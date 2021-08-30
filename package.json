@@ -1,10 +1,11 @@
 {
   "name": "chepi-back",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "0.0.0",
+  "description": "Backend for chepi",
+  "author": "https://github.com/Allohamora",
   "private": true,
   "license": "UNLICENSED",
+  "main": "src/main.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -66,5 +67,17 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allohamora/chepi-back.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Allohamora/chepi-back/issues"
+  },
+  "homepage": "https://github.com/Allohamora/chepi-back#readme"
 }
