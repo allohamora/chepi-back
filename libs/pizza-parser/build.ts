@@ -4,6 +4,8 @@ import translate from '@iamtraction/google-translate';
 import { parsePizzas } from '.';
 import { Pizza, Lang, supportedLangs, TranslatedPizza } from './types/pizza';
 
+const getTimestamp = () => Math.round(new Date().getTime() / 1000);
+
 type DataChunk = [string, string, number];
 type TranslateDataState = Record<string, DataChunk[]>;
 type Tranlated = {
@@ -112,14 +114,21 @@ const combineTranslated = (pizzas: Pizza[], tranlsated: Tranlated) => {
   return copy as TranslatedPizza[];
 };
 
+const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
+  const timestamp = getTimestamp();
+  const result = { timestamp, pizzas };
+
+  await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
+};
+
 const main = async () => {
   const pizzas = await parsePizzas();
 
   const { translateData, langs } = createTranslateDataState(pizzas);
   const translated = await translateState(translateData, langs);
-  const result = combineTranslated(pizzas, translated);
+  const translatedPizzas = combineTranslated(pizzas, translated);
 
-  await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
+  await writeOutputPizzas(translatedPizzas);
 };
 
 main();
