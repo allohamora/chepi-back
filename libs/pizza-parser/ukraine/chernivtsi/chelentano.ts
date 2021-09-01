@@ -85,14 +85,12 @@ export class Chelentano implements PizzasParser {
         .map((el) => Number($(el).text().replace('₴', '')));
 
       const variants = weights.map((weight, i) => ({
-        image,
-        link,
         weight,
         size: sizes[i],
         price: prices[i],
       }));
 
-      return { title, description, ingredients, variants };
+      return { title, description, image, link, ingredients, variants };
     });
 
     return metadata.map((pizzaMetadata) => ({ ...pizzaMetadata, ...this.baseMetadata }));

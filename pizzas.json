@@ -1,23 +1,21 @@
 {
-  "timestamp": 1630499539,
+  "timestamp": 1630510397,
   "pizzas": [
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 135,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 227,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -29,7 +27,7 @@
         "pineapple",
         "olives",
         "mozzarella",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Гавайская",
@@ -40,22 +38,20 @@
       "uk_description": "тісто, вершковий соус, сир, куряче філе, ананас, оливки, моцарела, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/4.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 122,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/4.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 225,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/4.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -66,7 +62,7 @@
         "ham",
         "cherryTomatoes",
         "mozzarella",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Пицца с помидорами черри и моцареллой",
@@ -77,22 +73,20 @@
       "uk_description": "тісто, соус, сир, шинка, помідори чері, моцарела, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/1.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 102,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/1.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 187,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/1.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -103,7 +97,7 @@
         "spicySalami",
         "chiliPeppers",
         "freshMushrooms",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Диаболо",
@@ -114,22 +108,20 @@
       "uk_description": "тісто, соус, сир, гостре салямі, перець чилі, печериці свіжі, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/12.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 107,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/12.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 221,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/12.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -141,7 +133,7 @@
         "mozzarella",
         "freshMushrooms",
         "capers",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Капричоза",
@@ -152,22 +144,20 @@
       "uk_description": "тісто, соус, сир, шинка, моцарела, печериці свіжі, каперси, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/19.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 132,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/19.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 242,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/19.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -178,7 +168,7 @@
         "mozzarella",
         "freshMushrooms",
         "prosciutto",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Прошуто",
@@ -189,22 +179,20 @@
       "uk_description": "тісто, соус, сир, моцарела, печериці свіжі, прошуто, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/11.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 115,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/11.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 215,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/11.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -216,7 +204,7 @@
         "freshMushrooms",
         "capers",
         "huntingSausages",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Европейская",
@@ -227,22 +215,20 @@
       "uk_description": "тісто, соус, сир, салямі, печериці свіжі, каперси, мисливські ковбаски, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/3.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 151,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/3.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 275,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/3.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -251,7 +237,7 @@
         "sauce",
         "cheese",
         "seafood",
-        "green",
+        "herb",
         "parmesan"
       ],
       "ru_title": "Фрут где маре",
@@ -262,22 +248,20 @@
       "uk_description": "тісто, соус, сир, морепродукти, зелень, пармезан"
     },
     {
+      "image": "https://shosho.pizza/shop/thumbnails_product_460_/15.jpeg",
       "variants": [
         {
           "weight": 400,
           "price": 142,
-          "size": 30,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/15.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 30
         },
         {
           "weight": 600,
           "price": 262,
-          "size": 50,
-          "image": "https://shosho.pizza/shop/thumbnails_product_460_/15.jpeg",
-          "link": "https://shosho.pizza"
+          "size": 50
         }
       ],
+      "link": "https://shosho.pizza",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -299,6 +283,8 @@
       "uk_description": "тісто, вершковий соус, сир, моцарела, фета, горгонзола, базилік, пармезан"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/cezare-verde-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/cesare-verde/",
       "ingredients": [
         "greenSauce",
         "mozzarella",
@@ -311,15 +297,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/cezare-verde-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/cesare-verde/",
           "weight": 445,
           "size": 28,
           "price": 125
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/cezare-verde-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/cesare-verde/",
           "weight": 850,
           "size": 40,
           "price": 245
@@ -336,6 +318,8 @@
       "uk_description": "Зелений соус, моцарела, бекон, куряче філе печене, салат мікс, соус Цезаре, помідори чері, сир Пармезан"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/salute-verde-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/salute-verde/",
       "ingredients": [
         "greenSauce",
         "mozzarella",
@@ -346,15 +330,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/salute-verde-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/salute-verde/",
           "weight": 410,
           "size": 28,
           "price": 119
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/salute-verde-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/salute-verde/",
           "weight": 740,
           "size": 40,
           "price": 235
@@ -371,6 +351,8 @@
       "uk_description": "Зелений соус, сир моцарела, печериці свіжі, бекон, сир фета, сир пармезан"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/bavarska-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-bavarska/",
       "ingredients": [
         "homemadeTomatoSauce",
         "huntingSausages",
@@ -381,15 +363,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/bavarska-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-bavarska/",
           "weight": 400,
           "size": 28,
           "price": 91
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/bavarska-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-bavarska/",
           "weight": 870,
           "size": 40,
           "price": 169
@@ -406,6 +384,8 @@
       "uk_description": "Домашній томатний соус, мисливські ковбаски, шинка, печериці, помідори та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/gavaiska-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-gavaiska/",
       "ingredients": [
         "homemadeTomatoSauce",
         "chickenFillet",
@@ -414,15 +394,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/gavaiska-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-gavaiska/",
           "weight": 370,
           "size": 28,
           "price": 85
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/gavaiska-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-gavaiska/",
           "weight": 800,
           "size": 40,
           "price": 157
@@ -439,6 +415,8 @@
       "uk_description": "Домашній томатний соус, куряче філе, ананаси та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/diabola-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-diabola/",
       "ingredients": [
         "homemadeTomatoSauce",
         "piquantSalami",
@@ -449,15 +427,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/diabola-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-diabola/",
           "weight": 390,
           "size": 28,
           "price": 91
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/diabola-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-diabola/",
           "weight": 780,
           "size": 40,
           "price": 169
@@ -474,6 +448,8 @@
       "uk_description": "Домашній томатний соус, салямі піканте, перці болгарський та чілі, маслини і моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/kaprichioza-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-kaprichioza/",
       "ingredients": [
         "homemadeTomatoSauce",
         "prosciutto",
@@ -484,15 +460,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/kaprichioza-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-kaprichioza/",
           "weight": 400,
           "size": 28,
           "price": 119
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/kaprichioza-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-kaprichioza/",
           "weight": 970,
           "size": 40,
           "price": 221
@@ -509,6 +481,8 @@
       "uk_description": "Домашній томатний соус, прошуто, салямі, печериці, артишоки та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/quatro/",
       "ingredients": [
         "creamSauce",
         "gorgonzola",
@@ -518,15 +492,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/quatro/",
           "weight": 400,
           "size": 28,
           "price": 117
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/quatro/",
           "weight": 750,
           "size": 40,
           "price": 209
@@ -543,6 +513,8 @@
       "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-margarita/",
       "ingredients": [
         "homemadeTomatoSauce",
         "basil",
@@ -550,15 +522,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-margarita/",
           "weight": 320,
           "size": 28,
           "price": 69
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-margarita/",
           "weight": 600,
           "size": 40,
           "price": 129
@@ -575,6 +543,8 @@
       "uk_description": "Домашній томатний соус, базилік та моцарела фреска"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/palermo-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-palermo/",
       "ingredients": [
         "homemadeTomatoSauce",
         "bacon",
@@ -586,15 +556,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/palermo-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-palermo/",
           "weight": 400,
           "size": 28,
           "price": 107
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/palermo-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-palermo/",
           "weight": 860,
           "size": 40,
           "price": 197
@@ -611,6 +577,8 @@
       "uk_description": "Домашній томатний соус, бекон, шинка, салямі, печериці, маслини та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/peperoni-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-peperoni/",
       "ingredients": [
         "homemadeTomatoSauce",
         "piquantSalami",
@@ -621,15 +589,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/peperoni-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-peperoni/",
           "weight": 380,
           "size": 28,
           "price": 97
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/peperoni-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-peperoni/",
           "weight": 800,
           "size": 40,
           "price": 179
@@ -646,6 +610,8 @@
       "uk_description": "Домашній томатний соус, салямі пікантне, перець пепероні та чілі, фета та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/10/egoista-na-tomatniy-osnovi-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-egoista/",
       "ingredients": [
         "pizzaBase",
         "cheese",
@@ -653,15 +619,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/10/egoista-na-tomatniy-osnovi-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-egoista/",
           "weight": 305,
           "size": 28,
           "price": 43
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/10/egoista-na-tomatniy-osnovi-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-egoista/",
           "weight": 600,
           "size": 40,
           "price": 77
@@ -678,6 +640,8 @@
       "uk_description": "Основа, сир, соус(томатний/вершковий)"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/06/Melanzana-salsacha-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-melanzania-salsichia/",
       "ingredients": [
         "tomatoSauce",
         "mozzarella",
@@ -689,8 +653,6 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/06/Melanzana-salsacha-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-melanzania-salsichia/",
           "weight": 600,
           "size": 28,
           "price": 137
@@ -707,6 +669,8 @@
       "uk_description": "Томатний соус, сир моцарелла, баклажани гриль, м’ясний фарш сальсіча, конфі з помідорів чері, крем-сир, соус песто"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/04/polo_amerykano-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/polo-amerykan/",
       "ingredients": [
         "homemadeTomatoSauce",
         "chicken",
@@ -717,15 +681,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/04/polo_amerykano-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/polo-amerykan/",
           "weight": 320,
           "size": 28,
           "price": 97
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/04/polo_amerykano-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/polo-amerykan/",
           "weight": 600,
           "size": 40,
           "price": 179
@@ -742,6 +702,8 @@
       "uk_description": "Домашній томатний соус, курка, бекон, маслини, перець пепероні та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/saliami_fungi-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-saliami-ta-fungi/",
       "ingredients": [
         "creamSauce",
         "salami",
@@ -751,15 +713,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/saliami_fungi-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-saliami-ta-fungi/",
           "weight": 390,
           "size": 28,
           "price": 85
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/saliami_fungi-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-saliami-ta-fungi/",
           "weight": 800,
           "size": 40,
           "price": 157
@@ -776,6 +734,8 @@
       "uk_description": "Вершковий соус, салямі, печериці, помідори та моцарела"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/09/formadjio-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-formajio-z-grusheu/",
       "ingredients": [
         "creamSauce",
         "radometer",
@@ -787,8 +747,6 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/09/formadjio-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-formajio-z-grusheu/",
           "weight": 440,
           "size": 28,
           "price": 123
@@ -805,6 +763,8 @@
       "uk_description": "Вершковий соус, радомер, горгонзола, пармезан, моцарела, груша, мед"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/%d1%84%d1%80%d1%83%d1%82%d1%96-%d0%b4%d1%96-%d0%bc%d0%b0%d1%80%d0%b5/",
       "ingredients": [
         "homemadeTomatoSauce",
         "shrimp",
@@ -812,15 +772,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/%d1%84%d1%80%d1%83%d1%82%d1%96-%d0%b4%d1%96-%d0%bc%d0%b0%d1%80%d0%b5/",
           "weight": 390,
           "size": 28,
           "price": 135
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/%d1%84%d1%80%d1%83%d1%82%d1%96-%d0%b4%d1%96-%d0%bc%d0%b0%d1%80%d0%b5/",
           "weight": 780,
           "size": 40,
           "price": 245
@@ -837,6 +793,8 @@
       "uk_description": "Домашній томатний соус, креветки, мідії"
     },
     {
+      "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/cezare-445x445.jpg",
+      "link": "https://chernivtsi.celentano.delivery/product/pizza-cezare/",
       "ingredients": [
         "homemadeTomatoSauce",
         "bacon",
@@ -848,15 +806,11 @@
       ],
       "variants": [
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/cezare-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-cezare/",
           "weight": 400,
           "size": 28,
           "price": 107
         },
         {
-          "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/cezare-445x445.jpg",
-          "link": "https://chernivtsi.celentano.delivery/product/pizza-cezare/",
           "weight": 800,
           "size": 40,
           "price": 191
@@ -883,18 +837,16 @@
         {
           "size": 35,
           "price": 100,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/43/170a0887italy.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-italijska"
+          "weight": 0
         },
         {
           "size": 45,
           "price": 110,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/43/170a0887italy.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-italijska"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/43/170a0887italy.jpg",
+      "link": "https://appeti.com.ua/menu/pizza-italijska",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -917,18 +869,16 @@
         {
           "size": 35,
           "price": 95,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/42/appeti.png",
-          "link": "https://appeti.com.ua/menu/pizza-appeti"
+          "weight": 0
         },
         {
           "size": 45,
           "price": 115,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/42/appeti.png",
-          "link": "https://appeti.com.ua/menu/pizza-appeti"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/42/appeti.png",
+      "link": "https://appeti.com.ua/menu/pizza-appeti",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -951,18 +901,16 @@
         {
           "size": 35,
           "price": 100,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/41/170a0880-baffalo.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-baffalo"
+          "weight": 0
         },
         {
           "size": 45,
           "price": 120,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/41/170a0880-baffalo.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-baffalo"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/41/170a0880-baffalo.jpg",
+      "link": "https://appeti.com.ua/menu/pizza-baffalo",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -986,18 +934,16 @@
         {
           "size": 35,
           "price": 105,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/22/170a0882buco.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-bukovinska"
+          "weight": 0
         },
         {
           "size": 45,
           "price": 125,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/22/170a0882buco.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-bukovinska"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/22/170a0882buco.jpg",
+      "link": "https://appeti.com.ua/menu/pizza-bukovinska",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -1011,7 +957,7 @@
     {
       "ingredients": [
         "pineapple",
-        "green",
+        "herb",
         "corn",
         "chickenFillet",
         "sauce"
@@ -1020,18 +966,16 @@
         {
           "size": 35,
           "price": 95,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/19/170a0884gavaii.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-gavaiska"
+          "weight": 0
         },
         {
           "size": 45,
           "price": 115,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/19/170a0884gavaii.jpg",
-          "link": "https://appeti.com.ua/menu/pizza-gavaiska"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/19/170a0884gavaii.jpg",
+      "link": "https://appeti.com.ua/menu/pizza-gavaiska",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
@@ -1053,11 +997,11 @@
         {
           "size": 35,
           "price": 100,
-          "weight": 0,
-          "image": "https://appeti.com.ua//assets/images/products/125/170a09772-(1).png",
-          "link": "https://appeti.com.ua/menu/pizza-kalcone"
+          "weight": 0
         }
       ],
+      "image": "https://appeti.com.ua//assets/images/products/125/170a09772-(1).png",
+      "link": "https://appeti.com.ua/menu/pizza-kalcone",
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",

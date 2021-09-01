@@ -58,10 +58,10 @@ export class Apetti implements PizzasParser {
           const price = Number(form.find('.product-price').text().replace('грн', '').trim());
           const weight = 0; // doesn't have weight
 
-          return { size, price, weight, image, link };
+          return { size, price, weight };
         });
 
-      return { title, description, ingredients, variants, ...this.baseMetadata };
+      return { title, description, ingredients, variants, image, link, ...this.baseMetadata };
     });
 
     return pizzas;

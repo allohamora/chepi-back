@@ -72,10 +72,10 @@ export class ShoSho implements PizzasParser {
           const price = Number(input.attr('data-base_price')) + Number(input.attr('data-option_price'));
           const size = Number($(el).text().trim().replace(' см', ''));
 
-          return { weight, price, size, image, link: this.pageLink };
+          return { weight, price, size };
         });
 
-      return { title, description, variants };
+      return { title, description, image, variants, link: this.pageLink };
     });
 
     const pizzas = pizzaMetadata.map((pizzaMetadata) => ({

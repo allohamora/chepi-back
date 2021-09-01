@@ -36,7 +36,7 @@ export enum Ingredient {
   salad = 'salad',
   saladMix = 'saladMix',
 
-  green = 'green',
+  herb = 'herb',
   corn = 'corn',
   grilledEggplant = 'grilledEggplant',
   artichokes = 'artichokes',
@@ -113,7 +113,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'мікс-салат': Ingredient.saladMix,
   'салат мікс': Ingredient.saladMix,
 
-  'зелень': Ingredient.green,
+  'зелень': Ingredient.herb,
   'кукурудза': Ingredient.corn,
   'баклажани гриль': Ingredient.grilledEggplant,
   'артишоки': Ingredient.artichokes,
