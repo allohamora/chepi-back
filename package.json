@@ -22,9 +22,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "test:libs": "jest --config ./libs/jest.json"
+    "test:libs": "jest --config ./libs/jest.json",
+    "build:pizzas": "cross-env node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts"
   },
   "dependencies": {
+    "@iamtraction/google-translate": "^1.1.2",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
@@ -44,6 +46,7 @@
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-beautiful-sort": "^1.0.6",

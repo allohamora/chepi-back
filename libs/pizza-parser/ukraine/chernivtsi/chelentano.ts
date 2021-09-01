@@ -104,8 +104,6 @@ export class Chelentano implements PizzasParser {
     const pizzasElements = this.getPizzasElements($);
     const pizzas = this.pizzasElementsToPizzas($, pizzasElements);
 
-    console.log(pizzas);
-
     return pizzas;
   }
 }
