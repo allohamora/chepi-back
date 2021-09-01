@@ -37,6 +37,7 @@ export enum Ingredient {
   saladMix = 'saladMix',
 
   green = 'green',
+  corn = 'corn',
   grilledEggplant = 'grilledEggplant',
   artichokes = 'artichokes',
   pear = 'pear',
@@ -94,6 +95,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
 
   'сир': Ingredient.cheese,
   'крем-сир': Ingredient.creamCheese,
+  'сир мацарелла': Ingredient.mozzarella,
   'сир моцарелла': Ingredient.mozzarella,
   'сир моцарела': Ingredient.mozzarella,
   'моцарела фреска': Ingredient.mozzarellaFresco,
@@ -112,6 +114,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'салат мікс': Ingredient.saladMix,
 
   'зелень': Ingredient.green,
+  'кукурудза': Ingredient.corn,
   'баклажани гриль': Ingredient.grilledEggplant,
   'артишоки': Ingredient.artichokes,
   'груша': Ingredient.pear,
@@ -122,16 +125,19 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'каперси': Ingredient.capers,
   'базилік': Ingredient.basil,
 
+  'помідора': Ingredient.tomatoes,
   'помідори': Ingredient.tomatoes,
   'конфі з помідорів чері': Ingredient.cherryTomatoConfit,
   'помідори чері': Ingredient.cherryTomatoes,
 
   'перець': Ingredient.pepper,
   'перець пепероні': Ingredient.pepperoniPeppers,
+  'перець болгарський': Ingredient.bellPepper,
   'перці болгарський': Ingredient.bellPepper,
   'перець чилі': Ingredient.chiliPeppers,
   'чілі': Ingredient.chiliPeppers,
 
+  'гриби': Ingredient.mushrooms,
   'печериці': Ingredient.mushrooms,
   'печериці свіжі': Ingredient.freshMushrooms,
 
