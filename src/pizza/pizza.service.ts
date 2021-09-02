@@ -7,6 +7,7 @@ import { delay } from 'src/utils/delay';
 import { nanoid } from 'nanoid';
 import { GetPizzasDto } from './dto/getPizzas.dto';
 import { FtsWhereBuilder } from 'src/fts/fts-where.builder';
+import { Pizza } from './entities/pizza.entity';
 
 interface SavedPizzas {
   timestamp: number;
@@ -47,7 +48,7 @@ export class PizzaService implements OnModuleInit {
 
   public async getPizzas({ query, limit, offset, country, city }: GetPizzasDto) {
     const where = new FtsWhereBuilder().equal('country', country).and().equal('city', city).build();
-    const result = await this.ftsService.select(this.pizzasIndex, query, { limit, offset, where });
+    const result = await this.ftsService.select<Pizza>(this.pizzasIndex, query, { limit, offset, where });
 
     return result;
   }
@@ -57,13 +58,13 @@ export class PizzaService implements OnModuleInit {
   }
 
   public async getPizzasByIds(ids: string[]) {
-    const value = await this.ftsService.getByIds(this.pizzasIndex, ids);
+    const value = await this.ftsService.getByIds<Pizza>(this.pizzasIndex, ids);
 
     return { value };
   }
 
   public async getPizzaById(id: string) {
-    const value = await this.ftsService.getById(this.pizzasIndex, id);
+    const value = await this.ftsService.getById<Pizza>(this.pizzasIndex, id);
 
     return { value };
   }

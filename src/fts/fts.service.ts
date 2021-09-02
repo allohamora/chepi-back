@@ -20,7 +20,7 @@ export class FtsService {
     });
   }
 
-  public async select(index: string, query: string, selectOptions: SelectOptions = null) {
+  public async select<T extends unknown>(index: string, query: string, selectOptions: SelectOptions = null) {
     let options: SearchParams<unknown> = null;
 
     if (selectOptions) {
@@ -29,12 +29,12 @@ export class FtsService {
       options = { limit, offset, filter: where };
     }
 
-    const { hits, nbHits } = await this.client.index(index).search(query, options);
+    const { hits, nbHits } = await this.client.index<T>(index).search(query, options);
 
     return { value: hits, total: nbHits };
   }
 
-  public async getByIds(index: string, ids: string[] | number[]) {
+  public async getByIds<T extends unknown>(index: string, ids: string[] | number[]) {
     const builder = new FtsWhereBuilder();
 
     ids.forEach((id, index) => {
@@ -47,7 +47,7 @@ export class FtsService {
 
     const filter = builder.build();
 
-    const { hits } = await this.client.index(index).search('', { filter, limit: ids.length });
+    const { hits } = await this.client.index<T>(index).search('', { filter, limit: ids.length });
 
     return hits;
   }

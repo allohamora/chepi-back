@@ -30,7 +30,7 @@ export interface Pizza {
 type TranslatedPizzaTitles = `${Lang}_title`;
 type TranslatedPizzaDescription = `${Lang}_description`;
 
-export type TranslatedPizza = Exclude<Pizza, 'title' | 'description'> &
+export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> &
   {
     [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
   };
