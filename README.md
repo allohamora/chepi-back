@@ -1,6 +1,6 @@
 # [Chepi-back](https://chepi-back-allohamora.cloud.okteto.net)
 
-Backend/api for cheppi. Prouction [link](https://chepi-back-allohamora.cloud.okteto.net).
+Backend/api for cheppi. Production [link](https://chepi-back-allohamora.cloud.okteto.net).
 
 ## Used technologies
 * [typescript](https://www.typescriptlang.org)
