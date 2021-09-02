@@ -1,6 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { MeiliSearch } from 'meilisearch';
+import { MeiliSearch, SearchParams } from 'meilisearch';
+
+interface SelectOptions {
+  limit: number;
+  offset: number;
+  where: string;
+}
 
 @Injectable()
 export class FtsService {
@@ -13,7 +19,13 @@ export class FtsService {
     });
   }
 
-  public async select(index: string, query: string, options: { limit: number; offset: number } = null) {
+  public async select(index: string, query: string, selectOptions: SelectOptions = null) {
+    let options: SearchParams<unknown> = null;
+
+    if (selectOptions) {
+      options = { ...selectOptions, filter: selectOptions.where };
+    }
+
     return await this.client.index(index).search(query, options);
   }
 
@@ -21,7 +33,11 @@ export class FtsService {
     return await this.client.index(index).addDocuments(documents);
   }
 
-  public async deleteAll(index: string) {
-    return await this.client.index(index).deleteAllDocuments();
+  public async delete(index: string, ids: string[] | number[]) {
+    return await this.client.index(index).deleteDocuments(ids);
+  }
+
+  public async update<T extends unknown>(index: string, documents: T[]) {
+    return await this.client.index(index).updateDocuments(documents);
   }
 }
