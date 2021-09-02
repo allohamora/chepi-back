@@ -33,7 +33,7 @@ npm run start:prod
 docker-compose up
 
 # in docker with dependencies
-docker-compose up --profile production
+docker-compose --profile production up
 ```
 
 ## Test
