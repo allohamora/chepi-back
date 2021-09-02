@@ -11,7 +11,7 @@ describe('queries', () => {
     const id = '1';
     const name = 'name';
 
-    const expected = `id=${id} AND name!=${name}`;
+    const expected = `id = ${id} AND name != ${name}`;
     const actual = builder.equal('id', id).and().notEqual('name', name).build();
 
     expect(actual).toBe(expected);
@@ -21,7 +21,7 @@ describe('queries', () => {
     const max = 10;
     const min = 0;
 
-    const expected = `min>${min} AND max<${max}`;
+    const expected = `min > ${min} AND max < ${max}`;
     const actual = builder.more('min', min).and().less('max', max).build();
 
     expect(expected).toBe(actual);
@@ -31,7 +31,7 @@ describe('queries', () => {
     const max = 10;
     const min = 0;
 
-    const expected = `min>=${min} AND max<=${max}`;
+    const expected = `min >= ${min} AND max <= ${max}`;
     const actual = builder.moreOrEqual('min', min).and().lessOrEqual('max', max).build();
 
     expect(actual).toBe(expected);
@@ -41,7 +41,7 @@ describe('queries', () => {
     const genres = ['horror', 'comedy'];
     const author = 'author';
 
-    const expected = `(genre=${genres[0]} OR genre=${genres[1]}) AND author=${author}`;
+    const expected = `(genre = ${genres[0]} OR genre = ${genres[1]}) AND author = ${author}`;
     const actual = builder
       .groupStart()
       .equal('genre', genres[0])
@@ -59,7 +59,7 @@ describe('queries', () => {
     const author = 'author';
     const genre = 'horror';
 
-    const expected = `author=${author} NOT genre=${genre}`;
+    const expected = `author = ${author} NOT genre = ${genre}`;
     const actual = builder.equal('author', author).not().equal('genre', genre).build();
 
     expect(actual).toBe(expected);

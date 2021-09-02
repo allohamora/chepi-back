@@ -2,37 +2,37 @@ export class FtsWhereBuilder {
   private filter = '';
 
   public equal<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}=${value}`;
+    this.filter += `${key} = ${value}`;
 
     return this;
   }
 
   public notEqual<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}!=${value}`;
+    this.filter += `${key} != ${value}`;
 
     return this;
   }
 
   public more<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}>${value}`;
+    this.filter += `${key} > ${value}`;
 
     return this;
   }
 
   public moreOrEqual<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}>=${value}`;
+    this.filter += `${key} >= ${value}`;
 
     return this;
   }
 
   public less<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}<${value}`;
+    this.filter += `${key} < ${value}`;
 
     return this;
   }
 
   public lessOrEqual<T extends unknown>(key: string, value: T) {
-    this.filter += `${key}<=${value}`;
+    this.filter += `${key} <= ${value}`;
 
     return this;
   }

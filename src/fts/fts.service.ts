@@ -3,9 +3,9 @@ import { ConfigService } from '@nestjs/config';
 import { MeiliSearch, SearchParams } from 'meilisearch';
 
 interface SelectOptions {
-  limit: number;
-  offset: number;
-  where: string;
+  limit?: number;
+  offset?: number;
+  where?: string;
 }
 
 @Injectable()
@@ -23,7 +23,9 @@ export class FtsService {
     let options: SearchParams<unknown> = null;
 
     if (selectOptions) {
-      options = { ...selectOptions, filter: selectOptions.where };
+      const { where, limit, offset } = selectOptions;
+
+      options = { limit, offset, filter: where };
     }
 
     return await this.client.index(index).search(query, options);
