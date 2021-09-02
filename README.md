@@ -9,6 +9,8 @@ Backend/api for cheppi
 * [meilisearch](https://www.meilisearch.com)
 * [docker](https://www.docker.com)
 * [okteto](https://okteto.com)
+* [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+* [convention-commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Options
 |        Key       |  Value |
