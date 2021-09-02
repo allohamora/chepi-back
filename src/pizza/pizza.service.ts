@@ -5,6 +5,9 @@ import { FtsService } from 'src/fts/fts.service';
 import { TranslatedPizza } from 'libs/pizza-parser/types/pizza';
 import { delay } from 'src/utils/delay';
 import { nanoid } from 'nanoid';
+import { GetPizzasDto } from './dto/getPizzas.dto';
+import { FtsWhereBuilder } from 'src/fts/fts-where.builder';
+import { Pizza } from './entities/pizza.entity';
 
 interface SavedPizzas {
   timestamp: number;
@@ -36,14 +39,33 @@ export class PizzaService implements OnModuleInit {
 
     await pizzaIndex.deleteAllDocuments();
     await delay(1000);
-    await pizzaIndex.updateFilterableAttributes(['city', 'country']);
+    await pizzaIndex.updateFilterableAttributes(['city', 'country', 'id']);
     await delay(1000);
 
     await pizzaIndex.addDocuments(pizzas.map((pizza) => ({ ...pizza, id: nanoid() })));
     await index.addDocuments([{ timestamp, id: nanoid() }]);
   }
 
-  public async findPizzasByQuery(query: string) {
-    return this.ftsService.select(this.pizzasIndex, query);
+  public async getPizzas({ query, limit, offset, country, city }: GetPizzasDto) {
+    const where = new FtsWhereBuilder().equal('country', country).and().equal('city', city).build();
+    const result = await this.ftsService.select<Pizza>(this.pizzasIndex, query, { limit, offset, where });
+
+    return result;
+  }
+
+  public async getPizzasTotal() {
+    return await this.ftsService.totalCount(this.pizzasIndex);
+  }
+
+  public async getPizzasByIds(ids: string[]) {
+    const value = await this.ftsService.getByIds<Pizza>(this.pizzasIndex, ids);
+
+    return { value };
+  }
+
+  public async getPizzaById(id: string) {
+    const value = await this.ftsService.getById<Pizza>(this.pizzasIndex, id);
+
+    return { value };
   }
 }

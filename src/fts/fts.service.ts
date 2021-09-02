@@ -1,6 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { MeiliSearch } from 'meilisearch';
+import { MeiliSearch, SearchParams } from 'meilisearch';
+import { FtsWhereBuilder } from './fts-where.builder';
+
+interface SelectOptions {
+  limit?: number;
+  offset?: number;
+  where?: string;
+}
 
 @Injectable()
 export class FtsService {
@@ -13,15 +20,62 @@ export class FtsService {
     });
   }
 
-  public async select(index: string, query: string, options: { limit: number; offset: number } = null) {
-    return await this.client.index(index).search(query, options);
+  public async select<T extends unknown>(index: string, query: string, selectOptions: SelectOptions = null) {
+    let options: SearchParams<unknown> = null;
+
+    if (selectOptions) {
+      const { where, limit, offset } = selectOptions;
+
+      options = { limit, offset, filter: where };
+    }
+
+    const { hits, nbHits } = await this.client.index<T>(index).search(query, options);
+
+    return { value: hits, total: nbHits };
+  }
+
+  public async getByIds<T extends unknown>(index: string, ids: string[] | number[]) {
+    const builder = new FtsWhereBuilder();
+
+    ids.forEach((id, index) => {
+      if (index !== 0) {
+        builder.or();
+      }
+
+      builder.equal('id', id);
+    });
+
+    const filter = builder.build();
+
+    const { hits } = await this.client.index<T>(index).search('', { filter, limit: ids.length });
+
+    return hits;
+  }
+
+  public async getById<T extends unknown>(index: string, id: string | number) {
+    try {
+      return await this.client.index<T>(index).getDocument(id);
+    } catch (error) {
+      if (error?.errorCode === 'document_not_found') return null;
+      throw error;
+    }
   }
 
   public async insert<T extends unknown>(index: string, documents: T[]) {
-    return await this.client.index(index).addDocuments(documents);
+    await this.client.index<T>(index).addDocuments(documents);
   }
 
-  public async deleteAll(index: string) {
-    return await this.client.index(index).deleteAllDocuments();
+  public async delete(index: string, ids: string[] | number[]) {
+    await this.client.index(index).deleteDocuments(ids);
+  }
+
+  public async update<T extends unknown>(index: string, documents: T[]) {
+    await this.client.index<T>(index).updateDocuments(documents);
+  }
+
+  public async totalCount(index: string) {
+    const { numberOfDocuments } = await this.client.index(index).getStats();
+
+    return { total: numberOfDocuments };
   }
 }

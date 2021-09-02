@@ -111,7 +111,7 @@ const combineTranslated = (pizzas: Pizza[], tranlsated: Tranlated) => {
     delete pizza.description;
   });
 
-  return copy as TranslatedPizza[];
+  return copy as unknown[] as TranslatedPizza[];
 };
 
 const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
