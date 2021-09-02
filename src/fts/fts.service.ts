@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { MeiliSearch, SearchParams } from 'meilisearch';
+import { FtsWhereBuilder } from './fts-where.builder';
 
 interface SelectOptions {
   limit?: number;
@@ -28,18 +29,53 @@ export class FtsService {
       options = { limit, offset, filter: where };
     }
 
-    return await this.client.index(index).search(query, options);
+    const { hits, nbHits } = await this.client.index(index).search(query, options);
+
+    return { value: hits, total: nbHits };
+  }
+
+  public async getByIds(index: string, ids: string[] | number[]) {
+    const builder = new FtsWhereBuilder();
+
+    ids.forEach((id, index) => {
+      if (index !== 0) {
+        builder.or();
+      }
+
+      builder.equal('id', id);
+    });
+
+    const filter = builder.build();
+
+    const { hits } = await this.client.index(index).search('', { filter, limit: ids.length });
+
+    return hits;
+  }
+
+  public async getById<T extends unknown>(index: string, id: string | number) {
+    try {
+      return await this.client.index<T>(index).getDocument(id);
+    } catch (error) {
+      if (error?.errorCode === 'document_not_found') return null;
+      throw error;
+    }
   }
 
   public async insert<T extends unknown>(index: string, documents: T[]) {
-    return await this.client.index(index).addDocuments(documents);
+    await this.client.index<T>(index).addDocuments(documents);
   }
 
   public async delete(index: string, ids: string[] | number[]) {
-    return await this.client.index(index).deleteDocuments(ids);
+    await this.client.index(index).deleteDocuments(ids);
   }
 
   public async update<T extends unknown>(index: string, documents: T[]) {
-    return await this.client.index(index).updateDocuments(documents);
+    await this.client.index<T>(index).updateDocuments(documents);
+  }
+
+  public async totalCount(index: string) {
+    const { numberOfDocuments } = await this.client.index(index).getStats();
+
+    return { total: numberOfDocuments };
   }
 }
