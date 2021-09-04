@@ -25,9 +25,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-floating-promises': 'warn',
 
-    "beautiful-sort/import": [2, {
-      "special": [], 
-      "order": ["special", "namespace", "default", "defaultObj", "obj", "none"]
+    'beautiful-sort/import': ['error', {
+      'special': [], 
+      'order': ['special', 'namespace', 'default', 'defaultObj', 'obj', 'none']
     }],
   },
 };
