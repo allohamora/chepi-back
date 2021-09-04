@@ -5,23 +5,23 @@ services:
     build: .
     ports:
       - 3000:3000
-    environment: 
+    environment:
       - MEILI_URL=http://chepi-ms:7700
       - MEILI_MASTER_KEY
-    depends_on: 
+    depends_on:
       - chepi-ms
     profiles:
       - production
 
   chepi-ms:
     image: getmeili/meilisearch:v0.21.1
-    environment: 
+    environment:
       - MEILI_MASTER_KEY
       - MEILI_ENV
-    volumes: 
+    volumes:
       - ms-data:/data.ms
-    ports: 
+    ports:
       - 7700:7700
 
-volumes: 
+volumes:
   ms-data:

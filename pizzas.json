@@ -55,16 +55,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "sauce",
-        "cheese",
-        "ham",
-        "cherryTomatoes",
-        "mozzarella",
-        "herb",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "sauce", "cheese", "ham", "cherryTomatoes", "mozzarella", "herb", "parmesan"],
       "ru_title": "Пицца с помидорами черри и моцареллой",
       "ru_description": "тесто, соус, сыр, ветчина, помидоры черри, моцарелла, зелень, пармезан",
       "en_title": "Pizza with cherry tomatoes and mozzarella",
@@ -90,16 +81,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "sauce",
-        "cheese",
-        "spicySalami",
-        "chiliPeppers",
-        "freshMushrooms",
-        "herb",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "sauce", "cheese", "spicySalami", "chiliPeppers", "freshMushrooms", "herb", "parmesan"],
       "ru_title": "Диаболо",
       "ru_description": "тесто, соус, сыр, острое салями, перец чили, шампиньоны свежие, зелень, пармезан",
       "en_title": "Diabolo",
@@ -125,17 +107,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "sauce",
-        "cheese",
-        "ham",
-        "mozzarella",
-        "freshMushrooms",
-        "capers",
-        "herb",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "sauce", "cheese", "ham", "mozzarella", "freshMushrooms", "capers", "herb", "parmesan"],
       "ru_title": "Капричоза",
       "ru_description": "тесто, соус, сыр, ветчина, моцарелла, шампиньоны свежие, каперсы, зелень, пармезан",
       "en_title": "Capricciosa",
@@ -161,16 +133,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "sauce",
-        "cheese",
-        "mozzarella",
-        "freshMushrooms",
-        "prosciutto",
-        "herb",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "sauce", "cheese", "mozzarella", "freshMushrooms", "prosciutto", "herb", "parmesan"],
       "ru_title": "Прошуто",
       "ru_description": "тесто, соус, сыр, моцарелла, шампиньоны свежие, прошутто, зелень, пармезан",
       "en_title": "Prosciutto",
@@ -232,14 +195,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "sauce",
-        "cheese",
-        "seafood",
-        "herb",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "sauce", "cheese", "seafood", "herb", "parmesan"],
       "ru_title": "Фрут где маре",
       "ru_description": "тесто, соус, сыр, морепродукты, зелень, пармезан",
       "en_title": "Fruit de mare",
@@ -265,16 +221,7 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": [
-        "dough",
-        "creamSauce",
-        "cheese",
-        "mozzarella",
-        "feta",
-        "gorgonzola",
-        "basil",
-        "parmesan"
-      ],
+      "ingredients": ["dough", "creamSauce", "cheese", "mozzarella", "feta", "gorgonzola", "basil", "parmesan"],
       "ru_title": "Четыре сыра",
       "ru_description": "тесто, сливочный соус, сыр, моцарелла, фета, горгонзола, базилик, пармезан",
       "en_title": "Four cheeses",
@@ -320,14 +267,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/salute-verde-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/salute-verde/",
-      "ingredients": [
-        "greenSauce",
-        "mozzarella",
-        "freshMushrooms",
-        "bacon",
-        "feta",
-        "parmesan"
-      ],
+      "ingredients": ["greenSauce", "mozzarella", "freshMushrooms", "bacon", "feta", "parmesan"],
       "variants": [
         {
           "weight": 410,
@@ -353,14 +293,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/bavarska-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-bavarska/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "huntingSausages",
-        "ham",
-        "mushrooms",
-        "tomatoes",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "huntingSausages", "ham", "mushrooms", "tomatoes", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -386,12 +319,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/gavaiska-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-gavaiska/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "chickenFillet",
-        "pineapple",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "chickenFillet", "pineapple", "mozzarella"],
       "variants": [
         {
           "weight": 370,
@@ -417,14 +345,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/diabola-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-diabola/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "piquantSalami",
-        "bellPepper",
-        "chiliPeppers",
-        "olives",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "bellPepper", "chiliPeppers", "olives", "mozzarella"],
       "variants": [
         {
           "weight": 390,
@@ -450,14 +371,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/kaprichioza-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-kaprichioza/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "prosciutto",
-        "salami",
-        "mushrooms",
-        "artichokes",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "prosciutto", "salami", "mushrooms", "artichokes", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -483,13 +397,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/quatro/",
-      "ingredients": [
-        "creamSauce",
-        "gorgonzola",
-        "radometer",
-        "parmesan",
-        "mozzarella"
-      ],
+      "ingredients": ["creamSauce", "gorgonzola", "radometer", "parmesan", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -515,11 +423,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-margarita/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "basil",
-        "mozzarellaFresco"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "basil", "mozzarellaFresco"],
       "variants": [
         {
           "weight": 320,
@@ -545,15 +449,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/palermo-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-palermo/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "bacon",
-        "ham",
-        "salami",
-        "mushrooms",
-        "olives",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "bacon", "ham", "salami", "mushrooms", "olives", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -579,14 +475,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/peperoni-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-peperoni/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "piquantSalami",
-        "pepperoniPeppers",
-        "chiliPeppers",
-        "feta",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "pepperoniPeppers", "chiliPeppers", "feta", "mozzarella"],
       "variants": [
         {
           "weight": 380,
@@ -612,11 +501,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/10/egoista-na-tomatniy-osnovi-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-egoista/",
-      "ingredients": [
-        "pizzaBase",
-        "cheese",
-        "tomatoOrCreamSauce"
-      ],
+      "ingredients": ["pizzaBase", "cheese", "tomatoOrCreamSauce"],
       "variants": [
         {
           "weight": 305,
@@ -671,14 +556,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/04/polo_amerykano-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/polo-amerykan/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "chicken",
-        "bacon",
-        "olives",
-        "pepperoniPeppers",
-        "mozzarella"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "chicken", "bacon", "olives", "pepperoniPeppers", "mozzarella"],
       "variants": [
         {
           "weight": 320,
@@ -704,13 +582,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/saliami_fungi-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-saliami-ta-fungi/",
-      "ingredients": [
-        "creamSauce",
-        "salami",
-        "mushrooms",
-        "tomatoes",
-        "mozzarella"
-      ],
+      "ingredients": ["creamSauce", "salami", "mushrooms", "tomatoes", "mozzarella"],
       "variants": [
         {
           "weight": 390,
@@ -736,15 +608,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/09/formadjio-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-formajio-z-grusheu/",
-      "ingredients": [
-        "creamSauce",
-        "radometer",
-        "gorgonzola",
-        "parmesan",
-        "mozzarella",
-        "pear",
-        "honey"
-      ],
+      "ingredients": ["creamSauce", "radometer", "gorgonzola", "parmesan", "mozzarella", "pear", "honey"],
       "variants": [
         {
           "weight": 440,
@@ -765,11 +629,7 @@
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/%d1%84%d1%80%d1%83%d1%82%d1%96-%d0%b4%d1%96-%d0%bc%d0%b0%d1%80%d0%b5/",
-      "ingredients": [
-        "homemadeTomatoSauce",
-        "shrimp",
-        "mussels"
-      ],
+      "ingredients": ["homemadeTomatoSauce", "shrimp", "mussels"],
       "variants": [
         {
           "weight": 390,
@@ -827,12 +687,7 @@
       "uk_description": "Домашній томатний соус, бекон, куряче філе, мікс-салат, сири пармезан, моцарела та соус Цезаре"
     },
     {
-      "ingredients": [
-        "tomatoes",
-        "mozzarella",
-        "basil",
-        "sauce"
-      ],
+      "ingredients": ["tomatoes", "mozzarella", "basil", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -858,13 +713,7 @@
       "uk_description": "Неймовірно смачне поєднання соковитих томатів, сиру моцарелла та духмяного базиліку"
     },
     {
-      "ingredients": [
-        "ham",
-        "cheese",
-        "tomatoes",
-        "mushrooms",
-        "sauce"
-      ],
+      "ingredients": ["ham", "cheese", "tomatoes", "mushrooms", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -890,13 +739,7 @@
       "uk_description": "Соковита шинка, стиглі томати, печериці, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом"
     },
     {
-      "ingredients": [
-        "chickenFillet",
-        "cheese",
-        "tomatoes",
-        "bellPepper",
-        "sauce"
-      ],
+      "ingredients": ["chickenFillet", "cheese", "tomatoes", "bellPepper", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -922,14 +765,7 @@
       "uk_description": "Куряче філе, томати, перець болгарський, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом"
     },
     {
-      "ingredients": [
-        "olives",
-        "bellPepper",
-        "tomatoes",
-        "salami",
-        "cheese",
-        "sauce"
-      ],
+      "ingredients": ["olives", "bellPepper", "tomatoes", "salami", "cheese", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -955,13 +791,7 @@
       "uk_description": "Апетитне салямі з томатами, перцем болгарським, маслинами, ніжним сиром у поєднанні з сиром моцарелла та фірмовим соусом"
     },
     {
-      "ingredients": [
-        "pineapple",
-        "herb",
-        "corn",
-        "chickenFillet",
-        "sauce"
-      ],
+      "ingredients": ["pineapple", "herb", "corn", "chickenFillet", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -987,12 +817,7 @@
       "uk_description": "Поєднання м’яса курки, ананасу, кукурудзи, ніжного сиру та сиру моцарелла з фірмовим соусом роблять нашу піцу надзвичайно смачною"
     },
     {
-      "ingredients": [
-        "tomatoes",
-        "sauce",
-        "ham",
-        "mushrooms"
-      ],
+      "ingredients": ["tomatoes", "sauce", "ham", "mushrooms"],
       "variants": [
         {
           "size": 35,

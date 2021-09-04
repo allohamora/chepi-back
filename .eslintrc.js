@@ -4,14 +4,8 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint/eslint-plugin',
-    'beautiful-sort'
-  ],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  plugins: ['@typescript-eslint/eslint-plugin', 'beautiful-sort'],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   root: true,
   env: {
     node: true,
@@ -25,9 +19,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-floating-promises': 'warn',
 
-    'beautiful-sort/import': ['error', {
-      'special': [], 
-      'order': ['special', 'namespace', 'default', 'defaultObj', 'obj', 'none']
-    }],
+    'beautiful-sort/import': [
+      'error',
+      {
+        special: [],
+        order: ['special', 'namespace', 'default', 'defaultObj', 'obj', 'none'],
+      },
+    ],
   },
 };
