@@ -2,16 +2,15 @@ import fsp from 'fs/promises';
 import path from 'path';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { FtsService } from 'src/fts/fts.service';
-import { TranslatedPizza } from 'libs/pizza-parser/types/pizza';
+import { TranslatedPizzaWithId } from 'libs/pizza-parser/types/pizza';
 import { delay } from 'src/utils/delay';
-import { nanoid } from 'nanoid';
 import { GetPizzasDto } from './dto/getPizzas.dto';
 import { FtsWhereBuilder } from 'src/fts/fts-where.builder';
 import { Pizza } from './entities/pizza.entity';
 
 interface SavedPizzas {
   timestamp: number;
-  pizzas: TranslatedPizza[];
+  pizzas: TranslatedPizzaWithId[];
 }
 const pizzasPath = path.join(process.cwd(), 'pizzas.json');
 
@@ -35,6 +34,7 @@ export class PizzaService implements OnModuleInit {
       return;
     }
 
+    await index.deleteAllDocuments();
     const pizzaIndex = await this.ftsService.client.getOrCreateIndex(this.pizzasIndex);
 
     await pizzaIndex.deleteAllDocuments();
@@ -42,8 +42,8 @@ export class PizzaService implements OnModuleInit {
     await pizzaIndex.updateFilterableAttributes(['city', 'country', 'id']);
     await delay(1000);
 
-    await pizzaIndex.addDocuments(pizzas.map((pizza) => ({ ...pizza, id: nanoid() })));
-    await index.addDocuments([{ timestamp, id: nanoid() }]);
+    await pizzaIndex.addDocuments(pizzas);
+    await index.addDocuments([{ timestamp, id: timestamp }]);
   }
 
   public async getPizzas({ query, limit, offset, country, city }: GetPizzasDto) {

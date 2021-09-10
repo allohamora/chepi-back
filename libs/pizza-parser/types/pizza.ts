@@ -34,3 +34,7 @@ export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> &
   {
     [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
   };
+
+export type TranslatedPizzaWithId = TranslatedPizza & {
+  id: string;
+};

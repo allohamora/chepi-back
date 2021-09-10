@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Ingredient } from 'libs/pizza-parser/types/ingredient';
 import {
   City,
-  County,
+  Country,
   Lang,
   supportedCities,
   supportedCountries,
@@ -36,7 +36,7 @@ export class Pizza implements TranslatedPizza {
   lang: Lang;
 
   @ApiProperty({ enum: supportedCountries, description: 'country where pizzeria located' })
-  country: County;
+  country: Country;
 
   @ApiProperty({ enum: supportedCities, description: 'city where pizzeria locatd' })
   city: City;
