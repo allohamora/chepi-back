@@ -1,7 +1,7 @@
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cherio, { CheerioAPI, Element } from 'cheerio';
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 export class Chelentano extends ChernivtsiPizzasParser {
   private blacklist = ['піцарол', 'кальцоне', 'комбо'];
@@ -93,7 +93,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzasElements = this.getPizzasElements($);
     const pizzas = this.pizzasElementsToPizzas($, pizzasElements);
 

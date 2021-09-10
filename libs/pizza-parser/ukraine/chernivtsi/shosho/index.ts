@@ -1,8 +1,7 @@
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cherio, { CheerioAPI, Element } from 'cheerio';
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 const PIZZA_CATEGORY_TITLE = 'Піца';
 
@@ -85,7 +84,7 @@ export class ShoSho extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzaCategory = this.getPizzaCategory($);
     const pizzas = this.pizzaCategoryToPizzas($, pizzaCategory);
 

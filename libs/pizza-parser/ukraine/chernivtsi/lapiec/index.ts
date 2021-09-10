@@ -1,4 +1,4 @@
-import cherio, { CheerioAPI } from 'cheerio';
+import cheerio, { CheerioAPI } from 'cheerio';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -35,7 +35,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzas = this.getPizzas($);
 
     return pizzas;

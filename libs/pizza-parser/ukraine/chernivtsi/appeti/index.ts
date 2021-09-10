@@ -1,4 +1,4 @@
-import cherio, { CheerioAPI } from 'cheerio';
+import cheerio, { CheerioAPI } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
@@ -32,7 +32,7 @@ export class Apetti extends ChernivtsiPizzasParser {
   private async parsePizzasFromLinks(links: string[]) {
     const pages = await Promise.all(links.map((link) => this.getPage(link)));
     const pizzas = pages.map((page, i) => {
-      const $ = cherio.load(page);
+      const $ = cheerio.load(page);
       const card = $('#msProduct');
 
       const title = lowerAndCapitalize(card.find('.title').text().trim());
@@ -67,7 +67,7 @@ export class Apetti extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzaLinks = await this.getPizzaLinks($);
     const pizzas = await this.parsePizzasFromLinks(pizzaLinks);
 

@@ -1,4 +1,4 @@
-import cherio, { CheerioAPI } from 'cheerio';
+import cheerio, { CheerioAPI } from 'cheerio';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { Lang, Pizza } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
@@ -70,7 +70,7 @@ export class Monopizza extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzas = this.getPizzas($);
 
     return pizzas;
