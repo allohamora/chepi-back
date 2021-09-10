@@ -26,12 +26,12 @@ export enum Ingredient {
 
   cheese = 'cheese',
   creamCheese = 'creamCheese',
-  mozzarellaFresco = 'mozzarellaFresco',
+  mozzarellaFresca = 'mozzarellaFresca',
   mozzarella = 'mozzarella',
   parmesan = 'parmesan',
   feta = 'feta',
   gorgonzola = 'gorgonzola',
-  radometer = 'radometer',
+  radomer = 'radomer',
 
   salad = 'salad',
   saladMix = 'saladMix',
@@ -42,7 +42,8 @@ export enum Ingredient {
   artichokes = 'artichokes',
   pear = 'pear',
   pineapple = 'pineapple',
-  olives = 'olives',
+  blackOlives = 'blackOlives',
+  greenOlives = 'greenOlives',
   capers = 'capers',
   basil = 'basil',
 
@@ -99,7 +100,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'сир мацарелла': Ingredient.mozzarella,
   'сир моцарелла': Ingredient.mozzarella,
   'сир моцарела': Ingredient.mozzarella,
-  'моцарела фреска': Ingredient.mozzarellaFresco,
+  'моцарела фреска': Ingredient.mozzarellaFresca,
   'моцарела': Ingredient.mozzarella,
   'сир пармезан': Ingredient.parmesan,
   'сири пармезан': Ingredient.parmesan,
@@ -108,7 +109,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'фета': Ingredient.feta,
   'сири горгонзола': Ingredient.gorgonzola,
   'горгонзола': Ingredient.gorgonzola,
-  'радомер': Ingredient.radometer,
+  'радомер': Ingredient.radomer,
 
   'салат': Ingredient.salad,
   'мікс-салат': Ingredient.saladMix,
@@ -121,8 +122,8 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'груша': Ingredient.pear,
   'ананаси': Ingredient.pineapple,
   'ананас': Ingredient.pineapple,
-  'оливки': Ingredient.olives,
-  'маслини': Ingredient.olives,
+  'оливки': Ingredient.greenOlives,
+  'маслини': Ingredient.blackOlives,
   'каперси': Ingredient.capers,
   'базилік': Ingredient.basil,
 
