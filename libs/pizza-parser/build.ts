@@ -2,7 +2,8 @@ import path from 'path';
 import fsp from 'fs/promises';
 import translate from '@iamtraction/google-translate';
 import { parsePizzas } from '.';
-import { Pizza, Lang, supportedLangs, TranslatedPizza } from './types/pizza';
+import { Pizza, Lang, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
+import { nanoid } from 'nanoid';
 
 const getTimestamp = () => Math.round(new Date().getTime() / 1000);
 
@@ -121,14 +122,19 @@ const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };
 
+const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
+  return pizzas.map((pizza) => ({ ...pizza, id: nanoid() }));
+};
+
 const main = async () => {
   const pizzas = await parsePizzas();
 
   const { translateData, langs } = createTranslateDataState(pizzas);
   const translated = await translateState(translateData, langs);
   const translatedPizzas = combineTranslated(pizzas, translated);
+  const withId = addId(translatedPizzas);
 
-  await writeOutputPizzas(translatedPizzas);
+  await writeOutputPizzas(withId);
 };
 
 main();

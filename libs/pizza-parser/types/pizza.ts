@@ -10,7 +10,7 @@ export const supportedLangs = ['uk', 'ru', 'en'] as const;
 export type Lang = typeof supportedLangs[number];
 
 export const supportedCountries = ['ukraine'] as const;
-export type County = typeof supportedCountries[number];
+export type Country = typeof supportedCountries[number];
 
 export const supportedCities = ['chernivtsi'] as const;
 export type City = typeof supportedCities[number];
@@ -23,7 +23,7 @@ export interface Pizza {
   ingredients: Ingredient[]; // ['peper', 'pepperoni']
   lang: Lang;
   variants: Variant[];
-  country: County;
+  country: Country;
   city: City;
 }
 
@@ -34,3 +34,7 @@ export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> &
   {
     [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
   };
+
+export type TranslatedPizzaWithId = TranslatedPizza & {
+  id: string;
+};

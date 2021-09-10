@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
-import { City, County, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
+import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
 import { Pizza } from '../entities/pizza.entity';
 
 export class GetPizzasDto {
@@ -14,7 +14,7 @@ export class GetPizzasDto {
 
   @ApiProperty({ enum: supportedCountries })
   @IsEnum(supportedCountries)
-  country: County;
+  country: Country;
 
   @ApiProperty({ default: 20, required: false })
   @IsOptional()

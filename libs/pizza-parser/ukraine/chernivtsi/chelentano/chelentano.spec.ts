@@ -1,15 +1,14 @@
-import { ShoSho } from './shosho';
+import { Chelentano } from '.';
 
-let parser: ShoSho;
+let parser: Chelentano;
 
 beforeEach(() => {
-  parser = new ShoSho();
+  parser = new Chelentano();
 });
 
 describe('parsePizza', () => {
   test('must return a pizza array', async () => {
     const pizzas = await parser.parsePizzas();
-    console.log(pizzas);
 
     expect(pizzas).toBeInstanceOf(Array);
     expect(pizzas[0]).not.toBe(undefined);

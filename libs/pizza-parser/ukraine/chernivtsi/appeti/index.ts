@@ -2,6 +2,7 @@ import cherio, { CheerioAPI } from 'cheerio';
 import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
+import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 
 export class Apetti implements PizzasParser {
   private pageLink = 'https://appeti.com.ua';
@@ -39,8 +40,10 @@ export class Apetti implements PizzasParser {
       const $ = cherio.load(page);
       const card = $('#msProduct');
 
-      const title = card.find('.title').text().trim();
-      const description = card.find('.content').text().trim().replace(/\s+/g, ' ');
+      const title = lowerAndCapitalize(card.find('.title').text().trim());
+      const description = lowerAndCapitalize(
+        card.find('.content').text().trim().replace(/\s+/g, ' ').replace(/, ..$/, ''),
+      );
       const ukIngredients = card
         .find('.folder_ingredient')
         .toArray()

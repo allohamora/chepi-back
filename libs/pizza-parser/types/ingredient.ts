@@ -26,12 +26,12 @@ export enum Ingredient {
 
   cheese = 'cheese',
   creamCheese = 'creamCheese',
-  mozzarellaFresco = 'mozzarellaFresco',
+  mozzarellaFresca = 'mozzarellaFresca',
   mozzarella = 'mozzarella',
   parmesan = 'parmesan',
   feta = 'feta',
   gorgonzola = 'gorgonzola',
-  radometer = 'radometer',
+  radomer = 'radomer',
 
   salad = 'salad',
   saladMix = 'saladMix',
@@ -42,7 +42,8 @@ export enum Ingredient {
   artichokes = 'artichokes',
   pear = 'pear',
   pineapple = 'pineapple',
-  olives = 'olives',
+  blackOlives = 'blackOlives',
+  greenOlives = 'greenOlives',
   capers = 'capers',
   basil = 'basil',
 
@@ -51,15 +52,15 @@ export enum Ingredient {
   cherryTomatoes = 'cherryTomatoes',
 
   pepper = 'pepper',
-  pepperoniPeppers = 'pepperoniPeppers',
-  chiliPeppers = 'chiliPeppers',
+  pepperoniPepper = 'pepperoniPepper',
+  chiliPepper = 'chiliPepper',
   bellPepper = 'bellPepper',
 
   mushrooms = 'mushrooms',
   freshMushrooms = 'freshMushrooms',
 
   seafood = 'seafood',
-  shrimp = 'shrimp',
+  shrimps = 'shrimps',
   mussels = 'mussels',
 
   honey = 'honey',
@@ -99,7 +100,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'сир мацарелла': Ingredient.mozzarella,
   'сир моцарелла': Ingredient.mozzarella,
   'сир моцарела': Ingredient.mozzarella,
-  'моцарела фреска': Ingredient.mozzarellaFresco,
+  'моцарела фреска': Ingredient.mozzarellaFresca,
   'моцарела': Ingredient.mozzarella,
   'сир пармезан': Ingredient.parmesan,
   'сири пармезан': Ingredient.parmesan,
@@ -108,7 +109,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'фета': Ingredient.feta,
   'сири горгонзола': Ingredient.gorgonzola,
   'горгонзола': Ingredient.gorgonzola,
-  'радомер': Ingredient.radometer,
+  'радомер': Ingredient.radomer,
 
   'салат': Ingredient.salad,
   'мікс-салат': Ingredient.saladMix,
@@ -121,8 +122,8 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'груша': Ingredient.pear,
   'ананаси': Ingredient.pineapple,
   'ананас': Ingredient.pineapple,
-  'оливки': Ingredient.olives,
-  'маслини': Ingredient.olives,
+  'оливки': Ingredient.greenOlives,
+  'маслини': Ingredient.blackOlives,
   'каперси': Ingredient.capers,
   'базилік': Ingredient.basil,
 
@@ -132,18 +133,18 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'помідори чері': Ingredient.cherryTomatoes,
 
   'перець': Ingredient.pepper,
-  'перець пепероні': Ingredient.pepperoniPeppers,
+  'перець пепероні': Ingredient.pepperoniPepper,
   'перець болгарський': Ingredient.bellPepper,
   'перці болгарський': Ingredient.bellPepper,
-  'перець чилі': Ingredient.chiliPeppers,
-  'чілі': Ingredient.chiliPeppers,
+  'перець чилі': Ingredient.chiliPepper,
+  'чілі': Ingredient.chiliPepper,
 
   'гриби': Ingredient.mushrooms,
   'печериці': Ingredient.mushrooms,
   'печериці свіжі': Ingredient.freshMushrooms,
 
   'морепродукти': Ingredient.seafood,
-  'креветки': Ingredient.shrimp,
+  'креветки': Ingredient.shrimps,
   'мідії': Ingredient.mussels,
 
   'мед': Ingredient.honey,

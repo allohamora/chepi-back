@@ -1,5 +1,5 @@
 {
-  "timestamp": 1630510397,
+  "timestamp": 1631268202,
   "pizzas": [
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
@@ -25,7 +25,7 @@
         "cheese",
         "chickenFillet",
         "pineapple",
-        "olives",
+        "greenOlives",
         "mozzarella",
         "herb",
         "parmesan"
@@ -35,7 +35,8 @@
       "en_title": "Hawaiian",
       "en_description": "dough, cream sauce, cheese, chicken fillet, pineapple, olives, mozzarella, herbs, parmesan",
       "uk_title": "Гавайська",
-      "uk_description": "тісто, вершковий соус, сир, куряче філе, ананас, оливки, моцарела, зелень, пармезан"
+      "uk_description": "тісто, вершковий соус, сир, куряче філе, ананас, оливки, моцарела, зелень, пармезан",
+      "id": "MmfLFpJUCntT8pjHS3vIQ"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/4.jpeg",
@@ -61,7 +62,8 @@
       "en_title": "Pizza with cherry tomatoes and mozzarella",
       "en_description": "dough, sauce, cheese, ham, cherry tomatoes, mozzarella, herbs, parmesan",
       "uk_title": "Піца з помідорами чері та моцарелою",
-      "uk_description": "тісто, соус, сир, шинка, помідори чері, моцарела, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, шинка, помідори чері, моцарела, зелень, пармезан",
+      "id": "jcf0iJBpIUxAIvhyRQf-Q"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/1.jpeg",
@@ -81,13 +83,14 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ingredients": ["dough", "sauce", "cheese", "spicySalami", "chiliPeppers", "freshMushrooms", "herb", "parmesan"],
+      "ingredients": ["dough", "sauce", "cheese", "spicySalami", "chiliPepper", "freshMushrooms", "herb", "parmesan"],
       "ru_title": "Диаболо",
       "ru_description": "тесто, соус, сыр, острое салями, перец чили, шампиньоны свежие, зелень, пармезан",
       "en_title": "Diabolo",
       "en_description": "dough, sauce, cheese, hot salami, chili peppers, fresh mushrooms, herbs, parmesan",
       "uk_title": "Діаболо",
-      "uk_description": "тісто, соус, сир, гостре салямі, перець чилі, печериці свіжі, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, гостре салямі, перець чилі, печериці свіжі, зелень, пармезан",
+      "id": "5VYQ19zGjcftaDOcb60Dl"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/12.jpeg",
@@ -113,7 +116,8 @@
       "en_title": "Capricciosa",
       "en_description": "dough, sauce, cheese, ham, mozzarella, fresh mushrooms, capers, herbs, parmesan",
       "uk_title": "Капрічоза",
-      "uk_description": "тісто, соус, сир, шинка, моцарела, печериці свіжі, каперси, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, шинка, моцарела, печериці свіжі, каперси, зелень, пармезан",
+      "id": "JxZCrVporlb3pGeHvDjcY"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/19.jpeg",
@@ -139,7 +143,8 @@
       "en_title": "Prosciutto",
       "en_description": "dough, sauce, cheese, mozzarella, fresh mushrooms, prosciutto, herbs, parmesan",
       "uk_title": "Прошуто",
-      "uk_description": "тісто, соус, сир, моцарела, печериці свіжі, прошуто, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, моцарела, печериці свіжі, прошуто, зелень, пармезан",
+      "id": "VBynxROHB9oZTAPOqUOHL"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/11.jpeg",
@@ -175,7 +180,8 @@
       "en_title": "European",
       "en_description": "dough, sauce, cheese, salami, fresh mushrooms, capers, hunting sausages, herbs, parmesan",
       "uk_title": "Європейська",
-      "uk_description": "тісто, соус, сир, салямі, печериці свіжі, каперси, мисливські ковбаски, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, салямі, печериці свіжі, каперси, мисливські ковбаски, зелень, пармезан",
+      "id": "FrQxyCLwc73bxLg6Vs104"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/3.jpeg",
@@ -201,7 +207,8 @@
       "en_title": "Fruit de mare",
       "en_description": "dough, sauce, cheese, seafood, herbs, parmesan",
       "uk_title": "Фруті де маре",
-      "uk_description": "тісто, соус, сир, морепродукти, зелень, пармезан"
+      "uk_description": "тісто, соус, сир, морепродукти, зелень, пармезан",
+      "id": "dabfMkZVPXPmT2pYBcgDV"
     },
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/15.jpeg",
@@ -227,7 +234,8 @@
       "en_title": "Four cheeses",
       "en_description": "dough, cream sauce, cheese, mozzarella, feta, gorgonzola, basil, parmesan",
       "uk_title": "Чотири сири",
-      "uk_description": "тісто, вершковий соус, сир, моцарела, фета, горгонзола, базилік, пармезан"
+      "uk_description": "тісто, вершковий соус, сир, моцарела, фета, горгонзола, базилік, пармезан",
+      "id": "tDvfX9ZcSLcVMUeEwvmLM"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/cezare-verde-445x445.jpg",
@@ -262,7 +270,8 @@
       "en_title": "Cesare Verde",
       "en_description": "Green sauce, mozzarella, bacon, roasted chicken fillet, salad mix, Caesar sauce, cherry tomatoes, Parmesan cheese",
       "uk_title": "Cesare Verde",
-      "uk_description": "Зелений соус, моцарела, бекон, куряче філе печене, салат мікс, соус Цезаре, помідори чері, сир Пармезан"
+      "uk_description": "Зелений соус, моцарела, бекон, куряче філе печене, салат мікс, соус Цезаре, помідори чері, сир Пармезан",
+      "id": "mG68_wK4uRB8O2Y4fLwMR"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/03/salute-verde-445x445.jpg",
@@ -288,7 +297,8 @@
       "en_title": "Salute Verde",
       "en_description": "Green sauce, mozzarella cheese, fresh mushrooms, bacon, feta cheese, parmesan cheese",
       "uk_title": "Salute Verde",
-      "uk_description": "Зелений соус, сир моцарела, печериці свіжі, бекон, сир фета, сир пармезан"
+      "uk_description": "Зелений соус, сир моцарела, печериці свіжі, бекон, сир фета, сир пармезан",
+      "id": "6YLYlze6vuLwYQu8xGjze"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/bavarska-445x445.jpg",
@@ -314,7 +324,8 @@
       "en_title": "Bavarian",
       "en_description": "Homemade tomato sauce, hunting sausages, ham, mushrooms, tomatoes and mozzarella",
       "uk_title": "Баварська",
-      "uk_description": "Домашній томатний соус, мисливські ковбаски, шинка, печериці, помідори та моцарела"
+      "uk_description": "Домашній томатний соус, мисливські ковбаски, шинка, печериці, помідори та моцарела",
+      "id": "F8rlMLN7TfNPjF2VkZOqg"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/gavaiska-445x445.jpg",
@@ -340,12 +351,13 @@
       "en_title": "Hawaiian",
       "en_description": "Homemade tomato sauce, chicken fillet, pineapple and mozzarella",
       "uk_title": "Гавайська",
-      "uk_description": "Домашній томатний соус, куряче філе, ананаси та моцарела"
+      "uk_description": "Домашній томатний соус, куряче філе, ананаси та моцарела",
+      "id": "3SduZ1Wd1AysNGXlf9y9V"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/diabola-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-diabola/",
-      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "bellPepper", "chiliPeppers", "olives", "mozzarella"],
+      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "bellPepper", "chiliPepper", "blackOlives", "mozzarella"],
       "variants": [
         {
           "weight": 390,
@@ -366,7 +378,8 @@
       "en_title": "Diabola",
       "en_description": "Homemade tomato sauce, salami piquant, bell peppers and chili, olives and mozzarella",
       "uk_title": "Діабола",
-      "uk_description": "Домашній томатний соус, салямі піканте, перці болгарський та чілі, маслини і моцарела"
+      "uk_description": "Домашній томатний соус, салямі піканте, перці болгарський та чілі, маслини і моцарела",
+      "id": "11AbVoj-lfB-bvFUzfPI4"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/kaprichioza-445x445.jpg",
@@ -392,12 +405,13 @@
       "en_title": "Capricciosa",
       "en_description": "Homemade tomato sauce, prosciutto, salami, mushrooms, artichokes and mozzarella",
       "uk_title": "Капрічіоза",
-      "uk_description": "Домашній томатний соус, прошуто, салямі, печериці, артишоки та моцарела"
+      "uk_description": "Домашній томатний соус, прошуто, салямі, печериці, артишоки та моцарела",
+      "id": "qmt2DgiPGsWL898VMFsj2"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/quatro/",
-      "ingredients": ["creamSauce", "gorgonzola", "radometer", "parmesan", "mozzarella"],
+      "ingredients": ["creamSauce", "gorgonzola", "radomer", "parmesan", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -418,12 +432,13 @@
       "en_title": "Quatro Formaggi",
       "en_description": "Cream sauce, gorgonzola cheese, radomer, parmesan and mozzarella",
       "uk_title": "Кватро Формаджі",
-      "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела"
+      "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела",
+      "id": "JbFL_gGsUbLJb7GUIk3vw"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-margarita/",
-      "ingredients": ["homemadeTomatoSauce", "basil", "mozzarellaFresco"],
+      "ingredients": ["homemadeTomatoSauce", "basil", "mozzarellaFresca"],
       "variants": [
         {
           "weight": 320,
@@ -442,14 +457,15 @@
       "ru_title": "Маргарита",
       "ru_description": "Домашний томатный соус, базилик и моцарелла фреска",
       "en_title": "Margarita",
-      "en_description": "Homemade tomato sauce, basil and mozzarella mural",
+      "en_description": "Homemade tomato sauce, basil and mozzarella fresco",
       "uk_title": "Маргарита",
-      "uk_description": "Домашній томатний соус, базилік та моцарела фреска"
+      "uk_description": "Домашній томатний соус, базилік та моцарела фреска",
+      "id": "MjaDM8MYslFQcha8TSi9B"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/palermo-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-palermo/",
-      "ingredients": ["homemadeTomatoSauce", "bacon", "ham", "salami", "mushrooms", "olives", "mozzarella"],
+      "ingredients": ["homemadeTomatoSauce", "bacon", "ham", "salami", "mushrooms", "blackOlives", "mozzarella"],
       "variants": [
         {
           "weight": 400,
@@ -470,12 +486,13 @@
       "en_title": "Palermo",
       "en_description": "Homemade tomato sauce, bacon, ham, salami, mushrooms, olives and mozzarella",
       "uk_title": "Палермо",
-      "uk_description": "Домашній томатний соус, бекон, шинка, салямі, печериці, маслини та моцарела"
+      "uk_description": "Домашній томатний соус, бекон, шинка, салямі, печериці, маслини та моцарела",
+      "id": "RCurQDmoYPpqWqJD5xzIK"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/peperoni-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-peperoni/",
-      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "pepperoniPeppers", "chiliPeppers", "feta", "mozzarella"],
+      "ingredients": ["homemadeTomatoSauce", "piquantSalami", "pepperoniPepper", "chiliPepper", "feta", "mozzarella"],
       "variants": [
         {
           "weight": 380,
@@ -496,7 +513,8 @@
       "en_title": "Pepperoni",
       "en_description": "Homemade tomato sauce, spicy salami, pepperoni and chili peppers, feta and mozzarella",
       "uk_title": "Пепероні",
-      "uk_description": "Домашній томатний соус, салямі пікантне, перець пепероні та чілі, фета та моцарела"
+      "uk_description": "Домашній томатний соус, салямі пікантне, перець пепероні та чілі, фета та моцарела",
+      "id": "LTuv41-KSdZyPlkxA4gR6"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/10/egoista-na-tomatniy-osnovi-445x445.jpg",
@@ -522,7 +540,8 @@
       "en_title": "Ego Pizza",
       "en_description": "Base, cheese, sauce (tomato / cream)",
       "uk_title": "Піца EgoЇста",
-      "uk_description": "Основа, сир, соус(томатний/вершковий)"
+      "uk_description": "Основа, сир, соус(томатний/вершковий)",
+      "id": "0HO8anrigbi-KkrYwMcSA"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/06/Melanzana-salsacha-445x445.jpg",
@@ -548,15 +567,16 @@
       "city": "chernivtsi",
       "ru_title": "Пицца Меланзана Сальсича",
       "ru_description": "Томатный соус, сыр моцарелла, баклажаны гриль, мясной фарш сальсича, конфи из помидоров черри, крем-сыр, соус песто",
-      "en_title": "Melanzan Salsic Pizza",
-      "en_description": "Tomato sauce, mozzarella cheese, grilled eggplant, minced salsa meat, cherry tomato confit, cream cheese, pesto sauce",
+      "en_title": "Pizza Melanzan Salsic",
+      "en_description": "Tomato sauce, mozzarella cheese, grilled eggplant, minced salsa, cherry tomato confit, cream cheese, pesto sauce",
       "uk_title": "Піца Меланзана Сальсіча",
-      "uk_description": "Томатний соус, сир моцарелла, баклажани гриль, м’ясний фарш сальсіча, конфі з помідорів чері, крем-сир, соус песто"
+      "uk_description": "Томатний соус, сир моцарелла, баклажани гриль, м’ясний фарш сальсіча, конфі з помідорів чері, крем-сир, соус песто",
+      "id": "QfoeZGVZ1JIq0inj1xL3U"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/04/polo_amerykano-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/polo-amerykan/",
-      "ingredients": ["homemadeTomatoSauce", "chicken", "bacon", "olives", "pepperoniPeppers", "mozzarella"],
+      "ingredients": ["homemadeTomatoSauce", "chicken", "bacon", "blackOlives", "pepperoniPepper", "mozzarella"],
       "variants": [
         {
           "weight": 320,
@@ -577,7 +597,8 @@
       "en_title": "Polo Americano",
       "en_description": "Homemade tomato sauce, chicken, bacon, olives, pepperoni and mozzarella",
       "uk_title": "Поло Американо",
-      "uk_description": "Домашній томатний соус, курка, бекон, маслини, перець пепероні та моцарела"
+      "uk_description": "Домашній томатний соус, курка, бекон, маслини, перець пепероні та моцарела",
+      "id": "iVIPZENYyXZ_9Po7wz9wM"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/saliami_fungi-445x445.jpg",
@@ -603,12 +624,13 @@
       "en_title": "Salami and fungi",
       "en_description": "Cream sauce, salami, mushrooms, tomatoes and mozzarella",
       "uk_title": "Салямі та фунгі",
-      "uk_description": "Вершковий соус, салямі, печериці, помідори та моцарела"
+      "uk_description": "Вершковий соус, салямі, печериці, помідори та моцарела",
+      "id": "NWOQW6PHX-uzETXCWXHbI"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2020/09/formadjio-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/pizza-formajio-z-grusheu/",
-      "ingredients": ["creamSauce", "radometer", "gorgonzola", "parmesan", "mozzarella", "pear", "honey"],
+      "ingredients": ["creamSauce", "radomer", "gorgonzola", "parmesan", "mozzarella", "pear", "honey"],
       "variants": [
         {
           "weight": 440,
@@ -624,12 +646,13 @@
       "en_title": "Formaggio with pear",
       "en_description": "Cream sauce, radomer, gorgonzola, parmesan, mozzarella, pear, honey",
       "uk_title": "Формаджіо з грушею",
-      "uk_description": "Вершковий соус, радомер, горгонзола, пармезан, моцарела, груша, мед"
+      "uk_description": "Вершковий соус, радомер, горгонзола, пармезан, моцарела, груша, мед",
+      "id": "oxDxInRti7u3xf5Kt0yrP"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-445x445.jpg",
       "link": "https://chernivtsi.celentano.delivery/product/%d1%84%d1%80%d1%83%d1%82%d1%96-%d0%b4%d1%96-%d0%bc%d0%b0%d1%80%d0%b5/",
-      "ingredients": ["homemadeTomatoSauce", "shrimp", "mussels"],
+      "ingredients": ["homemadeTomatoSauce", "shrimps", "mussels"],
       "variants": [
         {
           "weight": 390,
@@ -650,7 +673,8 @@
       "en_title": "Fruti Di Mare",
       "en_description": "Homemade tomato sauce, shrimp, mussels",
       "uk_title": "Фруті Ді Маре",
-      "uk_description": "Домашній томатний соус, креветки, мідії"
+      "uk_description": "Домашній томатний соус, креветки, мідії",
+      "id": "zrn_s3TkXnprqFvhrUOMc"
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/cezare-445x445.jpg",
@@ -684,7 +708,8 @@
       "en_title": "Caesar",
       "en_description": "Homemade tomato sauce, bacon, chicken fillet, mixed salad, parmesan cheese, mozzarella and Caesar sauce",
       "uk_title": "Цезаре",
-      "uk_description": "Домашній томатний соус, бекон, куряче філе, мікс-салат, сири пармезан, моцарела та соус Цезаре"
+      "uk_description": "Домашній томатний соус, бекон, куряче філе, мікс-салат, сири пармезан, моцарела та соус Цезаре",
+      "id": "V0Cs9BQFjaOVfEBwocFbM"
     },
     {
       "ingredients": ["tomatoes", "mozzarella", "basil", "sauce"],
@@ -705,12 +730,13 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ru_title": "ИТАЛЬЯНСКАЯ",
+      "ru_title": "Итальянский",
       "ru_description": "Невероятно вкусное сочетание сочных томатов, сыра моцарелла и душистого базилика",
-      "en_title": "ITALIAN",
+      "en_title": "Italian",
       "en_description": "Incredibly delicious combination of juicy tomatoes, mozzarella cheese and fragrant basil",
-      "uk_title": "ІТАЛІЙСЬКА",
-      "uk_description": "Неймовірно смачне поєднання соковитих томатів, сиру моцарелла та духмяного базиліку"
+      "uk_title": "Італійська",
+      "uk_description": "Неймовірно смачне поєднання соковитих томатів, сиру моцарелла та духмяного базиліку",
+      "id": "LNn7EXWzXfuYCmTqJCXn-"
     },
     {
       "ingredients": ["ham", "cheese", "tomatoes", "mushrooms", "sauce"],
@@ -731,12 +757,13 @@
       "lang": "uk",
       "country": "ukraine",
       "city": "chernivtsi",
-      "ru_title": "АППЕТИ",
+      "ru_title": "Аппети",
       "ru_description": "Сочная ветчина, спелые томаты, шампиньоны, нежный сыр в сочетании с сыром моцарелла и фирменным соусом",
-      "en_title": "APPETITE",
-      "en_description": "Juicy ham, ripe tomatoes, mushrooms, tender cheese combined with mozzarella cheese and special sauce",
-      "uk_title": "АППЕТІ",
-      "uk_description": "Соковита шинка, стиглі томати, печериці, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом"
+      "en_title": "Appetites",
+      "en_description": "Juicy ham, ripe tomatoes, mushrooms, tender cheese combined with mozzarella cheese and signature sauce",
+      "uk_title": "Аппеті",
+      "uk_description": "Соковита шинка, стиглі томати, печериці, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом",
+      "id": "4XuHcccBanea0SC20EtAj"
     },
     {
       "ingredients": ["chickenFillet", "cheese", "tomatoes", "bellPepper", "sauce"],
@@ -759,13 +786,14 @@
       "city": "chernivtsi",
       "ru_title": "Баффало",
       "ru_description": "Куриное филе, томаты, перец болгарский, нежный сыр в сочетании с сыром моцарелла и фирменным соусом",
-      "en_title": "BUFFALO",
+      "en_title": "Buffalo",
       "en_description": "Chicken fillet, tomatoes, bell peppers, soft cheese combined with mozzarella cheese and special sauce",
-      "uk_title": "БАФАЛО",
-      "uk_description": "Куряче філе, томати, перець болгарський, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом"
+      "uk_title": "Бафало",
+      "uk_description": "Куряче філе, томати, перець болгарський, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом",
+      "id": "rc7YPZjfpcCzn4TCcxzvI"
     },
     {
-      "ingredients": ["olives", "bellPepper", "tomatoes", "salami", "cheese", "sauce"],
+      "ingredients": ["blackOlives", "bellPepper", "tomatoes", "salami", "cheese", "sauce"],
       "variants": [
         {
           "size": 35,
@@ -788,7 +816,8 @@
       "en_title": "Bukovynian",
       "en_description": "Appetizing salami with tomatoes, bell peppers, olives, soft cheese in combination with mozzarella cheese and special sauce",
       "uk_title": "Буковинська",
-      "uk_description": "Апетитне салямі з томатами, перцем болгарським, маслинами, ніжним сиром у поєднанні з сиром моцарелла та фірмовим соусом"
+      "uk_description": "Апетитне салямі з томатами, перцем болгарським, маслинами, ніжним сиром у поєднанні з сиром моцарелла та фірмовим соусом",
+      "id": "_QIHwUDdOg2w-qFYkyiwX"
     },
     {
       "ingredients": ["pineapple", "herb", "corn", "chickenFillet", "sauce"],
@@ -814,7 +843,8 @@
       "en_title": "Hawaiian",
       "en_description": "The combination of chicken, pineapple, corn, soft cheese and mozzarella cheese with a special sauce make our pizza extremely delicious",
       "uk_title": "Гавайська",
-      "uk_description": "Поєднання м’яса курки, ананасу, кукурудзи, ніжного сиру та сиру моцарелла з фірмовим соусом роблять нашу піцу надзвичайно смачною"
+      "uk_description": "Поєднання м’яса курки, ананасу, кукурудзи, ніжного сиру та сиру моцарелла з фірмовим соусом роблять нашу піцу надзвичайно смачною",
+      "id": "YoMmHBuIKs3DZn-K8KYTI"
     },
     {
       "ingredients": ["tomatoes", "sauce", "ham", "mushrooms"],
@@ -831,11 +861,12 @@
       "country": "ukraine",
       "city": "chernivtsi",
       "ru_title": "Кальцоне",
-      "ru_description": "Помидора, Соус, Ветчина, Грибы, ..",
+      "ru_description": "Помидора, соус, ветчина, грибы",
       "en_title": "Calzone",
-      "en_description": "Tomatoes, Sauce, Ham, Mushrooms, ..",
+      "en_description": "Tomatoes, sauce, ham, mushrooms",
       "uk_title": "Кальцоне",
-      "uk_description": "Помідора, Соус, Шинка, Гриби, .."
+      "uk_description": "Помідора, соус, шинка, гриби",
+      "id": "yjr5_qmnPtVM3s_-pNs1h"
     }
   ]
 }
