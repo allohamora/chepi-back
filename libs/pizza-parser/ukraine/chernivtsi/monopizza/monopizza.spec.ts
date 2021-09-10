@@ -1,14 +1,15 @@
-import { Apetti } from '.';
+import { Monopizza } from '.';
 
-let parser: Apetti;
+let parser: Monopizza;
 
 beforeEach(() => {
-  parser = new Apetti();
+  parser = new Monopizza();
 });
 
 describe('parsePizza', () => {
   test('must return a pizza array', async () => {
     const pizzas = await parser.parsePizzas();
+    console.log(pizzas);
 
     expect(pizzas).toBeInstanceOf(Array);
     expect(pizzas[0]).not.toBe(undefined);
