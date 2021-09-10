@@ -1,4 +1,4 @@
-import { Apetti } from './appeti';
+import { Apetti } from '.';
 
 let parser: Apetti;
 
