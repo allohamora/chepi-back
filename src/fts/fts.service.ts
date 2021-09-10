@@ -35,6 +35,8 @@ export class FtsService {
   }
 
   public async getByIds<T extends unknown>(index: string, ids: string[] | number[]) {
+    if (ids.length === 0) return [];
+
     const builder = new FtsWhereBuilder();
 
     ids.forEach((id, index) => {
