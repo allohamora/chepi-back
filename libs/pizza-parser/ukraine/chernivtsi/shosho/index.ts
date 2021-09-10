@@ -1,17 +1,13 @@
 import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import cherio, { CheerioAPI, Element } from 'cheerio';
 
 const PIZZA_CATEGORY_TITLE = 'Піца';
 
-export class ShoSho implements PizzasParser {
+export class ShoSho extends ChernivtsiPizzasParser {
   private pageLink = 'https://shosho.pizza';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage() {
     return await getText(this.pageLink);

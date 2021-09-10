@@ -1,16 +1,11 @@
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import cherio, { CheerioAPI, Element } from 'cheerio';
 
-export class Chelentano implements PizzasParser {
+export class Chelentano extends ChernivtsiPizzasParser {
   private blacklist = ['піцарол', 'кальцоне', 'комбо'];
   private pageLink = 'https://chernivtsi.celentano.delivery';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage() {
     return await getText(this.pageLink);

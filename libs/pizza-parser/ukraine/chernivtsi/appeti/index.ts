@@ -1,16 +1,11 @@
 import cherio, { CheerioAPI } from 'cheerio';
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
-export class Apetti implements PizzasParser {
+export class Apetti extends ChernivtsiPizzasParser {
   private pageLink = 'https://appeti.com.ua';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage(pageLink: string = this.pageLink) {
     return await getText(pageLink);

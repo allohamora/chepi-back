@@ -1,10 +1,10 @@
 import cherio, { CheerioAPI } from 'cheerio';
-import { Ingredient, UkToIngredient } from 'libs/pizza-parser/types/ingredient';
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
+import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { Lang, Pizza } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lower, lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 import { join } from 'libs/pizza-parser/utils/url';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 interface Product {
   localization: { shortName: string; name: string; language: Lang }[];
@@ -34,13 +34,8 @@ interface NextData {
   };
 }
 
-export class Monopizza implements PizzasParser {
+export class Monopizza extends ChernivtsiPizzasParser {
   private pageLink = 'https://chernivtsi.monopizza.com.ua';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage() {
     return await getText(this.pageLink);
