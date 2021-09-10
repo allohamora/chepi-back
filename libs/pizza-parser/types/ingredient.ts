@@ -2,6 +2,8 @@ export enum Ingredient {
   pizzaBase = 'pizzaBase',
   dough = 'dough',
 
+  truffleOil = 'truffleOil',
+
   sauce = 'sauce',
   pestoSauce = 'pestoSauce',
   tomatoOrCreamSauce = 'tomatoOrCreamSauce',
@@ -12,8 +14,10 @@ export enum Ingredient {
   creamSauce = 'creamSauce',
   barbecueSauce = 'barbecueSauce',
   whiteSauce = 'whiteSauce',
-  truffleOil = 'truffleOil',
+  basilSauce = 'basilSauce',
   spinachCreamSauce = 'spinachCreamSauce',
+  bechamelSauce = 'bechamelSauce',
+  soySauce = 'soySauce',
   mayonnaise = 'mayonnaise',
 
   bacon = 'bacon',
@@ -54,6 +58,8 @@ export enum Ingredient {
   dorBlue = 'dorBlue',
   hardCheese = 'hardCheese',
   ricottaCheese = 'ricottaCheese',
+  gouda = 'gouda',
+  roquefort = 'roquefort',
 
   salad = 'salad',
   saladMix = 'saladMix',
@@ -66,11 +72,13 @@ export enum Ingredient {
   arugula = 'arugula',
   italianHerbs = 'italianHerbs',
   onion = 'onion',
+  greenOnion = 'greenOnion',
   blueOnion = 'blueOnion',
   redOnion = 'redOnion',
   pickledRedOnions = 'pickledRedOnions',
   parsley = 'parsley',
   corn = 'corn',
+  eggplant = 'eggplant',
   grilledEggplant = 'grilledEggplant',
   pickledZucchini = 'pickledZucchini',
   artichokes = 'artichokes',
@@ -82,6 +90,9 @@ export enum Ingredient {
   spinach = 'spinach',
   broccoli = 'broccoli',
   gherkin = 'gherkin',
+  zucchini = 'zucchini',
+  grilledVegetables = 'grilledVegetables',
+  garlic = 'garlic',
 
   pineapple = 'pineapple',
   pear = 'pear',
@@ -102,6 +113,7 @@ export enum Ingredient {
   bakedPepper = 'bakedPepper',
   hotPepper = 'hotPepper',
   sweetPepper = 'sweetPepper',
+  redPepper = 'redPepper',
 
   mushrooms = 'mushrooms',
   freshMushrooms = 'freshMushrooms',
@@ -112,6 +124,7 @@ export enum Ingredient {
   seafood = 'seafood',
   shrimps = 'shrimps',
   squid = 'squid',
+  octopus = 'octopus',
   mussels = 'mussels',
 
   honey = 'honey',
@@ -122,6 +135,8 @@ export enum Ingredient {
 export const UkToIngredient: Record<string, Ingredient> = {
   'основа': Ingredient.pizzaBase,
   'тісто': Ingredient.dough,
+
+  'трюфельна олія': Ingredient.truffleOil,
 
   'соус': Ingredient.sauce,
   'coyc': Ingredient.sauce,
@@ -140,8 +155,11 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'соус барбекю': Ingredient.barbecueSauce,
   'білий coyc': Ingredient.whiteSauce,
   'білий соус': Ingredient.whiteSauce,
-  'трюфельна олія': Ingredient.truffleOil,
   'соус шпинатно-вершковий': Ingredient.spinachCreamSauce,
+  'базиліковий соус': Ingredient.basilSauce,
+  'соус бешамель': Ingredient.bechamelSauce,
+  'соус бешемель': Ingredient.bechamelSauce,
+  'соєвий соус': Ingredient.soySauce,
   'майонез': Ingredient.mayonnaise,
 
   'бекон': Ingredient.bacon,
@@ -166,6 +184,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'копчена курка': Ingredient.smokedChicken,
   'куряче м\'ясо': Ingredient.chicken,
   'куряче філе': Ingredient.chickenFillet,
+  'філе запечене': Ingredient.bakedChickenFillet,
   'куряче філе печене': Ingredient.bakedChickenFillet,
   'філе курки копчене': Ingredient.smokedChickenFillet,
 
@@ -199,6 +218,8 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'сир дорблю': Ingredient.dorBlue,
   'сир твердий': Ingredient.hardCheese,
   'сир рікота': Ingredient.ricottaCheese,
+  'гауда': Ingredient.gouda,
+  'рокфор': Ingredient.roquefort,
 
   'салат': Ingredient.salad,
   'мікс-салат': Ingredient.saladMix,
@@ -212,6 +233,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'рукола': Ingredient.arugula,
   'італійські трави': Ingredient.italianHerbs,
   'цибуля': Ingredient.onion,
+  'зелена цибуля': Ingredient.greenOnion,
   'цибуля ріпчаста': Ingredient.onion,
   'цибуля синя': Ingredient.blueOnion,
   'червона цибуля': Ingredient.redOnion,
@@ -219,6 +241,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'цибуля червона маринована': Ingredient.pickledRedOnions,
   'петрушка': Ingredient.parsley,
   'кукурудза': Ingredient.corn,
+  'баклажан': Ingredient.eggplant,
   'баклажани гриль': Ingredient.grilledEggplant,
   'мариновані цукіні': Ingredient.pickledZucchini,
   'артишоки': Ingredient.artichokes,
@@ -230,6 +253,9 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'шпинат': Ingredient.spinach,
   'броколі': Ingredient.broccoli,
   'огірок корнішон': Ingredient.gherkin,
+  'цукіні': Ingredient.zucchini,
+  'гриль овочі': Ingredient.grilledVegetables,
+  'часник': Ingredient.garlic,
 
   'груша': Ingredient.pear,
   'ананаси': Ingredient.pineapple,
@@ -240,6 +266,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'волоський горіх': Ingredient.walnut,
 
   'помідора': Ingredient.tomatoes,
+  'томати': Ingredient.tomatoes,
   'помідор': Ingredient.tomatoes,
   'помідори': Ingredient.tomatoes,
   'конфі з помідорів чері': Ingredient.cherryTomatoConfit,
@@ -258,6 +285,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'запечений перець': Ingredient.bakedPepper,
   'гострий перець': Ingredient.hotPepper,
   'перець солодкий': Ingredient.sweetPepper,
+  'червоний перець': Ingredient.redPepper,
 
   'гриби': Ingredient.mushrooms,
   'шампіньйони': Ingredient.champignons,
@@ -272,6 +300,8 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'креветки': Ingredient.shrimps,
   'мідії': Ingredient.mussels,
   'кальмар': Ingredient.squid,
+  'кальмари': Ingredient.squid,
+  'восьминіг': Ingredient.octopus,
 
   'мед': Ingredient.honey,
 };
