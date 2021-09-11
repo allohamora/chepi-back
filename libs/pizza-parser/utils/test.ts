@@ -18,7 +18,12 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
       expect(pizzas).toBeInstanceOf(Array);
       pizzas.forEach((pizza) => {
         expect(typeof pizza.title).toBe('string');
+        expect(pizza.title[0] === ' ').toBe(false);
+        expect(pizza.title[pizza.title.length - 1] === ' ').toBe(false);
+
         expect(typeof pizza.description).toBe('string');
+        expect(pizza.description[0] === ' ').toBe(false);
+        expect(pizza.description[pizza.description.length - 1] === ' ').toBe(false);
 
         expect(typeof pizza.link).toBe('string');
         expect(typeof pizza.image).toBe('string');

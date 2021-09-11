@@ -29,7 +29,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       const title = this.getTitle($, element);
       const description = lower(
         $(element).find('.t776__descr.t-descr.t-descr_xxs').text().trim().replace(/\/$/, '').replace(/ \//g, ','),
-      );
+      ).trim();
       const link = `${this.pageLink}/#!/tproduct/227702381-${id}`;
       const image = $(element)
         .find('.t-slds__item.t-slds__item_active .t-slds__bgimg.t-bgimg.js-product-img')

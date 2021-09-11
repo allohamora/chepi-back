@@ -47,11 +47,10 @@ export class Monopizza extends ChernivtsiPizzasParser {
     const { products } = parsed.props.pageProps.initialState.products;
 
     return products.map((product) => {
-      const title = lowerAndCapitalize(product.name);
-      const description = lowerAndCapitalize(product.additionalProperties.nutritional.composition.value).replace(
-        /, у подарунок.+$/,
-        '',
-      );
+      const title = lowerAndCapitalize(product.name).trim();
+      const description = lowerAndCapitalize(product.additionalProperties.nutritional.composition.value)
+        .replace(/, у подарунок.+$/, '')
+        .trim();
       const image = product.publicImageUrl;
       const link = join(this.pageLink, '/menu/pitsa', product.slug);
 
