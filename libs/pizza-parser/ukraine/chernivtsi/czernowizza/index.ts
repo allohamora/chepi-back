@@ -1,4 +1,3 @@
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lower } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -35,8 +34,6 @@ export class Czernowizza extends ChernivtsiPizzasParser {
         .find('.t-slds__item.t-slds__item_active .t-slds__bgimg.t-bgimg.js-product-img')
         .attr('data-original');
 
-      const ingredients = description.split(',').map((ing) => UkToIngredient[ing.trim()]);
-
       const variants = $(element)
         .find('.t-product__option.js-product-option')
         .first()
@@ -49,7 +46,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
           weight: 0,
         }));
 
-      return { title, description, link, image, ingredients, variants, ...this.baseMetadata };
+      return { title, description, link, image, variants, ...this.baseMetadata };
     });
   }
 

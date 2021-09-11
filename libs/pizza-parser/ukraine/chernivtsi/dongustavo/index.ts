@@ -1,5 +1,4 @@
 import cheerio, { CheerioAPI } from 'cheerio';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lower } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -26,11 +25,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
       const sizes = sizeElements.map((element) => Number(element.attribs['data-size'].replace(/-cm$/, '')));
       const variants = weights.map((weight, i) => ({ weight, price: prices[i], size: sizes[i] }));
 
-      const ingredients = description
-        .split(',')
-        .map((ingredient) => UkToIngredient[ingredient.trim().replace(/\s/g, ' ')]);
-
-      return { title, description, image, link, variants, ingredients, ...this.baseMetadata };
+      return { title, description, image, link, variants, ...this.baseMetadata };
     });
   }
 

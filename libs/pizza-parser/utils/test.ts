@@ -34,9 +34,6 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
         expect(typeof pizza.country).toBe('string');
         expect(typeof pizza.city).toBe('string');
 
-        expect(pizza.ingredients).toBeInstanceOf(Array);
-        pizza.ingredients.forEach((ing) => expect(ing).not.toBeUndefined());
-
         expect(pizza.variants).toBeInstanceOf(Array);
         pizza.variants.forEach((variant) => {
           expect(typeof variant.price).toBe('number');

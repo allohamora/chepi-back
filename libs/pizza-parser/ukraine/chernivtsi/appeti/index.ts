@@ -1,6 +1,5 @@
 import cheerio, { CheerioAPI } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
@@ -25,10 +24,6 @@ export class Apetti extends ChernivtsiPizzasParser {
     return pizzaLinks;
   }
 
-  private ukIngredientsToIngredients(ukIngredients: string[]) {
-    return ukIngredients.map((ukIngredient) => UkToIngredient[ukIngredient]);
-  }
-
   private async parsePizzasFromLinks(links: string[]) {
     const pages = await Promise.all(links.map((link) => this.getPage(link)));
     const pizzas = pages.map((page, i) => {
@@ -39,11 +34,6 @@ export class Apetti extends ChernivtsiPizzasParser {
       const description = lowerAndCapitalize(
         card.find('.content').text().trim().replace(/\s+/g, ' ').replace(/, ..$/, ''),
       );
-      const ukIngredients = card
-        .find('.folder_ingredient')
-        .toArray()
-        .map((el) => $(el).attr('data-original-title').toLowerCase());
-      const ingredients = this.ukIngredientsToIngredients(ukIngredients);
       const image = this.addPageLink(card.find('#msGallery a').attr('href'));
       const link = links[i];
 
@@ -59,7 +49,7 @@ export class Apetti extends ChernivtsiPizzasParser {
           return { size, price, weight };
         });
 
-      return { title, description, ingredients, variants, image, link, ...this.baseMetadata };
+      return { title, description, variants, image, link, ...this.baseMetadata };
     });
 
     return pizzas;

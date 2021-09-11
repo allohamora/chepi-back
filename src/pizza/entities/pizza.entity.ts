@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Ingredient } from 'libs/pizza-parser/types/ingredient';
 import {
   City,
   Country,
@@ -40,9 +39,6 @@ export class Pizza implements TranslatedPizza {
 
   @ApiProperty({ enum: supportedCities, description: 'city where pizzeria locatd' })
   city: City;
-
-  @ApiProperty({ enum: Ingredient, isArray: true, description: 'pizza ingredient list' })
-  ingredients: Ingredient[];
 
   @ApiProperty({ type: [Variant], description: 'pizza variant list' })
   variants: VariantType[];

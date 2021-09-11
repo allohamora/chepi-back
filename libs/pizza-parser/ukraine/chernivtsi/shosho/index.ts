@@ -1,5 +1,4 @@
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import cheerio, { CheerioAPI, Element } from 'cheerio';
 
@@ -32,12 +31,8 @@ export class ShoSho extends ChernivtsiPizzasParser {
     return description
       .toLowerCase()
       .split(',')
-      .map((ukIngredient) => ukIngredient.trim())
+      .map((word) => word.trim())
       .join(', ');
-  }
-
-  private descriptionToIngredients(description: string) {
-    return description.split(',').map((ukIngredient) => UkToIngredient[ukIngredient.trim()]);
   }
 
   private pizzaCategoryToPizzas($: CheerioAPI, category: Element) {
@@ -76,7 +71,6 @@ export class ShoSho extends ChernivtsiPizzasParser {
     const pizzas = pizzaMetadata.map((pizzaMetadata) => ({
       ...pizzaMetadata,
       ...this.baseMetadata,
-      ingredients: this.descriptionToIngredients(pizzaMetadata.description),
     }));
 
     return pizzas;

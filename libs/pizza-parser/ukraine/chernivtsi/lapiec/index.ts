@@ -1,5 +1,4 @@
 import cheerio, { CheerioAPI } from 'cheerio';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
@@ -27,9 +26,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
       const price = Number(infoElement.find('.productPrice > span').text().trim());
       const variants = [{ size, weight, price }];
 
-      const ingredients = description.split(',').map((ing) => UkToIngredient[ing.trim()]);
-
-      return { title, description, link, image, variants, ingredients, ...this.baseMetadata };
+      return { title, description, link, image, variants, ...this.baseMetadata };
     });
   }
 

@@ -1,7 +1,6 @@
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import { getJSON } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { Pizza } from 'libs/pizza-parser/types/pizza';
 
 interface Dish {
@@ -83,12 +82,7 @@ export class Misteram extends ChernivtsiPizzasParser {
             const image = this.getImageLink(hash);
             const weight = measureType === '0' ? parseInt(measure) : 0;
 
-            const ingredients = description
-              .toLowerCase()
-              .split(',')
-              .map((ing) => UkToIngredient[ing.trim()]);
-
-            return { title, description, image, link, price, weight, size, ingredients };
+            return { title, description, image, link, price, weight, size };
           });
 
         return pizzaList;
