@@ -5,6 +5,8 @@ interface Constructable<T> {
 }
 
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
+  jest.setTimeout(60000);
+
   describe('parsePizza', () => {
     let parser: PizzasParser;
 

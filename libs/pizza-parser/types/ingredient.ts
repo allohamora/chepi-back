@@ -34,6 +34,7 @@ export enum Ingredient {
   huntingSausages = 'huntingSausages',
   veal = 'veal',
   bavarianSausages = 'bavarianSausages',
+  sausage = 'sausage',
 
   eggs = 'eggs',
   bakedEggs = 'bakedEggs',
@@ -113,7 +114,9 @@ export enum Ingredient {
   pineapple = 'pineapple',
   pear = 'pear',
   orange = 'orange',
+  prunes = 'prunes',
 
+  nuts = 'nuts',
   walnut = 'walnut',
   cashew = 'cashew',
   sesame = 'sesame',
@@ -124,6 +127,7 @@ export enum Ingredient {
   sunDriedTomatoes = 'sunDriedTomatoes',
 
   pepper = 'pepper',
+  rotundaPepper = 'rotundaPepper',
   pepperoniPepper = 'pepperoniPepper',
   chiliPepper = 'chiliPepper',
   bellPepper = 'bellPepper',
@@ -151,6 +155,7 @@ export enum Ingredient {
   squid = 'squid',
   octopus = 'octopus',
   mussels = 'mussels',
+  crabSticks = 'crabSticks',
 
   honey = 'honey',
 }
@@ -162,6 +167,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'тісто': Ingredient.dough,
 
   'вершки': Ingredient.cream,
+  'верш��и': Ingredient.cream,
   'трюфельна олія': Ingredient.truffleOil,
   'крем бальзамік': Ingredient.balsamicCream,
 
@@ -205,8 +211,10 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'телятина': Ingredient.veal,
   'баварські ковбаски': Ingredient.bavarianSausages,
   'ковбаски баварські': Ingredient.bavarianSausages,
+  'ковбаса': Ingredient.sausage,
 
   'яйце': Ingredient.eggs,
+  'яйця': Ingredient.eggs,
   'запечене яйце': Ingredient.bakedEggs,
   'яйце перепелине': Ingredient.quailEggs,
   'перепелині яйця': Ingredient.quailEggs,
@@ -288,6 +296,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'артишоки': Ingredient.artichokes,
   'оливки': Ingredient.greenOlives,
   'маслини': Ingredient.blackOlives,
+  'масліни': Ingredient.blackOlives,
   'каперси': Ingredient.capers,
   'базилік': Ingredient.basil,
   'огірки мариновані': Ingredient.pickledCucumbers,
@@ -307,7 +316,9 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'ананаси': Ingredient.pineapple,
   'ананас': Ingredient.pineapple,
   'апельсин': Ingredient.orange,
+  'чорнослив': Ingredient.prunes,
 
+  'горіхи': Ingredient.nuts,
   'горіхи кешью': Ingredient.cashew,
   'кунжут': Ingredient.sesame,
   'волоський горіх': Ingredient.walnut,
@@ -324,6 +335,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'помідори в’ялені': Ingredient.sunDriedTomatoes,
 
   'перець': Ingredient.pepper,
+  'ротунда': Ingredient.rotundaPepper,
   'перець пепероні': Ingredient.pepperoniPepper,
   'болгарський перець': Ingredient.bellPepper,
   'перець болгарський': Ingredient.bellPepper,
@@ -332,6 +344,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'чілі': Ingredient.chiliPepper,
   'запечений перець': Ingredient.bakedPepper,
   'гострий перець': Ingredient.hotPepper,
+  'солодкий перець': Ingredient.sweetPepper,
   'перець солодкий': Ingredient.sweetPepper,
   'червоний перець': Ingredient.redPepper,
 
@@ -358,6 +371,7 @@ export const UkToIngredient: Record<string, Ingredient> = {
   'кальмар': Ingredient.squid,
   'кальмари': Ingredient.squid,
   'восьминіг': Ingredient.octopus,
+  'крабові палички': Ingredient.crabSticks,
 
   'мед': Ingredient.honey,
 };

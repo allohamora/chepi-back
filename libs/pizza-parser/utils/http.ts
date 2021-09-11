@@ -31,7 +31,7 @@ const isExistsInCache = async (fileName: string) => {
   return stat.isFile();
 };
 
-const getFileName = (url: string) => Buffer.from(url, 'utf-8').toString('base64');
+const getFileName = (url: string) => Buffer.from(url, 'utf-8').toString('hex');
 
 const getFromCache = async (fileName: string) => {
   const file = await fsp.readFile(getFilePath(fileName), 'utf-8');
@@ -64,3 +64,7 @@ const getCacheOrText = async (url: string) => {
 };
 
 export const getText = process.env.NODE_ENV === 'production' ? getTextOriginal : getCacheOrText;
+export const getJSON = async <T extends unknown>(url: string) => {
+  const value = await getText(url);
+  return JSON.parse(value) as T;
+};

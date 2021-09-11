@@ -103,6 +103,6 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     const pizzaLinks = this.getPizzaLinks($);
     const pizzas = await this.getPizzas(pizzaLinks);
 
-    return pizzas;
+    return pizzas as any;
   }
 }
