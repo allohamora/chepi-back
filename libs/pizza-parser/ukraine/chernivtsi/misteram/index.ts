@@ -27,8 +27,8 @@ export class Misteram extends ChernivtsiPizzasParser {
   // private placeholderImage = 'https://assets.misteram.com.ua/misteram-public/4be85890821cea6dd9a7557b3c95b382-400x0.png';
 
   private companyList = [
-    { slug: 'pizzapark', company: 420, categories: [{ id: 4798, size: 0, slug: 'pizza' }] },
-    // { slug: 'panska-vtiha', company: 513, categories: [{ id: 6130, size: 0, slug: 'pizza' }] },
+    // { slug: 'pizzapark', company: 420, categories: [{ id: 4798, size: 0, slug: 'pizza' }] },
+    { slug: 'panska-vtiha', company: 513, categories: [{ id: 6130, size: 0, slug: 'pizza', blacklist: [/лаваш/] }] },
     // { slug: 'lapasta', company: 3134, categories: [{ id: 38384, size: 0, slug: 'pizza' }] },
     // { slug: 'baza', company: 563, categories: [{ id: 7067, size: 50, slug: 'pizza' }, { id: 7068, size: 30, slug: 'pizza30' }] },
     // { slug: 'picantico', company: 1103, categories: [{ id: 13559, size: 50, slug: 'pizza50' }, { id: 13558, size: 35, slug: 'pizza35' }] },
@@ -77,7 +77,7 @@ export class Misteram extends ChernivtsiPizzasParser {
         const pizzaList = parsed
           .filter(({ name }) => {
             if (blacklist === undefined) return true;
-            return !blacklist.find((regex) => regex.test(name));
+            return !blacklist.find((regex) => regex.test(name.trim().toLowerCase()));
           })
           .map(({ name: title, description, image: hash, price, measure, measureType }) => {
             const image = this.getImageLink(hash);
