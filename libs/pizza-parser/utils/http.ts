@@ -1,30 +1,17 @@
-import { request } from 'undici';
+import { HttpRequest } from 'libs/http';
 import { Cache } from './cache';
 
 const cache = new Cache('http');
 
-const getTextOriginal = async (url: string) => {
-  const { body } = await request(url);
+export const getText = cache.decorator(async (url: string) => {
+  const { data } = await new HttpRequest(url).returnType('text').request<string>();
 
-  return await body.text();
-};
+  return data;
+});
 
-const getCacheOrText = async (url: string) => {
-  await cache.createCacheDirIfNotExists();
+export const getJSON = async <T>(url: string) => {
+  const text = await getText(url);
+  const parsed = JSON.parse(text);
 
-  if (await cache.has(url)) {
-    return await cache.get(url);
-  }
-
-  const text = await getTextOriginal(url);
-  await cache.set(url, text);
-
-  return text;
-};
-
-export const getText = process.env.NODE_ENV === 'production' ? getTextOriginal : getCacheOrText;
-
-export const getJSON = async <T extends unknown>(url: string) => {
-  const value = await getText(url);
-  return JSON.parse(value) as T;
+  return parsed as T;
 };

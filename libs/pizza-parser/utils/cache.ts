@@ -36,13 +36,31 @@ export class Cache {
     const { filePath } = this.getFileNameAndPath(key);
 
     const buffer = await readFile(filePath);
+    const data = buffer.toString('utf-8');
 
-    return buffer.toString('utf-8');
+    return data;
   }
 
   public async set(key: string, value: string) {
     const { filePath } = this.getFileNameAndPath(key);
 
     await writeFile(filePath, value, 'utf-8');
+  }
+
+  public decorator<T extends (...args: unknown[]) => string | Promise<string>>(fun: T) {
+    return async (...args: Parameters<T>) => {
+      const key = JSON.stringify(args);
+
+      await this.createCacheDirIfNotExists();
+
+      if (await this.has(key)) {
+        return await this.get(key);
+      }
+
+      const data = await fun(...args);
+      await this.set(key, data);
+
+      return data;
+    };
   }
 }
