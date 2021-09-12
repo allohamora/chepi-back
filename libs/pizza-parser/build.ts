@@ -20,37 +20,35 @@ const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
 };
 
 const translatePizzas = async (pizzas: Pizza[]) => {
-  const requests = pizzas.map((pizza) => async () => {
-    const { title, description, lang: from, ...rest } = pizza;
+  const translatedPizzas = await Promise.all(
+    pizzas.map(async (pizza) => {
+      const { title, description, lang: from, ...rest } = pizza;
 
-    const restLangs = supportedLangs.filter((lang) => lang !== from);
+      const restLangs = supportedLangs.filter((lang) => lang !== from);
 
-    const variants = await Promise.all(
-      restLangs.map(async (to) => {
-        const translatedTitle = await translate({ text: title, from, to });
-        const translatedDescription = await translate({ text: description, from, to });
+      const variants = await Promise.all(
+        restLangs.map(async (to) => {
+          const translatedTitle = await translate({ text: title, from, to });
+          const translatedDescription = await translate({ text: description, from, to });
 
-        return { translatedTitle, translatedDescription, lang: to };
-      }),
-    );
+          return { translatedTitle, translatedDescription, lang: to };
+        }),
+      );
 
-    const translatedPizza = { ...rest } as TranslatedPizza;
+      const translatedPizza = { ...rest } as TranslatedPizza;
 
-    [{ translatedTitle: title, translatedDescription: description, lang: from }, ...variants].forEach(
-      ({ translatedTitle, translatedDescription, lang }) => {
-        translatedPizza[`${lang}_title`] = translatedTitle;
-        translatedPizza[`${lang}_description`] = translatedDescription;
-      },
-    );
+      [{ translatedTitle: title, translatedDescription: description, lang: from }, ...variants].forEach(
+        ({ translatedTitle, translatedDescription, lang }) => {
+          translatedPizza[`${lang}_title`] = translatedTitle;
+          translatedPizza[`${lang}_description`] = translatedDescription;
+        },
+      );
 
-    return translatedPizza;
-  });
+      return translatedPizza;
+    }),
+  );
 
-  const translatedPizzas = await requests.reduce((chain, request) => {
-    return chain.then(async (values) => [...values, await request()]);
-  }, Promise.resolve([]));
-
-  return translatedPizzas as TranslatedPizza[];
+  return translatedPizzas;
 };
 
 const main = async () => {

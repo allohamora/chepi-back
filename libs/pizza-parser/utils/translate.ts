@@ -1,5 +1,7 @@
-import { HttpRequest } from 'libs/http';
+import freeGoogleTranslate from '@vitalets/google-translate-api';
 import { Cache } from './cache';
+import { SocksProxyAgent } from 'socks-proxy-agent';
+import type { Options } from 'got';
 
 interface TranslateOptions {
   from: string;
@@ -7,17 +9,23 @@ interface TranslateOptions {
   text: string;
 }
 
-const LIBRE_URL = 'http://localhost:5000/translate';
 const cache = new Cache('translate');
 
-export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
-  const {
-    data: { translatedText },
-  } = await new HttpRequest(LIBRE_URL)
-    .post()
-    .jsonBody({ q: text, source: from, target: to })
-    .returnType('json')
-    .request<{ translatedText: string }>();
+interface FixedTranslateOptions {
+  from: string;
+  to: string;
+}
 
-  return translatedText;
+type FixedTranslate = (url: string, options: FixedTranslateOptions, gotOptions: Options) => Promise<{ text: string }>;
+
+const proxy = new SocksProxyAgent('socks5://localhost:9050');
+
+const fixedTranslate: FixedTranslate = (url, options, gotOptions) => {
+  return (freeGoogleTranslate as unknown as FixedTranslate)(url, options, gotOptions);
+};
+
+export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
+  const { text: data } = await fixedTranslate(text, { from, to }, { agent: { https: proxy } });
+
+  return data;
 });
