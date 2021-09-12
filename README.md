@@ -61,9 +61,15 @@ npm run test:e2e
 npm run test:cov
 ```
 
-## Build
+## Pizzas
 
 ```bash
+# up pizzas dependencies
+npm run pizzas:docker-compose up
+
 # build pizzas.json
-npm run build:pizzas
+npm run pizzas:build
+
+# down pizzas dependencies
+npm run pizzas:docker-compose down
 ```

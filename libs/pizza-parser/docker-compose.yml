@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  libretranslate:
+    image: libretranslate/libretranslate
+    environment:
+      LT_LOAD_ONLY: "en,ru,uk"
+      LT_FRONTEND_LANGUAGE_SOURCE: "en"
+      LT_FRONTEND_LANGUAGE_TARGET: "ru"
+    ports:
+      - 5000:5000

@@ -153,7 +153,7 @@ export class Misteram extends ChernivtsiPizzasParser {
             const weight = measureType === '0' ? parseInt(measure) : 0;
 
             const title = capitalize(remove.reduce((value, regex) => value.replace(regex, ''), name).trim());
-            const description = remove.reduce((value, regex) => value.replace(regex, ''), rawDescription).trim() || '-';
+            const description = remove.reduce((value, regex) => value.replace(regex, ''), rawDescription).trim() || ' ';
 
             return { title, description, image, link, price, weight, size };
           });

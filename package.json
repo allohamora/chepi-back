@@ -24,14 +24,14 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:libs": "jest --config ./libs/jest.json",
-    "build:pizzas": "cross-env node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
+    "pizzas:docker-compose": "docker-compose -f libs/pizza-parser/docker-compose.yml",
+    "pizzas:build": "cross-env node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major"
   },
   "dependencies": {
-    "@iamtraction/google-translate": "^1.1.2",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^1.0.1",
     "@nestjs/core": "^8.0.0",
