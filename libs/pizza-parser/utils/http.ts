@@ -1,66 +1,17 @@
-import fsp from 'fs/promises';
-import path from 'path';
-import { request } from 'undici';
+import { HttpRequest } from 'libs/http';
+import { Cache } from './cache';
 
-const CACHE_PATH = path.join(__dirname, '..', '.http-cache');
-const getFilePath = (fileName: string) => path.join(CACHE_PATH, fileName);
+const cache = new Cache('http');
 
-const getStatOrFalse = async (checkPath: string) => {
-  try {
-    return await fsp.stat(checkPath);
-  } catch (error) {
-    return false;
-  }
+export const getText = cache.decorator(async (url: string) => {
+  const { data } = await new HttpRequest(url).returnType('text').request<string>();
+
+  return data;
+});
+
+export const getJSON = async <T>(url: string) => {
+  const text = await getText(url);
+  const parsed = JSON.parse(text);
+
+  return parsed as T;
 };
-
-const createCacheDirIfNotExists = async () => {
-  const stat = await getStatOrFalse(CACHE_PATH);
-
-  if (stat !== false) return false;
-
-  await fsp.mkdir(CACHE_PATH);
-
-  return true;
-};
-
-const isExistsInCache = async (fileName: string) => {
-  const stat = await getStatOrFalse(getFilePath(fileName));
-
-  if (stat === false) return false;
-
-  return stat.isFile();
-};
-
-const getFileName = (url: string) => Buffer.from(url, 'utf-8').toString('base64');
-
-const getFromCache = async (fileName: string) => {
-  const file = await fsp.readFile(getFilePath(fileName), 'utf-8');
-
-  return file;
-};
-
-const setToCache = async (fileName: string, text: string) => {
-  await fsp.writeFile(getFilePath(fileName), text, 'utf-8');
-};
-
-const getTextOriginal = async (url: string) => {
-  const { body } = await request(url);
-
-  return await body.text();
-};
-
-const getCacheOrText = async (url: string) => {
-  const fileName = getFileName(url);
-
-  await createCacheDirIfNotExists();
-
-  if (await isExistsInCache(fileName)) {
-    return await getFromCache(fileName);
-  }
-
-  const text = await getTextOriginal(url);
-  await setToCache(fileName, text);
-  return text;
-};
-
-export const getText = process.env.NODE_ENV === 'production' ? getTextOriginal : getCacheOrText;

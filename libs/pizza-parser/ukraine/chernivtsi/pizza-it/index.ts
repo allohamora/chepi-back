@@ -1,6 +1,4 @@
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { lower } from 'libs/pizza-parser/utils/string';
 import { join } from 'libs/pizza-parser/utils/url';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import cheerio, { CheerioAPI, Element } from 'cheerio';
@@ -89,11 +87,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
           return { weight, size, price };
         });
 
-      const ingredients = lower(description)
-        .split(',')
-        .map((ing) => UkToIngredient[ing.trim()]);
-
-      return { title, description, link, image, variants, ingredients, ...this.baseMetadata };
+      return { title, description, link, image, variants, ...this.baseMetadata };
     });
   }
 
@@ -103,6 +97,6 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     const pizzaLinks = this.getPizzaLinks($);
     const pizzas = await this.getPizzas(pizzaLinks);
 
-    return pizzas;
+    return pizzas as any;
   }
 }

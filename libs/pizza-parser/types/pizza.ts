@@ -1,5 +1,3 @@
-import { Ingredient } from './ingredient';
-
 export interface Variant {
   size: number; // 30cm
   price: number; // 135grn
@@ -20,7 +18,6 @@ export interface Pizza {
   description: string; // with pepper and pepperoni
   link: string; // http://pizza.com/buy-pizza/:id
   image: string; // http://pizza.com/image
-  ingredients: Ingredient[]; // ['peper', 'pepperoni']
   lang: Lang;
   variants: Variant[];
   country: Country;

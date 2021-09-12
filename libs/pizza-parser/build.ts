@@ -1,119 +1,12 @@
 import path from 'path';
 import fsp from 'fs/promises';
-import translate from '@iamtraction/google-translate';
 import { parsePizzas } from '.';
-import { Pizza, Lang, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
+import { Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
 import { nanoid } from 'nanoid';
-
-const getTimestamp = () => Math.round(new Date().getTime() / 1000);
-
-type DataChunk = [string, string, number];
-type TranslateDataState = Record<string, DataChunk[]>;
-type Tranlated = {
-  from: Lang;
-  to: Lang;
-  dataChunks: DataChunk[];
-}[];
+import { getTimestamp } from './utils/date';
+import { translate } from './utils/translate';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
-const LEFT_SYMBOL = '_____';
-const RIGHT_SYMBOL = '_____';
-
-const serializeData = (data: string | number) => `${LEFT_SYMBOL}${data}${RIGHT_SYMBOL}`;
-const serialize = (dataToTranslate: [string, string, number][]) => {
-  return dataToTranslate.map((data) => data.map(serializeData).join(' ')).join('\n');
-};
-
-const deserialize = (serializedDataToTranslate: string) => {
-  const chunks = serializedDataToTranslate.match(new RegExp(`${LEFT_SYMBOL}.+?${RIGHT_SYMBOL}`, 'g'));
-  const result = [];
-
-  for (let index = 0; index < chunks.length; index++) {
-    const targetIndex = Math.floor(index / 3);
-
-    if (result[targetIndex] === undefined) {
-      result[targetIndex] = [];
-    }
-
-    const target = result[targetIndex];
-    const chunk = chunks[index];
-    const stringData = chunk.replace(LEFT_SYMBOL, '').replace(RIGHT_SYMBOL, '').trim();
-
-    if ((index + 1) % 3 === 0) {
-      target.push(Number(stringData));
-    } else {
-      target.push(stringData);
-    }
-  }
-
-  return result as DataChunk[];
-};
-
-const createTranslateDataState = (pizzas: Pizza[]) => {
-  const translateData: TranslateDataState = pizzas.reduce((state, { title, description, lang }, index) => {
-    if (!state[lang]) {
-      state[lang] = [];
-    }
-
-    state[lang].push([title, description, index]);
-
-    return state;
-  }, {});
-
-  const langs = Object.keys(translateData) as Lang[];
-
-  return { translateData, langs };
-};
-
-const translateState = async (translateData: TranslateDataState, langs: Lang[]) => {
-  const translated = await Promise.all(
-    langs.map(async (from) => {
-      const dataToTranslate = translateData[from];
-
-      const toList = supportedLangs.filter((to) => to !== from);
-      const serialized = serialize(dataToTranslate);
-
-      const data = await Promise.all(
-        toList.map(async (to) => {
-          const { text } = await translate(serialized, { from, to });
-
-          const dataChunks = deserialize(text);
-
-          return { from, to, dataChunks };
-        }),
-      );
-
-      return data;
-    }),
-  );
-
-  return translated.flat(1);
-};
-
-const combineTranslated = (pizzas: Pizza[], tranlsated: Tranlated) => {
-  const copy = [...pizzas];
-
-  tranlsated.forEach(({ to, dataChunks }) => {
-    dataChunks.forEach(([title, description, index]) => {
-      const pizza = copy[index];
-
-      pizza[`${to}_title`] = title;
-      pizza[`${to}_description`] = description;
-    });
-  });
-
-  copy.forEach(({ title, description, lang }, index) => {
-    const pizza = copy[index];
-
-    pizza[`${lang}_title`] = title;
-    pizza[`${lang}_description`] = description;
-
-    delete pizza.title;
-    delete pizza.description;
-  });
-
-  return copy as unknown[] as TranslatedPizza[];
-};
 
 const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
   const timestamp = getTimestamp();
@@ -126,12 +19,41 @@ const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
   return pizzas.map((pizza) => ({ ...pizza, id: nanoid() }));
 };
 
+const translatePizzas = async (pizzas: Pizza[]) => {
+  const translatedPizzas = await Promise.all(
+    pizzas.map(async (pizza) => {
+      const { title, description, lang: from, ...rest } = pizza;
+
+      const restLangs = supportedLangs.filter((lang) => lang !== from);
+
+      const variants = await Promise.all(
+        restLangs.map(async (to) => {
+          const translatedTitle = await translate({ text: title, from, to });
+          const translatedDescription = await translate({ text: description, from, to });
+
+          return { translatedTitle, translatedDescription, lang: to };
+        }),
+      );
+
+      const translatedPizza = { ...rest } as TranslatedPizza;
+
+      [{ translatedTitle: title, translatedDescription: description, lang: from }, ...variants].forEach(
+        ({ translatedTitle, translatedDescription, lang }) => {
+          translatedPizza[`${lang}_title`] = translatedTitle;
+          translatedPizza[`${lang}_description`] = translatedDescription;
+        },
+      );
+
+      return translatedPizza;
+    }),
+  );
+
+  return translatedPizzas;
+};
+
 const main = async () => {
   const pizzas = await parsePizzas();
-
-  const { translateData, langs } = createTranslateDataState(pizzas);
-  const translated = await translateState(translateData, langs);
-  const translatedPizzas = combineTranslated(pizzas, translated);
+  const translatedPizzas = await translatePizzas(pizzas);
   const withId = addId(translatedPizzas);
 
   await writeOutputPizzas(withId);

@@ -5,6 +5,8 @@ interface Constructable<T> {
 }
 
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
+  jest.setTimeout(60000);
+
   describe('parsePizza', () => {
     let parser: PizzasParser;
 
@@ -22,8 +24,10 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
         expect(pizza.title[pizza.title.length - 1] === ' ').toBe(false);
 
         expect(typeof pizza.description).toBe('string');
-        expect(pizza.description[0] === ' ').toBe(false);
-        expect(pizza.description[pizza.description.length - 1] === ' ').toBe(false);
+        if (pizza.description.trim().length !== 0) {
+          expect(pizza.description[0] === ' ').toBe(false);
+          expect(pizza.description[pizza.description.length - 1] === ' ').toBe(false);
+        }
 
         expect(typeof pizza.link).toBe('string');
         expect(typeof pizza.image).toBe('string');
@@ -31,9 +35,6 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
         expect(typeof pizza.lang).toBe('string');
         expect(typeof pizza.country).toBe('string');
         expect(typeof pizza.city).toBe('string');
-
-        expect(pizza.ingredients).toBeInstanceOf(Array);
-        pizza.ingredients.forEach((ing) => expect(ing).not.toBeUndefined());
 
         expect(pizza.variants).toBeInstanceOf(Array);
         pizza.variants.forEach((variant) => {

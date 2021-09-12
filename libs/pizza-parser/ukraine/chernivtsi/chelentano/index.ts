@@ -1,5 +1,4 @@
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import cheerio, { CheerioAPI, Element } from 'cheerio';
 
@@ -42,15 +41,6 @@ export class Chelentano extends ChernivtsiPizzasParser {
     return [result, weights];
   }
 
-  private descriptionToIngredients(description: string) {
-    return description
-      .toLowerCase()
-      .trim()
-      .replace(/( та )|( і )/g, ', ')
-      .split(',')
-      .map((chunk) => UkToIngredient[chunk.trim()]);
-  }
-
   private pizzasElementsToPizzas($: CheerioAPI, pizzasElements: Element[]) {
     const metadata = pizzasElements.map((el) => {
       const pizzaCard = $(el);
@@ -62,7 +52,6 @@ export class Chelentano extends ChernivtsiPizzasParser {
       const link = pizzaCardLink.attr('href');
       const image = pizzaCardImage.attr('data-src');
       const [description, dirtyWeights] = this.getDescriptionAndWeights(pizzaCardDescription.text());
-      const ingredients = this.descriptionToIngredients(description);
 
       const weights = dirtyWeights
         .replace(/г/g, '')
@@ -85,7 +74,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
         price: prices[i],
       }));
 
-      return { title, description, image, link, ingredients, variants };
+      return { title, description, image, link, variants };
     });
 
     return metadata.map((pizzaMetadata) => ({ ...pizzaMetadata, ...this.baseMetadata }));
