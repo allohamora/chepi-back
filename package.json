@@ -24,7 +24,6 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:libs": "jest --config ./libs/jest.json",
-    "pizzas:docker-compose": "docker-compose -f libs/pizza-parser/docker-compose.yml",
     "pizzas:build": "cross-env node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",

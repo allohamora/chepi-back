@@ -22,7 +22,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       .toArray()
       .filter((element) => !this.blackList.includes(this.getTitle($, element)));
 
-    return pizzaElements.map((element) => {
+    return pizzaElements.flatMap((element) => {
       const id = $(element).attr('id').replace('t776__product-', '');
 
       const title = this.getTitle($, element);
@@ -46,7 +46,9 @@ export class Czernowizza extends ChernivtsiPizzasParser {
           weight: 0,
         }));
 
-      return { title, description, link, image, variants, ...this.baseMetadata };
+      const base = { title, description, link, image, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
 

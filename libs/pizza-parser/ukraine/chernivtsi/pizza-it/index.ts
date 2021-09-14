@@ -32,7 +32,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
 
   private async getPizzas(pizzaLinks: string[]) {
     const pages = await Promise.all(pizzaLinks.map((link) => this.getPage(link)));
-    return pages.map((page, i) => {
+    return pages.flatMap((page, i) => {
       const $ = cheerio.load(page);
 
       const title = $('#product > .title.page-title').text().trim().replace(/^піца/, '').trim();
@@ -87,7 +87,9 @@ export class PizzaIt extends ChernivtsiPizzasParser {
           return { weight, size, price };
         });
 
-      return { title, description, link, image, variants, ...this.baseMetadata };
+      const base = { title, description, link, image, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
 
@@ -97,6 +99,6 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     const pizzaLinks = this.getPizzaLinks($);
     const pizzas = await this.getPizzas(pizzaLinks);
 
-    return pizzas as any;
+    return pizzas;
   }
 }

@@ -42,7 +42,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
   }
 
   private pizzasElementsToPizzas($: CheerioAPI, pizzasElements: Element[]) {
-    const metadata = pizzasElements.map((el) => {
+    const pizzas = pizzasElements.flatMap((el) => {
       const pizzaCard = $(el);
       const pizzaCardLink = pizzaCard.find('.c-product-grid__title-link');
       const pizzaCardImage = pizzaCard.find('img');
@@ -74,10 +74,12 @@ export class Chelentano extends ChernivtsiPizzasParser {
         price: prices[i],
       }));
 
-      return { title, description, image, link, variants };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
 
-    return metadata.map((pizzaMetadata) => ({ ...pizzaMetadata, ...this.baseMetadata }));
+    return pizzas;
   }
 
   public async parsePizzas() {

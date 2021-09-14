@@ -7,19 +7,7 @@ import {
   supportedCountries,
   supportedLangs,
   TranslatedPizza,
-  Variant as VariantType,
 } from 'libs/pizza-parser/types/pizza';
-
-class Variant implements VariantType {
-  @ApiProperty({ description: 'pizza weight in grams' })
-  weight: number;
-
-  @ApiProperty({ description: 'pizza size in cm' })
-  size: number;
-
-  @ApiProperty({ description: 'pizza price in grn' })
-  price: number;
-}
 
 export class Pizza implements TranslatedPizza {
   @ApiProperty({ description: 'pizza id what changes after new insert' })
@@ -40,8 +28,14 @@ export class Pizza implements TranslatedPizza {
   @ApiProperty({ enum: supportedCities, description: 'city where pizzeria locatd' })
   city: City;
 
-  @ApiProperty({ type: [Variant], description: 'pizza variant list' })
-  variants: VariantType[];
+  @ApiProperty({ description: 'pizza weight in grams' })
+  weight: number;
+
+  @ApiProperty({ description: 'pizza size in cm' })
+  size: number;
+
+  @ApiProperty({ description: 'pizza price in grn' })
+  price: number;
 
   @ApiProperty({ description: 'pizza title in ukrainian' })
   uk_title: string;

@@ -13,7 +13,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
     const pizzaList = $('.product-list.pizza');
     const pizzaElements = pizzaList.find('.col-sm-6.col-md-4 .product_item');
 
-    return pizzaElements.toArray().map((pizzaElement) => {
+    return pizzaElements.toArray().flatMap((pizzaElement) => {
       const title = $(pizzaElement).find('.product_item--name').text().trim();
       const description = lower($(pizzaElement).find('.product_item--descr > p').text().trim());
       const image = $(pizzaElement).find('.product-image.lazyload').attr('data-src');
@@ -25,7 +25,9 @@ export class Dongustavo extends ChernivtsiPizzasParser {
       const sizes = sizeElements.map((element) => Number(element.attribs['data-size'].replace(/-cm$/, '')));
       const variants = weights.map((weight, i) => ({ weight, price: prices[i], size: sizes[i] }));
 
-      return { title, description, image, link, variants, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
 

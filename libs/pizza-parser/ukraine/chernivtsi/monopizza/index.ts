@@ -45,7 +45,7 @@ export class Monopizza extends ChernivtsiPizzasParser {
     const parsed: NextData = JSON.parse(nextData);
     const { products } = parsed.props.pageProps.initialState.products;
 
-    return products.map((product) => {
+    return products.flatMap((product) => {
       const title = lowerAndCapitalize(product.name).trim();
       const description = lowerAndCapitalize(product.additionalProperties.nutritional.composition.value)
         .replace(/, у подарунок.+$/, '')
@@ -58,7 +58,9 @@ export class Monopizza extends ChernivtsiPizzasParser {
       const price = product.price;
       const variants = [{ size, weight, price }];
 
-      return { title, description, image, link, variants, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
 
