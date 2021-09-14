@@ -87,28 +87,37 @@ export class PizzaService implements OnModuleInit {
       .join(' ');
   }
 
-  public async getPizzas({ query, limit, offset, country, city }: GetPizzasDto) {
-    const {
-      body: { hits },
-    } = await this.elasticsearchService.search({
+  public async getPizzas({ query, limit, offset, country, city, orderBy }: GetPizzasDto) {
+    const must: Record<string, unknown> = {};
+
+    if (query.length === 0) {
+      must.match_all = {};
+    } else {
+      must.simple_query_string = {
+        query: this.queryToSimpleQuery(query),
+        fields: ['*_title', '*_description', 'weight.text', 'size.text', 'price.text'],
+        default_operator: 'and',
+      };
+    }
+
+    const esQuery = {
       index: this.pizzasIndex,
       body: {
         from: offset,
         size: limit,
+        sort: orderBy ? [{ [orderBy.target]: orderBy.cause }] : undefined,
         query: {
           bool: {
-            must: {
-              simple_query_string: {
-                query: this.queryToSimpleQuery(query),
-                fields: ['*_title', '*_description', 'weight.text', 'size.text', 'price.text'],
-                default_operator: 'and',
-              },
-            },
+            must,
             filter: [{ term: { country } }, { term: { city } }],
           },
         },
       },
-    });
+    };
+
+    const {
+      body: { hits },
+    } = await this.elasticsearchService.search(esQuery);
 
     const total: number = hits.total.value;
     const value: TranslatedPizzaWithId[] = hits.hits.map(({ _source }) => _source);
