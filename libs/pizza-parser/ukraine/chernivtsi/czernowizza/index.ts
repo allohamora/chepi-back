@@ -43,7 +43,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
         .map((variant) => ({
           size: parseInt(variant.attribs['value']),
           price: parseInt(variant.attribs['data-product-variant-price']),
-          weight: 0,
+          weight: null,
         }));
 
       const base = { title, description, link, image, ...this.baseMetadata };

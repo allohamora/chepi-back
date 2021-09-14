@@ -30,12 +30,12 @@ export class Misteram extends ChernivtsiPizzasParser {
   private misteramApiLink = 'https://misteram.com.ua/api/';
 
   private companyList = [
-    { slug: 'pizzapark', company: 420, categories: [{ id: 4798, size: 0, slug: 'pizza' }] },
-    { slug: 'panska-vtiha', company: 513, categories: [{ id: 6130, size: 0, slug: 'pizza', blacklist: [/лаваш/] }] },
+    { slug: 'pizzapark', company: 420, categories: [{ id: 4798, size: null, slug: 'pizza' }] },
+    { slug: 'panska-vtiha', company: 513, categories: [{ id: 6130, size: null, slug: 'pizza', blacklist: [/лаваш/] }] },
     {
       slug: 'lapasta',
       company: 3134,
-      categories: [{ id: 38384, size: 0, slug: 'pizza', remove: [/,?\s+зауважте.+$/u], blacklist: [/фокачча/] }],
+      categories: [{ id: 38384, size: null, slug: 'pizza', remove: [/,?\s+зауважте.+$/u], blacklist: [/фокачча/] }],
     },
     {
       slug: 'baza',
@@ -57,12 +57,12 @@ export class Misteram extends ChernivtsiPizzasParser {
       slug: 'thesad',
       company: 2096,
       categories: [
-        { id: 26669, size: 0, slug: 'pizza' },
+        { id: 26669, size: null, slug: 'pizza' },
         { id: 32975, size: 50, slug: 'pizza50', remove: [cmRegex] },
       ],
     },
-    { slug: 'monopoli', company: 803, categories: [{ id: 13020, size: 0, slug: 'pizza' }] },
-    { slug: 'kartoteka', company: 1323, categories: [{ id: 16173, size: 0, slug: 'pizza' }] },
+    { slug: 'monopoli', company: 803, categories: [{ id: 13020, size: null, slug: 'pizza' }] },
+    { slug: 'kartoteka', company: 1323, categories: [{ id: 16173, size: null, slug: 'pizza' }] },
     { slug: 'chicheri', company: 448, categories: [{ id: 35368, size: 30, slug: 'pizza30' }] },
     {
       slug: 'gorno',
@@ -72,7 +72,7 @@ export class Misteram extends ChernivtsiPizzasParser {
         { id: 16704, size: 50, slug: 'pizza50', remove: [cmRegex] },
       ],
     },
-    { slug: 'bruno', company: 669, categories: [{ id: 8166, size: 0, slug: 'pizza' }] },
+    { slug: 'bruno', company: 669, categories: [{ id: 8166, size: null, slug: 'pizza' }] },
     {
       slug: 'mamaspizza',
       company: 1026,
@@ -92,12 +92,12 @@ export class Misteram extends ChernivtsiPizzasParser {
     },
     { slug: 'terassa', company: 1124, categories: [{ id: 42425, size: 30, slug: 'pizza30' }] },
     { slug: 'kucheri', company: 1111, categories: [{ id: 14047, size: 30, slug: 'pizza', remove: [cmRegex] }] },
-    { slug: 'kleopatra', company: 713, categories: [{ id: 14366, size: 0, slug: 'pizza' }] },
+    { slug: 'kleopatra', company: 713, categories: [{ id: 14366, size: null, slug: 'pizza' }] },
     { slug: 'ciabatta', company: 1069, categories: [{ id: 13168, size: 30, slug: 'pizza' }] },
     {
       slug: 'diverso',
       company: 3076,
-      categories: [{ id: 37363, size: 0, slug: 'pizzaburgers', blacklist: [/бургер/] }],
+      categories: [{ id: 37363, size: null, slug: 'pizzaburgers', blacklist: [/бургер/] }],
     },
     {
       slug: 'yourpizza',
@@ -117,7 +117,7 @@ export class Misteram extends ChernivtsiPizzasParser {
       ],
     },
     { slug: 'aveceasare', company: 2633, categories: [{ id: 32894, size: 30, slug: 'pizza30', remove: [cmRegex] }] },
-    { slug: 'pastamia', company: 2255, categories: [{ id: 28784, size: 0, slug: 'pizza' }] },
+    { slug: 'pastamia', company: 2255, categories: [{ id: 28784, size: null, slug: 'pizza' }] },
   ];
 
   private getBuyLink(...slugs: string[]) {
@@ -150,7 +150,7 @@ export class Misteram extends ChernivtsiPizzasParser {
           .filter(({ availableToOrder }) => availableToOrder)
           .map(({ name, description: rawDescription, image: hash, price, measure, measureType }) => {
             const image = this.getImageLink(hash);
-            const weight = measureType === '0' ? parseInt(measure) : 0;
+            const weight = measureType === '0' ? parseInt(measure) : null;
 
             const title = capitalize(remove.reduce((value, regex) => value.replace(regex, ''), name).trim());
             const description = remove.reduce((value, regex) => value.replace(regex, ''), rawDescription).trim() || ' ';

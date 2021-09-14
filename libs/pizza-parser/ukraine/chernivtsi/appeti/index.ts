@@ -44,7 +44,7 @@ export class Apetti extends ChernivtsiPizzasParser {
           const form = $(formEl);
           const size = Number(form.find('.value').text().replace('см', '').trim());
           const price = Number(form.find('.product-price').text().replace('грн', '').trim());
-          const weight = 0; // doesn't have weight
+          const weight = null; // doesn't have weight
 
           return { size, price, weight };
         });

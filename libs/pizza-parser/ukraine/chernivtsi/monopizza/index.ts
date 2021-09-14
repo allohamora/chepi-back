@@ -53,7 +53,7 @@ export class Monopizza extends ChernivtsiPizzasParser {
       const image = product.publicImageUrl;
       const link = join(this.pageLink, '/menu/pitsa', product.slug);
 
-      const size = 0;
+      const size = null;
       const { weight } = product.additionalProperties.nutritional;
       const price = product.price;
       const variants = [{ size, weight, price }];

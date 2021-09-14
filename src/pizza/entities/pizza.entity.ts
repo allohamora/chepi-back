@@ -28,14 +28,14 @@ export class Pizza implements TranslatedPizza {
   @ApiProperty({ enum: supportedCities, description: 'city where pizzeria locatd' })
   city: City;
 
-  @ApiProperty({ description: 'pizza weight in grams' })
-  weight: number;
+  @ApiProperty({ description: 'pizza weight in grams', nullable: true })
+  weight: number | null;
 
-  @ApiProperty({ description: 'pizza size in cm' })
-  size: number;
+  @ApiProperty({ description: 'pizza size in cm', nullable: true })
+  size: number | null;
 
-  @ApiProperty({ description: 'pizza price in grn' })
-  price: number;
+  @ApiProperty({ description: 'pizza price in grn', nullable: true })
+  price: number | null;
 
   @ApiProperty({ description: 'pizza title in ukrainian' })
   uk_title: string;

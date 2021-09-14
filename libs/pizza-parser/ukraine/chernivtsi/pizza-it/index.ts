@@ -64,8 +64,11 @@ export class PizzaIt extends ChernivtsiPizzasParser {
           const gettedSize = sizeMatch ? sizeMatch[0] : '0';
           const gettedPrice = priceMatch ? priceMatch[0] : `0`;
 
-          const size = parseInt(gettedSize);
-          const price = parseInt(gettedPrice + basePrice);
+          const rawSize = parseInt(gettedSize);
+          const rawPrice = parseInt(gettedPrice + basePrice);
+
+          const size = rawSize === 0 ? null : rawSize;
+          const price = rawPrice === 0 ? null : rawPrice;
 
           return { size, price };
         });
