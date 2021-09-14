@@ -131,7 +131,7 @@ export class Misteram extends ChernivtsiPizzasParser {
   private async getPizzasFromCategories(company: number, categories: Category[], companySlug: string) {
     const companyLink = this.getBuyLink(companySlug);
 
-    const pizzasLists = await Promise.all(
+    const pizzas = await Promise.all(
       categories.map(async ({ id, size, slug, blacklist, remove = [] }) => {
         const url = join(
           this.misteramApiLink,
@@ -155,31 +155,14 @@ export class Misteram extends ChernivtsiPizzasParser {
             const title = capitalize(remove.reduce((value, regex) => value.replace(regex, ''), name).trim());
             const description = remove.reduce((value, regex) => value.replace(regex, ''), rawDescription).trim() || ' ';
 
-            return { title, description, image, link, price, weight, size };
+            return { title, description, image, link, price, weight, size, ...this.baseMetadata };
           });
 
         return pizzaList;
       }),
     );
 
-    const pizzas: Record<string, Pizza> = {};
-
-    pizzasLists.forEach((list) => {
-      list.forEach(({ title, price, weight, size, ...rest }) => {
-        const target = pizzas[title];
-
-        if (target) {
-          target.link = companyLink;
-          target.variants.push({ price, weight, size });
-          target.variants.sort((a, b) => a.size - b.price);
-          return;
-        }
-
-        pizzas[title] = { title, variants: [{ price, weight, size }], ...rest, ...this.baseMetadata };
-      });
-    });
-
-    return Object.values(pizzas);
+    return pizzas.flat(1);
   }
 
   private async getPizzas() {

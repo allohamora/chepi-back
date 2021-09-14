@@ -4,6 +4,8 @@ interface Constructable<T> {
   new (...args: any): T;
 }
 
+const numberValueMatch = (value: number | null) => typeof value === 'number' || value === null;
+
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
   jest.setTimeout(60000);
 
@@ -36,17 +38,14 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
         expect(typeof pizza.country).toBe('string');
         expect(typeof pizza.city).toBe('string');
 
-        expect(pizza.variants).toBeInstanceOf(Array);
-        pizza.variants.forEach((variant) => {
-          expect(typeof variant.price).toBe('number');
-          expect(variant.size).not.toBeNaN();
+        expect(numberValueMatch(pizza.price)).toBeTruthy();
+        expect(pizza.price).not.toBeNaN();
 
-          expect(typeof variant.size).toBe('number');
-          expect(variant.size).not.toBeNaN();
+        expect(numberValueMatch(pizza.size)).toBeTruthy();
+        expect(pizza.size).not.toBeNaN();
 
-          expect(typeof variant.weight).toBe('number');
-          expect(variant.weight).not.toBeNaN();
-        });
+        expect(numberValueMatch(pizza.weight)).toBeTruthy();
+        expect(pizza.weight).not.toBeNaN();
       });
 
       expect(pizzas[0]).not.toBe(undefined);

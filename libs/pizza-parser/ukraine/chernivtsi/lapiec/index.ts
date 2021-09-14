@@ -12,7 +12,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
     const pizzaList = $('.row.clear-md-3.clear-lg-3.clear-sm-2');
     const pizzaElements = pizzaList.find('.col-sm-6.col-md-4 .productThumbnail').toArray();
 
-    return pizzaElements.map((element) => {
+    return pizzaElements.flatMap((element) => {
       const infoElement = $(element).find('.productInfoWrapp');
       const linkElement = $(element).find('.productImage');
 
@@ -26,7 +26,9 @@ export class Lapiec extends ChernivtsiPizzasParser {
       const price = Number(infoElement.find('.productPrice > span').text().trim());
       const variants = [{ size, weight, price }];
 
-      return { title, description, link, image, variants, ...this.baseMetadata };
+      const base = { title, description, link, image, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
 

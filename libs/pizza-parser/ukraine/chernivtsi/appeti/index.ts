@@ -26,7 +26,7 @@ export class Apetti extends ChernivtsiPizzasParser {
 
   private async parsePizzasFromLinks(links: string[]) {
     const pages = await Promise.all(links.map((link) => this.getPage(link)));
-    const pizzas = pages.map((page, i) => {
+    const pizzas = pages.flatMap((page, i) => {
       const $ = cheerio.load(page);
       const card = $('#msProduct');
 
@@ -49,7 +49,9 @@ export class Apetti extends ChernivtsiPizzasParser {
           return { size, price, weight };
         });
 
-      return { title, description, variants, image, link, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
 
     return pizzas;

@@ -48,7 +48,7 @@ export class ShoSho extends ChernivtsiPizzasParser {
         return state;
       }, []);
 
-    const pizzaMetadata = items.map(([, modal]) => {
+    const pizzas = items.flatMap(([, modal]) => {
       const title = $(modal).find('.popup-title').text();
       const description = this.normalizeDescription($(modal).find('.popup-desc').text());
       const image = $(modal).find('form img').attr('src');
@@ -65,13 +65,10 @@ export class ShoSho extends ChernivtsiPizzasParser {
           return { weight, price, size };
         });
 
-      return { title, description, image, variants, link: this.pageLink };
-    });
+      const base = { title, description, image, link: this.pageLink, ...this.baseMetadata };
 
-    const pizzas = pizzaMetadata.map((pizzaMetadata) => ({
-      ...pizzaMetadata,
-      ...this.baseMetadata,
-    }));
+      return variants.map((variant) => ({ ...base, ...variant }));
+    });
 
     return pizzas;
   }
