@@ -12,7 +12,7 @@ Backend/api for cheppi.
 - [typescript](https://www.typescriptlang.org)
 - [nest](https://nestjs.com)
 - [swagger](https://swagger.io) as [@nestjs/swagger](https://docs.nestjs.com/openapi/introduction)
-- [meilisearch](https://www.meilisearch.com)
+- [elasticsearch](https://www.elastic.co)
 - [docker](https://www.docker.com)
 - [okteto](https://okteto.com)
 - [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
@@ -20,11 +20,11 @@ Backend/api for cheppi.
 
 ## Options
 
-| Key              | Value |
-| ---------------- | ----- |
-| Port             | 3000  |
-| Swagger url      | /api  |
-| Meilisearch port | 7700  |
+| Key                | Value |
+| ------------------ | ----- |
+| Port               | 3000  |
+| Swagger url        | /api  |
+| Elasticsearch port | 9200  |
 
 ## Running the app
 
