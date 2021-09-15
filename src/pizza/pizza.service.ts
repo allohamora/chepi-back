@@ -5,6 +5,8 @@ import { TranslatedPizzaWithId } from 'libs/pizza-parser/types/pizza';
 import { GetPizzasDto } from './dto/getPizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
+import { estypes } from '@elastic/elasticsearch';
+import { SearchQuery } from 'src/types/elasticsearch';
 
 interface SavedPizzas {
   timestamp: number;
@@ -20,7 +22,7 @@ const numberAndText = {
       type: 'text',
     },
   },
-};
+} as const;
 
 @Injectable()
 export class PizzaService implements OnModuleInit {
@@ -42,37 +44,39 @@ export class PizzaService implements OnModuleInit {
 
     if (isExists) return;
 
-    await this.elasticsearchService.indices.create({
+    const mappings: estypes.MappingTypeMapping = {
+      properties: {
+        id: { type: 'text' },
+        image: { type: 'text' },
+        link: { type: 'text' },
+        lang: { type: 'text' },
+        country: { type: 'text' },
+        city: { type: 'text' },
+        weight: numberAndText,
+        size: numberAndText,
+        price: numberAndText,
+        uk_title: { type: 'text' },
+        uk_description: { type: 'text' },
+        ru_title: { type: 'text' },
+        ru_description: { type: 'text' },
+        en_title: { type: 'text' },
+        en_description: { type: 'text' },
+      },
+    };
+
+    await this.elasticsearchService.indices.create<estypes.IndicesCreateResponse>({
       index: this.pizzasIndex,
       body: {
-        mappings: {
-          properties: {
-            id: { type: 'text' },
-            image: { type: 'text' },
-            link: { type: 'text' },
-            lang: { type: 'text' },
-            country: { type: 'text' },
-            city: { type: 'text' },
-            weight: numberAndText,
-            size: numberAndText,
-            price: numberAndText,
-            uk_title: { type: 'text' },
-            uk_description: { type: 'text' },
-            ru_title: { type: 'text' },
-            ru_description: { type: 'text' },
-            en_title: { type: 'text' },
-            en_description: { type: 'text' },
-          },
-        },
+        mappings,
       },
     });
 
     const bulkBody = pizzas.flatMap((pizza) => [{ index: { _index: this.pizzasIndex } }, pizza]);
     const {
       body: { errors },
-    } = await this.elasticsearchService.bulk({ refresh: true, body: bulkBody });
+    } = await this.elasticsearchService.bulk<estypes.BulkResponse>({ refresh: true, body: bulkBody });
 
-    if (errors.length > 0) throw new Error('bulk has errors');
+    if (errors) throw new Error('bulk has errors');
   }
 
   private queryToSimpleQuery(query: string) {
@@ -88,7 +92,7 @@ export class PizzaService implements OnModuleInit {
   }
 
   public async getPizzas({ query, limit, offset, country, city, orderBy }: GetPizzasDto) {
-    const must: Record<string, unknown> = {};
+    const must: estypes.QueryDslQueryContainer = {};
 
     if (query.length === 0) {
       must.match_all = {};
@@ -100,7 +104,7 @@ export class PizzaService implements OnModuleInit {
       };
     }
 
-    const esQuery = {
+    const esQuery: SearchQuery = {
       index: this.pizzasIndex,
       body: {
         from: offset,
@@ -117,22 +121,20 @@ export class PizzaService implements OnModuleInit {
 
     const {
       body: { hits },
-    } = await this.elasticsearchService.search(esQuery);
+    } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>(esQuery);
 
-    const total: number = hits.total.value;
-    const value: TranslatedPizzaWithId[] = hits.hits.map(({ _source }) => _source);
+    const total: number = typeof hits.total === 'number' ? hits.total : hits.total.value;
+    const value = hits.hits.map(({ _source }) => _source);
 
     return { total, value };
   }
 
   public async getPizzasTotal() {
     const {
-      body: { count },
-    } = await this.elasticsearchService.count({
+      body: { count: total },
+    } = await this.elasticsearchService.count<estypes.CountResponse>({
       index: this.pizzasIndex,
     });
-
-    const total: number = count;
 
     return { total };
   }
@@ -142,7 +144,7 @@ export class PizzaService implements OnModuleInit {
       body: {
         hits: { hits },
       },
-    } = await this.elasticsearchService.search({
+    } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
       index: this.pizzasIndex,
       body: {
         query: {
@@ -153,7 +155,7 @@ export class PizzaService implements OnModuleInit {
       },
     });
 
-    const value: Pizza[] = hits.map(({ _source }) => _source);
+    const value = hits.map(({ _source }) => _source);
 
     return { value };
   }
@@ -163,7 +165,7 @@ export class PizzaService implements OnModuleInit {
       body: {
         hits: { hits },
       },
-    } = await this.elasticsearchService.search({
+    } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
       index: this.pizzasIndex,
       body: {
         query: {
@@ -178,7 +180,7 @@ export class PizzaService implements OnModuleInit {
       },
     });
 
-    const value: Pizza = hits.map(({ _source }) => _source)[0];
+    const value = hits.map(({ _source }) => _source)[0];
 
     return { value };
   }
