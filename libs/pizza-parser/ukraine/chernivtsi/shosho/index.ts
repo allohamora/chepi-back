@@ -1,17 +1,11 @@
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
-import cherio, { CheerioAPI, Element } from 'cheerio';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 const PIZZA_CATEGORY_TITLE = 'Піца';
 
-export class ShoSho implements PizzasParser {
+export class ShoSho extends ChernivtsiPizzasParser {
   private pageLink = 'https://shosho.pizza';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage() {
     return await getText(this.pageLink);
@@ -37,12 +31,8 @@ export class ShoSho implements PizzasParser {
     return description
       .toLowerCase()
       .split(',')
-      .map((ukIngredient) => ukIngredient.trim())
+      .map((word) => word.trim())
       .join(', ');
-  }
-
-  private descriptionToIngredients(description: string) {
-    return description.split(',').map((ukIngredient) => UkToIngredient[ukIngredient.trim()]);
   }
 
   private pizzaCategoryToPizzas($: CheerioAPI, category: Element) {
@@ -58,7 +48,7 @@ export class ShoSho implements PizzasParser {
         return state;
       }, []);
 
-    const pizzaMetadata = items.map(([, modal]) => {
+    const pizzas = items.flatMap(([, modal]) => {
       const title = $(modal).find('.popup-title').text();
       const description = this.normalizeDescription($(modal).find('.popup-desc').text());
       const image = $(modal).find('form img').attr('src');
@@ -75,21 +65,17 @@ export class ShoSho implements PizzasParser {
           return { weight, price, size };
         });
 
-      return { title, description, image, variants, link: this.pageLink };
-    });
+      const base = { title, description, image, link: this.pageLink, ...this.baseMetadata };
 
-    const pizzas = pizzaMetadata.map((pizzaMetadata) => ({
-      ...pizzaMetadata,
-      ...this.baseMetadata,
-      ingredients: this.descriptionToIngredients(pizzaMetadata.description),
-    }));
+      return variants.map((variant) => ({ ...base, ...variant }));
+    });
 
     return pizzas;
   }
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzaCategory = this.getPizzaCategory($);
     const pizzas = this.pizzaCategoryToPizzas($, pizzaCategory);
 

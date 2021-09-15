@@ -1,16 +1,10 @@
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
-import cherio, { CheerioAPI, Element } from 'cheerio';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 
-export class Chelentano implements PizzasParser {
+export class Chelentano extends ChernivtsiPizzasParser {
   private blacklist = ['піцарол', 'кальцоне', 'комбо'];
   private pageLink = 'https://chernivtsi.celentano.delivery';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage() {
     return await getText(this.pageLink);
@@ -47,17 +41,8 @@ export class Chelentano implements PizzasParser {
     return [result, weights];
   }
 
-  private descriptionToIngredients(description: string) {
-    return description
-      .toLowerCase()
-      .trim()
-      .replace(/( та )|( і )/g, ', ')
-      .split(',')
-      .map((chunk) => UkToIngredient[chunk.trim()]);
-  }
-
   private pizzasElementsToPizzas($: CheerioAPI, pizzasElements: Element[]) {
-    const metadata = pizzasElements.map((el) => {
+    const pizzas = pizzasElements.flatMap((el) => {
       const pizzaCard = $(el);
       const pizzaCardLink = pizzaCard.find('.c-product-grid__title-link');
       const pizzaCardImage = pizzaCard.find('img');
@@ -67,7 +52,6 @@ export class Chelentano implements PizzasParser {
       const link = pizzaCardLink.attr('href');
       const image = pizzaCardImage.attr('data-src');
       const [description, dirtyWeights] = this.getDescriptionAndWeights(pizzaCardDescription.text());
-      const ingredients = this.descriptionToIngredients(description);
 
       const weights = dirtyWeights
         .replace(/г/g, '')
@@ -90,15 +74,17 @@ export class Chelentano implements PizzasParser {
         price: prices[i],
       }));
 
-      return { title, description, image, link, ingredients, variants };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
 
-    return metadata.map((pizzaMetadata) => ({ ...pizzaMetadata, ...this.baseMetadata }));
+    return pizzas;
   }
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzasElements = this.getPizzasElements($);
     const pizzas = this.pizzasElementsToPizzas($, pizzasElements);
 

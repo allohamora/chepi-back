@@ -1,7 +1,21 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
-import { City, County, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
+import { Type } from 'class-transformer';
+import { IsEnum, IsNotEmptyObject, IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
 import { Pizza } from '../entities/pizza.entity';
+
+const supportedTargets = ['weight', 'size', 'price'] as const;
+const supportedCause = ['asc', 'desc'] as const;
+
+class OrderBy {
+  @ApiProperty({ enum: supportedTargets })
+  @IsEnum(supportedTargets)
+  target: typeof supportedTargets[number];
+
+  @ApiProperty({ enum: supportedCause })
+  @IsEnum(supportedCause)
+  cause: typeof supportedCause[number];
+}
 
 export class GetPizzasDto {
   @ApiProperty({ description: 'search query', example: 'pizza with cheese' })
@@ -14,7 +28,7 @@ export class GetPizzasDto {
 
   @ApiProperty({ enum: supportedCountries })
   @IsEnum(supportedCountries)
-  country: County;
+  country: Country;
 
   @ApiProperty({ default: 20, required: false })
   @IsOptional()
@@ -25,6 +39,13 @@ export class GetPizzasDto {
   @IsOptional()
   @IsNumber()
   offset?: number;
+
+  @ApiProperty({ default: null, required: false })
+  @IsOptional()
+  @IsNotEmptyObject()
+  @IsObject()
+  @Type(() => OrderBy)
+  orderBy?: OrderBy;
 }
 
 export class GetPizzaResultDto {

@@ -1,15 +1,10 @@
-import cherio, { CheerioAPI } from 'cheerio';
-import { PizzasParser } from 'libs/pizza-parser/types/parser';
+import cheerio, { CheerioAPI } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { UkToIngredient } from 'libs/pizza-parser/types/ingredient';
+import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
+import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
-export class Apetti implements PizzasParser {
+export class Apetti extends ChernivtsiPizzasParser {
   private pageLink = 'https://appeti.com.ua';
-  private baseMetadata = {
-    lang: 'uk',
-    country: 'ukraine',
-    city: 'chernivtsi',
-  } as const;
 
   private async getPage(pageLink: string = this.pageLink) {
     return await getText(pageLink);
@@ -29,23 +24,16 @@ export class Apetti implements PizzasParser {
     return pizzaLinks;
   }
 
-  private ukIngredientsToIngredients(ukIngredients: string[]) {
-    return ukIngredients.map((ukIngredient) => UkToIngredient[ukIngredient]);
-  }
-
   private async parsePizzasFromLinks(links: string[]) {
     const pages = await Promise.all(links.map((link) => this.getPage(link)));
-    const pizzas = pages.map((page, i) => {
-      const $ = cherio.load(page);
+    const pizzas = pages.flatMap((page, i) => {
+      const $ = cheerio.load(page);
       const card = $('#msProduct');
 
-      const title = card.find('.title').text().trim();
-      const description = card.find('.content').text().trim().replace(/\s+/g, ' ');
-      const ukIngredients = card
-        .find('.folder_ingredient')
-        .toArray()
-        .map((el) => $(el).attr('data-original-title').toLowerCase());
-      const ingredients = this.ukIngredientsToIngredients(ukIngredients);
+      const title = lowerAndCapitalize(card.find('.title').text().trim());
+      const description = lowerAndCapitalize(
+        card.find('.content').text().trim().replace(/\s+/g, ' ').replace(/, ..$/, ''),
+      );
       const image = this.addPageLink(card.find('#msGallery a').attr('href'));
       const link = links[i];
 
@@ -56,12 +44,14 @@ export class Apetti implements PizzasParser {
           const form = $(formEl);
           const size = Number(form.find('.value').text().replace('см', '').trim());
           const price = Number(form.find('.product-price').text().replace('грн', '').trim());
-          const weight = 0; // doesn't have weight
+          const weight = null; // doesn't have weight
 
           return { size, price, weight };
         });
 
-      return { title, description, ingredients, variants, image, link, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.baseMetadata };
+
+      return variants.map((variant) => ({ ...base, ...variant }));
     });
 
     return pizzas;
@@ -69,7 +59,7 @@ export class Apetti implements PizzasParser {
 
   public async parsePizzas() {
     const page = await this.getPage();
-    const $ = cherio.load(page);
+    const $ = cheerio.load(page);
     const pizzaLinks = await this.getPizzaLinks($);
     const pizzas = await this.parsePizzasFromLinks(pizzaLinks);
 

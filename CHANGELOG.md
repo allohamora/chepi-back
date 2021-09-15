@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/Allohamora/chepi-back/compare/v1.0.0...v2.0.0) (2021-09-15)
+
+### ⚠ BREAKING CHANGES
+
+- remove variants field
+- change google translate to libretranslate
+- remove ingredient
+- now pizzas parser is abstract class
+
+### Features
+
+- add orderBy for getPizzas ([45b4cbf](https://github.com/Allohamora/chepi-back/commits/45b4cbf715da39994dfd0eaaac2e90f401137714))
+- add uk/che misteram ([052705e](https://github.com/Allohamora/chepi-back/commits/052705e1a0d9c178090d4bd0ba2f0dd5054ba3ff))
+- add uk/che monopizza parser ([c4dfa99](https://github.com/Allohamora/chepi-back/commits/c4dfa990f90ae782e5c85f1c8562c4b568199d82))
+- enable cors ([9cb1e1c](https://github.com/Allohamora/chepi-back/commits/9cb1e1c6da67d8c42294def2ec59330fc6d080ed))
+- migrate to elasticsearch ([21fb943](https://github.com/Allohamora/chepi-back/commits/21fb943cb7b131a4271f5adab471c045618f3226))
+- **pizza-parser:** add free-google-translate with tor proxy ([04a8d5c](https://github.com/Allohamora/chepi-back/commits/04a8d5c17cb780bd8f8c9918e52bc62480705de7))
+- **pizza-parser:** add uk/che czernowizza parser ([800766e](https://github.com/Allohamora/chepi-back/commits/800766eb0d19d008b1a492d121cd5b57d23c4a86))
+- **pizza-parser:** add uk/che dongustavo parser ([dc3f2f1](https://github.com/Allohamora/chepi-back/commits/dc3f2f1505b042cc6d879c306371143fee690c2c))
+- **pizza-parser:** add uk/che lapiec parser ([88d4b0e](https://github.com/Allohamora/chepi-back/commits/88d4b0e6d2cae36bcc0cb6797ae088f71651a7d9))
+- **pizza-parser:** add uk/che misteram panska-vtiha parser ([c76c4d7](https://github.com/Allohamora/chepi-back/commits/c76c4d7c05bfa85f0d57057bbe5021f924788498))
+- **pizza-parser:** add uk/che misteram pizzapark parser ([e876f25](https://github.com/Allohamora/chepi-back/commits/e876f2531e58b2006ebe070a62ecd9f2cdf714cd))
+- **pizza-parser:** add uk/che pizza-it parser ([985d4d8](https://github.com/Allohamora/chepi-back/commits/985d4d899fe5d3736a356a1769828276851abd38))
+
+### Bug Fixes
+
+- change 0 to null in pizzas ([3e12625](https://github.com/Allohamora/chepi-back/commits/3e12625068c9d1d40491f17854816dc08a33be67))
+- getByIds incorrect result when ids.length === 0 ([62bddd7](https://github.com/Allohamora/chepi-back/commits/62bddd7a3013bc20e561f421deb8f85f5413f905))
+- ingredient typos ([4b47e54](https://github.com/Allohamora/chepi-back/commits/4b47e54a757ca6e10b6185dbb159506f56249a68))
+- **pizza-parser:** capslocked and ", .." title and description ([5d4d50a](https://github.com/Allohamora/chepi-back/commits/5d4d50abba84eda3d0b6bc12be35e6d3e323008e))
+- **pizza-parser:** ingredient typos ([f251daa](https://github.com/Allohamora/chepi-back/commits/f251daac8746ee93274a53dd1174e487e5d52382))
+- **pizza-parser:** pizza type typo ([bca14f0](https://github.com/Allohamora/chepi-back/commits/bca14f022fdd2afb92a7ab95603c57ba7d92f20b))
+
+- add abstact class chernivtsi pizza parser ([5a1f4e5](https://github.com/Allohamora/chepi-back/commits/5a1f4e5fb55d6b2b29ab9d6f8c0bcda90b881831))
+- add libretranslate translate ([3ae1377](https://github.com/Allohamora/chepi-back/commits/3ae13774e5de204a44f0157d8bdddddc0dbf53af))
+- change pizza structure ([f33b635](https://github.com/Allohamora/chepi-back/commits/f33b635d205aae887cd1fd8dc154f2d6e303951f))
+- remove ingredient ([79a2bb4](https://github.com/Allohamora/chepi-back/commits/79a2bb4d11cf35e13abc3e91c9c467588bf8dfe2))
+
 ## 1.0.0 (2021-09-02)
 
 ### Features

@@ -15,14 +15,14 @@ export class PizzaController {
   @ApiOkResponse({ description: 'Return found by query pizzas', type: GetPizzaResultDto })
   @Post('/')
   @HttpCode(200)
-  public async getPizzasByQuery(@Body() getPizzasDto: GetPizzasDto) {
+  public async getPizzasByQuery(@Body() getPizzasDto: GetPizzasDto): Promise<GetPizzaResultDto> {
     return await this.pizzaService.getPizzas(getPizzasDto);
   }
 
   @ApiOperation({ summary: 'Get total number of pizzas in db' })
   @ApiOkResponse({ description: 'Return total number of pizzas in db', type: GetPizzasTotalResultDto })
   @Get('/total')
-  public async getPizzasTotal() {
+  public async getPizzasTotal(): Promise<GetPizzasTotalResultDto> {
     return await this.pizzaService.getPizzasTotal();
   }
 
@@ -33,14 +33,14 @@ export class PizzaController {
   })
   @Post('/ids')
   @HttpCode(200)
-  public async getPizzasByIds(@Body() { ids }: GetPizzasByIdsDto) {
+  public async getPizzasByIds(@Body() { ids }: GetPizzasByIdsDto): Promise<GetPizzasByIdsResultDto> {
     return await this.pizzaService.getPizzasByIds(ids);
   }
 
   @ApiOperation({ summary: 'Get pizza by id' })
   @ApiOkResponse({ description: 'Return pizza by id or null', type: GetPizzaByIdResultDto })
   @Get('/id/:id')
-  public async getPizzaById(@Param() { id }: GetPizzaByIdDto) {
+  public async getPizzaById(@Param() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
     return await this.pizzaService.getPizzaById(id);
   }
 }

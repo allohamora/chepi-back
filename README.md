@@ -12,7 +12,7 @@ Backend/api for cheppi.
 - [typescript](https://www.typescriptlang.org)
 - [nest](https://nestjs.com)
 - [swagger](https://swagger.io) as [@nestjs/swagger](https://docs.nestjs.com/openapi/introduction)
-- [meilisearch](https://www.meilisearch.com)
+- [elasticsearch](https://www.elastic.co)
 - [docker](https://www.docker.com)
 - [okteto](https://okteto.com)
 - [git-flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
@@ -20,11 +20,11 @@ Backend/api for cheppi.
 
 ## Options
 
-| Key              | Value |
-| ---------------- | ----- |
-| Port             | 3000  |
-| Swagger url      | /api  |
-| Meilisearch port | 7700  |
+| Key                | Value |
+| ------------------ | ----- |
+| Port               | 3000  |
+| Swagger url        | /api  |
+| Elasticsearch port | 9200  |
 
 ## Running the app
 
@@ -61,9 +61,13 @@ npm run test:e2e
 npm run test:cov
 ```
 
-## Build
+## Pizzas
 
 ```bash
+# needs socks5://localhost:9050 proxy (tor)
 # build pizzas.json
-npm run build:pizzas
+npm run pizzas:build
+
+# down pizzas dependencies
+npm run pizzas:docker-compose down
 ```

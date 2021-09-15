@@ -6,22 +6,21 @@ services:
     ports:
       - 3000:3000
     environment:
-      - MEILI_URL=http://chepi-ms:7700
-      - MEILI_MASTER_KEY
+      - ES_URL=http://chepi-es:9200
     depends_on:
-      - chepi-ms
+      - chepi-es
     profiles:
       - production
 
-  chepi-ms:
-    image: getmeili/meilisearch:v0.21.1
+  chepi-es:
+    image: elasticsearch:7.14.1
     environment:
-      - MEILI_MASTER_KEY
-      - MEILI_ENV
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
-      - ms-data:/data.ms
+      - es-data:/usr/share/elasticsearch/data
     ports:
-      - 7700:7700
+      - 9200:9200
 
 volumes:
-  ms-data:
+  es-data:
