@@ -5,6 +5,7 @@ import { Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from '.
 import { nanoid } from 'nanoid';
 import { getTimestamp } from './utils/date';
 import { translate } from './utils/translate';
+import { capitalize } from './utils/string';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
@@ -18,6 +19,15 @@ const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
 const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
   return pizzas.map((pizza) => ({ ...pizza, id: nanoid() }));
 };
+
+const TEXT_PLACEHOLDER = '-';
+const fixTranslationErrors = (text: string) =>
+  capitalize(
+    text
+      .replace(/ ?,/g, ',')
+      .replace(/ ?-/g, '-')
+      .replace(/" ?(.+?) ?"/g, '"$1"'),
+  );
 
 const translatePizzas = async (pizzas: Pizza[]) => {
   const translatedPizzas = await Promise.all(
@@ -39,8 +49,10 @@ const translatePizzas = async (pizzas: Pizza[]) => {
 
       [{ translatedTitle: title, translatedDescription: description, lang: from }, ...variants].forEach(
         ({ translatedTitle, translatedDescription, lang }) => {
-          translatedPizza[`${lang}_title`] = translatedTitle;
-          translatedPizza[`${lang}_description`] = translatedDescription;
+          translatedPizza[`${lang}_title`] =
+            translatedTitle.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(translatedTitle);
+          translatedPizza[`${lang}_description`] =
+            translatedDescription.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(translatedDescription);
         },
       );
 
