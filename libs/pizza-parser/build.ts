@@ -26,6 +26,7 @@ const fixTranslationErrors = (text: string) =>
     text
       .replace(/ ?,/g, ',')
       .replace(/ ?-/g, '-')
+      .replace(/« ?(.+?) ?»/g, '«$1»')
       .replace(/" ?(.+?) ?"/g, '"$1"'),
   );
 

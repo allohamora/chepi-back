@@ -31,7 +31,11 @@ export class Misteram extends ChernivtsiPizzasParser {
 
   private companyList = [
     { slug: 'pizzapark', company: 420, categories: [{ id: 4798, size: null, slug: 'pizza' }] },
-    { slug: 'panska-vtiha', company: 513, categories: [{ id: 6130, size: null, slug: 'pizza', blacklist: [/лаваш/] }] },
+    {
+      slug: 'panska-vtiha',
+      company: 513,
+      categories: [{ id: 6130, size: null, slug: 'pizza', blacklist: [/лаваш/, /хачапурі/] }],
+    },
     {
       slug: 'lapasta',
       company: 3134,
@@ -117,7 +121,7 @@ export class Misteram extends ChernivtsiPizzasParser {
       ],
     },
     { slug: 'aveceasare', company: 2633, categories: [{ id: 32894, size: 30, slug: 'pizza30', remove: [cmRegex] }] },
-    { slug: 'pastamia', company: 2255, categories: [{ id: 28784, size: null, slug: 'pizza' }] },
+    { slug: 'pastamia', company: 2255, categories: [{ id: 28784, size: null, slug: 'pizza', blacklist: [/пінца/] }] },
   ];
 
   private getBuyLink(...slugs: string[]) {
