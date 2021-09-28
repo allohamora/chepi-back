@@ -1,8 +1,4 @@
-import { request, Dispatcher } from 'undici';
-
-type UndiciOptions = {
-  dispatcher?: Dispatcher;
-} & Omit<Dispatcher.RequestOptions, 'origin' | 'path'>;
+import got from 'got';
 
 interface HttpResponse<D> {
   ok: boolean;
@@ -91,16 +87,16 @@ export abstract class RequestBuilder {
 export class UndiciRequestBuilder extends RequestBuilder {
   public async request<T>() {
     const { url, method, body, returnType } = this.options;
-    const undiciOptions: UndiciOptions = {
+    const requestOptions = {
       method,
       body,
       headers: this.headers as unknown as Record<string, string>,
     };
 
-    const res = await request(url, { ...undiciOptions });
-    const data = (await res.body[returnType]()) as T;
-    const ok = res.statusCode < 400;
-    const status = res.statusCode;
+    const res = got(url, requestOptions);
+    const data = (await res[returnType]()) as T;
+    const status = (await res).statusCode;
+    const ok = status < 400;
 
     return { data, ok, status };
   }
