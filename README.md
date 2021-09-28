@@ -64,10 +64,13 @@ npm run test:cov
 ## Pizzas
 
 ```bash
-# needs socks5://localhost:9050 proxy (tor)
+# pizzas docker-compose npm run wrapper
+npm run pizzas:docker-compose (up | down | etc)
+
+# run pizzas.json build script
+npm run pizzas:build:script
+
+# needs docker and docker-compose
 # build pizzas.json
 npm run pizzas:build
-
-# down pizzas dependencies
-npm run pizzas:docker-compose down
 ```

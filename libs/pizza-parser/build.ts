@@ -2,10 +2,10 @@ import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
 import { Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
-import { nanoid } from 'nanoid';
 import { getTimestamp } from './utils/date';
 import { translate } from './utils/translate';
 import { capitalize } from './utils/string';
+import { toSha256 } from './utils/crypto';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
@@ -17,7 +17,7 @@ const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
 };
 
 const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
-  return pizzas.map((pizza) => ({ ...pizza, id: nanoid() }));
+  return pizzas.map((pizza) => ({ ...pizza, id: toSha256(JSON.stringify(pizza)) }));
 };
 
 const TEXT_PLACEHOLDER = '-';
@@ -38,11 +38,19 @@ const translatePizzas = async (pizzas: Pizza[]) => {
       const restLangs = supportedLangs.filter((lang) => lang !== from);
 
       const variants = await Promise.all(
-        restLangs.map(async (to) => {
-          const translatedTitle = await translate({ text: title, from, to });
-          const translatedDescription = await translate({ text: description, from, to });
+        restLangs.map(async function translateContent(to) {
+          try {
+            const translatedTitle = await translate({ text: title, from, to });
+            const translatedDescription = await translate({ text: description, from, to });
 
-          return { translatedTitle, translatedDescription, lang: to };
+            return { translatedTitle, translatedDescription, lang: to };
+          } catch (error) {
+            if ('gotOptions' in error) {
+              return await translateContent(to);
+            }
+
+            throw error;
+          }
         }),
       );
 

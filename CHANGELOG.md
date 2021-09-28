@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/Allohamora/chepi-back/compare/v2.1.0...v2.1.1) (2021-09-28)
+
+### ⚠ BREAKING CHANGES
+
+- **pizza-parser:** change dynamic nanoid id to sha256 hash
+- **pizza-parser:** Remove undici, socks-proxy-agent. Replace undici to got.
+
+### Features
+
+- **pizza-parser:** update uk/che lapiec parser ([5fc8254](https://github.com/Allohamora/chepi-back/commits/5fc8254c654dc3bd93e93a5005b58a70d74ad0c6))
+
+- **pizza-parser:** add dynamic rotating proxies for translate ([0e90f82](https://github.com/Allohamora/chepi-back/commits/0e90f82109a0b5638d8166bcdb3e88c9af3d77d9))
+- **pizza-parser:** change dynamic nanoid id to sha256 hash ([a28f7fa](https://github.com/Allohamora/chepi-back/commits/a28f7fafe1ab285080d8695838aadeba83628706))
+
 ## [2.1.0](https://github.com/Allohamora/chepi-back/compare/v2.0.1...v2.1.0) (2021-09-15)
 
 ### Bug Fixes

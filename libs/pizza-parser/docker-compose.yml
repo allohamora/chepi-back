@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  proxy:
+    image: mattes/rotating-proxy:latest
+    ports:
+      # http proxy
+      - 5566:5566
+      # proxy stats http://localhost:4444/haproxy?stats
+      - 4444:4444
+    environment:
+      # proxy count
+      - tors=25

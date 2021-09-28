@@ -3,26 +3,28 @@ import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 export class Lapiec extends ChernivtsiPizzasParser {
-  private pageLink = 'https://lapiec-pizza.cv.ua/';
+  private pageLink = 'https://la.ua/chernivtsy/';
   private async getPage() {
     return await getText(this.pageLink);
   }
 
   private getPizzas($: CheerioAPI) {
-    const pizzaList = $('.row.clear-md-3.clear-lg-3.clear-sm-2');
-    const pizzaElements = pizzaList.find('.col-sm-6.col-md-4 .productThumbnail').toArray();
+    const pizzaList = $('#home-pizza');
+    const pizzaElements = pizzaList.find('.productThumbnail').toArray();
 
     return pizzaElements.flatMap((element) => {
-      const infoElement = $(element).find('.productInfoWrapp');
-      const linkElement = $(element).find('.productImage');
+      const $pizza = $(element);
+      const infoElement = $pizza.find('.productInfoWrapp');
 
-      const title = infoElement.find('.h5.as').text().trim();
+      const title = infoElement.find('.productTitle').text().trim();
       const description = infoElement.find('p').text().trim().replace(/\.$/, '');
-      const link = linkElement.attr('href');
-      const image = linkElement.attr('data-preview');
+      const link = infoElement.find('.productTitle > a').attr('href');
+      const image = $pizza.find('.productThumbnail-image > img').attr('src');
 
-      const size = parseInt(linkElement.find('.size').text());
-      const weight = parseInt(linkElement.find('.weight').text());
+      const sizeElement = $pizza.find('.productSize-W');
+
+      const size = parseInt(sizeElement.find('.size').text());
+      const weight = parseInt(sizeElement.find('.weight').text());
       const price = Number(infoElement.find('.productPrice > span').text().trim());
       const variants = [{ size, weight, price }];
 
