@@ -2,10 +2,10 @@ import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
 import { Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
-import { nanoid } from 'nanoid';
 import { getTimestamp } from './utils/date';
 import { translate } from './utils/translate';
 import { capitalize } from './utils/string';
+import { toSha256 } from './utils/crypto';
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
@@ -17,7 +17,7 @@ const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
 };
 
 const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
-  return pizzas.map((pizza) => ({ ...pizza, id: nanoid() }));
+  return pizzas.map((pizza) => ({ ...pizza, id: toSha256(JSON.stringify(pizza)) }));
 };
 
 const TEXT_PLACEHOLDER = '-';
