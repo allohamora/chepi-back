@@ -23,11 +23,15 @@ export interface Pizza {
 type TranslatedPizzaTitles = `${Lang}_title`;
 type TranslatedPizzaDescription = `${Lang}_description`;
 
-export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> &
-  {
-    [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
-  };
+export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> & {
+  [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
+};
 
 export type TranslatedPizzaWithId = TranslatedPizza & {
   id: string;
 };
+
+export interface PizzasJson {
+  timestamp: number;
+  pizzas: TranslatedPizzaWithId[];
+}
