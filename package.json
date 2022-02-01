@@ -66,7 +66,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-beautiful-sort": "^1.0.6",
     "eslint-plugin-prettier": "^4.0.0",
-    "got": "^12.0.1",
+    "got": "^11.8.3",
     "hpagent": "^0.1.2",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
