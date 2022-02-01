@@ -3,9 +3,9 @@
   "version": "2.1.1",
   "description": "Backend for chepi",
   "author": "https://github.com/Allohamora",
-  "private": true,
   "license": "MIT",
   "main": "src/main.ts",
+  "private": true,
   "scripts": {
     "prepare": "husky install",
     "prebuild": "rimraf dist",
@@ -82,23 +82,6 @@
     "node": "^16.13.2",
     "npm": "^8.1.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  },
   "lint-staged": {
     "*.ts": [
       "npm run lint -- --fix",
@@ -109,14 +92,10 @@
       "npm run format -- --write"
     ]
   },
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Allohamora/chepi-back.git"
   },
-  "keywords": [],
   "bugs": {
     "url": "https://github.com/Allohamora/chepi-back/issues"
   },

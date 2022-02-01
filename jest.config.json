@@ -1,0 +1,10 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "root": ".",
+  "moduleDirectories": ["<rootDir>", "node_modules"],
+  "testRegex": ".*\\.spec\\.ts$",
+  "collectCoverageFrom": ["**/*.(t|j)s"],
+  "coverageDirectory": "coverage"
+}
