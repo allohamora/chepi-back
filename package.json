@@ -22,7 +22,6 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:libs": "jest --config ./libs/jest.json",
     "pizzas:docker-compose": "docker-compose -f libs/pizza-parser/docker-compose.yml",
     "pizzas:build:script": "node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
     "pizzas:build": "npm run pizzas:docker-compose up -- -d && npm run pizzas:build:script && npm run pizzas:docker-compose down",
