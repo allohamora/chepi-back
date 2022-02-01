@@ -1,7 +1,6 @@
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import { getJSON } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
-import { Pizza } from 'libs/pizza-parser/types/pizza';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 
 interface Dish {
