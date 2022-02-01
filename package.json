@@ -4,7 +4,7 @@
   "description": "Backend for chepi",
   "author": "https://github.com/Allohamora",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "src/main.ts",
   "scripts": {
     "prepare": "husky install",
