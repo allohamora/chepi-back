@@ -24,11 +24,9 @@ const fixedTranslate: FixedTranslate = (url, options, gotOptions) => {
 };
 
 export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
-  const { text: data } = await fixedTranslate(
-    text,
-    { from, to },
-    { agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) } },
-  );
+  const { text: data } = await fixedTranslate(text, { from, to }, {
+    agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
+  } as Options);
 
   return data;
 });
