@@ -1,6 +1,6 @@
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 export class Chelentano extends ChernivtsiPizzasParser {
   private blacklist = ['піцарол', 'кальцоне', 'комбо'];

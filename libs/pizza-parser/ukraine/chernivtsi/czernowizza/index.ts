@@ -1,7 +1,7 @@
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lower } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 export class Czernowizza extends ChernivtsiPizzasParser {
   private blackList = ['Пиріг Осетинський'];

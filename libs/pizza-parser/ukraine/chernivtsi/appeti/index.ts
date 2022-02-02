@@ -1,8 +1,8 @@
+import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { compose } from 'libs/pizza-parser/utils/fp';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 
 const MEASURE_OF_SIZE = 'см';
 const MEASURE_OF_PRICE = 'грн';

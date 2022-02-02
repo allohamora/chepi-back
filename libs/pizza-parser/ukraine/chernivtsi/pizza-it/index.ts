@@ -1,7 +1,7 @@
+import cheerio, { CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { CheerioAPI, Element } from 'cheerio';
 
 export class PizzaIt extends ChernivtsiPizzasParser {
   private basePageLink = 'https://pizza-it.com/';
