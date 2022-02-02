@@ -1,9 +1,9 @@
 import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
+import { SPACE } from 'libs/pizza-parser/utils/const';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
-const SPACE = ' ';
-
+const BASE_URL = 'https://chernivtsi.celentano.delivery';
 const TYPE_BLACKLIST = ['піцарол', 'кальцоне', 'комбо'];
 
 const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г\/\d+?г)$/;
@@ -26,45 +26,30 @@ const CARD_SIZES_SELECTOR = '.c-variation__title';
 const CARD_PRICES_SELECTOR = '.c-variation__single-price .amount';
 
 export class Chelentano extends ChernivtsiPizzasParser {
-  private baseUrl = 'https://chernivtsi.celentano.delivery';
-
   private async getPageHtml() {
-    return await getText(this.baseUrl);
+    return await getText(BASE_URL);
   }
 
   private getCardTitle(card: Cheerio<Element>) {
-    const titleElement = card.find(CARD_TITLE_SELECTOR);
-    const title = titleElement.text().trim();
-
-    return title;
+    return card.find(CARD_TITLE_SELECTOR).text().trim();
   }
 
   private getCardLink(card: Cheerio<Element>) {
-    const titleElement = card.find(CARD_TITLE_SELECTOR);
-    const link = titleElement.attr(CARD_TITLE_LINK_ATTR);
-
-    return link;
+    return card.find(CARD_TITLE_SELECTOR).attr(CARD_TITLE_LINK_ATTR);
   }
 
   private getCardImage(card: Cheerio<Element>) {
-    const imageElement = card.find(CARD_IMAGE_SELECTOR);
-    const link = imageElement.attr(CARD_IMAGE_LINK_ATTR);
-
-    return link;
+    return card.find(CARD_IMAGE_SELECTOR).attr(CARD_IMAGE_LINK_ATTR);
   }
 
   private getDescriptionWithWeights(card: Cheerio<Element>) {
-    const descriptonElement = card.find(CARD_DESCRIPTION_SELECTOR);
-    const descriptionWithWeights = descriptonElement.text().trim();
-
-    return descriptionWithWeights;
+    return card.find(CARD_DESCRIPTION_SELECTOR).text().trim();
   }
 
   private getCardDescription(card: Cheerio<Element>) {
     const descriptionWithWeights = this.getDescriptionWithWeights(card);
-    const description = descriptionWithWeights.replace(DESCRIPTION_WEIGHT_REGEXP, '');
 
-    return description;
+    return descriptionWithWeights.replace(DESCRIPTION_WEIGHT_REGEXP, '');
   }
 
   private getCardWeights(card: Cheerio<Element>) {
@@ -72,42 +57,35 @@ export class Chelentano extends ChernivtsiPizzasParser {
     const {
       groups: { weights: weightsString },
     } = descriptionWithWeights.match(DESCRIPTION_WEIGHT_REGEXP);
-    const weights = weightsString
+
+    return weightsString
       .split(WEIGHT_JOIN_SYMBOL)
       .map((weightString) => weightString.replace(MEASURE_OF_WEIGHT, ''))
       .map((weightString) => Number(weightString));
-
-    return weights;
   }
 
   private getCardSizes($: CheerioAPI, card: Cheerio<Element>) {
     const sizeElements = card.find(CARD_SIZES_SELECTOR).toArray();
-    const elementToSize = (element: Element) => {
+
+    return sizeElements.map((element) => {
       const sizeElement = $(element);
       const sizeStringWithMeasure = sizeElement.text().trim();
       const sizeString = sizeStringWithMeasure.replace(MEASURE_OF_SIZE, '');
-      const size = Number(sizeString);
 
-      return size;
-    };
-    const sizes = sizeElements.map(elementToSize);
-
-    return sizes;
+      return Number(sizeString);
+    });
   }
 
   private getCardPrices($: CheerioAPI, card: Cheerio<Element>) {
     const priceElements = card.find(CARD_PRICES_SELECTOR).toArray();
-    const elementToPrice = (element: Element) => {
+
+    return priceElements.map((element) => {
       const priceElement = $(element);
       const priceStringWithMeasure = priceElement.text();
       const priceString = priceStringWithMeasure.replace(MEASURE_OF_PRICE, '');
-      const price = Number(priceString);
 
-      return price;
-    };
-    const prices = priceElements.map(elementToPrice);
-
-    return prices;
+      return Number(priceString);
+    });
   }
 
   private isCombo(card: Cheerio<Element>) {
@@ -117,16 +95,16 @@ export class Chelentano extends ChernivtsiPizzasParser {
   private isBlacklisted(card: Cheerio<Element>) {
     const title = this.getCardTitle(card);
     const [type] = title.toLowerCase().split(SPACE);
-    const isBlacklisted = TYPE_BLACKLIST.includes(type);
 
-    return isBlacklisted;
+    return TYPE_BLACKLIST.includes(type);
   }
 
   private getPizzasCards($: CheerioAPI) {
     const cards = $(PIZZA_CARDS_SELECTOR)
       .toArray()
       .map((element) => $(element));
-    const removeNonPizzaCard = (card: Cheerio<Element>) => {
+
+    return cards.filter((card) => {
       switch (true) {
         case this.isCombo(card):
           return false;
@@ -135,10 +113,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
         default:
           return true;
       }
-    };
-    const pizzaCards = cards.filter(removeNonPizzaCard);
-
-    return pizzaCards;
+    });
   }
 
   private pizzasCardsToPizzas($: CheerioAPI, pizzaCards: Cheerio<Element>[]) {
@@ -170,8 +145,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
     const pageHtml = await this.getPageHtml();
     const $ = cheerio.load(pageHtml);
     const pizzaCards = this.getPizzasCards($);
-    const pizzas = this.pizzasCardsToPizzas($, pizzaCards);
 
-    return pizzas;
+    return this.pizzasCardsToPizzas($, pizzaCards);
   }
 }
