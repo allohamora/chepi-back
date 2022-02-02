@@ -1,8 +1,9 @@
 import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
-import { compose } from 'libs/pizza-parser/utils/fp';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
+
+const BASE_URL = 'https://appeti.com.ua';
 
 const MEASURE_OF_SIZE = 'см';
 const MEASURE_OF_PRICE = 'грн';
@@ -25,86 +26,69 @@ const VARIANT_SIZE_SELECTOR = '.value';
 const VARIANT_PRICE_SELECTOR = '.product-price';
 
 export class Apetti extends ChernivtsiPizzasParser {
-  private baseUrl = 'https://appeti.com.ua';
-
-  private async getPageHtml(pageLink: string = this.baseUrl) {
+  private async getPageHtml(pageLink: string = BASE_URL) {
     return await getText(pageLink);
   }
 
   private withBaseUrl(href: string) {
-    return `${this.baseUrl}/${href}`;
+    return `${BASE_URL}/${href}`;
   }
 
   private parsePizzaCategoryLinks($: CheerioAPI, category: Cheerio<Element>) {
-    const items = category.children().toArray();
-    const toHref = (item: Element) => $(item).find(CATEGORY_ITEM_TITLE_SELECTOR).attr(CATEGORY_ITEM_TITLE_LINK_ATTR);
-    const toLink = (href: string) => this.withBaseUrl(href);
-    const links = items.map((item) => toLink(toHref(item)));
+    return category
+      .children()
+      .toArray()
+      .map((item) => {
+        const href = $(item).find(CATEGORY_ITEM_TITLE_SELECTOR).attr(CATEGORY_ITEM_TITLE_LINK_ATTR);
 
-    return links;
+        return this.withBaseUrl(href);
+      });
   }
 
   private async getPizzaLinks($: CheerioAPI) {
     const category = $(CATEGORY_SELECTOR);
-    const links = this.parsePizzaCategoryLinks($, category);
 
-    return links;
+    return this.parsePizzaCategoryLinks($, category);
   }
 
   private getCardTitle(card: Cheerio<Element>) {
     const element = card.find(CARD_TITLE_SELECTOR);
     const text = element.text().trim();
-    const title = lowerAndCapitalize(text);
 
-    return title;
+    return lowerAndCapitalize(text);
   }
-
-  private fixRepeatingSpaces(string: string) {
-    return string.replace(REPEATING_SPACES_REGEXP, ' ');
-  }
-
-  private fixInvalidSymbols(string: string) {
-    return string.replace(INVALID_SYMBOLS_REGEXP, '');
-  }
-
-  private fixDescriptionText = compose(this.fixRepeatingSpaces, this.fixInvalidSymbols);
 
   private getCardDescription(card: Cheerio<Element>) {
     const element = card.find(CARD_DESCRIPTION_SELECTOR);
     const text = element.text().trim();
-    const description = this.fixDescriptionText(text);
 
-    return description;
+    return text.replace(REPEATING_SPACES_REGEXP, ' ').replace(INVALID_SYMBOLS_REGEXP, '');
   }
 
   private getCardImage(card: Cheerio<Element>) {
-    const element = card.find(CARD_IMAGE_SELECTOR);
-    const link = element.attr(CARD_IMAGE_LINK_ATTR);
-
-    return link;
+    return card.find(CARD_IMAGE_SELECTOR).attr(CARD_IMAGE_LINK_ATTR);
   }
 
   private getVariantSize(form: Cheerio<Element>) {
-    const element = form.find(VARIANT_SIZE_SELECTOR);
-    const text = element.text();
-    const number = text.replace(MEASURE_OF_SIZE, '').trim();
-    const size = Number(number);
+    const variant = form.find(VARIANT_SIZE_SELECTOR);
+    const sizeWithMeasure = variant.text();
+    const sizeWithoutMeasure = sizeWithMeasure.replace(MEASURE_OF_SIZE, '').trim();
 
-    return size;
+    return Number(sizeWithoutMeasure);
   }
 
   private getVariantPrice(form: Cheerio<Element>) {
-    const element = form.find(VARIANT_PRICE_SELECTOR);
-    const text = element.text();
-    const number = text.replace(MEASURE_OF_PRICE, '').trim();
-    const price = Number(number);
+    const variant = form.find(VARIANT_PRICE_SELECTOR);
+    const priceWithMeasure = variant.text();
+    const priceWithoutMeasure = priceWithMeasure.replace(MEASURE_OF_PRICE, '').trim();
 
-    return price;
+    return Number(priceWithoutMeasure);
   }
 
   private getCardVariants($: CheerioAPI, card: Cheerio<Element>) {
     const elements = card.find(VARIANT_FORM_SELECTOR).toArray();
-    const variants = elements.map((element) => {
+
+    return elements.map((element) => {
       const form = $(element);
 
       const size = this.getVariantSize(form);
@@ -113,8 +97,6 @@ export class Apetti extends ChernivtsiPizzasParser {
 
       return { size, price, weight };
     });
-
-    return variants;
   }
 
   private async parsePizzaPage(link: string) {
@@ -136,9 +118,8 @@ export class Apetti extends ChernivtsiPizzasParser {
   private async parsePizzasFromLinks(links: string[]) {
     const linkToPizzas = async (link: string) => this.parsePizzaPage(link);
     const pizzasArrays = await Promise.all(links.map(linkToPizzas));
-    const pizzas = pizzasArrays.flat();
 
-    return pizzas;
+    return pizzasArrays.flat();
   }
 
   public async parsePizzas() {
