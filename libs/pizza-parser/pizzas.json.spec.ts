@@ -1,10 +1,5 @@
 import { timestamp, pizzas } from 'pizzas.json';
-
-const expectTypeof = <V>(value: V, type: 'object' | 'string' | 'number') => expect(typeof value).toBe(type);
-const expectString = <V>(value: V) => expectTypeof(value, 'string');
-const expectObject = <V>(value: V) => expectTypeof(value, 'object');
-const expectNumber = <V>(value: V) => expectTypeof(value, 'number');
-const expectNumberOrNull = <V>(value: V) => expect(typeof value === 'number' || value === null).toBe(true);
+import { expectString, expectNumber, expectObject, expectNumberOrNull } from './test/test.utils';
 
 describe('pizzas.json', () => {
   test('have timestamp', () => {
