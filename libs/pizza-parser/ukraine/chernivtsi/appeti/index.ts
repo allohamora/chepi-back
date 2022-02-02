@@ -5,11 +5,11 @@ import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://appeti.com.ua';
 
-const MEASURE_OF_SIZE = 'см';
-const MEASURE_OF_PRICE = 'грн';
-
 const REPEATING_SPACES_REGEXP = /\s+/g;
 const INVALID_SYMBOLS_REGEXP = /, ..$/;
+
+const MEASURE_OF_SIZE = 'см';
+const MEASURE_OF_PRICE = 'грн';
 
 const CATEGORY_SELECTOR = 'section.catrgories-all div[index="pizza"]';
 const CATEGORY_ITEM_TITLE_SELECTOR = '.title';
@@ -110,9 +110,8 @@ export class Apetti extends ChernivtsiPizzasParser {
 
     const variants = this.getCardVariants($, card);
     const base = { title, description, image, link, ...this.baseMetadata };
-    const pizzas = variants.map((variant) => ({ ...base, ...variant }));
 
-    return pizzas;
+    return variants.map((variant) => ({ ...base, ...variant }));
   }
 
   private async parsePizzasFromLinks(links: string[]) {
@@ -126,8 +125,7 @@ export class Apetti extends ChernivtsiPizzasParser {
     const pageHtml = await this.getPageHtml();
     const $ = cheerio.load(pageHtml);
     const pizzaLinks = await this.getPizzaLinks($);
-    const pizzas = await this.parsePizzasFromLinks(pizzaLinks);
 
-    return pizzas;
+    return await this.parsePizzasFromLinks(pizzaLinks);
   }
 }
