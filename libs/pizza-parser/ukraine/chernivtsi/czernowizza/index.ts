@@ -2,7 +2,11 @@ import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
+const BASE_URL = 'https://czernowizza.com';
 const BLACKLIST = ['Пиріг Осетинський'];
+
+const LAST_SLASH_REGEXP = /\/$/;
+const SPACE_SLASH_REGEXP = / \//g;
 
 const TITLE_SELECTOR = '.t776__title';
 const PIZZA_CATEGORY_SELECTOR = '.t776';
@@ -20,13 +24,9 @@ const VARIANT_PRICE_ATTR = 'data-product-variant-price';
 const PIZZA_ID_ATTR = 'id';
 const PIZZA_ID_PREFIX = 't776__product-';
 
-const LAST_SLASH_REGEXP = /\/$/;
-const SPACE_SLASH_REGEXP = / \//g;
-
 export class Czernowizza extends ChernivtsiPizzasParser {
-  private baseUrl = 'https://czernowizza.com';
   private async getPageHtml() {
-    return await getText(this.baseUrl);
+    return await getText(BASE_URL);
   }
 
   private getTitle(block: Cheerio<Element>) {
@@ -61,7 +61,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
   private getPizzaLink(pizza: Cheerio<Element>) {
     const id = pizza.attr(PIZZA_ID_ATTR).replace(PIZZA_ID_PREFIX, '');
 
-    return `${this.baseUrl}/#!/tproduct/227702381-${id}`;
+    return `${BASE_URL}/#!/tproduct/227702381-${id}`;
   }
 
   private getPizzaImage(pizza: Cheerio<Element>) {
@@ -101,8 +101,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
   public async parsePizzas() {
     const pageHtml = await this.getPageHtml();
     const $ = cheerio.load(pageHtml);
-    const pizzas = this.getPizzas($);
 
-    return pizzas;
+    return this.getPizzas($);
   }
 }
