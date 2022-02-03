@@ -41,9 +41,8 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       .filter((element) => {
         const title = this.getTitle(element);
         const isBlacklisted = BLACKLIST.includes(title);
-        const isNotBlacklisted = !isBlacklisted;
 
-        return isNotBlacklisted;
+        return !isBlacklisted;
       });
   }
 
@@ -94,6 +93,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       const variants = this.getVariants(pizza);
 
       const base = { title, description, link, image, ...this.baseMetadata };
+
       return variants.map((variant) => ({ ...base, ...variant }));
     });
   }
