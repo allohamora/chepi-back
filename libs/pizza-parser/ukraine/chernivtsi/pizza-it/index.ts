@@ -12,8 +12,8 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     return await getText(pageLink);
   }
 
-  private getPizzaElements($: CheerioAPI, pizzaCategory: Cheerio<Element>) {
-    return pizzaCategory
+  private getPizzaElements($: CheerioAPI, $pizzaCategory: Cheerio<Element>) {
+    return $pizzaCategory
       .find('.product-layout')
       .toArray()
       .filter((element) => {
@@ -24,13 +24,13 @@ export class PizzaIt extends ChernivtsiPizzasParser {
   }
 
   private getPizzaLinks($: CheerioAPI) {
-    const pizzasCategory = $('.main-products.product-grid');
-    const pizzaElements = this.getPizzaElements($, pizzasCategory);
+    const $pizzaCategory = $('.main-products.product-grid');
+    const pizzaElements = this.getPizzaElements($, $pizzaCategory);
 
     return pizzaElements.map((element) => {
-      const linkImage = $(element).find('.product-img.has-second-image');
+      const $linkImage = $(element).find('.product-img.has-second-image');
 
-      return join(PAGE_URL, linkImage.attr('href'));
+      return join(PAGE_URL, $linkImage.attr('href'));
     });
   }
 
@@ -129,8 +129,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     const pageHtml = await this.getPageHtml();
     const $ = cheerio.load(pageHtml);
     const pizzaLinks = this.getPizzaLinks($);
-    const pizzas = await this.getPizzas(pizzaLinks);
 
-    return pizzas;
+    return await this.getPizzas(pizzaLinks);
   }
 }
