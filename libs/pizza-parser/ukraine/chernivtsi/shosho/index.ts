@@ -1,14 +1,13 @@
-import cheerio, { CheerioAPI, Element } from 'cheerio';
+import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
+const BASE_URL = 'https://shosho.pizza';
 const PIZZA_CATEGORY_TITLE = 'Піца';
 
 export class ShoSho extends ChernivtsiPizzasParser {
-  private pageLink = 'https://shosho.pizza';
-
-  private async getPage() {
-    return await getText(this.pageLink);
+  private async getPageHtml() {
+    return await getText(BASE_URL);
   }
 
   private getPizzaCategory($: CheerioAPI) {
@@ -27,16 +26,8 @@ export class ShoSho extends ChernivtsiPizzasParser {
     return category;
   }
 
-  private normalizeDescription(description: string) {
-    return description
-      .toLowerCase()
-      .split(',')
-      .map((word) => word.trim())
-      .join(', ');
-  }
-
-  private pizzaCategoryToPizzas($: CheerioAPI, category: Element) {
-    const items = $(category)
+  private getPizzaElements($: CheerioAPI, category: Element) {
+    return $(category)
       .children()
       .children()
       .toArray()
@@ -47,38 +38,83 @@ export class ShoSho extends ChernivtsiPizzasParser {
 
         return state;
       }, []);
+  }
 
-    const pizzas = items.flatMap(([, modal]) => {
-      const title = $(modal).find('.popup-title').text();
-      const description = this.normalizeDescription($(modal).find('.popup-desc').text());
-      const image = $(modal).find('form img').attr('src');
+  private getTitle($modal: Cheerio<Element>) {
+    return $modal.find('.popup-title').text();
+  }
 
-      const variants = $(modal)
-        .find('.popup-size label')
-        .toArray()
-        .map((el) => {
-          const input = $(el).find('input');
-          const weight = Number(input.attr('data-description').replace(' гр.', ''));
-          const price = Number(input.attr('data-base_price')) + Number(input.attr('data-option_price'));
-          const size = Number($(el).text().trim().replace(' см', ''));
+  private getDescription($modal: Cheerio<Element>) {
+    const descriptionWithBugs = $modal.find('.popup-desc').text();
 
-          return { weight, price, size };
-        });
+    return descriptionWithBugs
+      .toLowerCase()
+      .split(',')
+      .map((word) => word.trim())
+      .join(', ');
+  }
 
-      const base = { title, description, image, link: this.pageLink, ...this.baseMetadata };
+  private getImage($modal: Cheerio<Element>) {
+    return $modal.find('form img').attr('src');
+  }
+
+  private getWeight($input: Cheerio<Element>) {
+    const weightString = $input.attr('data-description').replace(' гр.', '');
+
+    return Number(weightString);
+  }
+
+  private getPrice($input: Cheerio<Element>) {
+    const base = Number($input.attr('data-base_price'));
+    const additional = Number($input.attr('data-option_price'));
+
+    return base + additional;
+  }
+
+  private getSize($input: Cheerio<Element>) {
+    const sizeString = $input.text().trim().replace(' см', '');
+
+    return Number(sizeString);
+  }
+
+  private getVariants($: CheerioAPI, $modal: Cheerio<Element>) {
+    return $modal
+      .find('.popup-size label')
+      .toArray()
+      .map((el) => {
+        const $input = $(el).find('input');
+
+        const weight = this.getWeight($input);
+        const price = this.getPrice($input);
+        const size = this.getSize($input);
+
+        return { weight, price, size };
+      });
+  }
+
+  private pizzaCategoryToPizzas($: CheerioAPI, category: Element) {
+    const pizzaElements = this.getPizzaElements($, category);
+
+    return pizzaElements.flatMap(([, modal]) => {
+      const $modal = $(modal);
+
+      const title = this.getTitle($modal);
+      const description = this.getDescription($modal);
+      const image = this.getImage($modal);
+
+      const variants = this.getVariants($, $modal);
+
+      const base = { title, description, image, link: BASE_URL, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });
-
-    return pizzas;
   }
 
   public async parsePizzas() {
-    const page = await this.getPage();
-    const $ = cheerio.load(page);
+    const pageHtml = await this.getPageHtml();
+    const $ = cheerio.load(pageHtml);
     const pizzaCategory = this.getPizzaCategory($);
-    const pizzas = this.pizzaCategoryToPizzas($, pizzaCategory);
 
-    return pizzas;
+    return this.pizzaCategoryToPizzas($, pizzaCategory);
   }
 }
