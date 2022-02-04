@@ -53,7 +53,7 @@ export class Misteram extends ChernivtsiPizzasParser {
 
     const searchName = dishName.trim().toLowerCase();
 
-    return blacklist.some((regexp) => regexp.test(searchName));
+    return !blacklist.some((regexp) => regexp.test(searchName));
   }
 
   private availableToOrder(availableToOrder: boolean) {
