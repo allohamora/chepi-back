@@ -1,13 +1,20 @@
 import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
-import { Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
+import { Lang, Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { translate } from './utils/translate';
 import { capitalize } from './utils/string';
 import { toSha256 } from './utils/crypto';
 
+interface TranslatedContent {
+  title: string;
+  description: string;
+  lang: Lang;
+}
+
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
+const TEXT_PLACEHOLDER = '-';
 
 const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
   const timestamp = getTimestamp();
@@ -20,56 +27,54 @@ const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
   return pizzas.map((pizza) => ({ ...pizza, id: toSha256(JSON.stringify(pizza)) }));
 };
 
-const TEXT_PLACEHOLDER = '-';
-const fixTranslationErrors = (text: string) =>
-  capitalize(
-    text
-      .replace(/ ?,/g, ',')
-      .replace(/ ?-/g, '-')
-      .replace(/« ?(.+?) ?»/g, '«$1»')
-      .replace(/" ?(.+?) ?"/g, '"$1"'),
-  );
+const fixTranslationErrors = (text: string) => {
+  const withoutErrors = text
+    .replace(/ ?,/g, ',')
+    .replace(/ ?-/g, '-')
+    .replace(/« ?(.+?) ?»/g, '«$1»')
+    .replace(/" ?(.+?) ?"/g, '"$1"');
+
+  return capitalize(withoutErrors);
+};
+
+const placeholderOrFixed = (text: string) => {
+  return text.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(text);
+};
+
+const translatePizza = async ({ title, description, lang: from, ...rest }: Pizza) => {
+  const restLangs = supportedLangs.filter((lang) => lang !== from);
+
+  const translateContent = async (to: string): Promise<TranslatedContent> => {
+    try {
+      const translatedTitle = await translate({ text: title, from, to });
+      const translatedDescription = await translate({ text: description, from, to });
+
+      return { title: translatedTitle, description: translatedDescription, lang: to as Lang };
+    } catch (error) {
+      if ('gotOptions' in error) {
+        return await translateContent(to);
+      }
+
+      throw error;
+    }
+  };
+
+  const translatedContent = await Promise.all(restLangs.map(translateContent));
+  const content = [{ title, description, lang: from }, ...translatedContent];
+
+  return content.reduce(
+    (pizza, { title, description, lang }) => {
+      pizza[`${lang}_title`] = placeholderOrFixed(title);
+      pizza[`${lang}_description`] = placeholderOrFixed(description);
+
+      return pizza;
+    },
+    { ...rest },
+  ) as TranslatedPizza;
+};
 
 const translatePizzas = async (pizzas: Pizza[]) => {
-  const translatedPizzas = await Promise.all(
-    pizzas.map(async (pizza) => {
-      const { title, description, lang: from, ...rest } = pizza;
-
-      const restLangs = supportedLangs.filter((lang) => lang !== from);
-
-      const variants = await Promise.all(
-        restLangs.map(async function translateContent(to) {
-          try {
-            const translatedTitle = await translate({ text: title, from, to });
-            const translatedDescription = await translate({ text: description, from, to });
-
-            return { translatedTitle, translatedDescription, lang: to };
-          } catch (error) {
-            if ('gotOptions' in error) {
-              return await translateContent(to);
-            }
-
-            throw error;
-          }
-        }),
-      );
-
-      const translatedPizza = { ...rest } as TranslatedPizza;
-
-      [{ translatedTitle: title, translatedDescription: description, lang: from }, ...variants].forEach(
-        ({ translatedTitle, translatedDescription, lang }) => {
-          translatedPizza[`${lang}_title`] =
-            translatedTitle.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(translatedTitle);
-          translatedPizza[`${lang}_description`] =
-            translatedDescription.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(translatedDescription);
-        },
-      );
-
-      return translatedPizza;
-    }),
-  );
-
-  return translatedPizzas;
+  return await Promise.all(pizzas.map(translatePizza));
 };
 
 const main = async () => {
