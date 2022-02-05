@@ -118,16 +118,6 @@ export class PizzaService implements OnModuleInit {
     return { total, value };
   }
 
-  public async getPizzasTotal() {
-    const {
-      body: { count: total },
-    } = await this.elasticsearchService.count<estypes.CountResponse>({
-      index: PIZZAS_INDEX,
-    });
-
-    return { total };
-  }
-
   public async getPizzasByIds(ids: string[]) {
     const {
       body: {

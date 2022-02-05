@@ -3,7 +3,6 @@ import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
 import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
 import { GetPizzasByIdsDto, GetPizzasByIdsResultDto } from './dto/getPizzasByIds.dto';
-import { GetPizzasTotalResultDto } from './dto/getPizzasTotal.dto';
 import { PizzasStateResultDto } from './dto/pizzasState.dto';
 import { PizzaService } from './pizza.service';
 
@@ -18,13 +17,6 @@ export class PizzaController {
   @HttpCode(200)
   public async getPizzasByQuery(@Body() getPizzasDto: GetPizzasDto): Promise<GetPizzaResultDto> {
     return await this.pizzaService.getPizzas(getPizzasDto);
-  }
-
-  @ApiOperation({ summary: 'Get total number of pizzas in db' })
-  @ApiOkResponse({ description: 'Return total number of pizzas in db', type: GetPizzasTotalResultDto })
-  @Get('/total')
-  public async getPizzasTotal(): Promise<GetPizzasTotalResultDto> {
-    return await this.pizzaService.getPizzasTotal();
   }
 
   @ApiOperation({ summary: 'Get pizzas by ids' })
