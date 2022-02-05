@@ -1,19 +1,10 @@
-import fsp from 'fs/promises';
-import path from 'path';
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { TranslatedPizzaWithId } from 'libs/pizza-parser/types/pizza';
 import { GetPizzasDto } from './dto/getPizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
-
-interface SavedPizzas {
-  timestamp: number;
-  pizzas: TranslatedPizzaWithId[];
-}
-
-const pizzasPath = path.join(process.cwd(), 'pizzas.json');
+import { pizzas, timestamp } from 'pizzas.json';
 
 const numberAndText = {
   type: 'integer',
@@ -24,11 +15,30 @@ const numberAndText = {
   },
 } as const;
 
+const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
+  properties: {
+    id: { type: 'text' },
+    image: { type: 'text' },
+    link: { type: 'text' },
+    lang: { type: 'text' },
+    country: { type: 'text' },
+    city: { type: 'text' },
+    weight: numberAndText,
+    size: numberAndText,
+    price: numberAndText,
+    uk_title: { type: 'text' },
+    uk_description: { type: 'text' },
+    ru_title: { type: 'text' },
+    ru_description: { type: 'text' },
+    en_title: { type: 'text' },
+    en_description: { type: 'text' },
+  },
+};
+
+const PIZZAS_INDEX = `pizzas-${timestamp}`;
+
 @Injectable()
 export class PizzaService implements OnModuleInit {
-  private pizzasIndexBase = 'pizzas';
-  private pizzasIndex: string;
-
   constructor(private elasticsearchService: ElasticsearchService) {}
 
   public async onModuleInit() {
@@ -36,42 +46,18 @@ export class PizzaService implements OnModuleInit {
   }
 
   private async setPizzasIfNotExists() {
-    const { timestamp, pizzas } = JSON.parse(await fsp.readFile(pizzasPath, 'utf-8')) as SavedPizzas;
-
-    this.pizzasIndex = `${this.pizzasIndexBase}-${timestamp}`;
-
-    const { body: isExists } = await this.elasticsearchService.indices.exists({ index: this.pizzasIndex });
+    const { body: isExists } = await this.elasticsearchService.indices.exists({ index: PIZZAS_INDEX });
 
     if (isExists) return;
 
-    const mappings: estypes.MappingTypeMapping = {
-      properties: {
-        id: { type: 'text' },
-        image: { type: 'text' },
-        link: { type: 'text' },
-        lang: { type: 'text' },
-        country: { type: 'text' },
-        city: { type: 'text' },
-        weight: numberAndText,
-        size: numberAndText,
-        price: numberAndText,
-        uk_title: { type: 'text' },
-        uk_description: { type: 'text' },
-        ru_title: { type: 'text' },
-        ru_description: { type: 'text' },
-        en_title: { type: 'text' },
-        en_description: { type: 'text' },
-      },
-    };
-
     await this.elasticsearchService.indices.create<estypes.IndicesCreateResponse>({
-      index: this.pizzasIndex,
+      index: PIZZAS_INDEX,
       body: {
-        mappings,
+        mappings: PIZZAS_MAPPINGS,
       },
     });
 
-    const bulkBody = pizzas.flatMap((pizza) => [{ index: { _index: this.pizzasIndex } }, pizza]);
+    const bulkBody = pizzas.flatMap((pizza) => [{ index: { _index: PIZZAS_INDEX } }, pizza]);
     const {
       body: { errors },
     } = await this.elasticsearchService.bulk<estypes.BulkResponse>({ refresh: true, body: bulkBody });
@@ -105,7 +91,7 @@ export class PizzaService implements OnModuleInit {
     }
 
     const esQuery: SearchQuery = {
-      index: this.pizzasIndex,
+      index: PIZZAS_INDEX,
       body: {
         from: offset,
         size: limit,
@@ -133,7 +119,7 @@ export class PizzaService implements OnModuleInit {
     const {
       body: { count: total },
     } = await this.elasticsearchService.count<estypes.CountResponse>({
-      index: this.pizzasIndex,
+      index: PIZZAS_INDEX,
     });
 
     return { total };
@@ -145,7 +131,7 @@ export class PizzaService implements OnModuleInit {
         hits: { hits },
       },
     } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
-      index: this.pizzasIndex,
+      index: PIZZAS_INDEX,
       body: {
         query: {
           bool: {
@@ -166,7 +152,7 @@ export class PizzaService implements OnModuleInit {
         hits: { hits },
       },
     } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
-      index: this.pizzasIndex,
+      index: PIZZAS_INDEX,
       body: {
         query: {
           bool: {
