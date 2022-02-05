@@ -5,7 +5,7 @@ import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
 import { pizzas, timestamp } from 'pizzas.json';
-import { PizzasState } from './dto/pizzasState.dto';
+import { PizzasStateResultDto } from './dto/pizzasState.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -174,7 +174,7 @@ export class PizzaService implements OnModuleInit {
     return { value };
   }
 
-  public getPizzasState(): PizzasState {
+  public getPizzasState(): PizzasStateResultDto {
     return { timestamp: PIZZAS_TIMESTAMP, count: PIZZAS_COUNT };
   }
 }
