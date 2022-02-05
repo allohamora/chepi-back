@@ -5,6 +5,7 @@ import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
 import { pizzas, timestamp } from 'pizzas.json';
+import { PizzasState } from './dto/pizzasState.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -36,6 +37,8 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
 };
 
 const PIZZAS_INDEX = `pizzas-${timestamp}`;
+const PIZZAS_TIMESTAMP = timestamp;
+const PIZZAS_COUNT = pizzas.length;
 
 @Injectable()
 export class PizzaService implements OnModuleInit {
@@ -169,5 +172,9 @@ export class PizzaService implements OnModuleInit {
     const value = hits.map(({ _source }) => _source)[0];
 
     return { value };
+  }
+
+  public getPizzasState(): PizzasState {
+    return { timestamp: PIZZAS_TIMESTAMP, count: PIZZAS_COUNT };
   }
 }

@@ -4,6 +4,7 @@ import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
 import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
 import { GetPizzasByIdsDto, GetPizzasByIdsResultDto } from './dto/getPizzasByIds.dto';
 import { GetPizzasTotalResultDto } from './dto/getPizzasTotal.dto';
+import { PizzasState } from './dto/pizzasState.dto';
 import { PizzaService } from './pizza.service';
 
 @ApiTags('pizza')
@@ -42,5 +43,12 @@ export class PizzaController {
   @Get('/id/:id')
   public async getPizzaById(@Param() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
     return await this.pizzaService.getPizzaById(id);
+  }
+
+  @ApiOperation({ summary: 'Get pizzas state' })
+  @ApiOkResponse({ description: 'Return pizzas.json state', type: PizzasState })
+  @Get('/state')
+  public getPizzasState() {
+    return this.pizzaService.getPizzasState();
   }
 }
