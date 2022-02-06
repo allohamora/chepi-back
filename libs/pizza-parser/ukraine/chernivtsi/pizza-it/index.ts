@@ -30,7 +30,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     return pizzaElements.map((element) => {
       const $linkImage = $(element).find('.product-img.has-second-image');
 
-      return join(PAGE_URL, $linkImage.attr('href'));
+      return join(BASE_URL, $linkImage.attr('href'));
     });
   }
 

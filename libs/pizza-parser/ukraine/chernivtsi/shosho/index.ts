@@ -71,8 +71,8 @@ export class ShoSho extends ChernivtsiPizzasParser {
     return base + additional;
   }
 
-  private getSize($input: Cheerio<Element>) {
-    const sizeString = $input.text().trim().replace(' см', '');
+  private getSize($label: Cheerio<Element>) {
+    const sizeString = $label.text().trim().replace(' см', '');
 
     return Number(sizeString);
   }
@@ -82,11 +82,12 @@ export class ShoSho extends ChernivtsiPizzasParser {
       .find('.popup-size label')
       .toArray()
       .map((el) => {
-        const $input = $(el).find('input');
+        const $label = $(el);
+        const $input = $label.find('input');
 
         const weight = this.getWeight($input);
         const price = this.getPrice($input);
-        const size = this.getSize($input);
+        const size = this.getSize($label);
 
         return { weight, price, size };
       });

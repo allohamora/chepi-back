@@ -1,6 +1,7 @@
 import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
+import { join } from 'libs/pizza-parser/utils/url';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://appeti.com.ua';
@@ -46,7 +47,9 @@ export class Apetti extends ChernivtsiPizzasParser {
   }
 
   private getCardImage($card: Cheerio<Element>) {
-    return $card.find('#msGallery a').attr('href');
+    const relativePath = $card.find('#msGallery a').attr('href');
+
+    return join(BASE_URL, relativePath);
   }
 
   private getVariantSize($form: Cheerio<Element>) {
