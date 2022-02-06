@@ -81,6 +81,11 @@
     "node": "^16.13.2",
     "npm": "^8.1.2"
   },
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
+  },
   "lint-staged": {
     "*.ts": [
       "npm run lint -- --fix",
