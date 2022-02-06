@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/Allohamora/chepi-back/compare/v2.1.1...v2.2.0) (2022-02-06)
+
+### ⚠ BREAKING CHANGES
+
+- remove /total endpoint
+
+### Features
+
+- add pizzas state endpoint ([2ef85ca](https://github.com/Allohamora/chepi-back/commits/2ef85ca17d759532b94f65749ed5fe41abefbc89))
+- **pizza-parser:** improve misteram size parsing ([0873c40](https://github.com/Allohamora/chepi-back/commits/0873c4008f48856f03c1fb8d1098e9f58495766a))
+- **pizza-parser:** remove monopizza ([57e6a51](https://github.com/Allohamora/chepi-back/commits/57e6a51d692a8ec9a3c6efb61a0b7233f6a1180a))
+- **pizzas:** add new build ([2e6e8b6](https://github.com/Allohamora/chepi-back/commits/2e6e8b6b18e8f87667e9fead5d4a190c09bdc002))
+- remove /total endpoint ([086f68c](https://github.com/Allohamora/chepi-back/commits/086f68c990a2416b9ea0878b3caa3c322d5003c3))
+
+### Bug Fixes
+
+- **libs:** fix build crash ([37aa891](https://github.com/Allohamora/chepi-back/commits/37aa89148771771286162e0ca7173937f50ec203))
+- **pizza-parsed:** misteram incorrect blacklist work ([a08851d](https://github.com/Allohamora/chepi-back/commits/a08851df5df6d8bfe0a1f41dff4e499510fa52bb))
+- **pizza-parser:** fix missed monopizza bug ([30bd9ea](https://github.com/Allohamora/chepi-back/commits/30bd9ead8608b82a4d68ede6cb0e1f80590309cf))
+- **pizza-parser:** fix parser refactor bugs ([c1c6553](https://github.com/Allohamora/chepi-back/commits/c1c6553e8b36faa6d2c5a72b90ef3b3a16609a7e))
+- **pizza-parser:** incorrect empty description ([0e001c1](https://github.com/Allohamora/chepi-back/commits/0e001c139a86cf238ea940f4dc0d00f243127e42))
+
 ### [2.1.1](https://github.com/Allohamora/chepi-back/compare/v2.1.0...v2.1.1) (2021-09-28)
 
 ### ⚠ BREAKING CHANGES
