@@ -3,8 +3,7 @@ import fsp from 'fs/promises';
 import { parsePizzas } from '.';
 import { Lang, Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
 import { getTimestamp } from './utils/date';
-import { translate } from './utils/translate';
-import { capitalize } from './utils/string';
+import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 
 interface TranslatedContent {
@@ -14,7 +13,6 @@ interface TranslatedContent {
 }
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
-const TEXT_PLACEHOLDER = '-';
 
 const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
   const timestamp = getTimestamp();
@@ -25,20 +23,6 @@ const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
 
 const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
   return pizzas.map((pizza) => ({ ...pizza, id: toSha256(JSON.stringify(pizza)) }));
-};
-
-const fixTranslationErrors = (text: string) => {
-  const withoutErrors = text
-    .replace(/ ?,/g, ',')
-    .replace(/ ?-/g, '-')
-    .replace(/« ?(.+?) ?»/g, '«$1»')
-    .replace(/" ?(.+?) ?"/g, '"$1"');
-
-  return capitalize(withoutErrors);
-};
-
-const placeholderOrFixed = (text: string) => {
-  return text.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(text);
 };
 
 const translatePizza = async ({ title, description, lang: from, ...rest }: Pizza) => {

@@ -3,6 +3,7 @@ import { getJSON } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { Company, COMPANY_LIST } from './company-list';
+import { TEXT_PLACEHOLDER } from 'libs/pizza-parser/utils/translate';
 
 enum MeasureType {
   grm = '0',
@@ -87,7 +88,7 @@ export class Misteram extends ChernivtsiPizzasParser {
   private getDescription(dirtDishDescription: string, remove: RegExp[] = []) {
     const dishDescription = this.clearString(dirtDishDescription, remove);
 
-    return dishDescription || ' ';
+    return dishDescription || TEXT_PLACEHOLDER;
   }
 
   private getSize(categorySize: number, dishName: string) {

@@ -3,6 +3,7 @@ import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
 import type { Options } from 'got';
+import { capitalize } from './string';
 
 interface TranslateOptions {
   from: string;
@@ -30,3 +31,19 @@ export const translate = cache.decorator(async ({ from, to, text }: TranslateOpt
 
   return data;
 });
+
+export const TEXT_PLACEHOLDER = '-';
+
+const fixTranslationErrors = (text: string) => {
+  const withoutErrors = text
+    .replace(/ ?,/g, ',')
+    .replace(/ ?-/g, '-')
+    .replace(/« ?(.+?) ?»/g, '«$1»')
+    .replace(/" ?(.+?) ?"/g, '"$1"');
+
+  return capitalize(withoutErrors);
+};
+
+export const placeholderOrFixed = (text: string) => {
+  return text.length === 0 ? TEXT_PLACEHOLDER : fixTranslationErrors(text);
+};
