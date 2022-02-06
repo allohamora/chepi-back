@@ -84,7 +84,7 @@ export abstract class RequestBuilder {
   public abstract request<T>(): Promise<HttpResponse<T>>;
 }
 
-export class UndiciRequestBuilder extends RequestBuilder {
+export class GotRequestBuilder extends RequestBuilder {
   public async request<T>() {
     const { url, method, body, returnType } = this.options;
     const requestOptions = {
@@ -102,4 +102,4 @@ export class UndiciRequestBuilder extends RequestBuilder {
   }
 }
 
-export const HttpRequest = UndiciRequestBuilder;
+export const HttpRequest = GotRequestBuilder;

@@ -1,11 +1,11 @@
 {
   "name": "chepi-back",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Backend for chepi",
   "author": "https://github.com/Allohamora",
-  "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "src/main.ts",
+  "private": true,
   "scripts": {
     "prepare": "husky install",
     "prebuild": "rimraf dist",
@@ -22,10 +22,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "test:libs": "jest --config ./libs/jest.json",
     "pizzas:docker-compose": "docker-compose -f libs/pizza-parser/docker-compose.yml",
-    "pizzas:build:script": "cross-env node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
+    "pizzas:build:script": "node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
     "pizzas:build": "npm run pizzas:docker-compose up -- -d && npm run pizzas:build:script && npm run pizzas:docker-compose down",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
@@ -33,93 +31,74 @@
     "release:major": "standard-version --release-as major"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^7.14.1",
-    "@nestjs/common": "^8.0.0",
-    "@nestjs/config": "^1.0.1",
-    "@nestjs/core": "^8.0.0",
+    "@elastic/elasticsearch": "^7.17.0",
+    "@nestjs/common": "^8.2.6",
+    "@nestjs/config": "^1.1.6",
+    "@nestjs/core": "^8.2.6",
     "@nestjs/elasticsearch": "^8.0.0",
     "@nestjs/mapped-types": "*",
-    "@nestjs/platform-express": "^8.0.0",
-    "@nestjs/swagger": "^5.0.9",
-    "class-transformer": "^0.4.0",
-    "class-validator": "^0.13.1",
-    "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0",
-    "swagger-ui-express": "^4.1.6"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@nestjs/cli": "^8.0.0",
-    "@nestjs/schematics": "^8.0.0",
-    "@nestjs/testing": "^8.0.0",
-    "@types/express": "^4.17.13",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.7",
-    "@types/supertest": "^2.0.11",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
+    "@nestjs/platform-express": "^8.2.6",
+    "@nestjs/swagger": "^5.2.0",
     "@vitalets/google-translate-api": "^7.0.0",
     "cheerio": "^1.0.0-rc.10",
-    "cross-env": "^7.0.3",
-    "eslint": "^7.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-beautiful-sort": "^1.0.6",
-    "eslint-plugin-prettier": "^3.4.0",
-    "got": "^11.8.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "got": "^11.8.3",
     "hpagent": "^0.1.2",
-    "husky": "^7.0.2",
-    "jest": "^27.0.6",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "standard-version": "^9.3.1",
-    "supertest": "^6.1.3",
-    "ts-jest": "^27.0.3",
-    "ts-loader": "^9.2.3",
-    "ts-node": "^10.0.0",
-    "tsconfig-paths": "^3.10.1",
-    "typescript": "^4.3.5"
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.5.2",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@nestjs/cli": "^8.2.0",
+    "@nestjs/schematics": "^8.0.5",
+    "@nestjs/testing": "^8.2.6",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.14",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-beautiful-sort": "^2.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.5"
   },
   "engines": {
     "node": "^16.13.2",
     "npm": "^8.1.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
   },
   "lint-staged": {
     "*.ts": [
       "npm run lint -- --fix",
-      "npm run test -- --bail --findRelatedTests",
-      "npm run test:libs -- --bail --findRelatedTests"
+      "npm run test -- --bail --findRelatedTests"
     ],
     "*.{js,json,yml,md}": [
       "npm run format -- --write"
     ]
   },
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Allohamora/chepi-back.git"
   },
-  "keywords": [],
   "bugs": {
     "url": "https://github.com/Allohamora/chepi-back/issues"
   },

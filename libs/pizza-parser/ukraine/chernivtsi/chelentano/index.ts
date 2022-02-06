@@ -1,72 +1,115 @@
+import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { CheerioAPI, Element } from 'cheerio';
+
+const BASE_URL = 'https://chernivtsi.celentano.delivery';
+const TYPE_BLACKLIST = ['піцарол', 'кальцоне', 'комбо'];
+
+const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г\/\d+?г)$/;
 
 export class Chelentano extends ChernivtsiPizzasParser {
-  private blacklist = ['піцарол', 'кальцоне', 'комбо'];
-  private pageLink = 'https://chernivtsi.celentano.delivery';
-
-  private async getPage() {
-    return await getText(this.pageLink);
+  private async getPageHtml() {
+    return await getText(BASE_URL);
   }
 
-  private getPizzasElements($: CheerioAPI) {
-    const pizzasElements = $('li.product_cat-pizza')
+  private getCardTitle($cardTitle: Cheerio<Element>) {
+    return $cardTitle.text().trim();
+  }
+
+  private getCardLink($cardTitle: Cheerio<Element>) {
+    return $cardTitle.attr('href');
+  }
+
+  private getCardImage($card: Cheerio<Element>) {
+    return $card.find('img').attr('data-src');
+  }
+
+  private getDescriptionWithWeights($card: Cheerio<Element>) {
+    return $card.find('.c-product-grid__short-desc').text().trim();
+  }
+
+  private getCardDescription($card: Cheerio<Element>) {
+    const descriptionWithWeights = this.getDescriptionWithWeights($card);
+
+    return descriptionWithWeights.replace(DESCRIPTION_WEIGHT_REGEXP, '');
+  }
+
+  private getCardWeights($card: Cheerio<Element>) {
+    const descriptionWithWeights = this.getDescriptionWithWeights($card);
+    const {
+      groups: { weights: weightsString },
+    } = descriptionWithWeights.match(DESCRIPTION_WEIGHT_REGEXP);
+
+    return weightsString
+      .split('/')
+      .map((weightStringWithG) => weightStringWithG.replace('г', ''))
+      .map((weightString) => Number(weightString));
+  }
+
+  private getCardSizes($: CheerioAPI, $card: Cheerio<Element>) {
+    const sizeElements = $card.find('.c-variation__title').toArray();
+
+    return sizeElements.map((element) => {
+      const $size = $(element);
+      const sizeStringWithCm = $size.text().trim();
+      const sizeString = sizeStringWithCm.replace('cm', '');
+
+      return Number(sizeString);
+    });
+  }
+
+  private getCardPrices($: CheerioAPI, $card: Cheerio<Element>) {
+    const priceElements = $card.find('.c-variation__single-price .amount').toArray();
+
+    return priceElements.map((element) => {
+      const $price = $(element);
+      const priceStringWithGrn = $price.text();
+      const priceString = priceStringWithGrn.replace('₴', '');
+
+      return Number(priceString);
+    });
+  }
+
+  private isCombo($card: Cheerio<Element>) {
+    return $card.hasClass('product_cat-combo');
+  }
+
+  private isBlacklisted($card: Cheerio<Element>) {
+    const title = this.getCardTitle($card);
+    const [type] = title.toLowerCase().split(' ');
+
+    return TYPE_BLACKLIST.includes(type);
+  }
+
+  private getPizzasCards($: CheerioAPI) {
+    const $cards = $('li.product_cat-pizza')
       .toArray()
-      .filter((el) => {
-        const isCombo = $(el).hasClass('product_cat-combo');
-        if (isCombo) return false;
+      .map((element) => $(element));
 
-        const title = $(el).find('.c-product-grid__title-link').text();
-
-        const inBlacklist = this.blacklist.includes(title.split(' ')[0].toLowerCase());
-        if (inBlacklist) return false;
-
-        return true;
-      });
-
-    return pizzasElements;
+    return $cards.filter(($card) => {
+      switch (true) {
+        case this.isCombo($card):
+          return false;
+        case this.isBlacklisted($card):
+          return false;
+        default:
+          return true;
+      }
+    });
   }
 
-  private getDescriptionAndWeights(dirtyDescription: string) {
-    const chunks = dirtyDescription.trim().split(',');
-    const lastChunk = chunks.pop().split(' ');
-    // remove 123g/123g trash
-    const weights = lastChunk.pop();
+  private pizzasCardsToPizzas($: CheerioAPI, $pizzaCards: Cheerio<Element>[]) {
+    return $pizzaCards.flatMap(($card) => {
+      const $cardTitle = $card.find('.c-product-grid__title-link');
 
-    chunks.push(lastChunk.join(' '));
-    const joined = chunks.join(',');
-    const result = joined.trim().replace(/,$/, '');
+      const title = this.getCardTitle($cardTitle);
+      const description = this.getCardDescription($card);
+      const link = this.getCardLink($cardTitle);
+      const image = this.getCardImage($card);
 
-    return [result, weights];
-  }
-
-  private pizzasElementsToPizzas($: CheerioAPI, pizzasElements: Element[]) {
-    const pizzas = pizzasElements.flatMap((el) => {
-      const pizzaCard = $(el);
-      const pizzaCardLink = pizzaCard.find('.c-product-grid__title-link');
-      const pizzaCardImage = pizzaCard.find('img');
-      const pizzaCardDescription = pizzaCard.find('.c-product-grid__short-desc');
-
-      const title = pizzaCardLink.text().trim();
-      const link = pizzaCardLink.attr('href');
-      const image = pizzaCardImage.attr('data-src');
-      const [description, dirtyWeights] = this.getDescriptionAndWeights(pizzaCardDescription.text());
-
-      const weights = dirtyWeights
-        .replace(/г/g, '')
-        .split('/')
-        .map((value) => Number(value));
-
-      const sizes = pizzaCard
-        .find('.c-variation__title')
-        .toArray()
-        .map((el) => Number($(el).text().replace('cm', '')));
-
-      const prices = pizzaCard
-        .find('.c-variation__single-price .amount')
-        .toArray()
-        .map((el) => Number($(el).text().replace('₴', '')));
+      const weights = this.getCardWeights($card);
+      const sizes = this.getCardSizes($, $card);
+      const prices = this.getCardPrices($, $card);
 
       const variants = weights.map((weight, i) => ({
         weight,
@@ -78,16 +121,13 @@ export class Chelentano extends ChernivtsiPizzasParser {
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });
-
-    return pizzas;
   }
 
   public async parsePizzas() {
-    const page = await this.getPage();
-    const $ = cheerio.load(page);
-    const pizzasElements = this.getPizzasElements($);
-    const pizzas = this.pizzasElementsToPizzas($, pizzasElements);
+    const pageHtml = await this.getPageHtml();
+    const $ = cheerio.load(pageHtml);
+    const $pizzaCards = this.getPizzasCards($);
 
-    return pizzas;
+    return this.pizzasCardsToPizzas($, $pizzaCards);
   }
 }

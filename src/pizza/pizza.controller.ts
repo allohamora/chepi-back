@@ -3,7 +3,7 @@ import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
 import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
 import { GetPizzasByIdsDto, GetPizzasByIdsResultDto } from './dto/getPizzasByIds.dto';
-import { GetPizzasTotalResultDto } from './dto/getPizzasTotal.dto';
+import { PizzasStateResultDto } from './dto/pizzasState.dto';
 import { PizzaService } from './pizza.service';
 
 @ApiTags('pizza')
@@ -17,13 +17,6 @@ export class PizzaController {
   @HttpCode(200)
   public async getPizzasByQuery(@Body() getPizzasDto: GetPizzasDto): Promise<GetPizzaResultDto> {
     return await this.pizzaService.getPizzas(getPizzasDto);
-  }
-
-  @ApiOperation({ summary: 'Get total number of pizzas in db' })
-  @ApiOkResponse({ description: 'Return total number of pizzas in db', type: GetPizzasTotalResultDto })
-  @Get('/total')
-  public async getPizzasTotal(): Promise<GetPizzasTotalResultDto> {
-    return await this.pizzaService.getPizzasTotal();
   }
 
   @ApiOperation({ summary: 'Get pizzas by ids' })
@@ -42,5 +35,12 @@ export class PizzaController {
   @Get('/id/:id')
   public async getPizzaById(@Param() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
     return await this.pizzaService.getPizzaById(id);
+  }
+
+  @ApiOperation({ summary: 'Get pizzas state' })
+  @ApiOkResponse({ description: 'Return pizzas.json state', type: PizzasStateResultDto })
+  @Get('/state')
+  public getPizzasState(): PizzasStateResultDto {
+    return this.pizzaService.getPizzasState();
   }
 }

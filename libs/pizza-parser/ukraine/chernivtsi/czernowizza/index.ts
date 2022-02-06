@@ -1,50 +1,77 @@
+import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
-import { lower } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
-import cheerio, { CheerioAPI, Element } from 'cheerio';
+
+const BASE_URL = 'https://czernowizza.com';
+const BLACKLIST = ['Пиріг Осетинський'];
 
 export class Czernowizza extends ChernivtsiPizzasParser {
-  private blackList = ['Пиріг Осетинський'];
-  private pageLink = 'https://czernowizza.com';
-  private async getPage() {
-    return await getText(this.pageLink);
+  private async getPageHtml() {
+    return await getText(BASE_URL);
   }
 
-  private getTitle($: CheerioAPI, element: Element) {
-    return $(element).find('.t776__title').text().trim();
+  private getTitle($block: Cheerio<Element>) {
+    return $block.find('.t776__title').text().trim();
+  }
+
+  private getPizzaElements($: CheerioAPI, $category: Cheerio<Element>) {
+    return $category
+      .find('.t776__product-full.js-product')
+      .toArray()
+      .map((element) => $(element))
+      .filter(($element) => {
+        const title = this.getTitle($element);
+        const isBlacklisted = BLACKLIST.includes(title);
+
+        return !isBlacklisted;
+      });
+  }
+
+  private getPizzaDescription($pizza: Cheerio<Element>) {
+    return $pizza
+      .find('.t776__descr.t-descr.t-descr_xxs')
+      .text()
+      .trim()
+      .replace(/\/$/, '')
+      .replace(/ \//g, ',')
+      .toLowerCase()
+      .trim();
+  }
+
+  private getPizzaLink($pizza: Cheerio<Element>) {
+    const id = $pizza.attr('id').replace('t776__product-', '');
+
+    return `${BASE_URL}/#!/tproduct/227702381-${id}`;
+  }
+
+  private getPizzaImage($pizza: Cheerio<Element>) {
+    return $pizza.find('.t-slds__item.t-slds__item_active .t-slds__bgimg.t-bgimg.js-product-img').attr('data-original');
+  }
+
+  private getVariants($pizza: Cheerio<Element>) {
+    return $pizza
+      .find('.t-product__option.js-product-option')
+      .first()
+      .find('.t-product__option-select.js-product-option-variants')
+      .children()
+      .toArray()
+      .map((variant) => ({
+        size: parseInt(variant.attribs['value']),
+        price: parseInt(variant.attribs['data-product-variant-price']),
+        weight: null,
+      }));
   }
 
   private getPizzas($: CheerioAPI) {
-    const pizzaCategory = $('.t776');
+    const $category = $('.t776');
+    const $pizzas = this.getPizzaElements($, $category);
 
-    const pizzaElements = pizzaCategory
-      .find('.t776__product-full.js-product')
-      .toArray()
-      .filter((element) => !this.blackList.includes(this.getTitle($, element)));
-
-    return pizzaElements.flatMap((element) => {
-      const id = $(element).attr('id').replace('t776__product-', '');
-
-      const title = this.getTitle($, element);
-      const description = lower(
-        $(element).find('.t776__descr.t-descr.t-descr_xxs').text().trim().replace(/\/$/, '').replace(/ \//g, ','),
-      ).trim();
-      const link = `${this.pageLink}/#!/tproduct/227702381-${id}`;
-      const image = $(element)
-        .find('.t-slds__item.t-slds__item_active .t-slds__bgimg.t-bgimg.js-product-img')
-        .attr('data-original');
-
-      const variants = $(element)
-        .find('.t-product__option.js-product-option')
-        .first()
-        .find('.t-product__option-select.js-product-option-variants')
-        .children()
-        .toArray()
-        .map((variant) => ({
-          size: parseInt(variant.attribs['value']),
-          price: parseInt(variant.attribs['data-product-variant-price']),
-          weight: null,
-        }));
+    return $pizzas.flatMap(($pizza) => {
+      const title = this.getTitle($pizza);
+      const description = this.getPizzaDescription($pizza);
+      const link = this.getPizzaLink($pizza);
+      const image = this.getPizzaImage($pizza);
+      const variants = this.getVariants($pizza);
 
       const base = { title, description, link, image, ...this.baseMetadata };
 
@@ -53,10 +80,9 @@ export class Czernowizza extends ChernivtsiPizzasParser {
   }
 
   public async parsePizzas() {
-    const page = await this.getPage();
-    const $ = cheerio.load(page);
-    const pizzas = this.getPizzas($);
+    const pageHtml = await this.getPageHtml();
+    const $ = cheerio.load(pageHtml);
 
-    return pizzas;
+    return this.getPizzas($);
   }
 }
