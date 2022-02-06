@@ -32,6 +32,8 @@ const ASSET_BASE_URL = 'https://assets.misteram.com.ua';
 
 const MAX_ITEMS_PER_COMPANY = 100;
 
+const NUMBERS_WITH_CM = /\d+? ?см/;
+
 export class Misteram extends ChernivtsiPizzasParser {
   private withBaseUrl(...slugs: string[]) {
     return join(BASE_URL, ...slugs);
@@ -77,7 +79,7 @@ export class Misteram extends ChernivtsiPizzasParser {
   }
 
   private getTitle(dirtDishName: string, remove: RegExp[] = []) {
-    const dishName = this.clearString(dirtDishName, remove);
+    const dishName = this.clearString(dirtDishName, [...remove, NUMBERS_WITH_CM]);
 
     return capitalize(dishName);
   }
@@ -88,6 +90,22 @@ export class Misteram extends ChernivtsiPizzasParser {
     return dishDescription || ' ';
   }
 
+  private getSize(categorySize: number, dishName: string) {
+    if (categorySize !== null) {
+      return categorySize;
+    }
+
+    const match = dishName.match(/(?<size>\d+?) см/);
+
+    if (match === null) {
+      return null;
+    }
+
+    const [, sizeString] = match;
+
+    return Number(sizeString);
+  }
+
   private dishToPizza(company: Company, category: Category, dish: Dish) {
     const link = this.getLink(company.slug, category.slug);
     const image = this.getImage(dish.image);
@@ -95,8 +113,9 @@ export class Misteram extends ChernivtsiPizzasParser {
 
     const title = this.getTitle(dish.name, category.remove);
     const description = this.getDescription(dish.description, category.remove);
+    const size = this.getSize(category.size, dish.name);
 
-    return { title, description, image, link, weight, size: category.size, price: dish.price, ...this.baseMetadata };
+    return { title, description, image, link, weight, size, price: dish.price, ...this.baseMetadata };
   }
 
   private async getPizzasFromCategory(company: Company, category: Category) {
