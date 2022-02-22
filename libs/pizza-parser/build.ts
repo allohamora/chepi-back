@@ -1,7 +1,7 @@
 import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
-import { Lang, Pizza, supportedLangs, TranslatedPizza, TranslatedPizzaWithId } from './types/pizza';
+import { Lang, Pizza, PizzaWithId, supportedLangs, TranslatedPizzaWithId } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
@@ -14,18 +14,23 @@ interface TranslatedContent {
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
-const writeOutputPizzas = async (pizzas: TranslatedPizza[]) => {
+const writeOutputPizzas = async (pizzas: TranslatedPizzaWithId[]) => {
   const timestamp = getTimestamp();
   const result = { timestamp, pizzas };
 
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };
 
-const addId = (pizzas: TranslatedPizza[]): TranslatedPizzaWithId[] => {
-  return pizzas.map((pizza) => ({ ...pizza, id: toSha256(JSON.stringify(pizza)) }));
+const addId = (pizzas: Pizza[]): PizzaWithId[] => {
+  return pizzas.map((pizza) => {
+    const { title, link, lang, country, city } = pizza;
+    const id = toSha256(JSON.stringify({ title, link, lang, country, city }));
+
+    return { ...pizza, id };
+  });
 };
 
-const translatePizza = async ({ title, description, lang: from, ...rest }: Pizza) => {
+const translatePizza = async ({ title, description, lang: from, ...rest }: PizzaWithId) => {
   const restLangs = supportedLangs.filter((lang) => lang !== from);
 
   const translateContent = async (to: string): Promise<TranslatedContent> => {
@@ -54,19 +59,19 @@ const translatePizza = async ({ title, description, lang: from, ...rest }: Pizza
       return pizza;
     },
     { ...rest },
-  ) as TranslatedPizza;
+  ) as TranslatedPizzaWithId;
 };
 
-const translatePizzas = async (pizzas: Pizza[]) => {
+const translatePizzas = async (pizzas: PizzaWithId[]) => {
   return await Promise.all(pizzas.map(translatePizza));
 };
 
 const main = async () => {
   const pizzas = await parsePizzas();
-  const translatedPizzas = await translatePizzas(pizzas);
-  const withId = addId(translatedPizzas);
+  const withId = addId(pizzas);
+  const translatedPizzas = await translatePizzas(withId);
 
-  await writeOutputPizzas(withId);
+  await writeOutputPizzas(translatedPizzas);
 };
 
 main();

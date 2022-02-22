@@ -6,10 +6,10 @@ import {
   supportedCities,
   supportedCountries,
   supportedLangs,
-  TranslatedPizza,
+  TranslatedPizzaWithId,
 } from 'libs/pizza-parser/types/pizza';
 
-export class Pizza implements TranslatedPizza {
+export class Pizza implements TranslatedPizzaWithId {
   @ApiProperty({ description: 'pizza id what changes after new insert' })
   id: string;
 

@@ -20,15 +20,15 @@ export interface Pizza {
   city: City;
 }
 
+export interface PizzaWithId extends Pizza {
+  id: string;
+}
+
 type TranslatedPizzaTitles = `${Lang}_title`;
 type TranslatedPizzaDescription = `${Lang}_description`;
 
-export type TranslatedPizza = Omit<Pizza, 'title' | 'description'> & {
+export type TranslatedPizzaWithId = Omit<PizzaWithId, 'title' | 'description'> & {
   [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
-};
-
-export type TranslatedPizzaWithId = TranslatedPizza & {
-  id: string;
 };
 
 export interface PizzasJson {
