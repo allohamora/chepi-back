@@ -6,6 +6,7 @@ import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
 import { pizzas, createdAt } from 'pizzas.json';
 import { PizzasStateResultDto } from './dto/pizzasState.dto';
+import { WithChanges } from 'libs/pizza-parser/types/pizza';
 
 const numberAndText = {
   type: 'integer',
@@ -36,6 +37,38 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
   },
 };
 
+const withChangesToContent = ({
+  id,
+  en_title,
+  en_description,
+  ru_title,
+  ru_description,
+  uk_title,
+  uk_description,
+  size,
+  weight,
+  price,
+  link,
+  image,
+  country,
+  city,
+}: WithChanges) => ({
+  id,
+  en_title,
+  en_description,
+  ru_title,
+  ru_description,
+  uk_title,
+  uk_description,
+  size,
+  weight,
+  price,
+  link,
+  image,
+  country,
+  city,
+});
+
 const PIZZAS_INDEX = `pizzas-${createdAt}`;
 const PIZZAS_CREATED_AT = createdAt;
 const PIZZAS_COUNT = pizzas.length;
@@ -60,7 +93,10 @@ export class PizzaService implements OnModuleInit {
       },
     });
 
-    const bulkBody = pizzas.flatMap((pizza) => [{ index: { _index: PIZZAS_INDEX } }, pizza]);
+    const bulkBody = pizzas.flatMap((pizza) => [
+      { index: { _index: PIZZAS_INDEX } },
+      withChangesToContent(pizza as WithChanges),
+    ]);
     const {
       body: { errors },
     } = await this.elasticsearchService.bulk<estypes.BulkResponse>({ refresh: true, body: bulkBody });
