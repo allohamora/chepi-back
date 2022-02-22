@@ -1,9 +1,9 @@
-import { timestamp, pizzas } from 'pizzas.json';
+import { updatedAt, pizzas } from 'pizzas.json';
 import { expectString, expectNumber, expectObject, expectNumberOrNull } from './test/test.utils';
 
 describe('pizzas.json', () => {
-  test('have timestamp', () => {
-    expectNumber(timestamp);
+  test('have updatedAt', () => {
+    expectNumber(updatedAt);
   });
 
   test('pizzas have all fields', () => {
