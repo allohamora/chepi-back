@@ -1,7 +1,7 @@
 import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
-import { Lang, Pizza, WithId, supportedLangs, Translated, WithChanges } from './types/pizza';
+import { Lang, Pizza, WithId, supportedLangs, Translated, WithChanges, PizzaJson } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
@@ -16,16 +16,13 @@ interface TranslatedContent {
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
-const writeOutputPizzas = async (pizzas: Translated[], updatedAt: number) => {
+const writeOutputPizzas = async (pizzas: PizzaJson[], updatedAt: number) => {
   const result = { updatedAt, pizzas };
 
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };
 
-const pizzasMap = pizzas.reduce(
-  (map, pizza) => map.set(pizza.id, pizza as WithChanges),
-  new Map<string, WithChanges>(),
-);
+const pizzasMap = pizzas.reduce((map, pizza) => map.set(pizza.id, pizza as PizzaJson), new Map<string, PizzaJson>());
 
 const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
   return newPizzas.map((newPizza) => {

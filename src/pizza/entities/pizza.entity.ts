@@ -4,10 +4,10 @@ import {
   City,
   Country,
   Lang,
+  PizzaJson,
   supportedCities,
   supportedCountries,
   supportedLangs,
-  WithChanges,
 } from 'libs/pizza-parser/types/pizza';
 
 class Change implements PizzaChange {
@@ -24,7 +24,7 @@ class Change implements PizzaChange {
   discoveredAt: number;
 }
 
-export class Pizza implements WithChanges {
+export class Pizza implements PizzaJson {
   @ApiProperty({ description: 'pizza id what changes after new insert' })
   id: string;
 

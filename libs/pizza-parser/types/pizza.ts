@@ -42,7 +42,9 @@ export type WithChanges = Translated & {
   changes?: Change[];
 };
 
+export type PizzaJson = WithChanges;
+
 export interface PizzasJson {
   updatedAt: number;
-  pizzas: WithChanges[];
+  pizzas: PizzaJson[];
 }
