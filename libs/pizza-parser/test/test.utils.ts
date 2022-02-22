@@ -1,11 +1,17 @@
 const SPACE = ' ';
 
-export const expectTypeof = <V>(value: V, type: 'object' | 'string' | 'number') => expect(typeof value).toBe(type);
+export const expectTypeof = <V>(value: V, type: 'object' | 'string' | 'number' | 'undefined') =>
+  expect(typeof value).toBe(type);
 export const expectString = <V>(value: V) => expectTypeof(value, 'string');
 export const expectObject = <V>(value: V) => expectTypeof(value, 'object');
+export const expectUndefined = <V>(value: V) => expectTypeof(value, 'undefined');
 export const expectNumber = <V>(value: V) => {
   expectTypeof(value, 'number');
   expect(value).not.toBeNaN();
+};
+
+export const expectOwnProperty = <V, K extends keyof V>(value: V, key: K) => {
+  expect(value.hasOwnProperty(key)).toBe(true);
 };
 
 const expectSomeTrue = (cheks: boolean[]) => {

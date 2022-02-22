@@ -1,5 +1,26 @@
 import { updatedAt, pizzas } from 'pizzas.json';
-import { expectString, expectNumber, expectObject, expectNumberOrNull } from './test/test.utils';
+import {
+  expectString,
+  expectNumber,
+  expectObject,
+  expectNumberOrNull,
+  expectUndefined,
+  expectOwnProperty,
+} from './test/test.utils';
+import { Change } from './types/pizza';
+
+const expectChanges = (changes?: Change[]) => {
+  if (!Array.isArray(changes)) {
+    return expectUndefined(changes);
+  }
+
+  for (const change of changes) {
+    expectString(change.key);
+    expectOwnProperty(change, 'old');
+    expectOwnProperty(change, 'new');
+    expectNumber(change.discoveredAt);
+  }
+};
 
 describe('pizzas.json', () => {
   test('have updatedAt', () => {
@@ -29,6 +50,8 @@ describe('pizzas.json', () => {
 
       expectString(pizza.en_title);
       expectString(pizza.en_description);
+
+      expectChanges(pizza.changes);
     }
   });
 });
