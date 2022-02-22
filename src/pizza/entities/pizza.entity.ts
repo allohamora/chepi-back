@@ -1,15 +1,30 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
+  Change as PizzaChange,
   City,
   Country,
   Lang,
   supportedCities,
   supportedCountries,
   supportedLangs,
-  Translated,
+  WithChanges,
 } from 'libs/pizza-parser/types/pizza';
 
-export class Pizza implements Translated {
+class Change implements PizzaChange {
+  @ApiProperty({ description: 'pizza key' })
+  key: string;
+
+  @ApiProperty({ description: 'old pizza[key] value' })
+  old: string;
+
+  @ApiProperty({ description: 'new pizza[key] value' })
+  new: string;
+
+  @ApiProperty({ description: 'discovered timestamp' })
+  discoveredAt: number;
+}
+
+export class Pizza implements WithChanges {
   @ApiProperty({ description: 'pizza id what changes after new insert' })
   id: string;
 
@@ -54,4 +69,7 @@ export class Pizza implements Translated {
 
   @ApiProperty({ description: 'pizza description in english' })
   en_description: string;
+
+  @ApiProperty({ description: 'pizza changes', type: [Change], required: false })
+  changes?: Change[];
 }
