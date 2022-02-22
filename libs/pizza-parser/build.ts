@@ -15,8 +15,8 @@ interface TranslatedContent {
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
 const writeOutputPizzas = async (pizzas: TranslatedPizzaWithId[]) => {
-  const timestamp = getTimestamp();
-  const result = { timestamp, pizzas };
+  const createdAt = getTimestamp();
+  const result = { createdAt, pizzas };
 
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };

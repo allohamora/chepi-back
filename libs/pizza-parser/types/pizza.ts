@@ -32,6 +32,6 @@ export type TranslatedPizzaWithId = Omit<PizzaWithId, 'title' | 'description'> &
 };
 
 export interface PizzasJson {
-  timestamp: number;
+  createdAt: number;
   pizzas: TranslatedPizzaWithId[];
 }
