@@ -19,6 +19,8 @@ const numberAndText = {
 const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
   properties: {
     id: { type: 'text' },
+    image: { type: 'text' },
+    link: { type: 'text' },
     weight: numberAndText,
     size: numberAndText,
     price: numberAndText,
