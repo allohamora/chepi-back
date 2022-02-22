@@ -6,7 +6,7 @@ import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
-import { omit, getNotDeepChanges } from './utils/object';
+import { omit, getDiff } from './utils/object';
 
 interface TranslatedContent {
   title: string;
@@ -36,7 +36,7 @@ const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
     }
 
     const oldPizza = pizzasMap.get(newPizza.id);
-    const changesWithoutDiscoveredAt = getNotDeepChanges(omit(oldPizza, ['changes']), newPizza);
+    const changesWithoutDiscoveredAt = getDiff(omit(oldPizza, ['changes']), newPizza);
     const changes = changesWithoutDiscoveredAt.map((change) => ({ ...change, discoveredAt }));
 
     const result = { ...newPizza } as WithChanges;
