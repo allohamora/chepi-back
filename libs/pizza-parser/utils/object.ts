@@ -1,3 +1,13 @@
+export const omit = <T, K extends keyof T>(target: T, keys: K[]) => {
+  const copy = { ...target };
+
+  for (const key of keys) {
+    delete copy[key];
+  }
+
+  return copy as Omit<T, K>;
+};
+
 export const getNotDeepChanges = <O, T>(oldTarget: O, newTarget: T) => {
   const oldKeys = Object.keys(oldTarget);
 

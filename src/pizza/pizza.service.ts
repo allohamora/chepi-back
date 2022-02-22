@@ -4,7 +4,7 @@ import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
-import { pizzas, createdAt } from 'pizzas.json';
+import { pizzas, updatedAt } from 'pizzas.json';
 import { PizzasStateResultDto } from './dto/pizzasState.dto';
 import { WithChanges } from 'libs/pizza-parser/types/pizza';
 
@@ -69,8 +69,8 @@ const withChangesToContent = ({
   city,
 });
 
-const PIZZAS_INDEX = `pizzas-${createdAt}`;
-const PIZZAS_CREATED_AT = createdAt;
+const PIZZAS_INDEX = `pizzas-${updatedAt}`;
+const PIZZAS_UPDATED_AT = updatedAt;
 const PIZZAS_COUNT = pizzas.length;
 
 @Injectable()
@@ -201,6 +201,6 @@ export class PizzaService implements OnModuleInit {
   }
 
   public getPizzasState(): PizzasStateResultDto {
-    return { createdAt: PIZZAS_CREATED_AT, count: PIZZAS_COUNT };
+    return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
   }
 }

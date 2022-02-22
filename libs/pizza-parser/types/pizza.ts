@@ -43,6 +43,6 @@ export type WithChanges = Translated & {
 };
 
 export interface PizzasJson {
-  createdAt: number;
+  updatedAt: number;
   pizzas: WithChanges[];
 }

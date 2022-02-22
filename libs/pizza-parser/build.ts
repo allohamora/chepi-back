@@ -6,7 +6,7 @@ import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
-import { getNotDeepChanges } from './utils/object';
+import { omit, getNotDeepChanges } from './utils/object';
 
 interface TranslatedContent {
   title: string;
@@ -16,8 +16,8 @@ interface TranslatedContent {
 
 const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
 
-const writeOutputPizzas = async (pizzas: Translated[], createdAt: number) => {
-  const result = { createdAt, pizzas };
+const writeOutputPizzas = async (pizzas: Translated[], updatedAt: number) => {
+  const result = { updatedAt, pizzas };
 
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };
@@ -36,13 +36,13 @@ const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
     }
 
     const oldPizza = pizzasMap.get(newPizza.id);
-    const changesWithoutDiscoveredAt = getNotDeepChanges(oldPizza, newPizza);
+    const changesWithoutDiscoveredAt = getNotDeepChanges(omit(oldPizza, ['changes']), newPizza);
     const changes = changesWithoutDiscoveredAt.map((change) => ({ ...change, discoveredAt }));
 
     const result = { ...newPizza } as WithChanges;
 
-    if (changes.length !== 0) {
-      result.changes = [...(result.changes || []), ...changes];
+    if (changes.length !== 0 || Array.isArray(oldPizza.changes)) {
+      result.changes = [...(oldPizza.changes || []), ...changes];
     }
 
     return result;
@@ -95,13 +95,13 @@ const translatePizzas = async (pizzas: WithId[]) => {
 };
 
 const main = async () => {
-  const createdAt = getTimestamp();
+  const updatedAt = getTimestamp();
   const pizzas = await parsePizzas();
   const withId = addId(pizzas);
   const translatedPizzas = await translatePizzas(withId);
-  const withChanges = addChanges(translatedPizzas, createdAt);
+  const withChanges = addChanges(translatedPizzas, updatedAt);
 
-  await writeOutputPizzas(withChanges, createdAt);
+  await writeOutputPizzas(withChanges, updatedAt);
 };
 
 main();
