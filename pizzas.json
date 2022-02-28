@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1645530228,
+  "updatedAt": 1646062890,
   "pizzas": [
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
@@ -396,10 +396,18 @@
       "id": "0bd78a92605860a8928844a77c54c9f5ddece37a79787c6b1e9f567c4ee338f0",
       "uk_title": "Кватро Формаджі",
       "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела",
-      "ru_title": "Quatro Formadzh",
+      "ru_title": "Quatro Formadzh.",
       "ru_description": "Сливочный соус, горгонзола сыры, Радомер, пармезан и моцарелла",
       "en_title": "Quatro Formadzh",
-      "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella"
+      "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh",
+          "new": "Quatro Formadzh.",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/06/qvatro_formadg-438x438.jpg",
@@ -412,10 +420,18 @@
       "id": "2f34cf50d129a23040fec33f458359f687d639aab57da2ff5875d0df3914fd17",
       "uk_title": "Кватро Формаджі",
       "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела",
-      "ru_title": "Quatro Formadzh",
+      "ru_title": "Quatro Formadzh.",
       "ru_description": "Сливочный соус, горгонзола сыры, Радомер, пармезан и моцарелла",
       "en_title": "Quatro Formadzh",
-      "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella"
+      "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh",
+          "new": "Quatro Formadzh.",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/margarita-438x438.jpg",
@@ -525,10 +541,16 @@
       "uk_title": "Піца EgoЇста",
       "uk_description": "Основа, сир, соус(томатний/вершковий)",
       "ru_title": "Пицца эгоиста",
-      "ru_description": "Основа, сыр, соус (помидор / сливки)",
+      "ru_description": "Основа, сыр, соус (помидор / крем)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Основа, сыр, соус (помидор / сливки)",
+          "new": "Основа, сыр, соус (помидор / крем)",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / крем)",
@@ -549,10 +571,16 @@
       "uk_title": "Піца EgoЇста",
       "uk_description": "Основа, сир, соус(томатний/вершковий)",
       "ru_title": "Пицца эгоиста",
-      "ru_description": "Основа, сыр, соус (помидор / сливки)",
+      "ru_description": "Основа, сыр, соус (помидор / крем)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Основа, сыр, соус (помидор / сливки)",
+          "new": "Основа, сыр, соус (помидор / крем)",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / крем)",
@@ -636,10 +664,24 @@
       "id": "ee3fccba06c91ff20cd07e85eae89daeddd25b1d5a7490ee80b4ba75798f6c44",
       "uk_title": "Фруті Ді Маре",
       "uk_description": "Домашній томатний соус, креветки, мідії",
-      "ru_title": "Fruity Di Mare.",
+      "ru_title": "Fruet Di Mare.",
       "ru_description": "Главная томатный соус, креветки, мидии",
-      "en_title": "Fruet di Mare",
-      "en_description": "Home Tomato Sauce, Shrimp, Mussels"
+      "en_title": "Fruity Di Mare",
+      "en_description": "Home Tomato Sauce, Shrimp, Mussels",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Fruity Di Mare.",
+          "new": "Fruet Di Mare.",
+          "detectedAt": 1646062890
+        },
+        {
+          "key": "en_title",
+          "old": "Fruet di Mare",
+          "new": "Fruity Di Mare",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2021/02/frutyDeMare-438x438.jpg",
@@ -652,10 +694,24 @@
       "id": "785751088f6ec3e8799a6f35bd8ed197c56ba3d97d7a9d97cdded41821a9bbea",
       "uk_title": "Фруті Ді Маре",
       "uk_description": "Домашній томатний соус, креветки, мідії",
-      "ru_title": "Fruity Di Mare.",
+      "ru_title": "Fruet Di Mare.",
       "ru_description": "Главная томатный соус, креветки, мидии",
-      "en_title": "Fruet di Mare",
-      "en_description": "Home Tomato Sauce, Shrimp, Mussels"
+      "en_title": "Fruity Di Mare",
+      "en_description": "Home Tomato Sauce, Shrimp, Mussels",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Fruity Di Mare.",
+          "new": "Fruet Di Mare.",
+          "detectedAt": 1646062890
+        },
+        {
+          "key": "en_title",
+          "old": "Fruet di Mare",
+          "new": "Fruity Di Mare",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://chernivtsi.celentano.delivery/wp-content/uploads/2019/07/cezare-438x438.jpg",
@@ -1327,7 +1383,15 @@
       "ru_title": "Калконе",
       "ru_description": "Coyc, сыр, ветчина, грибы",
       "en_title": "Calzzone",
-      "en_description": "Coyc, Cheese, Ham, Mushrooms"
+      "en_description": "Coyc, cheese, ham, mushrooms",
+      "historyOfChanges": [
+        {
+          "key": "en_description",
+          "old": "Coyc, Cheese, Ham, Mushrooms",
+          "new": "Coyc, cheese, ham, mushrooms",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://www.dongustavo.com.ua/wp-content/uploads/2020/12/byanko-360x320.jpg",
@@ -1424,11 +1488,17 @@
       "id": "1455345b003a34bb79e7a9cbae04f32a802cc8b52b86a40de64d9b05a576cf42",
       "uk_title": "Кватро формаджі",
       "uk_description": "Соус бешамель, пармезан, сир моцарела, сир рікота, сир дорблю, волоський горіх, груша",
-      "ru_title": "Quatro Formadzh",
+      "ru_title": "Quatro Formadzh.",
       "ru_description": "Соус Beshamel, Parmesan, сыр моцарелла, сыр рикона, домашний сыр, орех, груша",
       "en_title": "Quatro Formadzh",
       "en_description": "Beshamel Sauce, Parmesan, Mozzarella Cheese, Ricot Cheese, Domestic Cheese, Walnut, Pear",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh",
+          "new": "Quatro Formadzh.",
+          "detectedAt": 1646062890
+        },
         {
           "key": "weight",
           "old": 410,
@@ -2230,7 +2300,7 @@
       "city": "chernivtsi",
       "weight": 370,
       "size": 30,
-      "price": 127,
+      "price": 132,
       "id": "3859e267b174ac06020d3c4faacef768cd7f37ecd9fd065b5c1eaf550d25d70a",
       "uk_title": "Маргарита",
       "uk_description": "Моцарелла, соус Pomodoro, орегано",
@@ -2241,9 +2311,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 117,
-          "new": 127,
-          "detectedAt": 1645528465
+          "old": 127,
+          "new": 132,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2254,7 +2324,7 @@
       "city": "chernivtsi",
       "weight": 760,
       "size": 50,
-      "price": 100,
+      "price": 252,
       "id": "8b1740f0284df959e303cea831c18afcd1219844d0063cfe87e5838d3256668c",
       "uk_title": "Маргарита",
       "uk_description": "Моцарелла, соус Pomodoro, орегано",
@@ -2270,7 +2340,7 @@
       "city": "chernivtsi",
       "weight": 490,
       "size": 30,
-      "price": 157,
+      "price": 159,
       "id": "74417e32944419906be1bb2dd34d79d62430c8efc35145bdc2d83699a87f2a10",
       "uk_title": "Broccoli Love",
       "uk_description": "Фірмовий Соус Броколі, Моцарелла, Броколі, Черрі, Насіння Гарбуза",
@@ -2281,9 +2351,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 147,
-          "new": 157,
-          "detectedAt": 1645528465
+          "old": 157,
+          "new": 159,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2294,22 +2364,14 @@
       "city": "chernivtsi",
       "weight": 980,
       "size": 50,
-      "price": 130,
+      "price": 289,
       "id": "da76bff33f770e66f3a4b285653c9ce6a5ef23f635d53f20a7da0ab840bac53a",
       "uk_title": "Broccoli Love",
       "uk_description": "Фірмовий Соус Броколі, Моцарелла, Броколі, Черрі, Насіння Гарбуза",
       "ru_title": "Броксоли Лоз",
       "ru_description": "Корпоративный соус брокколи, моцарелла, брокколи, вишня, тыквенные семена",
       "en_title": "Brocsoli Loz",
-      "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 120,
-          "new": 130,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds"
     },
     {
       "link": "https://pizza-it.com/cinque-stelle",
@@ -2318,14 +2380,22 @@
       "city": "chernivtsi",
       "weight": 540,
       "size": 30,
-      "price": 147,
+      "price": 150,
       "id": "4ba42721a1fea4034549209b1534c7eb4c1a2fb0d2a21ff154859a8bfdff53dd",
       "uk_title": "Cinque Stelle (П'ять Зірок)",
       "uk_description": "Фірмовий соус із гарбуза, запечений Бурячок, томати Черрі, Рукола, Соус Песто, Насіння гарбуза",
       "ru_title": "Cinque Stelle (пять звезд)",
       "ru_description": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
       "en_title": "Cinque Stelle (Five Stars)",
-      "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds"
+      "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds",
+      "historyOfChanges": [
+        {
+          "key": "price",
+          "old": 147,
+          "new": 150,
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/cinque-stelle",
@@ -2334,7 +2404,7 @@
       "city": "chernivtsi",
       "weight": 1080,
       "size": 50,
-      "price": 120,
+      "price": 290,
       "id": "1e6a3f2a36ad59ad12a02e12d4eb9e9ae823c6765e6dfe16d415482bc159d003",
       "uk_title": "Cinque Stelle (П'ять Зірок)",
       "uk_description": "Фірмовий соус із гарбуза, запечений Бурячок, томати Черрі, Рукола, Соус Песто, Насіння гарбуза",
@@ -2350,7 +2420,7 @@
       "city": "chernivtsi",
       "weight": 480,
       "size": 30,
-      "price": 197,
+      "price": 204,
       "id": "7e15aeeab68d7370c749f7de34365f45382811b303c4d3c8e8d5876f0905ff1e",
       "uk_title": "Popeye (Моряк Попай)",
       "uk_description": "Моцарелла, Бебі Шпинат, Черрі, Оливки, Пармезан, Маскарпоне",
@@ -2361,9 +2431,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 187,
-          "new": 197,
-          "detectedAt": 1645528465
+          "old": 197,
+          "new": 204,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2374,22 +2444,14 @@
       "city": "chernivtsi",
       "weight": 960,
       "size": 50,
-      "price": 110,
+      "price": 334,
       "id": "dec6e4d85f13bfc32aef1ffd0f9659385d9b2af41a687102569605bc6d9e0a28",
       "uk_title": "Popeye (Моряк Попай)",
       "uk_description": "Моцарелла, Бебі Шпинат, Черрі, Оливки, Пармезан, Маскарпоне",
       "ru_title": "Popeye (Sailor Popen)",
       "ru_description": "Моцарелла, детское шпинат, вишня, оливки, пармезан, маскарпон",
       "en_title": "Popeye (Sailor Popen)",
-      "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 100,
-          "new": 110,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone"
     },
     {
       "link": "https://pizza-it.com/primavera",
@@ -2398,7 +2460,7 @@
       "city": "chernivtsi",
       "weight": 560,
       "size": 30,
-      "price": 197,
+      "price": 204,
       "id": "d8fb7afd1198c5aeba5c6aba4af32ba0d52779a81e7ec625065e12ad4b0ac99b",
       "uk_title": "PrimaVera",
       "uk_description": "Фірмовий Соус Броколі, Моцарелла, Фета, Спаржа, томати Черрі, соус Песто Базилік",
@@ -2409,9 +2471,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 187,
-          "new": 197,
-          "detectedAt": 1645528465
+          "old": 197,
+          "new": 204,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2422,22 +2484,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 110,
+      "price": 334,
       "id": "6a7532170c35f6a50d51360d4deb701337732a3c7e0ed8d25f7f8cea9aea59ae",
       "uk_title": "PrimaVera",
       "uk_description": "Фірмовий Соус Броколі, Моцарелла, Фета, Спаржа, томати Черрі, соус Песто Базилік",
       "ru_title": "Преступник",
       "ru_description": "Брокколи, моцарелла, фета, спаржа, помидоры черри, соус песто",
       "en_title": "Primander",
-      "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 100,
-          "new": 110,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil"
     },
     {
       "link": "https://pizza-it.com/avocado",
@@ -2446,14 +2500,22 @@
       "city": "chernivtsi",
       "weight": 450,
       "size": 30,
-      "price": 147,
+      "price": 159,
       "id": "1adbdffa94c47cbf04e9797a1661a19cb2b64394a93c4f71f539bcef36931331",
       "uk_title": "Авокадо",
       "uk_description": "Фірмовий крем-соус зі шпинату, Авокадо Хасс, Броколі, Мікс Салатів, крем Бальзамік",
       "ru_title": "Авокадо",
       "ru_description": "Корпоративный крем-соус из шпината, гасс авокадо, брокколи, салаты смеси, крем-бальзам",
       "en_title": "Avocado",
-      "en_description": "Corporate Cream-Sauce from Spinach, Avocado Hass, Broccoli, Mix Salads, Cream Balm"
+      "en_description": "Corporate Cream-Sauce from Spinach, Avocado Hass, Broccoli, Mix Salads, Cream Balm",
+      "historyOfChanges": [
+        {
+          "key": "price",
+          "old": 147,
+          "new": 159,
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/avocado",
@@ -2462,7 +2524,7 @@
       "city": "chernivtsi",
       "weight": 900,
       "size": 50,
-      "price": 120,
+      "price": 289,
       "id": "d024733e417259198e9860191cd50b5ededa6997f951dcd896a4919be05ce243",
       "uk_title": "Авокадо",
       "uk_description": "Фірмовий крем-соус зі шпинату, Авокадо Хасс, Броколі, Мікс Салатів, крем Бальзамік",
@@ -2478,14 +2540,22 @@
       "city": "chernivtsi",
       "weight": 420,
       "size": 30,
-      "price": 137,
+      "price": 159,
       "id": "f167c66c902ec2137e98eca37b5ad04c37ca0a01621db38648a61bb2de626f18",
       "uk_title": "Вегані",
       "uk_description": "Фірмовий крем-соус зі шпинату, Артишоки, Перець Болгарський, Апельсин, Рукола, крем Бальзамік, орегано",
       "ru_title": "Вану",
       "ru_description": "Корпоративный крем-соус от шпината, артишоки, болгарский перец, оранжевый, ругула, крем-бальзам, орегано",
       "en_title": "Vanuary",
-      "en_description": "Corporate Cream-Sauce from Spinach, Artichokes, Bulgarian Pepper, Orange, Rugola, Cream Balm, Oregano"
+      "en_description": "Corporate Cream-Sauce from Spinach, Artichokes, Bulgarian Pepper, Orange, Rugola, Cream Balm, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "price",
+          "old": 137,
+          "new": 159,
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/vegani",
@@ -2494,7 +2564,7 @@
       "city": "chernivtsi",
       "weight": 900,
       "size": 50,
-      "price": 110,
+      "price": 289,
       "id": "e152986a98c32ac74eab7e678934729fe6dc3a7bc3a721fd8c7c01b22af90521",
       "uk_title": "Вегані",
       "uk_description": "Фірмовий крем-соус зі шпинату, Артишоки, Перець Болгарський, Апельсин, Рукола, крем Бальзамік, орегано",
@@ -2510,7 +2580,7 @@
       "city": "chernivtsi",
       "weight": 1100,
       "size": 50,
-      "price": 110,
+      "price": 289,
       "id": "be928d27e878c3d56abbc48aac3a5371c3a85d4865e85d94f4002cce034eb033",
       "uk_title": "Вердуре",
       "uk_description": "Моцарелла, соус Pomodoro, Броколі, Перець Болгарський, Кукурудза, свіжі запечені Шампіньйони",
@@ -2526,24 +2596,8 @@
       "city": "chernivtsi",
       "weight": 440,
       "size": 30,
-      "price": 187,
+      "price": 186,
       "id": "812821fd4a8bba8aa73b99451265ca5d3af10c1659d17d49afd744ba98255ac9",
-      "uk_title": "Два Сири",
-      "uk_description": "Проволоне, Пекоріно Романо, Вершки, свіжі запечені Шампіньйони",
-      "ru_title": "Два сыра",
-      "ru_description": "Роллон, Пекорино Романо, Крем, Свежие запеченные Champignons",
-      "en_title": "Two cheeses",
-      "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons"
-    },
-    {
-      "link": "https://pizza-it.com/due-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "weight": 880,
-      "size": 50,
-      "price": 120,
-      "id": "fc474711c17caf836a24fb1cfa8234c7f9a3af7db2ca640364ba7d6d2cc40c82",
       "uk_title": "Два Сири",
       "uk_description": "Проволоне, Пекоріно Романо, Вершки, свіжі запечені Шампіньйони",
       "ru_title": "Два сыра",
@@ -2553,11 +2607,27 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 100,
-          "new": 120,
-          "detectedAt": 1645528465
+          "old": 187,
+          "new": 186,
+          "detectedAt": 1646062890
         }
       ]
+    },
+    {
+      "link": "https://pizza-it.com/due-formaggi",
+      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "weight": 880,
+      "size": 50,
+      "price": 336,
+      "id": "fc474711c17caf836a24fb1cfa8234c7f9a3af7db2ca640364ba7d6d2cc40c82",
+      "uk_title": "Два Сири",
+      "uk_description": "Проволоне, Пекоріно Романо, Вершки, свіжі запечені Шампіньйони",
+      "ru_title": "Два сыра",
+      "ru_description": "Роллон, Пекорино Романо, Крем, Свежие запеченные Champignons",
+      "en_title": "Two cheeses",
+      "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons"
     },
     {
       "link": "https://pizza-it.com/tre-formaggi",
@@ -2573,15 +2643,7 @@
       "ru_title": "Три сыра",
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
-      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 167,
-          "new": 177,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola"
     },
     {
       "link": "https://pizza-it.com/tre-formaggi",
@@ -2590,22 +2652,14 @@
       "city": "chernivtsi",
       "weight": 840,
       "size": 50,
-      "price": 130,
+      "price": 337,
       "id": "2aaaca0239d6ba77f176b6dbdbbaa0900287304121d1357ed3a79b4c63ea0498",
       "uk_title": "Три Сири",
       "uk_description": "Моцарелла, Скаморца, Фета, Вершки, Рукола",
       "ru_title": "Три сыра",
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
-      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 120,
-          "new": 130,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola"
     },
     {
       "link": "https://pizza-it.com/quattro-formaggi",
@@ -2614,24 +2668,8 @@
       "city": "chernivtsi",
       "weight": 480,
       "size": 30,
-      "price": 197,
+      "price": 204,
       "id": "ebe1b552e6cb3b638030d8f8e3e31113b68e6a088ece9345b0d65079e5742a40",
-      "uk_title": "Чотири Сири",
-      "uk_description": "Моцарелла, Рікота, ДорБлю, Пармезан, Вершки",
-      "ru_title": "Четыре сыра",
-      "ru_description": "Моцарелла, Рикота, Дорн, Пармезан, Крем",
-      "en_title": "Four cheeses",
-      "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream"
-    },
-    {
-      "link": "https://pizza-it.com/quattro-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "weight": 940,
-      "size": 50,
-      "price": 110,
-      "id": "dbd65400cb5a1d0e3da974c9c6de30ab487038dbd0c3c9cf567a61c22f56825e",
       "uk_title": "Чотири Сири",
       "uk_description": "Моцарелла, Рікота, ДорБлю, Пармезан, Вершки",
       "ru_title": "Четыре сыра",
@@ -2641,11 +2679,27 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 90,
-          "new": 110,
-          "detectedAt": 1645528465
+          "old": 197,
+          "new": 204,
+          "detectedAt": 1646062890
         }
       ]
+    },
+    {
+      "link": "https://pizza-it.com/quattro-formaggi",
+      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "weight": 940,
+      "size": 50,
+      "price": 334,
+      "id": "dbd65400cb5a1d0e3da974c9c6de30ab487038dbd0c3c9cf567a61c22f56825e",
+      "uk_title": "Чотири Сири",
+      "uk_description": "Моцарелла, Рікота, ДорБлю, Пармезан, Вершки",
+      "ru_title": "Четыре сыра",
+      "ru_description": "Моцарелла, Рикота, Дорн, Пармезан, Крем",
+      "en_title": "Four cheeses",
+      "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream"
     },
     {
       "link": "https://pizza-it.com/cinque-formaggi",
@@ -2654,24 +2708,8 @@
       "city": "chernivtsi",
       "weight": 470,
       "size": 30,
-      "price": 197,
+      "price": 204,
       "id": "1d32f29c5ea2dd1de890fa86feb09fb6c2322e65cdf7db529366e027e8403267",
-      "uk_title": "П'ять Сирів",
-      "uk_description": "Моцарелла, Проволоне, Скаморца, Рікота, Пекоріно Романо, Вершки",
-      "ru_title": "Пять сыров",
-      "ru_description": "Моцарелла, спровоцированные, боевики, Рикота, Пекорино Романо, Крем",
-      "en_title": "Five cheeses",
-      "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream"
-    },
-    {
-      "link": "https://pizza-it.com/cinque-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "weight": 940,
-      "size": 50,
-      "price": 110,
-      "id": "4687c7d1ab18df8c219418ba87a88808272f50ceb91da7e738fec069ef69ba49",
       "uk_title": "П'ять Сирів",
       "uk_description": "Моцарелла, Проволоне, Скаморца, Рікота, Пекоріно Романо, Вершки",
       "ru_title": "Пять сыров",
@@ -2681,11 +2719,27 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 90,
-          "new": 110,
-          "detectedAt": 1645528465
+          "old": 197,
+          "new": 204,
+          "detectedAt": 1646062890
         }
       ]
+    },
+    {
+      "link": "https://pizza-it.com/cinque-formaggi",
+      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "weight": 940,
+      "size": 50,
+      "price": 334,
+      "id": "4687c7d1ab18df8c219418ba87a88808272f50ceb91da7e738fec069ef69ba49",
+      "uk_title": "П'ять Сирів",
+      "uk_description": "Моцарелла, Проволоне, Скаморца, Рікота, Пекоріно Романо, Вершки",
+      "ru_title": "Пять сыров",
+      "ru_description": "Моцарелла, спровоцированные, боевики, Рикота, Пекорино Романо, Крем",
+      "en_title": "Five cheeses",
+      "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream"
     },
     {
       "link": "https://pizza-it.com/cacciatore",
@@ -2694,20 +2748,26 @@
       "city": "chernivtsi",
       "weight": 440,
       "size": 30,
-      "price": 167,
+      "price": 168,
       "id": "2705241087f3b1a695a673c8bab56ae7b4e33a90ace00510130053c0170f539e",
       "uk_title": "Качаторе",
       "uk_description": "Моцарелла, соус Pomodoro, Ковбаски Баварські, Салямі Наполі, орегано",
       "ru_title": "Kachathore.",
-      "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, Орегано",
+      "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, орегано",
       "en_title": "Kachathore",
       "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 157,
-          "new": 167,
-          "detectedAt": 1645528465
+          "old": 167,
+          "new": 168,
+          "detectedAt": 1646062890
+        },
+        {
+          "key": "ru_description",
+          "old": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, Орегано",
+          "new": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, орегано",
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2718,22 +2778,14 @@
       "city": "chernivtsi",
       "weight": 900,
       "size": 50,
-      "price": 140,
+      "price": 328,
       "id": "57f9cd8704f545de5a3ba73e5171861926947db0c42cc33c78748e287699f721",
       "uk_title": "Качаторе",
       "uk_description": "Моцарелла, соус Pomodoro, Ковбаски Баварські, Салямі Наполі, орегано",
       "ru_title": "Kachathore.",
-      "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, Орегано",
+      "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, орегано",
       "en_title": "Kachathore",
-      "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 130,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano"
     },
     {
       "link": "https://pizza-it.com/mascarpone",
@@ -2742,20 +2794,26 @@
       "city": "chernivtsi",
       "weight": 510,
       "size": 30,
-      "price": 187,
+      "price": 186,
       "id": "085dea4ba0d2f213b72be8d0d81ab7eed34f9945b396e29178f81ba41eb7c506",
       "uk_title": "Mascarpone",
       "uk_description": "Моцарелла, соус Pomodoro, мікс: Маскарпоне Рікота, свіжі запечені Шампіньйони, Філе куряче Josper, орегано",
-      "ru_title": "Matsharpone.",
+      "ru_title": "Matsharpone",
       "ru_description": "Моцарелла, соус Pomodoro, смесь: Mascarpone Ricot, свежие запеченные Champignons, куриное филе Josper, Орегано",
       "en_title": "Matsharpone",
       "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 177,
-          "new": 187,
-          "detectedAt": 1645528465
+          "old": 187,
+          "new": 186,
+          "detectedAt": 1646062890
+        },
+        {
+          "key": "ru_title",
+          "old": "Matsharpone.",
+          "new": "Matsharpone",
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2766,22 +2824,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 120,
+      "price": 336,
       "id": "191c4233d6009a93211a1ae3eb3dfd66b5da7ef8f21ad754c6230c5623cba46e",
       "uk_title": "Mascarpone",
       "uk_description": "Моцарелла, соус Pomodoro, мікс: Маскарпоне Рікота, свіжі запечені Шампіньйони, Філе куряче Josper, орегано",
-      "ru_title": "Matsharpone.",
+      "ru_title": "Matsharpone",
       "ru_description": "Моцарелла, соус Pomodoro, смесь: Mascarpone Ricot, свежие запеченные Champignons, куриное филе Josper, Орегано",
       "en_title": "Matsharpone",
-      "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 110,
-          "new": 120,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano"
     },
     {
       "link": "https://pizza-it.com/pizza-tenerezza",
@@ -2790,7 +2840,7 @@
       "city": "chernivtsi",
       "weight": 540,
       "size": 30,
-      "price": 197,
+      "price": 204,
       "id": "155de233d07d6a31b010b6fc697fb87b616ec2a2416a90f13859a07372310f71",
       "uk_title": "Tenerezza (Ніжність)",
       "uk_description": "Моцарелла, Пармезан, Вершки, Груша, Філе куряче Josper, орегано",
@@ -2801,9 +2851,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 177,
-          "new": 197,
-          "detectedAt": 1645528465
+          "old": 197,
+          "new": 204,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2814,7 +2864,7 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 110,
+      "price": 334,
       "id": "a1d81e1dd7f0f5eb76c3baba389c5f69d0bf60e529926987d4c2fc36814582ad",
       "uk_title": "Tenerezza (Ніжність)",
       "uk_description": "Моцарелла, Пармезан, Вершки, Груша, Філе куряче Josper, орегано",
@@ -2830,7 +2880,7 @@
       "city": "chernivtsi",
       "weight": 460,
       "size": 30,
-      "price": 227,
+      "price": 240,
       "id": "5089ecafa1802059127dd1d4881e5964afd7f40b464ded70385aa0cacba8e716",
       "uk_title": "Прошутто",
       "uk_description": "Моцарелла, соус Pomodoro, Прошутто Крудо, Рукола, Пармезан",
@@ -2841,9 +2891,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 217,
-          "new": 227,
-          "detectedAt": 1645528465
+          "old": 227,
+          "new": 240,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2854,22 +2904,14 @@
       "city": "chernivtsi",
       "weight": 920,
       "size": 50,
-      "price": 90,
+      "price": 350,
       "id": "26ffd0a80cf5a7d83e09a7a8d7b7f780e5c392879214c8d0d0527ebe007ba616",
       "uk_title": "Прошутто",
       "uk_description": "Моцарелла, соус Pomodoro, Прошутто Крудо, Рукола, Пармезан",
       "ru_title": "Prosciuto.",
       "ru_description": "Моцарелла, соус Pomodoro, Proxatto Krudo, Rugola, Parmesan",
       "en_title": "Prosciuto",
-      "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 80,
-          "new": 90,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan"
     },
     {
       "link": "https://pizza-it.com/pizza-prosciutto-and-pear",
@@ -2878,7 +2920,7 @@
       "city": "chernivtsi",
       "weight": 460,
       "size": 30,
-      "price": 227,
+      "price": 240,
       "id": "51e684ca84967c8bf57b0e4cd5a21bef9692d7528126db152e9d20baeab4da38",
       "uk_title": "Прошутто та Груша",
       "uk_description": "Прошутто Крудо, Груша, Апельсин, Мікс Салатів, Вершки",
@@ -2889,9 +2931,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 217,
-          "new": 227,
-          "detectedAt": 1645528465
+          "old": 227,
+          "new": 240,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2902,22 +2944,14 @@
       "city": "chernivtsi",
       "weight": 920,
       "size": 50,
-      "price": 90,
+      "price": 350,
       "id": "24cb21d84619c63e2b2ca54bb6f19338e03e5680f0985ecc5763414e2a981138",
       "uk_title": "Прошутто та Груша",
       "uk_description": "Прошутто Крудо, Груша, Апельсин, Мікс Салатів, Вершки",
       "ru_title": "Прошутто и груши",
       "ru_description": "Prosciuto Krudo, груша, оранжевый, салаты смеси, сливки",
       "en_title": "Prosciutto and pears",
-      "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 80,
-          "new": 90,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream"
     },
     {
       "link": "https://pizza-it.com/capricciosa",
@@ -2926,7 +2960,7 @@
       "city": "chernivtsi",
       "weight": 500,
       "size": 30,
-      "price": 167,
+      "price": 186,
       "id": "e0e7665dc61d66cd506067ce1a6f62780f24099eb0f4ee3d3f54b0fc0d0d793e",
       "uk_title": "Капрічоза",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Куряче Josper, томати Черрі, мікс Салатів заправлені базиліковим Соусом Песто, Пармезан",
@@ -2937,9 +2971,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 157,
-          "new": 167,
-          "detectedAt": 1645528465
+          "old": 167,
+          "new": 186,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2950,22 +2984,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 140,
+      "price": 336,
       "id": "10828179d50df0fde1b4eabe83ee9bf3f1c7f6f7fc1a2d5ef5b5aec467e19056",
       "uk_title": "Капрічоза",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Куряче Josper, томати Черрі, мікс Салатів заправлені базиліковим Соусом Песто, Пармезан",
       "ru_title": "Каприз",
       "ru_description": "Моцарелла, Помодоро соус, куриное филе Josper, Cherry Tomatoes, салат Смешанные салаты Василия соус Pesto, Parmesan",
       "en_title": "Caprice",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 130,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan"
     },
     {
       "link": "https://pizza-it.com/salami",
@@ -2974,7 +3000,7 @@
       "city": "chernivtsi",
       "weight": 470,
       "size": 30,
-      "price": 167,
+      "price": 177,
       "id": "018ef0fcae88040e4fca08ad1f2be9d9de9fad61f7ab339d9137ae556d416f3e",
       "uk_title": "Салямі",
       "uk_description": "Моцарелла, соус Pomodoro, Салямі Наполі, Перець Болгарський, орегано",
@@ -2985,9 +3011,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 157,
-          "new": 167,
-          "detectedAt": 1645528465
+          "old": 167,
+          "new": 177,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -2998,22 +3024,14 @@
       "city": "chernivtsi",
       "weight": 940,
       "size": 50,
-      "price": 140,
+      "price": 337,
       "id": "6bc7fa1b428f6c803705c48bd16a45b12b0ea2d75cf6cf4f807aa767183a936d",
       "uk_title": "Салямі",
       "uk_description": "Моцарелла, соус Pomodoro, Салямі Наполі, Перець Болгарський, орегано",
       "ru_title": "Салями",
       "ru_description": "Моцарелла, соус Pomodoro, салями Наполи, болгарский перец, орегано",
       "en_title": "Salami",
-      "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 130,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano"
     },
     {
       "link": "https://pizza-it.com/classic",
@@ -3022,22 +3040,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 140,
+      "price": 328,
       "id": "c7cb8df9838cdb223bd610589dcff910d3e40abc8ed8f1e85facc1d87f4f1df6",
       "uk_title": "Класік",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Куряче Josper, Кукурудза солодка, свіжі запечені Шампіньйони, орегано",
       "ru_title": "Классика",
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, кукуруза сладкий, свежие запеченные шампиньоны, орегано",
       "en_title": "Classic",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Maize sweet, Fresh baked champignons, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 130,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Maize sweet, Fresh baked champignons, Oregano"
     },
     {
       "link": "https://pizza-it.com/four-seasons",
@@ -3046,7 +3056,7 @@
       "city": "chernivtsi",
       "weight": 500,
       "size": 30,
-      "price": 187,
+      "price": 186,
       "id": "b07c5e3765d8801ea2655909eda73459fb3af65640d818d127c0da8ebcf6f983",
       "uk_title": "Чотири Сезони",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Свинини Josper, Артишоки, Шампіньйони, Салямі Наполі, орегано",
@@ -3057,9 +3067,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 177,
-          "new": 187,
-          "detectedAt": 1645528465
+          "old": 187,
+          "new": 186,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3070,22 +3080,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 120,
+      "price": 336,
       "id": "45cf4f27ef3990484f1f4a0fdbfba9f44a2e6ccac8b0c8dac8d1bd8d90af7d25",
       "uk_title": "Чотири Сезони",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Свинини Josper, Артишоки, Шампіньйони, Салямі Наполі, орегано",
       "ru_title": "Четыре сезона",
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, Artichokes, Champignons, Salami Napoli, Орегано",
       "en_title": "Four seasons",
-      "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 110,
-          "new": 120,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano"
     },
     {
       "link": "https://pizza-it.com/pepperoni",
@@ -3094,7 +3096,7 @@
       "city": "chernivtsi",
       "weight": 430,
       "size": 30,
-      "price": 167,
+      "price": 177,
       "id": "b787e0b9b86140283c14ac268d2c98726399f1413e4b55d78a828ce6bf7bae2b",
       "uk_title": "Пепероні",
       "uk_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Салямі Наполі, Перець Чилі, орегано",
@@ -3105,9 +3107,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 157,
-          "new": 167,
-          "detectedAt": 1645528465
+          "old": 167,
+          "new": 177,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3118,22 +3120,14 @@
       "city": "chernivtsi",
       "weight": 890,
       "size": 50,
-      "price": 140,
+      "price": 337,
       "id": "131f7368efea8245aa21caed97349a3d0487b93253c0d0b0433a91a100869421",
       "uk_title": "Пепероні",
       "uk_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Салямі Наполі, Перець Чилі, орегано",
       "ru_title": "Пеперони",
       "ru_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Salami Napoli, Chili, Oregano",
       "en_title": "Peperoni",
-      "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 130,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano"
     },
     {
       "link": "https://pizza-it.com/four-kinds-of-meat",
@@ -3142,7 +3136,7 @@
       "city": "chernivtsi",
       "weight": 500,
       "size": 30,
-      "price": 187,
+      "price": 186,
       "id": "a5c811a152145c2a573f5045162881e6b36706aa9d34e5b01a7577f7267c3cd6",
       "uk_title": "Чотири види М'яса",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Свинини Josper, Філе Куряче Josper, Салямі Наполі, Ковбаски Баварські, орегано",
@@ -3153,9 +3147,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 177,
-          "new": 187,
-          "detectedAt": 1645528465
+          "old": 187,
+          "new": 186,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3166,22 +3160,14 @@
       "city": "chernivtsi",
       "weight": 1000,
       "size": 50,
-      "price": 120,
+      "price": 336,
       "id": "37a4caa556f9d2b05929d03a3e119c6bb65c5bc14d1aa22bd72271df96864142",
       "uk_title": "Чотири види М'яса",
       "uk_description": "Моцарелла, соус Pomodoro, Філе Свинини Josper, Філе Куряче Josper, Салямі Наполі, Ковбаски Баварські, орегано",
       "ru_title": "Четыре типа мяса",
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, куриное филе Йосперу, салями Наполи, баварские колбаски, орегано",
       "en_title": "Four types of meat",
-      "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 110,
-          "new": 120,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano"
     },
     {
       "link": "https://pizza-it.com/giuliano",
@@ -3190,7 +3176,7 @@
       "city": "chernivtsi",
       "weight": 460,
       "size": 30,
-      "price": 157,
+      "price": 159,
       "id": "1a2627d94e48317798bf3c5ad0e8b1256c00ec61dac6bf2a4003987587619ab1",
       "uk_title": "Джуліано",
       "uk_description": "Моцарелла, соус Pomodoro, філе куряче Josper, свіжі запечені Шампіньйони, орегано",
@@ -3201,9 +3187,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 147,
-          "new": 157,
-          "detectedAt": 1645528465
+          "old": 157,
+          "new": 159,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3214,22 +3200,14 @@
       "city": "chernivtsi",
       "weight": 920,
       "size": 50,
-      "price": 140,
+      "price": 309,
       "id": "2b4767473e3c6cf0b7994f6a3c6e5fc1415c4bcbbbd73c6900bc92be3b51d552",
       "uk_title": "Джуліано",
       "uk_description": "Моцарелла, соус Pomodoro, філе куряче Josper, свіжі запечені Шампіньйони, орегано",
       "ru_title": "Джулиано",
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, свежие запеченные шампиньоны, орегано",
       "en_title": "Juliano",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 120,
-          "new": 140,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano"
     },
     {
       "link": "https://pizza-it.com/bergamo",
@@ -3238,7 +3216,7 @@
       "city": "chernivtsi",
       "weight": 410,
       "size": 30,
-      "price": 227,
+      "price": 240,
       "id": "9426ec978280433431f21ef7e9e8444b4b02f095f0a374e9d71b8acdfad06ab9",
       "uk_title": "Бергамо",
       "uk_description": "Моцарелла, ДорБлю, Інжир, Прошутто Крудо, орегано",
@@ -3249,9 +3227,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 217,
-          "new": 227,
-          "detectedAt": 1645528465
+          "old": 227,
+          "new": 240,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3262,22 +3240,14 @@
       "city": "chernivtsi",
       "weight": 860,
       "size": 50,
-      "price": 90,
+      "price": 350,
       "id": "266e5ac2c920b00605992abcc8e9fc0cb9125f6d46f25b75d7d8b051754c8329",
       "uk_title": "Бергамо",
       "uk_description": "Моцарелла, ДорБлю, Інжир, Прошутто Крудо, орегано",
       "ru_title": "Бергамо.",
       "ru_description": "Моцарелла, Дораил, Рис, Просицко, Орегано",
       "en_title": "Bergamo.",
-      "en_description": "Mozzarella, Dorail, figs, proscco, Oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 80,
-          "new": 90,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, Dorail, figs, proscco, Oregano"
     },
     {
       "link": "https://pizza-it.com/pollo-con-formaggi",
@@ -3286,24 +3256,8 @@
       "city": "chernivtsi",
       "weight": 470,
       "size": 30,
-      "price": 167,
+      "price": 177,
       "id": "16a624df312b7cd61e992bc4ee0cb9cbb8f6bde8aa833597bd093f4b1c12ad44",
-      "uk_title": "Поло кон Формаджі",
-      "uk_description": "Моцарелла, Фета, Вершки, Філе Куряче Josper, Перець Болгарський, орегано",
-      "ru_title": "Поло Кн Формадж",
-      "ru_description": "Моцарелла, фета, сливки, куриное филе, болгарский перец, орегано",
-      "en_title": "Polo Kon formadzh",
-      "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano"
-    },
-    {
-      "link": "https://pizza-it.com/pollo-con-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "weight": 960,
-      "size": 50,
-      "price": 140,
-      "id": "fa393578395c7aa0fc218bf6f3a59980389dfca265fa2767b9725889637f1399",
       "uk_title": "Поло кон Формаджі",
       "uk_description": "Моцарелла, Фета, Вершки, Філе Куряче Josper, Перець Болгарський, орегано",
       "ru_title": "Поло Кн Формадж",
@@ -3313,11 +3267,27 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 120,
-          "new": 140,
-          "detectedAt": 1645528465
+          "old": 167,
+          "new": 177,
+          "detectedAt": 1646062890
         }
       ]
+    },
+    {
+      "link": "https://pizza-it.com/pollo-con-formaggi",
+      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "weight": 960,
+      "size": 50,
+      "price": 337,
+      "id": "fa393578395c7aa0fc218bf6f3a59980389dfca265fa2767b9725889637f1399",
+      "uk_title": "Поло кон Формаджі",
+      "uk_description": "Моцарелла, Фета, Вершки, Філе Куряче Josper, Перець Болгарський, орегано",
+      "ru_title": "Поло Кн Формадж",
+      "ru_description": "Моцарелла, фета, сливки, куриное филе, болгарский перец, орегано",
+      "en_title": "Polo Kon formadzh",
+      "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano"
     },
     {
       "link": "https://pizza-it.com/tuna",
@@ -3326,22 +3296,14 @@
       "city": "chernivtsi",
       "weight": 840,
       "size": 50,
-      "price": 120,
+      "price": 336,
       "id": "b14b3549d01859274af8577cb196ae603cfb1a5ee62793d24730ce8ddbab5574",
       "uk_title": "Тунець",
       "uk_description": "Моцарелла, Вершки, Тунець в оливковій олії, Перець Болгарський, орегано",
       "ru_title": "Тунец",
       "ru_description": "Моцарелла, крем, тунец в оливковом масле, болгарском перце, орегано",
       "en_title": "Tuna",
-      "en_description": "Mozzarella, cream, tuna in olive oil, Bulgarian pepper, oregano",
-      "historyOfChanges": [
-        {
-          "key": "price",
-          "old": 110,
-          "new": 120,
-          "detectedAt": 1645528465
-        }
-      ]
+      "en_description": "Mozzarella, cream, tuna in olive oil, Bulgarian pepper, oregano"
     },
     {
       "link": "https://pizza-it.com/royal",
@@ -3350,7 +3312,7 @@
       "city": "chernivtsi",
       "weight": 480,
       "size": 30,
-      "price": 297,
+      "price": 267,
       "id": "ee9317b8ee5c9649671dddee422f28e0b211a3498242e183954e7908b2287d73",
       "uk_title": "Королівська",
       "uk_description": "Моцарелла, соус Pomodoro, Рукола, Ікра червона, Лосось холодного копчення, орегано",
@@ -3361,9 +3323,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 287,
-          "new": 297,
-          "detectedAt": 1645528465
+          "old": 297,
+          "new": 267,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3374,7 +3336,7 @@
       "city": "chernivtsi",
       "weight": 480,
       "size": 30,
-      "price": 277,
+      "price": 249,
       "id": "e4e915355a5a230c1d5ec7caf7b3370a23bfe29cfeea5bd1cc0ba20914e64ddf",
       "uk_title": "Лосось",
       "uk_description": "Моцарелла, фірмовий крем-соус зі шпинату, Лосось холодного копчення, Оливки, орегано",
@@ -3385,9 +3347,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 267,
-          "new": 277,
-          "detectedAt": 1645528465
+          "old": 277,
+          "new": 249,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -3398,7 +3360,7 @@
       "city": "chernivtsi",
       "weight": 500,
       "size": 30,
-      "price": 267,
+      "price": 240,
       "id": "9d26ee4b9878e0c4548c94a7ce79842d9b1241be2ad8ac60725cedf3e70ac8a4",
       "uk_title": "Лосось Россо",
       "uk_description": "Моцарелла, соус Pomodoro, Лосось холодного копчення, томати Черрі, мікс салатів, орегано",
@@ -3409,9 +3371,9 @@
       "historyOfChanges": [
         {
           "key": "price",
-          "old": 247,
-          "new": 267,
-          "detectedAt": 1645528465
+          "old": 267,
+          "new": 240,
+          "detectedAt": 1646062890
         }
       ]
     },
@@ -4232,6 +4194,22 @@
       "en_description": "Tomato sauce, solid cheese, mozzarella, mushrooms, corpses, Bulgarian pepper, salami, sausages hunting"
     },
     {
+      "image": "https://assets.misteram.com.ua/misteram-public/f052d11e87f1339081873648b80878c6-400x0.png",
+      "link": "https://misteram.com.ua/chernivtsi/baza/pizza",
+      "weight": null,
+      "size": 50,
+      "price": 265,
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "id": "bc8f10d6360bd456810ebeb89331721537cd9ebf0bb28acbe2cd33c8626ac9b4",
+      "uk_title": "Піца \"Прошуто\"",
+      "uk_description": "Сир твердий, моцарела, прошуто, шампіньйони, помідори, рукола, томатний соус",
+      "ru_title": "Пицца «защищена»",
+      "ru_description": "Сплошной сыр, моцарелла, причуто, шампиньоны, помидоры, стойка, томатный соус",
+      "en_title": "Pizza \"Protuted\"",
+      "en_description": "Solid cheese, mozzarella, prichuto, champignons, tomatoes, rack, tomato sauce"
+    },
+    {
       "image": "https://assets.misteram.com.ua/misteram-public/c386d090660cc1d2a2e0585797e02383-400x0.png",
       "link": "https://misteram.com.ua/chernivtsi/baza/pizza",
       "weight": null,
@@ -4440,6 +4418,22 @@
       "en_description": "Cheese solid, mozzarella, tomato sauce, ham, bacon, chicken fillet, sausages hunting, salami"
     },
     {
+      "image": "https://assets.misteram.com.ua/misteram-public/f052d11e87f1339081873648b80878c6-400x0.png",
+      "link": "https://misteram.com.ua/chernivtsi/baza/pizza30",
+      "weight": null,
+      "size": 30,
+      "price": 165,
+      "country": "ukraine",
+      "city": "chernivtsi",
+      "id": "2cd8352033dea4cdf76e2781646c5b8ae155ee869dfd9bed0fc2df26c938083a",
+      "uk_title": "Піца \"Прошуто\"",
+      "uk_description": "Сир твердий, моцарела, прошуто, шампіньйони, помідори, рукола, томатний соус",
+      "ru_title": "Пицца «защищена»",
+      "ru_description": "Сплошной сыр, моцарелла, причуто, шампиньоны, помидоры, стойка, томатный соус",
+      "en_title": "Pizza \"Protuted\"",
+      "en_description": "Solid cheese, mozzarella, prichuto, champignons, tomatoes, rack, tomato sauce"
+    },
+    {
       "image": "https://assets.misteram.com.ua/misteram-public/3b8e5208b70b285026260dab82508442-400x0.png",
       "link": "https://misteram.com.ua/chernivtsi/picantico/pizza50",
       "weight": null,
@@ -4594,10 +4588,18 @@
       "id": "2ebc80777cd50cecc5328fbc1b7ec180493bf074a2c3301248bb18ccc11474ae",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцон\"",
+      "ru_title": "Пицца \"Кальцона\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
-      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan"
+      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцон\"",
+          "new": "Пицца \"Кальцона\"",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/692bfca96ab16e8cc0c06b8476fff190-400x0.png",
@@ -4850,10 +4852,18 @@
       "id": "09395eae944ea06b7816430d8f7a40f51198a3d159d0c6a84de9cd11b80bd3d7",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцон\"",
+      "ru_title": "Пицца \"Кальцона\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
-      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan"
+      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцон\"",
+          "new": "Пицца \"Кальцона\"",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/692bfca96ab16e8cc0c06b8476fff190-400x0.png",
@@ -5155,9 +5165,17 @@
       "uk_title": "Піца \"Мексиканська\"",
       "uk_description": "Соус маринара, салямі, папероні, моцарела, перець халапеньйо, соус песто",
       "ru_title": "Пицца \"Мексиканская\"",
-      "ru_description": "Маринарский соус, салями, бумага, моцарелла, перец халапенио, соус песто",
+      "ru_description": "Маринарский соус, салями, бумага, моцарелла, перец галапенио, соус песто",
       "en_title": "Pizza \"Mexican\"",
-      "en_description": "Marinara sauce, salami, paper, mozzarella, Pepper Halapenio, Pesto sauce"
+      "en_description": "Marinara sauce, salami, paper, mozzarella, Pepper Halapenio, Pesto sauce",
+      "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Маринарский соус, салями, бумага, моцарелла, перец халапенио, соус песто",
+          "new": "Маринарский соус, салями, бумага, моцарелла, перец галапенио, соус песто",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/4a3705edda42767ebbccfbbfcbd711f5-400x0.png",
@@ -5251,10 +5269,16 @@
       "uk_title": "Піца \"Техаська\"",
       "uk_description": "Соус маринара, асорті домашніх сосисок, опеньки, моцарелла, кримська цибуля",
       "ru_title": "Пицца \"Техас\"",
-      "ru_description": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
+      "ru_description": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
       "en_title": "Pizza \"Texas\"",
       "en_description": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onion",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
+          "new": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_description",
           "old": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
@@ -5489,9 +5513,17 @@
       "uk_title": "Піца \"Мексиканська\"",
       "uk_description": "Соус маринара, салямі, папероні, моцарела, перець халапеньйо, соус песто",
       "ru_title": "Пицца \"Мексиканская\"",
-      "ru_description": "Маринарский соус, салями, бумага, моцарелла, перец халапенио, соус песто",
+      "ru_description": "Маринарский соус, салями, бумага, моцарелла, перец галапенио, соус песто",
       "en_title": "Pizza \"Mexican\"",
-      "en_description": "Marinara sauce, salami, paper, mozzarella, Pepper Halapenio, Pesto sauce"
+      "en_description": "Marinara sauce, salami, paper, mozzarella, Pepper Halapenio, Pesto sauce",
+      "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Маринарский соус, салями, бумага, моцарелла, перец халапенио, соус песто",
+          "new": "Маринарский соус, салями, бумага, моцарелла, перец галапенио, соус песто",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/4a3705edda42767ebbccfbbfcbd711f5-400x0.png",
@@ -5720,10 +5752,18 @@
       "id": "ab75c9f5cda6bb7efffecde0fc371ed806aa031fc194a1abe636a89253d6a138",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Шинка, салямі, печериці",
-      "ru_title": "Пицца \"Кальцон\"",
+      "ru_title": "Пицца \"Кальцона\"",
       "ru_description": "Ветчина, салями, грибы",
       "en_title": "Pizza \"Caltsone\"",
-      "en_description": "Ham, salami, mushrooms"
+      "en_description": "Ham, salami, mushrooms",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцон\"",
+          "new": "Пицца \"Кальцона\"",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/321ce396004f284134e46ba455c8baf1-400x0.png",
@@ -6584,11 +6624,17 @@
       "id": "c901513b8040c8357f670455c011aff307fe388e0cf086c9ff294702633044b2",
       "uk_title": "Піца \"Італійська\"",
       "uk_description": "Салямі, моцарелла, соус томатний \"Пелаті\", паприка.",
-      "ru_title": "Пицца \"Итальянский\"",
+      "ru_title": "Пицца \"Итальянская\"",
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Итальянский\"",
+          "new": "Пицца \"Итальянская\"",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянская\"",
@@ -6608,11 +6654,17 @@
       "id": "a6682cf4f1b7852c89345fda069b676a95ed47899359e9f749beb470c84d3417",
       "uk_title": "Піца \"Італійська\"",
       "uk_description": "Салямі, моцарелла, соус томатний \"Пелаті\", паприка.",
-      "ru_title": "Пицца \"Итальянский\"",
+      "ru_title": "Пицца \"Итальянская\"",
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Итальянский\"",
+          "new": "Пицца \"Итальянская\"",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянская\"",
@@ -7080,11 +7132,17 @@
       "id": "8a36849685919cccb3f1040f0e7c4a0b8e03fc4d63f76c401780d6bfde5baf67",
       "uk_title": "Піца Шашлична",
       "uk_description": "Шашлик, моцарела, томати, соус томатний, шампіньйонин, цибуля маринована в оцеті",
-      "ru_title": "Пицца шашлыка",
+      "ru_title": "Пицца шашлика",
       "ru_description": "Шашлик, моцарела, помидоры, томатный соус, шампиньоны, маринованные лук в уксусе",
       "en_title": "Pizza Shashlika",
       "en_description": "Shashlik, mozzarela, tomatoes, tomato sauce, champignons, marinated onions in vinegar",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца шашлыка",
+          "new": "Пицца шашлика",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_title",
           "old": "Пицца шашлика",
@@ -7328,11 +7386,17 @@
       "id": "29fd215ccc7de7ae8b486bd3660007b92591db19b18432cb58ed60ee56fac2eb",
       "uk_title": "Піца Шашлична",
       "uk_description": "Шашлик свинний, моцарела, томати, шампіньйони, цибуля маринована в оцеті, соус томатний",
-      "ru_title": "Пицца шашлыка",
+      "ru_title": "Пицца шашлика",
       "ru_description": "Свинья шашлык, моцарелла, помидоры, шампиньоны, маринованные лук в уксусе, томатный соус",
       "en_title": "Pizza Shashlika",
       "en_description": "Pig Shashlik, Mozzarella, Tomatoes, Champignons, Marinated onions in vinegar, Tomato sauce",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца шашлыка",
+          "new": "Пицца шашлика",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_title",
           "old": "Пицца шашлика",
@@ -7784,10 +7848,18 @@
       "id": "8a07d80430c5c5eed6580fe057ed2b1e932aa7357a3585df359455a60bbd1f07",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцон\"",
+      "ru_title": "Пицца \"Кальцона\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
-      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan"
+      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцон\"",
+          "new": "Пицца \"Кальцона\"",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/692bfca96ab16e8cc0c06b8476fff190-400x0.png",
@@ -8040,10 +8112,18 @@
       "id": "fe6e38edf126af9e71aeeadc16f5827d8d730ca0310ac06775567b56f198182f",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцон\"",
+      "ru_title": "Пицца \"Кальцона\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
-      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan"
+      "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцон\"",
+          "new": "Пицца \"Кальцона\"",
+          "detectedAt": 1646062890
+        }
+      ]
     },
     {
       "image": "https://assets.misteram.com.ua/misteram-public/692bfca96ab16e8cc0c06b8476fff190-400x0.png",
@@ -9479,10 +9559,16 @@
       "uk_title": "Піца з морепродуктами",
       "uk_description": "Тигрові креветки, мідії, лосось, моцарела, вершки, базилік",
       "ru_title": "Пицца с морепродуктами",
-      "ru_description": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
+      "ru_description": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",
       "en_title": "Pizza with seafood",
       "en_description": "Tiger shrimp, mussels, salmon, mozzarella, cream, basil",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
+          "new": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",
+          "detectedAt": 1646062890
+        },
         {
           "key": "ru_description",
           "old": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",

@@ -76,6 +76,6 @@ export class Pizza implements PizzaJson {
   @ApiProperty({ description: 'pizza description in english' })
   en_description: string;
 
-  @ApiProperty({ description: 'pizza changes', type: [Change], required: false })
+  @ApiProperty({ description: 'pizza changes. order by detectedAt desc', type: [Change], required: false })
   historyOfChanges?: Change[];
 }
