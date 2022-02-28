@@ -32,7 +32,7 @@ export type Translated = Omit<WithId, 'title' | 'description'> & {
 };
 
 export interface Change {
-  key: keyof Translated;
+  key: string;
   old: unknown;
   new: unknown;
   detectedAt: number;

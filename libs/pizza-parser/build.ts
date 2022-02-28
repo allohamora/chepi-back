@@ -36,9 +36,9 @@ const addChanges = (newPizzas: Translated[], detectedAt: number) => {
     }
 
     const oldPizza = pizzasMap.get(newPizza.id);
-    const diffs = objectDiff(omit(oldPizza, ['historyOfChanges']), newPizza);
-    const historyOfChanges = diffs.map(({ key, values }) => ({
-      key: key as keyof Translated,
+    const diff = objectDiff(omit(oldPizza, ['historyOfChanges']), newPizza);
+    const historyOfChanges = diff.map(({ key, values }) => ({
+      key,
       old: values[0],
       new: values[1],
       detectedAt,

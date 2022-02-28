@@ -51,7 +51,7 @@ describe('pizzas.json', () => {
       expectString(pizza.en_title);
       expectString(pizza.en_description);
 
-      expectHistory(pizza.historyOfChanges as Change[]);
+      expectHistory(pizza.historyOfChanges);
     }
   });
 });
