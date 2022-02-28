@@ -3,6 +3,7 @@ import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://la.ua/chernivtsy/';
+const TITLE_BLACKLIST = [/На армію/];
 
 export class Lapiec extends ChernivtsiPizzasParser {
   private async getPageHtml() {
@@ -51,32 +52,40 @@ export class Lapiec extends ChernivtsiPizzasParser {
     const $pizzaList = $('#home-pizza');
     const pizzaElements = this.getPizzaElements($pizzaList);
 
-    return pizzaElements.map((element) => {
-      const $pizza = $(element);
-      const $info = $pizza.find('.productInfoWrapp');
+    return pizzaElements
+      .filter((element) => {
+        const $pizza = $(element);
+        const $info = $pizza.find('.productInfoWrapp');
+        const title = this.getTitle($info);
 
-      const title = this.getTitle($info);
-      const description = this.getDescription($info);
-      const link = this.getLink($info);
-      const image = this.getImage($pizza);
+        return !TITLE_BLACKLIST.some((regexp) => regexp.test(title));
+      })
+      .map((element) => {
+        const $pizza = $(element);
+        const $info = $pizza.find('.productInfoWrapp');
 
-      const $variant = $pizza.find('.productSize-W');
+        const title = this.getTitle($info);
+        const description = this.getDescription($info);
+        const link = this.getLink($info);
+        const image = this.getImage($pizza);
 
-      const size = this.getSize($variant);
-      const weight = this.getWeight($variant);
-      const price = this.getPrice($info);
+        const $variant = $pizza.find('.productSize-W');
 
-      return {
-        ...this.baseMetadata,
-        title,
-        description,
-        link,
-        image,
-        size,
-        weight,
-        price,
-      };
-    });
+        const size = this.getSize($variant);
+        const weight = this.getWeight($variant);
+        const price = this.getPrice($info);
+
+        return {
+          ...this.baseMetadata,
+          title,
+          description,
+          link,
+          image,
+          size,
+          weight,
+          price,
+        };
+      });
   }
 
   public async parsePizzas() {

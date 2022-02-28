@@ -73,7 +73,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
         const gettedPrice = priceMatch ? priceMatch[0] : `0`;
 
         const rawSize = parseInt(gettedSize);
-        const rawPrice = parseInt(gettedPrice + basePrice);
+        const rawPrice = parseInt(gettedPrice) + basePrice;
 
         const size = rawSize === 0 ? null : rawSize;
         const price = rawPrice === 0 ? null : rawPrice;
@@ -83,7 +83,10 @@ export class PizzaIt extends ChernivtsiPizzasParser {
   }
 
   private getVariants($: CheerioAPI) {
-    const basePrice = parseInt($('.product-price').text());
+    const notSaleBasePrice = parseInt($('.product-price').text());
+    const saleBasePrice = parseInt($('.product-price-new').text());
+    const basePrice = notSaleBasePrice || saleBasePrice;
+
     const pricesAndSizes = this.getPricesAndSizes($, basePrice);
 
     return $('.product-blocks .block-content > h2')
