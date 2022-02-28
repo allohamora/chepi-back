@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1646062890,
+  "updatedAt": 1646065016,
   "pizzas": [
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
@@ -2295,7 +2295,7 @@
     },
     {
       "link": "https://pizza-it.com/margarita",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Margherita%20Integrale/Pizza_web_102-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 370,
@@ -2310,6 +2310,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Margherita%20Integrale/Pizza_web_102-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 127,
           "new": 132,
@@ -2319,7 +2325,7 @@
     },
     {
       "link": "https://pizza-it.com/margarita",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Margherita%20Integrale/Pizza_web_102-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 760,
@@ -2331,11 +2337,19 @@
       "ru_title": "Маргарита.",
       "ru_description": "Моцарелла, соус Помодоро, Орегано",
       "en_title": "Margarita.",
-      "en_description": "Mozzarella, Pomodoro sauce, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Margherita%20Integrale/Pizza_web_102-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/broccoli-love",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/BroccoliLove/Photo_small_025-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 490,
@@ -2350,6 +2364,12 @@
       "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/BroccoliLove/Photo_small_025-600x425.JPG",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 157,
           "new": 159,
@@ -2359,7 +2379,7 @@
     },
     {
       "link": "https://pizza-it.com/broccoli-love",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/BroccoliLove/Photo_small_025-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 980,
@@ -2371,11 +2391,19 @@
       "ru_title": "Броксоли Лоз",
       "ru_description": "Корпоративный соус брокколи, моцарелла, брокколи, вишня, тыквенные семена",
       "en_title": "Brocsoli Loz",
-      "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds"
+      "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/BroccoliLove/Photo_small_025-600x425.JPG",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/cinque-stelle",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/CinqueStelle/Pizza_small_15-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 540,
@@ -2390,6 +2418,12 @@
       "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/CinqueStelle/Pizza_small_15-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 147,
           "new": 150,
@@ -2399,7 +2433,7 @@
     },
     {
       "link": "https://pizza-it.com/cinque-stelle",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/CinqueStelle/Pizza_small_15-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1080,
@@ -2411,11 +2445,19 @@
       "ru_title": "Cinque Stelle (пять звезд)",
       "ru_description": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
       "en_title": "Cinque Stelle (Five Stars)",
-      "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds"
+      "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/CinqueStelle/Pizza_small_15-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/popeye",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Popeye/Photo_small_001-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 480,
@@ -2430,6 +2472,12 @@
       "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Popeye/Photo_small_001-600x425.JPG",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 197,
           "new": 204,
@@ -2439,7 +2487,7 @@
     },
     {
       "link": "https://pizza-it.com/popeye",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Popeye/Photo_small_001-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 960,
@@ -2451,11 +2499,19 @@
       "ru_title": "Popeye (Sailor Popen)",
       "ru_description": "Моцарелла, детское шпинат, вишня, оливки, пармезан, маскарпон",
       "en_title": "Popeye (Sailor Popen)",
-      "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone"
+      "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Popeye/Photo_small_001-600x425.JPG",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/primavera",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/PrimaVera/Photo_small_013-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 560,
@@ -2470,6 +2526,12 @@
       "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/PrimaVera/Photo_small_013-600x425.JPG",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 197,
           "new": 204,
@@ -2479,7 +2541,7 @@
     },
     {
       "link": "https://pizza-it.com/primavera",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/PrimaVera/Photo_small_013-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -2491,11 +2553,19 @@
       "ru_title": "Преступник",
       "ru_description": "Брокколи, моцарелла, фета, спаржа, помидоры черри, соус песто",
       "en_title": "Primander",
-      "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil"
+      "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/PrimaVera/Photo_small_013-600x425.JPG",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/avocado",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Avocado/Pizza_web_058-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 450,
@@ -2510,6 +2580,12 @@
       "en_description": "Corporate Cream-Sauce from Spinach, Avocado Hass, Broccoli, Mix Salads, Cream Balm",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Avocado/Pizza_web_058-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 147,
           "new": 159,
@@ -2519,7 +2595,7 @@
     },
     {
       "link": "https://pizza-it.com/avocado",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Avocado/Pizza_web_058-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 900,
@@ -2531,11 +2607,19 @@
       "ru_title": "Авокадо",
       "ru_description": "Корпоративный крем-соус из шпината, гасс авокадо, брокколи, салаты смеси, крем-бальзам",
       "en_title": "Avocado",
-      "en_description": "Corporate Cream-Sauce from Spinach, Avocado Hass, Broccoli, Mix Salads, Cream Balm"
+      "en_description": "Corporate Cream-Sauce from Spinach, Avocado Hass, Broccoli, Mix Salads, Cream Balm",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Avocado/Pizza_web_058-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/vegani",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Vegani/Pizza_web_042-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 420,
@@ -2550,6 +2634,12 @@
       "en_description": "Corporate Cream-Sauce from Spinach, Artichokes, Bulgarian Pepper, Orange, Rugola, Cream Balm, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Vegani/Pizza_web_042-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 137,
           "new": 159,
@@ -2559,7 +2649,7 @@
     },
     {
       "link": "https://pizza-it.com/vegani",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Vegani/Pizza_web_042-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 900,
@@ -2571,11 +2661,19 @@
       "ru_title": "Вану",
       "ru_description": "Корпоративный крем-соус от шпината, артишоки, болгарский перец, оранжевый, ругула, крем-бальзам, орегано",
       "en_title": "Vanuary",
-      "en_description": "Corporate Cream-Sauce from Spinach, Artichokes, Bulgarian Pepper, Orange, Rugola, Cream Balm, Oregano"
+      "en_description": "Corporate Cream-Sauce from Spinach, Artichokes, Bulgarian Pepper, Orange, Rugola, Cream Balm, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Vegani/Pizza_web_042-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/verdure",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Verdure/Pizza_web_109-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1100,
@@ -2587,11 +2685,19 @@
       "ru_title": "Вердий",
       "ru_description": "Моцарелла, соус Pomodoro, брокколи, болгарский перец, кукуруза, свежие запеченные шампиньоны",
       "en_title": "Verdaire",
-      "en_description": "Mozzarella, Pomodoro sauce, broccoli, Bulgarian pepper, corn, Fresh baked champignons"
+      "en_description": "Mozzarella, Pomodoro sauce, broccoli, Bulgarian pepper, corn, Fresh baked champignons",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Verdure/Pizza_web_109-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/due-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/2Formaggi/Pizza_small_01-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 440,
@@ -2606,6 +2712,12 @@
       "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/2Formaggi/Pizza_small_01-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 187,
           "new": 186,
@@ -2615,7 +2727,7 @@
     },
     {
       "link": "https://pizza-it.com/due-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/2Formaggi/Pizza_small_01-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 880,
@@ -2627,11 +2739,19 @@
       "ru_title": "Два сыра",
       "ru_description": "Роллон, Пекорино Романо, Крем, Свежие запеченные Champignons",
       "en_title": "Two cheeses",
-      "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons"
+      "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/2Formaggi/Pizza_small_01-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/tre-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/3Formaggi/Pizza_small_28-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 420,
@@ -2643,11 +2763,19 @@
       "ru_title": "Три сыра",
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
-      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola"
+      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/3Formaggi/Pizza_small_28-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/tre-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/3Formaggi/Pizza_small_28-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 840,
@@ -2659,11 +2787,19 @@
       "ru_title": "Три сыра",
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
-      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola"
+      "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/3Formaggi/Pizza_small_28-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/quattro-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Quattro%20Formaggi/Pizza_web_125-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 480,
@@ -2678,6 +2814,12 @@
       "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Quattro%20Formaggi/Pizza_web_125-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 197,
           "new": 204,
@@ -2687,7 +2829,7 @@
     },
     {
       "link": "https://pizza-it.com/quattro-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Quattro%20Formaggi/Pizza_web_125-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 940,
@@ -2699,11 +2841,19 @@
       "ru_title": "Четыре сыра",
       "ru_description": "Моцарелла, Рикота, Дорн, Пармезан, Крем",
       "en_title": "Four cheeses",
-      "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream"
+      "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/Quattro%20Formaggi/Pizza_web_125-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/cinque-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/5Formaggi/Pizza_small_41-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 470,
@@ -2718,6 +2868,12 @@
       "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/5Formaggi/Pizza_small_41-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 197,
           "new": 204,
@@ -2727,7 +2883,7 @@
     },
     {
       "link": "https://pizza-it.com/cinque-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/5Formaggi/Pizza_small_41-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 940,
@@ -2739,11 +2895,19 @@
       "ru_title": "Пять сыров",
       "ru_description": "Моцарелла, спровоцированные, боевики, Рикота, Пекорино Романо, Крем",
       "en_title": "Five cheeses",
-      "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream"
+      "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/Neapolitan/5Formaggi/Pizza_small_41-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/cacciatore",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Cacciatore/Pizza_web_002-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 440,
@@ -2757,6 +2921,12 @@
       "en_title": "Kachathore",
       "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
       "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Cacciatore/Pizza_web_002-600x425.jpg",
+          "detectedAt": 1646065016
+        },
         {
           "key": "price",
           "old": 167,
@@ -2773,7 +2943,7 @@
     },
     {
       "link": "https://pizza-it.com/cacciatore",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Cacciatore/Pizza_web_002-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 900,
@@ -2785,11 +2955,19 @@
       "ru_title": "Kachathore.",
       "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, орегано",
       "en_title": "Kachathore",
-      "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Cacciatore/Pizza_web_002-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/mascarpone",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Mascarpone/Photo_small_035-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 510,
@@ -2803,6 +2981,12 @@
       "en_title": "Matsharpone",
       "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
       "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Mascarpone/Photo_small_035-600x425.JPG",
+          "detectedAt": 1646065016
+        },
         {
           "key": "price",
           "old": 187,
@@ -2819,7 +3003,7 @@
     },
     {
       "link": "https://pizza-it.com/mascarpone",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Mascarpone/Photo_small_035-600x425.JPG",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -2831,11 +3015,19 @@
       "ru_title": "Matsharpone",
       "ru_description": "Моцарелла, соус Pomodoro, смесь: Mascarpone Ricot, свежие запеченные Champignons, куриное филе Josper, Орегано",
       "en_title": "Matsharpone",
-      "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Mascarpone/Photo_small_035-600x425.JPG",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/pizza-tenerezza",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Tenerezza/Pizza_web_17-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 540,
@@ -2850,6 +3042,12 @@
       "en_description": "Mozzarella, Parmesan, Cream, Pear, Chicken fillet Josper, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Tenerezza/Pizza_web_17-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 197,
           "new": 204,
@@ -2859,7 +3057,7 @@
     },
     {
       "link": "https://pizza-it.com/pizza-tenerezza",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Tenerezza/Pizza_web_17-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -2871,11 +3069,19 @@
       "ru_title": "Тенерецка (нежность)",
       "ru_description": "Моцарелла, пармезан, крем, груша, куриное филе Josper, Oregano",
       "en_title": "Tenerezza (tenderness)",
-      "en_description": "Mozzarella, Parmesan, Cream, Pear, Chicken fillet Josper, Oregano"
+      "en_description": "Mozzarella, Parmesan, Cream, Pear, Chicken fillet Josper, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Tenerezza/Pizza_web_17-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/prosciutto",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Prosciutto/Pizza_web_163-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 460,
@@ -2890,6 +3096,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Prosciutto/Pizza_web_163-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 227,
           "new": 240,
@@ -2899,7 +3111,7 @@
     },
     {
       "link": "https://pizza-it.com/prosciutto",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Prosciutto/Pizza_web_163-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 920,
@@ -2911,11 +3123,19 @@
       "ru_title": "Prosciuto.",
       "ru_description": "Моцарелла, соус Pomodoro, Proxatto Krudo, Rugola, Parmesan",
       "en_title": "Prosciuto",
-      "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan"
+      "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Prosciutto/Pizza_web_163-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/pizza-prosciutto-and-pear",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/ProsciuttoandPear/Pizza_web_29-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 460,
@@ -2930,6 +3150,12 @@
       "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/ProsciuttoandPear/Pizza_web_29-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 227,
           "new": 240,
@@ -2939,7 +3165,7 @@
     },
     {
       "link": "https://pizza-it.com/pizza-prosciutto-and-pear",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/ProsciuttoandPear/Pizza_web_29-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 920,
@@ -2951,11 +3177,19 @@
       "ru_title": "Прошутто и груши",
       "ru_description": "Prosciuto Krudo, груша, оранжевый, салаты смеси, сливки",
       "en_title": "Prosciutto and pears",
-      "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream"
+      "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/ProsciuttoandPear/Pizza_web_29-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/capricciosa",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Capricciosa/Pizza_web_020-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 500,
@@ -2970,6 +3204,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Capricciosa/Pizza_web_020-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 167,
           "new": 186,
@@ -2979,7 +3219,7 @@
     },
     {
       "link": "https://pizza-it.com/capricciosa",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Capricciosa/Pizza_web_020-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -2991,11 +3231,19 @@
       "ru_title": "Каприз",
       "ru_description": "Моцарелла, Помодоро соус, куриное филе Josper, Cherry Tomatoes, салат Смешанные салаты Василия соус Pesto, Parmesan",
       "en_title": "Caprice",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan"
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Capricciosa/Pizza_web_020-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/salami",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Salami/Pizza_web_009-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 470,
@@ -3010,6 +3258,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Salami/Pizza_web_009-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 167,
           "new": 177,
@@ -3019,7 +3273,7 @@
     },
     {
       "link": "https://pizza-it.com/salami",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Salami/Pizza_web_009-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 940,
@@ -3031,11 +3285,19 @@
       "ru_title": "Салями",
       "ru_description": "Моцарелла, соус Pomodoro, салями Наполи, болгарский перец, орегано",
       "en_title": "Salami",
-      "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Salami/Pizza_web_009-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/classic",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Classic/Pizza_web_157-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -3047,11 +3309,19 @@
       "ru_title": "Классика",
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, кукуруза сладкий, свежие запеченные шампиньоны, орегано",
       "en_title": "Classic",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Maize sweet, Fresh baked champignons, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Maize sweet, Fresh baked champignons, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Classic/Pizza_web_157-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/four-seasons",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Four%20Seasons/Pizza_web_149-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 500,
@@ -3066,6 +3336,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Four%20Seasons/Pizza_web_149-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 187,
           "new": 186,
@@ -3075,7 +3351,7 @@
     },
     {
       "link": "https://pizza-it.com/four-seasons",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Four%20Seasons/Pizza_web_149-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -3087,11 +3363,19 @@
       "ru_title": "Четыре сезона",
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, Artichokes, Champignons, Salami Napoli, Орегано",
       "en_title": "Four seasons",
-      "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Four%20Seasons/Pizza_web_149-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/pepperoni",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pepperoni/Pizza_web_131-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 430,
@@ -3106,6 +3390,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pepperoni/Pizza_web_131-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 167,
           "new": 177,
@@ -3115,7 +3405,7 @@
     },
     {
       "link": "https://pizza-it.com/pepperoni",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pepperoni/Pizza_web_131-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 890,
@@ -3127,11 +3417,19 @@
       "ru_title": "Пеперони",
       "ru_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Salami Napoli, Chili, Oregano",
       "en_title": "Peperoni",
-      "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pepperoni/Pizza_web_131-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/four-kinds-of-meat",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/four%20Kinds%20of%20Meat/Pizza_web_136-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 500,
@@ -3146,6 +3444,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/four%20Kinds%20of%20Meat/Pizza_web_136-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 187,
           "new": 186,
@@ -3155,7 +3459,7 @@
     },
     {
       "link": "https://pizza-it.com/four-kinds-of-meat",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/four%20Kinds%20of%20Meat/Pizza_web_136-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 1000,
@@ -3167,11 +3471,19 @@
       "ru_title": "Четыре типа мяса",
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, куриное филе Йосперу, салями Наполи, баварские колбаски, орегано",
       "en_title": "Four types of meat",
-      "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/four%20Kinds%20of%20Meat/Pizza_web_136-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/giuliano",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Giuliano/Pizza_web_092-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 460,
@@ -3186,6 +3498,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Giuliano/Pizza_web_092-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 157,
           "new": 159,
@@ -3195,7 +3513,7 @@
     },
     {
       "link": "https://pizza-it.com/giuliano",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Giuliano/Pizza_web_092-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 920,
@@ -3207,11 +3525,19 @@
       "ru_title": "Джулиано",
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, свежие запеченные шампиньоны, орегано",
       "en_title": "Juliano",
-      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano"
+      "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Giuliano/Pizza_web_092-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/bergamo",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Bergamo/Pizza_web_086-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 410,
@@ -3226,6 +3552,12 @@
       "en_description": "Mozzarella, Dorail, figs, proscco, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Bergamo/Pizza_web_086-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 227,
           "new": 240,
@@ -3235,7 +3567,7 @@
     },
     {
       "link": "https://pizza-it.com/bergamo",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Bergamo/Pizza_web_086-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 860,
@@ -3247,11 +3579,19 @@
       "ru_title": "Бергамо.",
       "ru_description": "Моцарелла, Дораил, Рис, Просицко, Орегано",
       "en_title": "Bergamo.",
-      "en_description": "Mozzarella, Dorail, figs, proscco, Oregano"
+      "en_description": "Mozzarella, Dorail, figs, proscco, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Bergamo/Pizza_web_086-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/pollo-con-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pollo%20con%20Formaggi/Pizza_web_098-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 470,
@@ -3266,6 +3606,12 @@
       "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pollo%20con%20Formaggi/Pizza_web_098-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 167,
           "new": 177,
@@ -3275,7 +3621,7 @@
     },
     {
       "link": "https://pizza-it.com/pollo-con-formaggi",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pollo%20con%20Formaggi/Pizza_web_098-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 960,
@@ -3287,11 +3633,19 @@
       "ru_title": "Поло Кн Формадж",
       "ru_description": "Моцарелла, фета, сливки, куриное филе, болгарский перец, орегано",
       "en_title": "Polo Kon formadzh",
-      "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano"
+      "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Meat/Pollo%20con%20Formaggi/Pizza_web_098-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/tuna",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Tonno/Pizza_web_206-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 840,
@@ -3303,11 +3657,19 @@
       "ru_title": "Тунец",
       "ru_description": "Моцарелла, крем, тунец в оливковом масле, болгарском перце, орегано",
       "en_title": "Tuna",
-      "en_description": "Mozzarella, cream, tuna in olive oil, Bulgarian pepper, oregano"
+      "en_description": "Mozzarella, cream, tuna in olive oil, Bulgarian pepper, oregano",
+      "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Tonno/Pizza_web_206-600x425.jpg",
+          "detectedAt": 1646065016
+        }
+      ]
     },
     {
       "link": "https://pizza-it.com/royal",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Royale/Pizza_web_188-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 480,
@@ -3322,6 +3684,12 @@
       "en_description": "Mozzarella, Pomodoro sauce, Rugola, Red caviar, Cold smoked salmon, Oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Royale/Pizza_web_188-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 297,
           "new": 267,
@@ -3331,7 +3699,7 @@
     },
     {
       "link": "https://pizza-it.com/salmon",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Salmone/Pizza_web_198-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 480,
@@ -3346,6 +3714,12 @@
       "en_description": "Mozzarella, corporate spinach sauce, cold smoked salmon, olives, oregano",
       "historyOfChanges": [
         {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Salmone/Pizza_web_198-600x425.jpg",
+          "detectedAt": 1646065016
+        },
+        {
           "key": "price",
           "old": 277,
           "new": 249,
@@ -3355,7 +3729,7 @@
     },
     {
       "link": "https://pizza-it.com/salmon-rosso",
-      "image": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+      "image": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Salmone-Rosso/Pizza_web_182-600x425.jpg",
       "country": "ukraine",
       "city": "chernivtsi",
       "weight": 500,
@@ -3369,6 +3743,12 @@
       "en_title": "Salmon Rosso",
       "en_description": "Mozzarella, Pomodoro sauce, cold smoked salmon, Cherry tomatoes, Salad mix, Oregano",
       "historyOfChanges": [
+        {
+          "key": "image",
+          "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
+          "new": "https://pizza-it.com/image/cache/catalog/Pizza/with%20Fish/Salmone-Rosso/Pizza_web_182-600x425.jpg",
+          "detectedAt": 1646065016
+        },
         {
           "key": "price",
           "old": 267,
