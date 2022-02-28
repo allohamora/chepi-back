@@ -14,10 +14,10 @@ const isPrimitive = <V>(value: V) => !isObject(value) && !isFunction(value);
 
 const isObjects = <A, B>(a: A, b: B) => isObject(a) && isObject(b);
 
-const isDifferentTypes = <A, B>(a: A, b: B) => typeof a !== typeof b && a !== b;
+const isDifferentTypes = <A, B>(a: A, b: B) => typeof a !== typeof b && (a as unknown) !== b;
 
 const isFunctionsNotEqual = <A, B>(a: A, b: B) => isFunction(a) && isFunction(b) && a.toString() !== b.toString();
-const isPrimitiveNotEqual = <A, B>(a: A, b: B) => (isPrimitive(a) || isPrimitive(b)) && a !== b;
+const isPrimitiveNotEqual = <A, B>(a: A, b: B) => (isPrimitive(a) || isPrimitive(b)) && (a as unknown) !== b;
 
 type DeepEqual = <A, B>(a: A, b: B) => boolean;
 
@@ -49,7 +49,7 @@ const objectsEqual = <A, B>(a: A, b: B, { deepEqual }: ObjectsEqualOptions) => {
 };
 
 const deepEqual: DeepEqual = (a, b) => {
-  if (a === b) {
+  if ((a as unknown) === b) {
     return true;
   }
 
