@@ -1,7 +1,17 @@
 import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
-import { Lang, Pizza, WithId, supportedLangs, Translated, WithHistory, PizzaJson } from './types/pizza';
+import {
+  Lang,
+  Pizza,
+  WithId,
+  supportedLangs,
+  Translated,
+  WithHistory,
+  PizzaJson,
+  TranslatedKey,
+  TranslatedValue,
+} from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
@@ -38,9 +48,9 @@ const addChanges = (newPizzas: Translated[], detectedAt: number) => {
     const oldPizza = pizzasMap.get(newPizza.id);
     const diff = objectDiff(omit(oldPizza, ['historyOfChanges']), newPizza);
     const historyOfChanges = diff.map(({ key, values }) => ({
-      key,
-      old: values[0],
-      new: values[1],
+      key: key as TranslatedKey,
+      old: values[0] as TranslatedValue,
+      new: values[1] as TranslatedValue,
       detectedAt,
     }));
 

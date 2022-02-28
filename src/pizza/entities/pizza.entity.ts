@@ -8,17 +8,23 @@ import {
   supportedCities,
   supportedCountries,
   supportedLangs,
+  translatedKeys,
+  translatedValues,
+  TranslatedKey,
+  TranslatedValue,
 } from 'libs/pizza-parser/types/pizza';
 
+const translatedSwaggerValues = translatedValues.map((type) => ({ type }));
+
 class Change implements PizzaChange {
-  @ApiProperty({ description: 'pizza key' })
-  key: string;
+  @ApiProperty({ description: 'pizza key', enum: translatedKeys })
+  key: TranslatedKey;
 
-  @ApiProperty({ description: 'old pizza[key] value' })
-  old: string;
+  @ApiProperty({ description: 'old pizza[key]', oneOf: translatedSwaggerValues })
+  old?: TranslatedValue;
 
-  @ApiProperty({ description: 'new pizza[key] value' })
-  new: string;
+  @ApiProperty({ description: 'new pizza[key]', oneOf: translatedSwaggerValues })
+  new?: TranslatedValue;
 
   @ApiProperty({ description: 'detect timestamp' })
   detectedAt: number;
