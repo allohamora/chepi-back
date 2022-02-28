@@ -1,15 +1,36 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
+  Change as PizzaChange,
   City,
   Country,
   Lang,
+  PizzaJson,
   supportedCities,
   supportedCountries,
   supportedLangs,
-  TranslatedPizza,
+  translatedKeys,
+  translatedValues,
+  TranslatedKey,
+  TranslatedValue,
 } from 'libs/pizza-parser/types/pizza';
 
-export class Pizza implements TranslatedPizza {
+const translatedSwaggerValues = translatedValues.map((type) => ({ type }));
+
+class Change implements PizzaChange {
+  @ApiProperty({ description: 'pizza key', enum: translatedKeys })
+  key: TranslatedKey;
+
+  @ApiProperty({ description: 'old pizza[key]', oneOf: translatedSwaggerValues })
+  old?: TranslatedValue;
+
+  @ApiProperty({ description: 'new pizza[key]', oneOf: translatedSwaggerValues })
+  new?: TranslatedValue;
+
+  @ApiProperty({ description: 'detect timestamp' })
+  detectedAt: number;
+}
+
+export class Pizza implements PizzaJson {
   @ApiProperty({ description: 'pizza id what changes after new insert' })
   id: string;
 
@@ -54,4 +75,7 @@ export class Pizza implements TranslatedPizza {
 
   @ApiProperty({ description: 'pizza description in english' })
   en_description: string;
+
+  @ApiProperty({ description: 'pizza changes', type: [Change], required: false })
+  historyOfChanges?: Change[];
 }

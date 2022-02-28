@@ -1,9 +1,30 @@
-import { timestamp, pizzas } from 'pizzas.json';
-import { expectString, expectNumber, expectObject, expectNumberOrNull } from './test/test.utils';
+import { updatedAt, pizzas } from 'pizzas.json';
+import {
+  expectString,
+  expectNumber,
+  expectObject,
+  expectNumberOrNull,
+  expectUndefined,
+  expectOwnProperty,
+} from './test/test.utils';
+import { Change } from './types/pizza';
+
+const expectHistory = (historyOfChanges?: Change[]) => {
+  if (!Array.isArray(historyOfChanges)) {
+    return expectUndefined(historyOfChanges);
+  }
+
+  for (const change of historyOfChanges) {
+    expectString(change.key);
+    expectOwnProperty(change, 'old');
+    expectOwnProperty(change, 'new');
+    expectNumber(change.detectedAt);
+  }
+};
 
 describe('pizzas.json', () => {
-  test('have timestamp', () => {
-    expectNumber(timestamp);
+  test('have updatedAt', () => {
+    expectNumber(updatedAt);
   });
 
   test('pizzas have all fields', () => {
@@ -29,6 +50,8 @@ describe('pizzas.json', () => {
 
       expectString(pizza.en_title);
       expectString(pizza.en_description);
+
+      expectHistory(pizza.historyOfChanges as Change[]);
     }
   });
 });

@@ -4,8 +4,8 @@ import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
-import { pizzas, timestamp } from 'pizzas.json';
-import { PizzasStateResultDto } from './dto/pizzasState.dto';
+import { pizzas, updatedAt } from 'pizzas.json';
+import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -21,9 +21,6 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
     id: { type: 'text' },
     image: { type: 'text' },
     link: { type: 'text' },
-    lang: { type: 'text' },
-    country: { type: 'text' },
-    city: { type: 'text' },
     weight: numberAndText,
     size: numberAndText,
     price: numberAndText,
@@ -36,8 +33,8 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
   },
 };
 
-const PIZZAS_INDEX = `pizzas-${timestamp}`;
-const PIZZAS_TIMESTAMP = timestamp;
+const PIZZAS_INDEX = `pizzas-${updatedAt}`;
+const PIZZAS_UPDATED_AT = updatedAt;
 const PIZZAS_COUNT = pizzas.length;
 
 @Injectable()
@@ -98,7 +95,7 @@ export class PizzaService implements OnModuleInit {
       body: {
         from: offset,
         size: limit,
-        sort: orderBy ? [{ [orderBy.target]: orderBy.cause }] : undefined,
+        sort: orderBy ? [{ [orderBy.target]: orderBy.direction }] : undefined,
         query: {
           bool: {
             must,
@@ -164,7 +161,7 @@ export class PizzaService implements OnModuleInit {
     return { value };
   }
 
-  public getPizzasState(): PizzasStateResultDto {
-    return { timestamp: PIZZAS_TIMESTAMP, count: PIZZAS_COUNT };
+  public getPizzasStats(): PizzasStatsResultDto {
+    return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
   }
 }
