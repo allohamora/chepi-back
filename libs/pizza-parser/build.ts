@@ -39,7 +39,7 @@ const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
     const result = { ...newPizza } as WithChanges;
 
     if (changes.length !== 0 || Array.isArray(oldPizza.changes)) {
-      result.changes = [...(oldPizza.changes || []), ...changes];
+      result.changes = [...changes, ...(oldPizza.changes || [])];
     }
 
     return result;
