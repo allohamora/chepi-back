@@ -67,7 +67,7 @@ export interface Change {
 }
 
 export type WithHistory = Translated & {
-  historyOfChanges?: Change[];
+  historyOfChanges?: Change[]; // order by detectedAt desc
 };
 
 export type PizzaJson = WithHistory;
