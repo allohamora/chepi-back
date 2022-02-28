@@ -7,6 +7,14 @@ const BASE_URL = 'https://pizza-it.com/';
 const PAGE_URL = join(BASE_URL, '/famiglia-grande');
 const WHITELIST = [/^піца/];
 
+interface GalleryItem {
+  src: string;
+  thumb: string;
+  subHtml: string;
+}
+
+type Gallery = GalleryItem[];
+
 export class PizzaIt extends ChernivtsiPizzasParser {
   private async getPageHtml(pageLink = PAGE_URL) {
     return await getText(pageLink);
@@ -56,9 +64,10 @@ export class PizzaIt extends ChernivtsiPizzasParser {
   }
 
   private getImage($: CheerioAPI) {
-    const imageSrc = $('.product-img > img').attr('src');
+    const galleryJson = $('.lightgallery.lightgallery-product-images').attr('data-images');
+    const gallery = JSON.parse(galleryJson) as Gallery;
 
-    return join(BASE_URL, imageSrc);
+    return gallery[0].src;
   }
 
   private getPricesAndSizes($: CheerioAPI, basePrice: number) {
