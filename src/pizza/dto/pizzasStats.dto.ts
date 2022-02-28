@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class PizzasStateResultDto {
+export class PizzasStatsResultDto {
   @ApiProperty({ description: 'pizzas update timestamp' })
   updatedAt: number;
 
