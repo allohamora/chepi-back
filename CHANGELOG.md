@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/Allohamora/chepi-back/compare/v2.2.0...v3.0.0) (2022-02-28)
+
+### ⚠ BREAKING CHANGES
+
+- rename state to stats
+- rename orderBy keys to correct
+- **pizza-parser:** fix wrong changes calculation and rename createdAt to updatedAt
+- **pizza-parser:** rename timestamp to createdAt
+
+### Features
+
+- add api description for changes ([81be035](https://github.com/Allohamora/chepi-back/commits/81be035ed8805794439a22acbb039cedce45107e))
+- **pizza-parser:** add changes field ([2e70d41](https://github.com/Allohamora/chepi-back/commits/2e70d41711e8bbe9c597c19ee4679f7ba581f8a5))
+- **pizzas:** update pizzas.json ([41635ed](https://github.com/Allohamora/chepi-back/commits/41635edaaa9a33091a729b6770b90c08b84d525a))
+- restore image and link mappings ([55eb50a](https://github.com/Allohamora/chepi-back/commits/55eb50a9736014dedab5e12ed349917a94f8f442))
+
+### Bug Fixes
+
+- **pizza-parser:** fix invalid changes compose ([a418023](https://github.com/Allohamora/chepi-back/commits/a41802361e10d9ad2e07c5e36a1dde8ebb38111c))
+- **pizza-parser:** fix wrong changes calculation and rename createdAt to updatedAt ([8362cef](https://github.com/Allohamora/chepi-back/commits/8362cef5d469199fa0664d59cbbcf964bed1a93e))
+- **pizza-parser:** invalid types bug ([2f1f3e0](https://github.com/Allohamora/chepi-back/commits/2f1f3e0fec737276e4b88242d97cbe2c369dd750))
+- **pizza-parser:** rename pizza keys to correct ([863fcd4](https://github.com/Allohamora/chepi-back/commits/863fcd41e950503ae5a3e198893446e5bbd50987))
+- rename orderBy keys to correct ([79ca403](https://github.com/Allohamora/chepi-back/commits/79ca4038f5ad21394eba78c20d130f1ed038e225))
+- rename state to stats ([1fa9fc3](https://github.com/Allohamora/chepi-back/commits/1fa9fc33694b3ee0396d723624edbf4e9f82a044))
+
+- **pizza-parser:** rename timestamp to createdAt ([499d9d4](https://github.com/Allohamora/chepi-back/commits/499d9d4e0fc9b9523bd7bc8eee11b644462f2afe))
+
 ## [2.2.0](https://github.com/Allohamora/chepi-back/compare/v2.1.1...v2.2.0) (2022-02-06)
 
 ### ⚠ BREAKING CHANGES
