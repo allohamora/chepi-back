@@ -8,11 +8,12 @@ import {
   supportedCities,
   supportedCountries,
   supportedLangs,
+  Translated,
 } from 'libs/pizza-parser/types/pizza';
 
 class Change implements PizzaChange {
   @ApiProperty({ description: 'pizza key' })
-  key: string;
+  key: keyof Translated;
 
   @ApiProperty({ description: 'old pizza[key] value' })
   old: string;
@@ -20,8 +21,8 @@ class Change implements PizzaChange {
   @ApiProperty({ description: 'new pizza[key] value' })
   new: string;
 
-  @ApiProperty({ description: 'discovered timestamp' })
-  discoveredAt: number;
+  @ApiProperty({ description: 'detect timestamp' })
+  detectedAt: number;
 }
 
 export class Pizza implements PizzaJson {

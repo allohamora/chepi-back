@@ -528,12 +528,12 @@
       "ru_description": "Основа, сыр, соус (помидор / сливки)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / крем)",
           "new": "Основа, сыр, соус (помидор / сливки)",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -552,12 +552,12 @@
       "ru_description": "Основа, сыр, соус (помидор / сливки)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / крем)",
           "new": "Основа, сыр, соус (помидор / сливки)",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -880,12 +880,12 @@
       "ru_description": "Томатный соус, охотничьи колбаски, Корнисоны, ронтеры, смесь сыров, фиолетовый лук",
       "en_title": "Hunting",
       "en_description": "Tomato sauce, Hunting sausages, Cornishons, Chanteries, Mix of cheeses, Purple onions",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 155,
           "new": 165,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -920,12 +920,12 @@
       "ru_description": "Спиннинг соус, сладкий перец, авокадо, Рир, микс сыр, оранжевый, бальзам",
       "en_title": "Pizza Vegetarian",
       "en_description": "Spinning Sauce, Sweet Pepper, Avocado, Rork, Mix Cheese, Orange, Balm",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 155,
           "new": 169,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -960,12 +960,12 @@
       "ru_description": "Белый соус, лосось, карамелизированный лук, цуккини, сочетание сыров, лимон, трюфельное масло",
       "en_title": "Pizza with salmon",
       "en_description": "White sauce, salmon, caramelized onion, zucchini, mix of cheeses, lemon, truffle oil",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 205,
           "new": 225,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1000,12 +1000,12 @@
       "ru_description": "Белый соус, куриное филе, роман салат, вишня, пармезан, смеси сыр, соус цезаря",
       "en_title": "Premium Caesar",
       "en_description": "White sauce, chicken fillet, Romain salad, Cherry, Parmesan, Mix Cheese, Caesar Sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 167,
           "new": 185,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1088,12 +1088,12 @@
       "ru_description": "Соус, моцарелла, салями",
       "en_title": "Salami",
       "en_description": "Sauce, mozzarella, salami",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 142,
           "new": 165,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1112,12 +1112,12 @@
       "ru_description": "Соус, моцарелла, салями",
       "en_title": "Salami",
       "en_description": "Sauce, mozzarella, salami",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 235,
           "new": 255,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1392,24 +1392,24 @@
       "ru_description": "Соус beshamel, помидоры, хрустящий салат, пармезан, куриное мясо, сыр моцарелла, перепелиные яйца, соус \"Цезарь\"",
       "en_title": "Caesario",
       "en_description": "Beshamel sauce, tomatoes, crispy salad, parmesan, chicken meat, mozzarella cheese, quail eggs, sauce \"Caesar\"",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "uk_description",
           "old": "Соус вершковий, помідори, хрусткий салат, пармезан, куряче м'ясо, сир моцарела, перепелині яйця, соус \"Цезар\"",
           "new": "Соус бешамель, помідори, хрусткий салат, пармезан, куряче м'ясо, сир моцарела, перепелині яйця, соус \"Цезар\"",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Сливочный соус, помидоры, хрустящий салат, пармезан, куриное мясо, сыр моцарелла, перепелиные яйца, соус \"Цезарь\"",
           "new": "Соус beshamel, помидоры, хрустящий салат, пармезан, куриное мясо, сыр моцарелла, перепелиные яйца, соус \"Цезарь\"",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Creamy sauce, tomatoes, crispy salad, parmesan, chicken meat, mozzarella cheese, quail eggs, sauce \"Caesar\"",
           "new": "Beshamel sauce, tomatoes, crispy salad, parmesan, chicken meat, mozzarella cheese, quail eggs, sauce \"Caesar\"",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1428,30 +1428,30 @@
       "ru_description": "Соус Beshamel, Parmesan, сыр моцарелла, сыр рикона, домашний сыр, орех, груша",
       "en_title": "Quatro Formadzh",
       "en_description": "Beshamel Sauce, Parmesan, Mozzarella Cheese, Ricot Cheese, Domestic Cheese, Walnut, Pear",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 410,
           "new": 440,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "uk_description",
           "old": "Соус вершковий, пармезан, сир моцарела, сир рікота, сир дорблю, волоський горіх, груша",
           "new": "Соус бешамель, пармезан, сир моцарела, сир рікота, сир дорблю, волоський горіх, груша",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Соус сливочный, пармезан, сыр моцарелла, сыр рикона, домашний сыр, орех, груша",
           "new": "Соус Beshamel, Parmesan, сыр моцарелла, сыр рикона, домашний сыр, орех, груша",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Sauce Creamy, Parmesan, Mozzarella Cheese, Ricot Cheese, Domestic Cheese, Walnut, Pear",
           "new": "Beshamel Sauce, Parmesan, Mozzarella Cheese, Ricot Cheese, Domestic Cheese, Walnut, Pear",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1470,12 +1470,12 @@
       "ru_description": "Томатный соус, сыр моцарелла, ветчина, свежие грибы",
       "en_title": "Caprice",
       "en_description": "Tomato sauce, Mozzarella cheese, ham, fresh mushrooms",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 470,
           "new": 465,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1494,12 +1494,12 @@
       "ru_description": "Томатный соус, ветчина, запеченное яйцо, сыр моцарелла, баварские колбаски",
       "en_title": "Carbonara",
       "en_description": "Tomato sauce, ham, baked egg, Mozzarella cheese, Bavarian sausages",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 480,
           "new": 485,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1518,12 +1518,12 @@
       "ru_description": "Томатный соус, сыр моцарелла, салями колбаса",
       "en_title": "Salami",
       "en_description": "Tomato sauce, Mozzarella cheese, Salami sausage",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 410,
           "new": 415,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1542,12 +1542,12 @@
       "ru_description": "Томатный соус, сыр моцарелла, перец Чили, колбаса Piperoni",
       "en_title": "Diabola",
       "en_description": "Tomato sauce, Mozzarella cheese, Chili pepper, Piperoni sausage",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 440,
           "new": 445,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1582,30 +1582,30 @@
       "ru_description": "Соус бешамель, пармезан, сыр моцарелла, промачу, ругула",
       "en_title": "Parma",
       "en_description": "Beshamel sauce, Parmesan, Mozzarella Cheese, Promachu, Rugola",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 400,
           "new": 405,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "uk_description",
           "old": "Соус вершковий, пармезан, сир моцарела, прошуто, рукола",
           "new": "Соус бешамель, пармезан, сир моцарела, прошуто, рукола",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Соус сливочный, пармезан, сыр моцарелла, промач, ругула",
           "new": "Соус бешамель, пармезан, сыр моцарелла, промачу, ругула",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Sauce Creamy, Parmesan, Mozzarella Cheese, Promach, Rugola",
           "new": "Beshamel sauce, Parmesan, Mozzarella Cheese, Promachu, Rugola",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1624,12 +1624,12 @@
       "ru_description": "Томатный соус, сыр моцарелла, ветчина",
       "en_title": "Shinkalla",
       "en_description": "Tomato sauce, Mozzarella cheese, ham",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 410,
           "new": 415,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1648,12 +1648,12 @@
       "ru_description": "Сыр моцареллы, лук, майонез, помидоры, куриное мясо",
       "en_title": "Polo",
       "en_description": "Mozzarella cheese, onion, mayonnaise, tomatoes, chicken meat",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 450,
           "new": 485,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1672,30 +1672,30 @@
       "ru_description": "Филе лосося, соус Beshamel, сыр моцарелла, кунжут",
       "en_title": "Al Salmone",
       "en_description": "Salmon fillet, Beshamel sauce, Mozzarella cheese, sesame",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 400,
           "new": 430,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "uk_description",
           "old": "Філе лосося, соус вершковий, сир моцарела, кунжут",
           "new": "Філе лосося, соус бешамель, сир моцарела, кунжут",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Филе лосося, сливочный соус, сыр моцарелла, кунжут",
           "new": "Филе лосося, соус Beshamel, сыр моцарелла, кунжут",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Salmon fillet, cream sauce, mozzarella cheese, sesame",
           "new": "Salmon fillet, Beshamel sauce, Mozzarella cheese, sesame",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1714,30 +1714,30 @@
       "ru_description": "Томатный соус, сыр моцарелла, сыр рикона, ветчина, помидоры",
       "en_title": "Calzone Al Forno",
       "en_description": "Tomato sauce, Mozzarella cheese, ricot cheese, ham, tomatoes",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 470,
           "new": 455,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "uk_description",
           "old": "Соус томатний, пармезан, сир моцарела, сир рікота, шинка, помідори",
           "new": "Соус томатний,  сир моцарела, сир рікота, шинка, помідори",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Томатный соус, пармезан, сыр моцарелла, сыр рикона, ветчина, помидоры",
           "new": "Томатный соус, сыр моцарелла, сыр рикона, ветчина, помидоры",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Tomato sauce, Parmesan, Mozzarella Cheese, Ricot Cheese, Ham, Tomatoes",
           "new": "Tomato sauce, Mozzarella cheese, ricot cheese, ham, tomatoes",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1756,30 +1756,30 @@
       "ru_description": "Соус Beshamel, сыр моцарелла, грибы, болгарский перец, брокколи",
       "en_title": "Vegetarian",
       "en_description": "Beshamel sauce, Mozzarella cheese, mushrooms, Bulgarian pepper, broccoli",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 495,
           "new": 490,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "uk_description",
           "old": "Соус вершковий, сир моцарела, печериці, перець болгарський, броколі",
           "new": "Соус бешамель, сир моцарела, печериці, перець болгарський, броколі",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "ru_description",
           "old": "Сливочный соус, сыр моцарелла, грибы, болгарский перец, брокколи",
           "new": "Соус Beshamel, сыр моцарелла, грибы, болгарский перец, брокколи",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Creamy sauce, mozzarella cheese, mushrooms, Bulgarian pepper, broccoli",
           "new": "Beshamel sauce, Mozzarella cheese, mushrooms, Bulgarian pepper, broccoli",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -1798,12 +1798,12 @@
       "ru_description": "Теала, соус для барбекю, сыр моцарелла, голубой лук, огурец Корнишон",
       "en_title": "Vitello.",
       "en_description": "Veal, barbecue sauce, Mozzarella cheese, blue onion, Cornishon cucumber",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "weight",
           "old": 490,
           "new": 515,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2238,12 +2238,12 @@
       "ru_description": "Моцарелла, соус Помодоро, Орегано",
       "en_title": "Margarita.",
       "en_description": "Mozzarella, Pomodoro sauce, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 117,
           "new": 127,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2278,12 +2278,12 @@
       "ru_description": "Корпоративный соус брокколи, моцарелла, брокколи, вишня, тыквенные семена",
       "en_title": "Brocsoli Loz",
       "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 147,
           "new": 157,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2302,12 +2302,12 @@
       "ru_description": "Корпоративный соус брокколи, моцарелла, брокколи, вишня, тыквенные семена",
       "en_title": "Brocsoli Loz",
       "en_description": "Broccoli's corporate sauce, mozzarella, broccoli, cherry, pumpkin seeds",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 130,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2358,12 +2358,12 @@
       "ru_description": "Моцарелла, детское шпинат, вишня, оливки, пармезан, маскарпон",
       "en_title": "Popeye (Sailor Popen)",
       "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 187,
           "new": 197,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2382,12 +2382,12 @@
       "ru_description": "Моцарелла, детское шпинат, вишня, оливки, пармезан, маскарпон",
       "en_title": "Popeye (Sailor Popen)",
       "en_description": "Mozzarella, Baby Spinach, Cherry, Olives, Parmesan, Mascarpone",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 100,
           "new": 110,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2406,12 +2406,12 @@
       "ru_description": "Брокколи, моцарелла, фета, спаржа, помидоры черри, соус песто",
       "en_title": "Primander",
       "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 187,
           "new": 197,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2430,12 +2430,12 @@
       "ru_description": "Брокколи, моцарелла, фета, спаржа, помидоры черри, соус песто",
       "en_title": "Primander",
       "en_description": "Broccoli, Mozzarella, Feta, Asparagus, Cherry Tomatoes, Pesto Sauce Basil",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 100,
           "new": 110,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2550,12 +2550,12 @@
       "ru_description": "Роллон, Пекорино Романо, Крем, Свежие запеченные Champignons",
       "en_title": "Two cheeses",
       "en_description": "Rollon, Pecorino Romano, cream, fresh baked champignons",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 100,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2574,12 +2574,12 @@
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
       "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 167,
           "new": 177,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2598,12 +2598,12 @@
       "ru_description": "Моцарелла, скамам, фета, сливки, ругула",
       "en_title": "Three cheeses",
       "en_description": "Mozzarella, Skamarm, Feta, Cream, Rugola",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 130,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2638,12 +2638,12 @@
       "ru_description": "Моцарелла, Рикота, Дорн, Пармезан, Крем",
       "en_title": "Four cheeses",
       "en_description": "Mozzarella, Ricota, Dorn, Parmesan, Cream",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 90,
           "new": 110,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2678,12 +2678,12 @@
       "ru_description": "Моцарелла, спровоцированные, боевики, Рикота, Пекорино Романо, Крем",
       "en_title": "Five cheeses",
       "en_description": "Mozzarella, provoked, Scaments, Rikota, Pecorino Romano, cream",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 90,
           "new": 110,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2702,12 +2702,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, Орегано",
       "en_title": "Kachathore",
       "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 157,
           "new": 167,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2726,12 +2726,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, баварские колбаски, салями Наполи, Орегано",
       "en_title": "Kachathore",
       "en_description": "Mozzarella, Pomodoro sauce, Bavarian sausages, Salami Napoli, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2750,12 +2750,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, смесь: Mascarpone Ricot, свежие запеченные Champignons, куриное филе Josper, Орегано",
       "en_title": "Matsharpone",
       "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 177,
           "new": 187,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2774,12 +2774,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, смесь: Mascarpone Ricot, свежие запеченные Champignons, куриное филе Josper, Орегано",
       "en_title": "Matsharpone",
       "en_description": "Mozzarella, Pomodoro sauce, Mix: Mascarpone Ricot, Fresh Baked Champignons, Chicken fillet Josper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 110,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2798,12 +2798,12 @@
       "ru_description": "Моцарелла, пармезан, крем, груша, куриное филе Josper, Oregano",
       "en_title": "Tenerezza (tenderness)",
       "en_description": "Mozzarella, Parmesan, Cream, Pear, Chicken fillet Josper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 177,
           "new": 197,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2838,12 +2838,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, Proxatto Krudo, Rugola, Parmesan",
       "en_title": "Prosciuto",
       "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 217,
           "new": 227,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2862,12 +2862,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, Proxatto Krudo, Rugola, Parmesan",
       "en_title": "Prosciuto",
       "en_description": "Mozzarella, Pomodoro sauce, Proxatto Krudo, Rugola, Parmesan",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 80,
           "new": 90,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2886,12 +2886,12 @@
       "ru_description": "Prosciuto Krudo, груша, оранжевый, салаты смеси, сливки",
       "en_title": "Prosciutto and pears",
       "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 217,
           "new": 227,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2910,12 +2910,12 @@
       "ru_description": "Prosciuto Krudo, груша, оранжевый, салаты смеси, сливки",
       "en_title": "Prosciutto and pears",
       "en_description": "Prosciuto Krudo, Pear, Orange, Mix Salads, Cream",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 80,
           "new": 90,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2934,12 +2934,12 @@
       "ru_description": "Моцарелла, Помодоро соус, куриное филе Josper, Cherry Tomatoes, салат Смешанные салаты Василия соус Pesto, Parmesan",
       "en_title": "Caprice",
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 157,
           "new": 167,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2958,12 +2958,12 @@
       "ru_description": "Моцарелла, Помодоро соус, куриное филе Josper, Cherry Tomatoes, салат Смешанные салаты Василия соус Pesto, Parmesan",
       "en_title": "Caprice",
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Cherry tomatoes, Salad mixed salads Basil Pesto sauce, Parmesan",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -2982,12 +2982,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, салями Наполи, болгарский перец, орегано",
       "en_title": "Salami",
       "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 157,
           "new": 167,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3006,12 +3006,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, салями Наполи, болгарский перец, орегано",
       "en_title": "Salami",
       "en_description": "Mozzarella, Pomodoro sauce, Salami Napoli, Bulgarian pepper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3030,12 +3030,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, кукуруза сладкий, свежие запеченные шампиньоны, орегано",
       "en_title": "Classic",
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Maize sweet, Fresh baked champignons, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3054,12 +3054,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, Artichokes, Champignons, Salami Napoli, Орегано",
       "en_title": "Four seasons",
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 177,
           "new": 187,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3078,12 +3078,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, Artichokes, Champignons, Salami Napoli, Орегано",
       "en_title": "Four seasons",
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillets Josper, Artichokes, Champignons, Salami Napoli, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 110,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3102,12 +3102,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Salami Napoli, Chili, Oregano",
       "en_title": "Peperoni",
       "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 157,
           "new": 167,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3126,12 +3126,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, соус Pepperoni, Salami Napoli, Chili, Oregano",
       "en_title": "Peperoni",
       "en_description": "Mozzarella, Pomodoro sauce, Pepperoni sauce, Salami Napoli, Chili, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3150,12 +3150,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, куриное филе Йосперу, салями Наполи, баварские колбаски, орегано",
       "en_title": "Four types of meat",
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 177,
           "new": 187,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3174,12 +3174,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, филе свинины Josper, куриное филе Йосперу, салями Наполи, баварские колбаски, орегано",
       "en_title": "Four types of meat",
       "en_description": "Mozzarella, Pomodoro sauce, Pork fillet Josper, Chicken fillet Josper, Salami Napoli, Bavarian sausages, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 110,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3198,12 +3198,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, свежие запеченные шампиньоны, орегано",
       "en_title": "Juliano",
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 147,
           "new": 157,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3222,12 +3222,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, куриное филе Josper, свежие запеченные шампиньоны, орегано",
       "en_title": "Juliano",
       "en_description": "Mozzarella, Pomodoro sauce, Chicken fillet Josper, Fresh baked champignons, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3246,12 +3246,12 @@
       "ru_description": "Моцарелла, Дораил, Рис, Просицко, Орегано",
       "en_title": "Bergamo.",
       "en_description": "Mozzarella, Dorail, figs, proscco, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 217,
           "new": 227,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3270,12 +3270,12 @@
       "ru_description": "Моцарелла, Дораил, Рис, Просицко, Орегано",
       "en_title": "Bergamo.",
       "en_description": "Mozzarella, Dorail, figs, proscco, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 80,
           "new": 90,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3310,12 +3310,12 @@
       "ru_description": "Моцарелла, фета, сливки, куриное филе, болгарский перец, орегано",
       "en_title": "Polo Kon formadzh",
       "en_description": "Mozzarella, Feta, cream, Chicken fillet, Bulgarian pepper, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3334,12 +3334,12 @@
       "ru_description": "Моцарелла, крем, тунец в оливковом масле, болгарском перце, орегано",
       "en_title": "Tuna",
       "en_description": "Mozzarella, cream, tuna in olive oil, Bulgarian pepper, oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 110,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3358,12 +3358,12 @@
       "ru_description": "Моцарелла, соус Pomodoro, Rugola, красная икра, холодный копченый лосось, орегано",
       "en_title": "Royal",
       "en_description": "Mozzarella, Pomodoro sauce, Rugola, Red caviar, Cold smoked salmon, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 287,
           "new": 297,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3382,12 +3382,12 @@
       "ru_description": "Моцарелла, корпоративный шпинатный соус, холодный копченый лосось, оливки, орегано",
       "en_title": "Salmon",
       "en_description": "Mozzarella, corporate spinach sauce, cold smoked salmon, olives, oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 267,
           "new": 277,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -3406,12 +3406,12 @@
       "ru_description": "Моцарелла, соус помодоро, холодный копченый лосось, помидоры черри, салатница, орегано",
       "en_title": "Salmon Rosso",
       "en_description": "Mozzarella, Pomodoro sauce, cold smoked salmon, Cherry tomatoes, Salad mix, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 247,
           "new": 267,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -5254,18 +5254,18 @@
       "ru_description": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
       "en_title": "Pizza \"Texas\"",
       "en_description": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onion",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_description",
           "old": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
           "new": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_description",
           "old": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onions",
           "new": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onion",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -5636,12 +5636,12 @@
       "ru_description": "Ветчина, куриное филе, изделия, перец",
       "en_title": "Pizza \"Al Date\"",
       "en_description": "Ham, chicken fillet, articles, pepper",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_description",
           "old": "Ветчина, куриное филе, статьи, перец",
           "new": "Ветчина, куриное филе, изделия, перец",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -6588,12 +6588,12 @@
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянская\"",
           "new": "Пицца \"Итальянский\"",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -6612,12 +6612,12 @@
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянская\"",
           "new": "Пицца \"Итальянский\"",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7084,12 +7084,12 @@
       "ru_description": "Шашлик, моцарела, помидоры, томатный соус, шампиньоны, маринованные лук в уксусе",
       "en_title": "Pizza Shashlika",
       "en_description": "Shashlik, mozzarela, tomatoes, tomato sauce, champignons, marinated onions in vinegar",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_title",
           "old": "Пицца шашлика",
           "new": "Пицца шашлыка",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7332,12 +7332,12 @@
       "ru_description": "Свинья шашлык, моцарелла, помидоры, шампиньоны, маринованные лук в уксусе, томатный соус",
       "en_title": "Pizza Shashlika",
       "en_description": "Pig Shashlik, Mozzarella, Tomatoes, Champignons, Marinated onions in vinegar, Tomato sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_title",
           "old": "Пицца шашлика",
           "new": "Пицца шашлыка",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7356,12 +7356,12 @@
       "ru_description": "Ананас, курица, кукуруза, белый соус",
       "en_title": "Pizza \"Hawaii\"",
       "en_description": "Pineapple, Chicken, Corn, White Sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 145,
           "new": 160,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7380,12 +7380,12 @@
       "ru_description": "Моцарелла, бекон, яйцо, пармезан, белый соус",
       "en_title": "Pizza \"Carbonara\"",
       "en_description": "Mozzarella, Bacon, Egg, Parmesan, White sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 165,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7404,12 +7404,12 @@
       "ru_description": "Моцарелла, моцарелла весна, пармезан, дор синий, бри",
       "en_title": "Pizza \"Quatro-formading\"",
       "en_description": "Mozzarella, Mozzarella Spring, Parmesan, Dor Blue, Brie",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 160,
           "new": 170,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7428,12 +7428,12 @@
       "ru_description": "Моцарелла, бекон, муниципальные колбаски, курица, красный соус",
       "en_title": "Pizza \"meat\"",
       "en_description": "Mozzarella, Bacon, Municipal sausages, Chicken, Red sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 155,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7452,12 +7452,12 @@
       "ru_description": "Моцарелла, охотничьи колбаски, перец, красный соус",
       "en_title": "Pizza \"hunting\"",
       "en_description": "Mozzarella, hunting sausages, pepper, red sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 125,
           "new": 135,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7476,12 +7476,12 @@
       "ru_description": "Моцарелла, салями, оливки, грибы, красный соус",
       "en_title": "Pizza \"New York\"",
       "en_description": "Mozzarella, salami, olives, mushrooms, red sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 150,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7500,12 +7500,12 @@
       "ru_description": "Моцарелла, бумага, чили перец, красный соус",
       "en_title": "Pizza \"Paperon\"",
       "en_description": "Mozzarella, paper, chili pepper, red sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 155,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7524,12 +7524,12 @@
       "ru_description": "Моцарелла, салями, помидоры",
       "en_title": "Pizza \"Roman\" with salami",
       "en_description": "Mozzarella, Salami, Tomatoes",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 125,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7548,12 +7548,12 @@
       "ru_description": "Моцарелла, курица, помидоры, красный соус, соус розмаринового песто",
       "en_title": "Chicken Pizza",
       "en_description": "Mozzarella, Chicken, Tomatoes, Red Sauce, Rosemary Pesto sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 125,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7572,12 +7572,12 @@
       "ru_description": "Моцарелла, курица, грибы, кунжут, белый соус",
       "en_title": "Pizza with chicken and mushrooms",
       "en_description": "Mozzarella, Chicken, Mushrooms, Sesame, White Sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 125,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7596,12 +7596,12 @@
       "ru_description": "Моцарелла, лосось, белый соус, помидоры, шпинат",
       "en_title": "Pizza with salmon",
       "en_description": "Mozzarella, Salmon, White Sauce, Tomatoes, Spinach",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 220,
           "new": 228,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7620,12 +7620,12 @@
       "ru_description": "Моцарелла, морской коктейль, белый соус, оливка, лимон",
       "en_title": "Pizza with seafood",
       "en_description": "Mozzarella, Sea Cocktail, White Sauce, Olive, Lemon",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 170,
           "new": 190,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7644,12 +7644,12 @@
       "ru_description": "Моцарелла, ветчина, грибы, бринза, красный соус",
       "en_title": "Calzzone",
       "en_description": "Mozzarella, Ham, Mushrooms, Brynza, Red Sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 100,
           "new": 120,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7668,12 +7668,12 @@
       "ru_description": "Моцарелла. помидоры, грибы, перец",
       "en_title": "Pizza \"vegan\"",
       "en_description": "Mozzarella. tomatoes, mushrooms, pepper",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 130,
           "new": 145,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7692,12 +7692,12 @@
       "ru_description": "Моцарелла, помидоры, моцарелла младенца, соус розмарина песто",
       "en_title": "Pizza \"Margarita\"",
       "en_description": "Mozzarella, Tomatoes, Mozzarella Baby, Rosemary Pesto sauce",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 120,
           "new": 135,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -7716,12 +7716,12 @@
       "ru_description": "Моцарелла, томатный соус, шампиньоны, помидоры, ветчина, салями, болгарский перец, бринза, чеснок",
       "en_title": "Pizza with brinsy",
       "en_description": "Mozzarella, Tomato sauce, champignons, tomatoes, ham, salami, Bulgarian pepper, Brynza, Garlic",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 165,
           "new": 180,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -8588,18 +8588,18 @@
       "ru_description": "-",
       "en_title": "Focha",
       "en_description": "-",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_title",
           "old": "Focaccha",
           "new": "Фочас",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         },
         {
           "key": "en_title",
           "old": "Focaccha",
           "new": "Focha",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9290,12 +9290,12 @@
       "ru_description": "Тесто муки высшего сорта, томатный соус в соответствии с настоящим итальянским рецептом, колбаски собственной кухни, бекона собственного курения, помидоры, грибы, сыр моцарелла, домашний сплошной сыр",
       "en_title": "Pizza \"Villagio\"",
       "en_description": "Dough of flour of higher grade, tomato sauce according to true Italian recipe, sausages of own cooking, bacon of own smoking, tomatoes, mushrooms, mozzarella cheese, homemade solid cheese",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 125,
           "new": 150,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9314,12 +9314,12 @@
       "ru_description": "Тесто из итальянской муки высшего сорта, томатного соуса в соответствии с настоящим итальянским рецептом, Балика его собственного курения, баклажана в жарке с чесноком и орегано, помидорами, сыром моцарелла, домашний сплошной сыр",
       "en_title": "Pizza \"Malanzana\"",
       "en_description": "Dough from the Italian flour of the highest grade, tomato sauce according to the true Italian recipe, Balik of its own smoking, eggplant in frying with garlic and oregano, tomato, mozzarella cheese, home solid cheese",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 116,
           "new": 140,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9338,12 +9338,12 @@
       "ru_description": "Тесто из итальянской муки высшего сорта, томатный соус в соответствии с настоящим итальянским рецептом, утиной груди собственного курения, сыр моцарелла, сыр пармезан, ругула",
       "en_title": "Pizza «Ave Caesar»",
       "en_description": "Dough from the Italian flour of the highest grade, tomato sauce according to the true Italian recipe, duck breast of own smoking, Mozzarella cheese, Parmesan cheese, Rugola",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 170,
           "new": 185,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9362,12 +9362,12 @@
       "ru_description": "Тесто из итальянской муки высшего сорта, томатного соуса в соответствии с настоящим итальянским рецептом, колбаски собственной кухни, огурцы соло, сладкий маринованный перец Peponchino, сыр моцарелла",
       "en_title": "Pizza \"Diablo\"",
       "en_description": "Dough from the Italian flour of the highest grade, tomato sauce according to the true Italian recipe, sausages of own cooking, cucumber Solo, sweet pickled pepper peponchino, Mozzarella cheese",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 119,
           "new": 145,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9386,12 +9386,12 @@
       "ru_description": "Тесто из итальянской муки высшего сорта, сливочный соус с сливочным сыром, сыром горгонзола, сыр пармезан, сыр моцарелла, сыр фета, базилик, оливковое масло",
       "en_title": "Pizza «Quadra Formade + 1»",
       "en_description": "Dough from the Italian flour of the highest grade, cream sauce with cream cheese, Gorgonzola cheese, Parmesan cheese, Mozzarella cheese, Feta cheese, Basil, Olive oil",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 129,
           "new": 165,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9410,12 +9410,12 @@
       "ru_description": "Тесто из итальянской муки высшего сорта, сливочный соус, сыр Филадельфия, лосося, сыр моцарелла, сыр пармезан, ругула, орегано",
       "en_title": "Pizza \"Philadelphia\"",
       "en_description": "Dough from the Italian flour of the highest grade, cream sauce, Philadelphia cheese, salmon, Mozzarella cheese, Parmesan cheese, Rugola, Oregano",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "price",
           "old": 190,
           "new": 210,
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },
@@ -9482,12 +9482,12 @@
       "ru_description": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
       "en_title": "Pizza with seafood",
       "en_description": "Tiger shrimp, mussels, salmon, mozzarella, cream, basil",
-      "changes": [
+      "historyOfChanges": [
         {
           "key": "ru_description",
           "old": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",
           "new": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
-          "discoveredAt": 1645528465
+          "detectedAt": 1645528465
         }
       ]
     },

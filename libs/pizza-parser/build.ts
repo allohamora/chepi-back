@@ -1,12 +1,12 @@
 import path from 'path';
 import fsp from 'fs/promises';
 import { parsePizzas } from '.';
-import { Lang, Pizza, WithId, supportedLangs, Translated, WithChanges, PizzaJson } from './types/pizza';
+import { Lang, Pizza, WithId, supportedLangs, Translated, WithHistory, PizzaJson } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
-import { omit, getDiff } from './utils/object';
+import { omit, objectDiff } from './utils/object';
 
 interface TranslatedContent {
   title: string;
@@ -22,9 +22,12 @@ const writeOutputPizzas = async (pizzas: PizzaJson[], updatedAt: number) => {
   await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
 };
 
-const pizzasMap = pizzas.reduce((map, pizza) => map.set(pizza.id, pizza as PizzaJson), new Map<string, PizzaJson>());
+const pizzasMap = pizzas.reduce(
+  (map, pizza) => map.set(pizza.id, pizza as any as PizzaJson),
+  new Map<string, PizzaJson>(),
+);
 
-const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
+const addChanges = (newPizzas: Translated[], detectedAt: number) => {
   return newPizzas.map((newPizza) => {
     const isFound = pizzasMap.has(newPizza.id);
 
@@ -33,13 +36,18 @@ const addChanges = (newPizzas: Translated[], discoveredAt: number) => {
     }
 
     const oldPizza = pizzasMap.get(newPizza.id);
-    const changesWithoutDiscoveredAt = getDiff(omit(oldPizza, ['changes']), newPizza);
-    const changes = changesWithoutDiscoveredAt.map((change) => ({ ...change, discoveredAt }));
+    const diffs = objectDiff(omit(oldPizza, ['historyOfChanges']), newPizza);
+    const historyOfChanges = diffs.map(({ key, values }) => ({
+      key: key as keyof Translated,
+      old: values[0],
+      new: values[1],
+      detectedAt,
+    }));
 
-    const result = { ...newPizza } as WithChanges;
+    const result = { ...newPizza } as WithHistory;
 
-    if (changes.length !== 0 || Array.isArray(oldPizza.changes)) {
-      result.changes = [...changes, ...(oldPizza.changes || [])];
+    if (historyOfChanges.length !== 0 || Array.isArray(oldPizza.historyOfChanges)) {
+      result.historyOfChanges = [...historyOfChanges, ...(oldPizza.historyOfChanges || [])];
     }
 
     return result;

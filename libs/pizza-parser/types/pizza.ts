@@ -32,17 +32,17 @@ export type Translated = Omit<WithId, 'title' | 'description'> & {
 };
 
 export interface Change {
-  key: string;
+  key: keyof Translated;
   old: unknown;
   new: unknown;
-  discoveredAt: number;
+  detectedAt: number;
 }
 
-export type WithChanges = Translated & {
-  changes?: Change[];
+export type WithHistory = Translated & {
+  historyOfChanges?: Change[];
 };
 
-export type PizzaJson = WithChanges;
+export type PizzaJson = WithHistory;
 
 export interface PizzasJson {
   updatedAt: number;

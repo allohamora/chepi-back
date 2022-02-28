@@ -9,16 +9,16 @@ import {
 } from './test/test.utils';
 import { Change } from './types/pizza';
 
-const expectChanges = (changes?: Change[]) => {
-  if (!Array.isArray(changes)) {
-    return expectUndefined(changes);
+const expectHistory = (historyOfChanges?: Change[]) => {
+  if (!Array.isArray(historyOfChanges)) {
+    return expectUndefined(historyOfChanges);
   }
 
-  for (const change of changes) {
+  for (const change of historyOfChanges) {
     expectString(change.key);
     expectOwnProperty(change, 'old');
     expectOwnProperty(change, 'new');
-    expectNumber(change.discoveredAt);
+    expectNumber(change.detectedAt);
   }
 };
 
@@ -51,7 +51,7 @@ describe('pizzas.json', () => {
       expectString(pizza.en_title);
       expectString(pizza.en_description);
 
-      expectChanges(pizza.changes);
+      expectHistory(pizza.historyOfChanges as Change[]);
     }
   });
 });
