@@ -5,16 +5,16 @@ import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-p
 import { Pizza } from '../entities/pizza.entity';
 
 const supportedTargets = ['weight', 'size', 'price'] as const;
-const supportedCause = ['asc', 'desc'] as const;
+const supportedDirections = ['asc', 'desc'] as const;
 
 class OrderBy {
   @ApiProperty({ enum: supportedTargets })
   @IsEnum(supportedTargets)
   target: typeof supportedTargets[number];
 
-  @ApiProperty({ enum: supportedCause })
-  @IsEnum(supportedCause)
-  cause: typeof supportedCause[number];
+  @ApiProperty({ description: 'sort direction', enum: supportedDirections })
+  @IsEnum(supportedDirections)
+  direction: typeof supportedDirections[number];
 }
 
 export class GetPizzasDto {

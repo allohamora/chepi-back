@@ -95,7 +95,7 @@ export class PizzaService implements OnModuleInit {
       body: {
         from: offset,
         size: limit,
-        sort: orderBy ? [{ [orderBy.target]: orderBy.cause }] : undefined,
+        sort: orderBy ? [{ [orderBy.target]: orderBy.direction }] : undefined,
         query: {
           bool: {
             must,
