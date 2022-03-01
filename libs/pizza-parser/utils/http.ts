@@ -1,8 +1,8 @@
 import { HttpRequest } from 'libs/http';
-import { MemoryFsStrategy } from './cache/memory-fs.strategy';
 import { Cache } from './cache';
+import { isomorphicMemoryFsStrategy } from './cache/isomorphic-memory-fs.strategy';
 
-const cache = new Cache(new MemoryFsStrategy('http'));
+const cache = new Cache(isomorphicMemoryFsStrategy('http'));
 
 export const getText = cache.decorator(async (url: string) => {
   const { data } = await new HttpRequest(url).returnType('text').request<string>();
