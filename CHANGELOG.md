@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.5](https://github.com/allohamora/chepi-back/compare/v3.0.4...v3.0.5) (2022-03-01)
+
+### Bug Fixes
+
+- **pizza-parser:** failed cache tests ([55ba8d0](https://github.com/allohamora/chepi-back/commits/55ba8d058e1ac17ed22b17ccf5a64236e23f942f))
+- remove console.log ([ca324ab](https://github.com/allohamora/chepi-back/commits/ca324ab35a25abf2aba3af5571bc63fec5c40c50))
+
 ### [3.0.4](https://github.com/allohamora/chepi-back/compare/v3.0.3...v3.0.4) (2022-03-01)
 
 ### Bug Fixes

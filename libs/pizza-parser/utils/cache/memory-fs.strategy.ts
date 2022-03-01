@@ -43,11 +43,9 @@ export class MemoryFsStrategy implements CacheStrategy {
       return this.initPromise;
     }
 
-    this.initPromise = Promise.resolve(this.initState())
-      .then(() => console.log(this.state))
-      .then(() => {
-        this.initStatus = InitStatus.Loaded;
-      });
+    this.initPromise = Promise.resolve(this.initState()).then(() => {
+      this.initStatus = InitStatus.Loaded;
+    });
 
     this.initStatus = InitStatus.Loading;
 
