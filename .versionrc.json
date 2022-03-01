@@ -9,6 +9,6 @@
     { "type": "perf", "hidden": true },
     { "type": "test", "hidden": true }
   ],
-  "commitUrlFormat": "https://github.com/Allohamora/chepi-back/commits/{{hash}}",
-  "compareUrlFormat": "https://github.com/Allohamora/chepi-back/compare/{{previousTag}}...{{currentTag}}"
+  "commitUrlFormat": "https://github.com/allohamora/chepi-back/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/allohamora/chepi-back/compare/{{previousTag}}...{{currentTag}}"
 }
