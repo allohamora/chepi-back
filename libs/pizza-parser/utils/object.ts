@@ -8,6 +8,14 @@ export const omit = <T, K extends keyof T>(target: T, keys: K[]) => {
   return copy as Omit<T, K>;
 };
 
+export const pick = <T, K extends keyof T>(target: T, keys: readonly K[]) => {
+  return keys.reduce<Pick<T, K>>((result, key) => {
+    result[key] = target[key];
+
+    return result;
+  }, {} as Pick<T, K>);
+};
+
 const isObject = <V>(value: V) => typeof value === 'object' && value !== null;
 const isFunction = <V>(value: V) => typeof value === 'function';
 const isPrimitive = <V>(value: V) => !isObject(value) && !isFunction(value);
@@ -68,12 +76,15 @@ const deepEqual: DeepEqual = (a, b) => {
   return objectsEqual(a, b, { deepEqual });
 };
 
-export const objectDiff = <A, B>(a: A, b: B) => {
+export const objectDiff = <A, B, Key = keyof A | keyof B>(a: A, b: B) => {
   const keysSet = new Set([...Object.keys(a), ...Object.keys(b)]);
-  const keys = Array.from(keysSet);
+  const keys = Array.from(keysSet) as unknown[] as Key[];
 
-  return keys.reduce<{ key: string; values: [unknown, unknown] }[]>((result, key) => {
-    const values: [unknown, unknown] = [a[key], b[key]];
+  return keys.reduce<{ key: Key; values: [A[keyof A], B[keyof B]] }[]>((result, key) => {
+    const values: [A[keyof A] | undefined, B[keyof B] | undefined] = [
+      a[key as unknown as keyof A],
+      b[key as unknown as keyof B],
+    ];
 
     if (!deepEqual(...values)) {
       result.push({ key, values });

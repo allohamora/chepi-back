@@ -9,14 +9,13 @@ import {
   Translated,
   WithHistory,
   PizzaJson,
-  TranslatedKey,
-  TranslatedValue,
+  historyOfChangesWatchKeys,
 } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
-import { omit, objectDiff } from './utils/object';
+import { objectDiff, pick } from './utils/object';
 
 interface TranslatedContent {
   title: string;
@@ -46,11 +45,11 @@ const addChanges = (newPizzas: Translated[], detectedAt: number) => {
     }
 
     const oldPizza = pizzasMap.get(newPizza.id);
-    const diff = objectDiff(omit(oldPizza, ['historyOfChanges']), newPizza);
+    const diff = objectDiff(pick(oldPizza, historyOfChangesWatchKeys), pick(newPizza, historyOfChangesWatchKeys));
     const historyOfChanges = diff.map(({ key, values }) => ({
-      key: key as TranslatedKey,
-      old: values[0] as TranslatedValue,
-      new: values[1] as TranslatedValue,
+      key,
+      old: values[0],
+      new: values[1],
       detectedAt,
     }));
 

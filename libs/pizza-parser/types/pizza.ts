@@ -1,3 +1,5 @@
+import { TypeUnionToTypes } from './utils';
+
 export const supportedLangs = ['uk', 'ru', 'en'] as const;
 export type Lang = typeof supportedLangs[number];
 
@@ -31,38 +33,26 @@ export type Translated = Omit<WithId, 'title' | 'description'> & {
   [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
 };
 
-const translatedMock: Translated = {
-  id: '',
-  country: 'ukraine',
-  city: 'chernivtsi',
-  lang: 'uk',
-  size: 0,
-  weight: 0,
-  price: 0,
-  image: '',
-  link: '',
-  uk_title: '',
-  uk_description: '',
-  en_title: '',
-  en_description: '',
-  ru_title: '',
-  ru_description: '',
-};
+export const historyOfChangesWatchKeys = [
+  'image',
+  'price',
+  'weight',
+  'uk_title',
+  'uk_description',
+  'en_title',
+  'en_description',
+  'ru_title',
+  'ru_description',
+] as const;
+export const historyOfChangesValues = ['string', 'number', 'undefined'] as const;
 
-export const translatedKeys = Object.keys(translatedMock) as (keyof Translated)[];
-const translatedValuesSet = new Set([
-  ...Object.values(translatedMock).map((value) => (value === null ? 'null' : typeof value)),
-  'undefined',
-]);
-export const translatedValues = Array.from(translatedValuesSet);
-
-export type TranslatedKey = keyof Translated;
-export type TranslatedValue = Translated[keyof Translated] | undefined;
+export type HistoryOfChangesWatchKey = typeof historyOfChangesWatchKeys[number];
+export type HistoryOfChangesValue = TypeUnionToTypes<typeof historyOfChangesValues[number]>;
 
 export interface Change {
-  key: TranslatedKey;
-  old?: TranslatedValue;
-  new?: TranslatedValue;
+  key: HistoryOfChangesWatchKey;
+  old?: HistoryOfChangesValue;
+  new?: HistoryOfChangesValue;
   detectedAt: number;
 }
 
