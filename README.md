@@ -1,6 +1,6 @@
 # Chepi-back
 
-Backend/api for cheppi.
+back-end for chepi
 
 ## Links
 

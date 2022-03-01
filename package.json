@@ -1,7 +1,7 @@
 {
   "name": "chepi-back",
   "version": "3.0.2",
-  "description": "Backend for chepi",
+  "description": "back-end for chepi",
   "author": "https://github.com/Allohamora",
   "license": "MIT",
   "main": "src/main.ts",
