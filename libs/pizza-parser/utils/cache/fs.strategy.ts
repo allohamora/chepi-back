@@ -1,17 +1,18 @@
-import { resolve } from 'path';
-import { mkdir, writeFile, readFile } from 'fs/promises';
-import { pathExists } from './fs';
-import { createHash } from 'crypto';
+import { resolve } from 'node:path';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { pathExists } from '../fs';
+import { CacheStrategy } from './strategy';
+import { CACHE_DIR } from './path.const';
 
-export class Cache {
-  private cacheBaseDir = resolve(__dirname, '../', '.cache');
+export class FsStrategy implements CacheStrategy {
   private cacheDir: string;
 
   constructor(cacheName: string) {
-    this.cacheDir = resolve(this.cacheBaseDir, cacheName);
+    this.cacheDir = resolve(CACHE_DIR, cacheName);
   }
 
-  public async createCacheDirIfNotExists() {
+  private async createCacheDirIfNotExists() {
     const isExists = await pathExists(this.cacheDir);
 
     if (isExists) return;
@@ -27,40 +28,26 @@ export class Cache {
   }
 
   public async has(key: string) {
+    await this.createCacheDirIfNotExists();
     const { filePath } = this.getFileNameAndPath(key);
 
     return await pathExists(filePath);
   }
 
   public async get(key: string) {
+    await this.createCacheDirIfNotExists();
+
     const { filePath } = this.getFileNameAndPath(key);
 
     const buffer = await readFile(filePath);
-    const data = buffer.toString('utf-8');
-
-    return data;
+    return buffer.toString('utf-8');
   }
 
   public async set(key: string, value: string) {
+    await this.createCacheDirIfNotExists();
+
     const { filePath } = this.getFileNameAndPath(key);
 
     await writeFile(filePath, value, 'utf-8');
-  }
-
-  public decorator<T extends (...args: unknown[]) => string | Promise<string>>(fun: T) {
-    return async (...args: Parameters<T>) => {
-      const key = JSON.stringify(args);
-
-      await this.createCacheDirIfNotExists();
-
-      if (await this.has(key)) {
-        return await this.get(key);
-      }
-
-      const data = await fun(...args);
-      await this.set(key, data);
-
-      return data;
-    };
   }
 }

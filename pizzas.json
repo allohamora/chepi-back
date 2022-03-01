@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1646065016,
+  "updatedAt": 1646136701,
   "pizzas": [
     {
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/13.jpeg",
@@ -396,11 +396,17 @@
       "id": "0bd78a92605860a8928844a77c54c9f5ddece37a79787c6b1e9f567c4ee338f0",
       "uk_title": "Кватро Формаджі",
       "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела",
-      "ru_title": "Quatro Formadzh.",
+      "ru_title": "Quatro Formadzh",
       "ru_description": "Сливочный соус, горгонзола сыры, Радомер, пармезан и моцарелла",
       "en_title": "Quatro Formadzh",
       "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh.",
+          "new": "Quatro Formadzh",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Quatro Formadzh",
@@ -420,11 +426,17 @@
       "id": "2f34cf50d129a23040fec33f458359f687d639aab57da2ff5875d0df3914fd17",
       "uk_title": "Кватро Формаджі",
       "uk_description": "Вершковий соус, сири горгонзола, радомер, пармезан та моцарела",
-      "ru_title": "Quatro Formadzh.",
+      "ru_title": "Quatro Formadzh",
       "ru_description": "Сливочный соус, горгонзола сыры, Радомер, пармезан и моцарелла",
       "en_title": "Quatro Formadzh",
       "en_description": "Creamy sauce, Gorgonzola cheeses, Radomer, Parmesan and Mozzarella",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh.",
+          "new": "Quatro Formadzh",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Quatro Formadzh",
@@ -541,10 +553,16 @@
       "uk_title": "Піца EgoЇста",
       "uk_description": "Основа, сир, соус(томатний/вершковий)",
       "ru_title": "Пицца эгоиста",
-      "ru_description": "Основа, сыр, соус (помидор / крем)",
+      "ru_description": "Основа, сыр, соус (помидор / сливки)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Основа, сыр, соус (помидор / крем)",
+          "new": "Основа, сыр, соус (помидор / сливки)",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / сливки)",
@@ -571,10 +589,16 @@
       "uk_title": "Піца EgoЇста",
       "uk_description": "Основа, сир, соус(томатний/вершковий)",
       "ru_title": "Пицца эгоиста",
-      "ru_description": "Основа, сыр, соус (помидор / крем)",
+      "ru_description": "Основа, сыр, соус (помидор / сливки)",
       "en_title": "Pizza Egoista",
       "en_description": "Basis, cheese, sauce (tomato / cream)",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Основа, сыр, соус (помидор / крем)",
+          "new": "Основа, сыр, соус (помидор / сливки)",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_description",
           "old": "Основа, сыр, соус (помидор / сливки)",
@@ -1488,11 +1512,17 @@
       "id": "1455345b003a34bb79e7a9cbae04f32a802cc8b52b86a40de64d9b05a576cf42",
       "uk_title": "Кватро формаджі",
       "uk_description": "Соус бешамель, пармезан, сир моцарела, сир рікота, сир дорблю, волоський горіх, груша",
-      "ru_title": "Quatro Formadzh.",
+      "ru_title": "Quatro Formadzh",
       "ru_description": "Соус Beshamel, Parmesan, сыр моцарелла, сыр рикона, домашний сыр, орех, груша",
       "en_title": "Quatro Formadzh",
       "en_description": "Beshamel Sauce, Parmesan, Mozzarella Cheese, Ricot Cheese, Domestic Cheese, Walnut, Pear",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Quatro Formadzh.",
+          "new": "Quatro Formadzh",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Quatro Formadzh",
@@ -2413,10 +2443,16 @@
       "uk_title": "Cinque Stelle (П'ять Зірок)",
       "uk_description": "Фірмовий соус із гарбуза, запечений Бурячок, томати Черрі, Рукола, Соус Песто, Насіння гарбуза",
       "ru_title": "Cinque Stelle (пять звезд)",
-      "ru_description": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
+      "ru_description": "Тыква фермерский соус, запеченная свекла, помидоры черри, ругула, соус песто, тыквенные семена",
       "en_title": "Cinque Stelle (Five Stars)",
       "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
+          "new": "Тыква фермерский соус, запеченная свекла, помидоры черри, ругула, соус песто, тыквенные семена",
+          "detectedAt": 1646136701
+        },
         {
           "key": "image",
           "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
@@ -2443,10 +2479,16 @@
       "uk_title": "Cinque Stelle (П'ять Зірок)",
       "uk_description": "Фірмовий соус із гарбуза, запечений Бурячок, томати Черрі, Рукола, Соус Песто, Насіння гарбуза",
       "ru_title": "Cinque Stelle (пять звезд)",
-      "ru_description": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
+      "ru_description": "Тыква фермерский соус, запеченная свекла, помидоры черри, ругула, соус песто, тыквенные семена",
       "en_title": "Cinque Stelle (Five Stars)",
       "en_description": "Pumpkin Farm Sauce, Baked Beetroot, Cherry Tomatoes, Rugola, Pesto Sauce, Pumpkin Seeds",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Тыквенный соус фермы, запеченная свекла, помидоры черри, коврики, соус песто, тыквенные семена",
+          "new": "Тыква фермерский соус, запеченная свекла, помидоры черри, ругула, соус песто, тыквенные семена",
+          "detectedAt": 1646136701
+        },
         {
           "key": "image",
           "old": "https://pizza-it.com/image/cache/transparent-600x425.png.pagespeed.ce.l9jHWeGONC.png",
@@ -4968,11 +5010,17 @@
       "id": "2ebc80777cd50cecc5328fbc1b7ec180493bf074a2c3301248bb18ccc11474ae",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцона\"",
+      "ru_title": "Пицца \"Кальцон\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
       "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцона\"",
+          "new": "Пицца \"Кальцон\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Кальцон\"",
@@ -5232,11 +5280,17 @@
       "id": "09395eae944ea06b7816430d8f7a40f51198a3d159d0c6a84de9cd11b80bd3d7",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцона\"",
+      "ru_title": "Пицца \"Кальцон\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
       "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцона\"",
+          "new": "Пицца \"Кальцон\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Кальцон\"",
@@ -5649,10 +5703,22 @@
       "uk_title": "Піца \"Техаська\"",
       "uk_description": "Соус маринара, асорті домашніх сосисок, опеньки, моцарелла, кримська цибуля",
       "ru_title": "Пицца \"Техас\"",
-      "ru_description": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
+      "ru_description": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
       "en_title": "Pizza \"Texas\"",
-      "en_description": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onion",
+      "en_description": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onions",
       "historyOfChanges": [
+        {
+          "key": "en_description",
+          "old": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onion",
+          "new": "Marinara sauce, assorted home sausages, honey, mozzarella, Crimean onions",
+          "detectedAt": 1646136701
+        },
+        {
+          "key": "ru_description",
+          "old": "Соус Marinara, ассорти домашние колбаски, мед, моцарелла, крымский лук",
+          "new": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_description",
           "old": "Соус Marinara, сортированные домашние колбаски, мед, моцарелла, крымский лук",
@@ -6045,10 +6111,16 @@
       "uk_title": "Піца \"Аль денте\"",
       "uk_description": "Шинка, куряче філе, артішок, перець",
       "ru_title": "Пицца \"Дата\" al \"",
-      "ru_description": "Ветчина, куриное филе, изделия, перец",
+      "ru_description": "Ветчина, куриное филе, статьи, перец",
       "en_title": "Pizza \"Al Date\"",
       "en_description": "Ham, chicken fillet, articles, pepper",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Ветчина, куриное филе, изделия, перец",
+          "new": "Ветчина, куриное филе, статьи, перец",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_description",
           "old": "Ветчина, куриное филе, статьи, перец",
@@ -6132,11 +6204,17 @@
       "id": "ab75c9f5cda6bb7efffecde0fc371ed806aa031fc194a1abe636a89253d6a138",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Шинка, салямі, печериці",
-      "ru_title": "Пицца \"Кальцона\"",
+      "ru_title": "Пицца \"Кальцон\"",
       "ru_description": "Ветчина, салями, грибы",
       "en_title": "Pizza \"Caltsone\"",
       "en_description": "Ham, salami, mushrooms",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцона\"",
+          "new": "Пицца \"Кальцон\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Кальцон\"",
@@ -7004,11 +7082,17 @@
       "id": "c901513b8040c8357f670455c011aff307fe388e0cf086c9ff294702633044b2",
       "uk_title": "Піца \"Італійська\"",
       "uk_description": "Салямі, моцарелла, соус томатний \"Пелаті\", паприка.",
-      "ru_title": "Пицца \"Итальянская\"",
+      "ru_title": "Пицца \"Итальянский\"",
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Итальянская\"",
+          "new": "Пицца \"Итальянский\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянский\"",
@@ -7034,11 +7118,17 @@
       "id": "a6682cf4f1b7852c89345fda069b676a95ed47899359e9f749beb470c84d3417",
       "uk_title": "Піца \"Італійська\"",
       "uk_description": "Салямі, моцарелла, соус томатний \"Пелаті\", паприка.",
-      "ru_title": "Пицца \"Итальянская\"",
+      "ru_title": "Пицца \"Итальянский\"",
       "ru_description": "Салями, моцарелла, томатный соус \"Пелати\", паприка.",
       "en_title": "Pizza \"Italian\"",
       "en_description": "Salami, Mozzarella, Tomato sauce \"Pelati\", Paprika.",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Итальянская\"",
+          "new": "Пицца \"Итальянский\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Итальянский\"",
@@ -7512,11 +7602,17 @@
       "id": "8a36849685919cccb3f1040f0e7c4a0b8e03fc4d63f76c401780d6bfde5baf67",
       "uk_title": "Піца Шашлична",
       "uk_description": "Шашлик, моцарела, томати, соус томатний, шампіньйонин, цибуля маринована в оцеті",
-      "ru_title": "Пицца шашлика",
+      "ru_title": "Пицца шашлыка",
       "ru_description": "Шашлик, моцарела, помидоры, томатный соус, шампиньоны, маринованные лук в уксусе",
       "en_title": "Pizza Shashlika",
       "en_description": "Shashlik, mozzarela, tomatoes, tomato sauce, champignons, marinated onions in vinegar",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца шашлика",
+          "new": "Пицца шашлыка",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца шашлыка",
@@ -7766,11 +7862,17 @@
       "id": "29fd215ccc7de7ae8b486bd3660007b92591db19b18432cb58ed60ee56fac2eb",
       "uk_title": "Піца Шашлична",
       "uk_description": "Шашлик свинний, моцарела, томати, шампіньйони, цибуля маринована в оцеті, соус томатний",
-      "ru_title": "Пицца шашлика",
+      "ru_title": "Пицца шашлыка",
       "ru_description": "Свинья шашлык, моцарелла, помидоры, шампиньоны, маринованные лук в уксусе, томатный соус",
       "en_title": "Pizza Shashlika",
       "en_description": "Pig Shashlik, Mozzarella, Tomatoes, Champignons, Marinated onions in vinegar, Tomato sauce",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца шашлика",
+          "new": "Пицца шашлыка",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца шашлыка",
@@ -8228,11 +8330,17 @@
       "id": "8a07d80430c5c5eed6580fe057ed2b1e932aa7357a3585df359455a60bbd1f07",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцона\"",
+      "ru_title": "Пицца \"Кальцон\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
       "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцона\"",
+          "new": "Пицца \"Кальцон\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Кальцон\"",
@@ -8492,11 +8600,17 @@
       "id": "fe6e38edf126af9e71aeeadc16f5827d8d730ca0310ac06775567b56f198182f",
       "uk_title": "Піца \"Кальцоне\"",
       "uk_description": "Моцарела, соус томатний, шинка, томати, шампіньйони, базилік, пармезан",
-      "ru_title": "Пицца \"Кальцона\"",
+      "ru_title": "Пицца \"Кальцон\"",
       "ru_description": "Моцарелла, томатный соус, ветчина, помидоры, шампиньоны, базилик, пармезан",
       "en_title": "Pizza \"Caltsone\"",
       "en_description": "Mozzarella, Tomato sauce, ham, tomatoes, champignons, basil, Parmesan",
       "historyOfChanges": [
+        {
+          "key": "ru_title",
+          "old": "Пицца \"Кальцона\"",
+          "new": "Пицца \"Кальцон\"",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Пицца \"Кальцон\"",
@@ -9046,9 +9160,15 @@
       "uk_description": "-",
       "ru_title": "Фочас",
       "ru_description": "-",
-      "en_title": "Focha",
+      "en_title": "Focaccha",
       "en_description": "-",
       "historyOfChanges": [
+        {
+          "key": "en_title",
+          "old": "Focha",
+          "new": "Focaccha",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_title",
           "old": "Focaccha",
@@ -9939,10 +10059,16 @@
       "uk_title": "Піца з морепродуктами",
       "uk_description": "Тигрові креветки, мідії, лосось, моцарела, вершки, базилік",
       "ru_title": "Пицца с морепродуктами",
-      "ru_description": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",
+      "ru_description": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
       "en_title": "Pizza with seafood",
       "en_description": "Tiger shrimp, mussels, salmon, mozzarella, cream, basil",
       "historyOfChanges": [
+        {
+          "key": "ru_description",
+          "old": "Тигровые креветки, мидии, лосося, моцарелла, крем, базилик",
+          "new": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",
+          "detectedAt": 1646136701
+        },
         {
           "key": "ru_description",
           "old": "Тигровые креветки, мидии, лосось, моцарелла, сливки, базилик",

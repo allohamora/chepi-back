@@ -1,4 +1,5 @@
 import freeGoogleTranslate from '@vitalets/google-translate-api';
+import { MemoryFsStrategy } from './cache/memory-fs.strategy';
 import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
@@ -11,7 +12,7 @@ interface TranslateOptions {
   text: string;
 }
 
-const cache = new Cache('translate');
+const cache = new Cache(new MemoryFsStrategy('translate'));
 
 interface FixedTranslateOptions {
   from: string;
