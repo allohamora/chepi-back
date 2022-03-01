@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/Allohamora/chepi-back/compare/v3.0.2...v3.0.3) (2022-03-01)
+
+### Features
+
+- **pizza-parser:** improve and refactor cache ([37979fa](https://github.com/Allohamora/chepi-back/commits/37979fac03eb56065ac4b73626eb4b144fd2d37a))
+- **pizza-parser:** improve pizza historyOfChanges types ([a7ad7c9](https://github.com/Allohamora/chepi-back/commits/a7ad7c9ac3c3e5d85dcaeca1172e275fac949906))
+- **pizzas.json:** update pizzas.json ([e8783e9](https://github.com/Allohamora/chepi-back/commits/e8783e9249f6310f7a1c2bf2fb5893d59fde812b))
+
 ### [3.0.2](https://github.com/Allohamora/chepi-back/compare/v3.0.1...v3.0.2) (2022-02-28)
 
 ### Features
