@@ -2,7 +2,7 @@
   "name": "chepi-back",
   "version": "3.0.2",
   "description": "back-end for chepi",
-  "author": "https://github.com/Allohamora",
+  "author": "https://github.com/allohamora",
   "license": "MIT",
   "main": "src/main.ts",
   "private": true,
@@ -97,10 +97,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Allohamora/chepi-back.git"
+    "url": "git+https://github.com/allohamora/chepi-back.git"
   },
   "bugs": {
-    "url": "https://github.com/Allohamora/chepi-back/issues"
+    "url": "https://github.com/allohamora/chepi-back/issues"
   },
-  "homepage": "https://github.com/Allohamora/chepi-back#readme"
+  "homepage": "https://github.com/allohamora/chepi-back#readme"
 }
