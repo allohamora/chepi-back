@@ -1,11 +1,11 @@
-import { writeFile, readFile, mkdir } from 'node:fs/promises';
+import { writeFile, readFile, mkdir, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
-import { serialize, deserialize } from 'node:v8';
 import { CACHE_DIR } from './path.const';
 import { CacheStrategy } from './strategy';
 import { pathExists } from '../fs';
 
-const WRITE_TIMEOUT = 10000;
+export const WRITE_TIMEOUT = 10000;
 
 enum InitStatus {
   Loaded,
@@ -13,9 +13,8 @@ enum InitStatus {
   Waiting,
 }
 
-export class MemoryFsStrategy implements CacheStrategy {
-  private cacheFileName: string;
-  private cachePath: string;
+export class InMemoryFsStrategy implements CacheStrategy {
+  private cacheDir: string;
 
   private state: Record<string, string> = {};
   private initStatus: InitStatus = InitStatus.Waiting;
@@ -23,17 +22,32 @@ export class MemoryFsStrategy implements CacheStrategy {
   private writeTimeout: NodeJS.Timeout;
 
   constructor(cacheName: string) {
-    this.cacheFileName = `${cacheName}.cache`;
-    this.cachePath = resolve(CACHE_DIR, this.cacheFileName);
+    this.cacheDir = resolve(CACHE_DIR, cacheName);
+  }
+
+  private hashKey(key: string) {
+    return createHash('sha256').update(key).digest('hex');
+  }
+
+  private getFilePath(hashedKey: string) {
+    return resolve(this.cacheDir, hashedKey);
   }
 
   private async initState() {
-    if (!(await pathExists(this.cachePath))) {
+    if (!(await pathExists(this.cacheDir))) {
       return;
     }
 
-    const cacheBuffer = await readFile(this.cachePath);
-    this.state = deserialize(cacheBuffer);
+    const hashedKeys = await readdir(this.cacheDir);
+
+    await Promise.all(
+      hashedKeys.map(async (hashedKey) => {
+        const filePath = resolve(this.cacheDir, hashedKey);
+        const value = await readFile(filePath, 'utf-8');
+
+        this.state[hashedKey] = value;
+      }),
+    );
   }
 
   private async initStateIfNeed() {
@@ -54,11 +68,19 @@ export class MemoryFsStrategy implements CacheStrategy {
 
   private saveState() {
     clearTimeout(this.writeTimeout);
-    setTimeout(async () => {
-      const buffer = serialize(this.state);
 
+    this.writeTimeout = setTimeout(async () => {
       await mkdir(CACHE_DIR, { recursive: true });
-      await writeFile(this.cachePath, buffer);
+
+      const hashedKeys = Object.keys(this.state);
+
+      await Promise.all(
+        hashedKeys.map(async (hashedKey) => {
+          const filePath = this.getFilePath(hashedKey);
+
+          await writeFile(filePath, this.state[hashedKey], 'utf-8');
+        }),
+      );
     }, WRITE_TIMEOUT);
   }
 
@@ -77,7 +99,9 @@ export class MemoryFsStrategy implements CacheStrategy {
   public async set(key: string, value: string) {
     await this.initStateIfNeed();
 
-    this.state[key] = value;
+    const hashedKey = this.hashKey(key);
+
+    this.state[hashedKey] = value;
 
     this.saveState();
   }

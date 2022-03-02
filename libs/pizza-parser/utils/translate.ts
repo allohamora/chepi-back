@@ -4,7 +4,7 @@ import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
 import type { Options } from 'got';
 import { capitalize } from './string';
-import { isomorphicMemoryFsStrategy } from './cache/isomorphic-memory-fs.strategy';
+import { InMemoryFsStrategy } from './cache/in-memory-fs.strategy';
 
 interface TranslateOptions {
   from: string;
@@ -12,7 +12,7 @@ interface TranslateOptions {
   text: string;
 }
 
-const cache = new Cache(isomorphicMemoryFsStrategy('translate'));
+const cache = new Cache(new InMemoryFsStrategy('translate'));
 
 interface FixedTranslateOptions {
   from: string;
