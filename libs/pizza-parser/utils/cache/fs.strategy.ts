@@ -8,6 +8,9 @@ import { CACHE_DIR } from './path.const';
 export class FsStrategy implements CacheStrategy {
   private cacheDir: string;
 
+  /**
+   * supports multi-threading
+   */
   constructor(cacheName: string) {
     this.cacheDir = resolve(CACHE_DIR, cacheName);
   }

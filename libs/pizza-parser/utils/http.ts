@@ -1,6 +1,6 @@
 import { HttpRequest } from 'libs/http';
 import { Cache } from './cache';
-import { isomorphicMemoryFsStrategy } from './cache/isomorphic-memory-fs.strategy';
+import { isomorphicMemoryFsStrategy } from './cache/isomorphic-in-memory-fs.strategy';
 
 const cache = new Cache(isomorphicMemoryFsStrategy('http'));
 

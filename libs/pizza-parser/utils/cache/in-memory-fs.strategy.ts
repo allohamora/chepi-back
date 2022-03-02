@@ -13,7 +13,7 @@ enum InitStatus {
   Waiting,
 }
 
-export class MemoryFsStrategy implements CacheStrategy {
+export class InMemoryFsStrategy implements CacheStrategy {
   private cacheFileName: string;
   private cachePath: string;
 
@@ -22,6 +22,9 @@ export class MemoryFsStrategy implements CacheStrategy {
   private initPromise: Promise<void>;
   private writeTimeout: NodeJS.Timeout;
 
+  /**
+   * doesn't support multithreading
+   */
   constructor(cacheName: string) {
     this.cacheFileName = `${cacheName}.cache`;
     this.cachePath = resolve(CACHE_DIR, this.cacheFileName);
@@ -54,7 +57,7 @@ export class MemoryFsStrategy implements CacheStrategy {
 
   private saveState() {
     clearTimeout(this.writeTimeout);
-    setTimeout(async () => {
+    this.writeTimeout = setTimeout(async () => {
       const buffer = serialize(this.state);
 
       await mkdir(CACHE_DIR, { recursive: true });

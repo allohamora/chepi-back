@@ -4,7 +4,7 @@ import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
 import type { Options } from 'got';
 import { capitalize } from './string';
-import { isomorphicMemoryFsStrategy } from './cache/isomorphic-memory-fs.strategy';
+import { isomorphicMemoryFsStrategy } from './cache/isomorphic-in-memory-fs.strategy';
 
 interface TranslateOptions {
   from: string;
