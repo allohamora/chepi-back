@@ -1,5 +1,5 @@
-import path from 'path';
-import fsp from 'fs/promises';
+import path from 'node:path';
+import fsp from 'node:fs/promises';
 import { parsePizzas } from '.';
 import {
   Lang,
@@ -17,26 +17,20 @@ import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
 import { objectDiff, pick } from './utils/object';
 
-interface TranslatedContent {
-  title: string;
-  description: string;
-  lang: Lang;
-}
+const WRITE_PATH = path.join(process.cwd(), 'pizzas.json');
 
-const OUTPUT_PATH = path.join(process.cwd(), 'pizzas.json');
+const writePizzas = async (pizzas: PizzaJson[], updatedAt: number) => {
+  const data = { updatedAt, pizzas };
 
-const writeOutputPizzas = async (pizzas: PizzaJson[], updatedAt: number) => {
-  const result = { updatedAt, pizzas };
-
-  await fsp.writeFile(OUTPUT_PATH, JSON.stringify(result, null, 2));
+  await fsp.writeFile(WRITE_PATH, JSON.stringify(data, null, 2));
 };
 
-const pizzasMap = pizzas.reduce(
-  (map, pizza) => map.set(pizza.id, pizza as any as PizzaJson),
-  new Map<string, PizzaJson>(),
-);
+const addHistory = (newPizzas: Translated[], detectedAt: number) => {
+  const pizzasMap = pizzas.reduce(
+    (map, pizza) => map.set(pizza.id, pizza as unknown as PizzaJson),
+    new Map<string, PizzaJson>(),
+  );
 
-const addChanges = (newPizzas: Translated[], detectedAt: number) => {
   return newPizzas.map((newPizza) => {
     const isFound = pizzasMap.has(newPizza.id);
 
@@ -71,6 +65,12 @@ const addId = (pizzas: Pizza[]): WithId[] => {
     return { ...pizza, id };
   });
 };
+
+interface TranslatedContent {
+  title: string;
+  description: string;
+  lang: Lang;
+}
 
 const translatePizza = async ({ title, description, lang: from, ...rest }: WithId) => {
   const restLangs = supportedLangs.filter((lang) => lang !== from);
@@ -112,10 +112,10 @@ const main = async () => {
   const updatedAt = getTimestamp();
   const pizzas = await parsePizzas();
   const withId = addId(pizzas);
-  const translatedPizzas = await translatePizzas(withId);
-  const withChanges = addChanges(translatedPizzas, updatedAt);
+  const translated = await translatePizzas(withId);
+  const withHistory = addHistory(translated, updatedAt);
 
-  await writeOutputPizzas(withChanges, updatedAt);
+  await writePizzas(withHistory, updatedAt);
 };
 
 main();
