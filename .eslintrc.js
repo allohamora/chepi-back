@@ -22,7 +22,7 @@ module.exports = {
     'beautiful-sort/import': [
       'error',
       {
-        special: ['^node:'],
+        special: ['/^node:/'],
         order: ['special', 'namespace', 'default', 'defaultObj', 'obj', 'none'],
       },
     ],
