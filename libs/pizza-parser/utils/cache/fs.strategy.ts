@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { pathExists } from '../fs';
+import { isExists } from '../fs';
 import { CacheStrategy } from './strategy';
 import { CACHE_DIR } from './path.const';
 
@@ -16,9 +16,9 @@ export class FsStrategy implements CacheStrategy {
   }
 
   private async createCacheDirIfNotExists() {
-    const isExists = await pathExists(this.cacheDir);
+    const isCacheDirExists = await isExists(this.cacheDir);
 
-    if (isExists) return;
+    if (isCacheDirExists) return;
 
     await mkdir(this.cacheDir, { recursive: true });
   }
@@ -34,7 +34,7 @@ export class FsStrategy implements CacheStrategy {
     await this.createCacheDirIfNotExists();
     const { filePath } = this.getFileNameAndPath(key);
 
-    return await pathExists(filePath);
+    return await isExists(filePath);
   }
 
   public async get(key: string) {

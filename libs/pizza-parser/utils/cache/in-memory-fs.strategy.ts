@@ -4,9 +4,9 @@ import { serialize, deserialize } from 'node:v8';
 import { setTimeout as delay } from 'node:timers/promises';
 import { CACHE_DIR } from './path.const';
 import { CacheStrategy } from './strategy';
-import { pathExists } from '../fs';
+import { isExists } from '../fs';
 
-const WRITE_TIMEOUT = 10000;
+export const WRITE_TIMEOUT = 10000;
 
 enum InitStatus {
   Loaded,
@@ -35,8 +35,12 @@ export class InMemoryFsStrategy implements CacheStrategy {
     await delay(WRITE_TIMEOUT);
   }
 
-  private async initState() {
-    if (!(await pathExists(this.cachePath))) {
+  public getState() {
+    return this.state;
+  }
+
+  public async initState() {
+    if (!(await isExists(this.cachePath))) {
       return;
     }
 
@@ -44,7 +48,7 @@ export class InMemoryFsStrategy implements CacheStrategy {
     this.state = deserialize(cacheBuffer);
   }
 
-  private async initStateIfNeed() {
+  public async initStateIfNeed() {
     if (this.initStatus === InitStatus.Loaded) {
       return;
     } else if (this.initStatus === InitStatus.Loading) {
@@ -60,14 +64,16 @@ export class InMemoryFsStrategy implements CacheStrategy {
     return this.initPromise;
   }
 
-  private saveState() {
-    clearTimeout(this.writeTimeout);
-    this.writeTimeout = setTimeout(async () => {
-      const buffer = serialize(this.state);
+  public async saveState() {
+    const buffer = serialize(this.state);
 
-      await mkdir(CACHE_DIR, { recursive: true });
-      await writeFile(this.cachePath, buffer);
-    }, WRITE_TIMEOUT);
+    await mkdir(CACHE_DIR, { recursive: true });
+    await writeFile(this.cachePath, buffer);
+  }
+
+  public throttledSaveState() {
+    clearTimeout(this.writeTimeout);
+    this.writeTimeout = setTimeout(async () => await this.saveState(), WRITE_TIMEOUT);
   }
 
   public async has(key: string) {
@@ -87,6 +93,6 @@ export class InMemoryFsStrategy implements CacheStrategy {
 
     this.state[key] = value;
 
-    this.saveState();
+    this.throttledSaveState();
   }
 }
