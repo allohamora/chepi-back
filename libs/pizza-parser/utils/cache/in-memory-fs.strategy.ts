@@ -1,6 +1,7 @@
 import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { serialize, deserialize } from 'node:v8';
+import { setTimeout as delay } from 'node:timers/promises';
 import { CACHE_DIR } from './path.const';
 import { CacheStrategy } from './strategy';
 import { pathExists } from '../fs';
@@ -28,6 +29,10 @@ export class InMemoryFsStrategy implements CacheStrategy {
   constructor(cacheName: string) {
     this.cacheFileName = `${cacheName}.cache`;
     this.cachePath = resolve(CACHE_DIR, this.cacheFileName);
+  }
+
+  static async waitWriteTimeout() {
+    await delay(WRITE_TIMEOUT);
   }
 
   private async initState() {
