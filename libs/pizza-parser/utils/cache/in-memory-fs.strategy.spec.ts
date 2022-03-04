@@ -1,8 +1,8 @@
-import * as fsUtils from '../fs';
 import fsp from 'node:fs/promises';
 import v8 from 'node:v8';
-import { InMemoryFsStrategy, WRITE_TIMEOUT } from './in-memory-fs.strategy';
 import { resolve } from 'node:path';
+import * as fsUtils from '../fs';
+import { InMemoryFsStrategy, WRITE_TIMEOUT } from './in-memory-fs.strategy';
 import { CACHE_DIR } from './path.const';
 
 jest.mock('../fs');
