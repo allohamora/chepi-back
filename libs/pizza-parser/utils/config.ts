@@ -1,1 +1,1 @@
-export const HTTP_PROXY_URL = 'http://localhost:5566';
+export const HTTP_PROXY_URL = 'http://localhost:3128';

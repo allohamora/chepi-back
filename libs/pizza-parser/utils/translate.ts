@@ -1,3 +1,5 @@
+import { setTimeout as delay } from 'node:timers/promises';
+import { debuglog } from 'node:util';
 import freeGoogleTranslate from '@vitalets/google-translate-api';
 import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
@@ -9,21 +11,34 @@ interface TranslateOptions {
   from: string;
   to: string;
   text: string;
+  timeout?: number;
 }
 
 const cache = new Cache(new FsStrategy('translate'));
+const debug = debuglog('pizza-parser:translate');
 
-export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
-  const res = await freeGoogleTranslate(
-    text,
-    { from, to },
-    {
-      agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
-    },
-  );
+const TRANSLATE_ERROR_TIMEOUT_STEP = 100;
 
-  return res.text;
-});
+export const translate = cache.decorator(
+  async ({ from, to, text, timeout = TRANSLATE_ERROR_TIMEOUT_STEP }: TranslateOptions) => {
+    try {
+      const res = await freeGoogleTranslate(
+        text,
+        { from, to },
+        {
+          agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
+        },
+      );
+
+      return res.text;
+    } catch (error) {
+      debug('translate-error: %o', { message: error.message, from, to, text, timeout });
+
+      await delay(timeout);
+      return await translate({ from, to, text, timeout: timeout * 2 });
+    }
+  },
+);
 
 export const TEXT_PLACEHOLDER = '-';
 

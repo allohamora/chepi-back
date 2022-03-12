@@ -1,5 +1,6 @@
 import path from 'node:path';
 import fsp from 'node:fs/promises';
+import { debuglog } from 'node:util';
 import { parsePizzas } from '.';
 import {
   Lang,
@@ -16,6 +17,8 @@ import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
 import { objectDiff, pick } from './utils/object';
+
+const debug = debuglog('pizza-parser:build');
 
 const WRITE_PATH = path.join(process.cwd(), 'pizzas.json');
 
@@ -66,28 +69,14 @@ const addId = (pizzas: Pizza[]): WithId[] => {
   });
 };
 
-interface TranslatedContent {
-  title: string;
-  description: string;
-  lang: Lang;
-}
-
 const translatePizza = async ({ title, description, lang: from, ...rest }: WithId) => {
   const restLangs = supportedLangs.filter((lang) => lang !== from);
 
-  const translateContent = async (to: string): Promise<TranslatedContent> => {
-    try {
-      const translatedTitle = await translate({ text: title, from, to });
-      const translatedDescription = await translate({ text: description, from, to });
+  const translateContent = async (to: string) => {
+    const translatedTitle = await translate({ text: title, from, to });
+    const translatedDescription = await translate({ text: description, from, to });
 
-      return { title: translatedTitle, description: translatedDescription, lang: to as Lang };
-    } catch (error) {
-      if ('gotOptions' in error) {
-        return await translateContent(to);
-      }
-
-      throw error;
-    }
+    return { title: translatedTitle, description: translatedDescription, lang: to as Lang };
   };
 
   const translatedContent = await Promise.all(restLangs.map(translateContent));
@@ -104,18 +93,56 @@ const translatePizza = async ({ title, description, lang: from, ...rest }: WithI
   ) as Translated;
 };
 
+const PIZZAS_PARALLEL_CHAINS = 15;
+
 const translatePizzas = async (pizzas: WithId[]) => {
-  return await Promise.all(pizzas.map(translatePizza));
+  const pieces: WithId[][] = pizzas.reduce(
+    (state, pizza, i) => {
+      const stateIdx = i % PIZZAS_PARALLEL_CHAINS;
+
+      state[stateIdx].push(pizza);
+      return state;
+    },
+    Array.from({ length: PIZZAS_PARALLEL_CHAINS }, () => []),
+  );
+
+  const pieceToChain = async (piece: WithId[]) => {
+    return await piece.reduce((chain, pizza) => {
+      return chain.then(async (state) => {
+        state.push(await translatePizza(pizza));
+
+        return state;
+      });
+    }, Promise.resolve([] as Translated[]));
+  };
+
+  const pizzasNested = await Promise.all(pieces.map(pieceToChain));
+
+  return pizzasNested.flat(1);
 };
 
 const main = async () => {
+  debug('build start');
+
+  debug('get updatedAt');
   const updatedAt = getTimestamp();
+
+  debug('parse pizzas');
   const pizzas = await parsePizzas();
+
+  debug('add id to pizzas');
   const withId = addId(pizzas);
+
+  debug('translate pizzas');
   const translated = await translatePizzas(withId);
+
+  debug('add historyOfChanges to pizzas');
   const withHistory = addHistory(translated, updatedAt);
 
+  debug('write pizzas.json');
   await writePizzas(withHistory, updatedAt);
+
+  debug('build finish');
 };
 
 main();
