@@ -3,7 +3,7 @@ import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
 import { capitalize } from './string';
-import { isomorphicMemoryFsStrategy } from './cache/isomorphic-in-memory-fs.strategy';
+import { FsStrategy } from './cache/fs.strategy';
 
 interface TranslateOptions {
   from: string;
@@ -11,7 +11,7 @@ interface TranslateOptions {
   text: string;
 }
 
-const cache = new Cache(isomorphicMemoryFsStrategy('translate'));
+const cache = new Cache(new FsStrategy('translate'));
 
 export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
   const res = await freeGoogleTranslate(
