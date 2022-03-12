@@ -5,9 +5,9 @@ import { FsStrategy } from './cache/fs.strategy';
 const cache = new Cache(new FsStrategy('http'));
 
 export const getText = cache.decorator(async (url: string) => {
-  const { data } = await new HttpRequest(url).returnType('text').request<string>();
+  const res = await new HttpRequest(url).returnType('text').request<string>();
 
-  return data;
+  return res.data;
 });
 
 export const getJSON = async <T>(url: string) => {
