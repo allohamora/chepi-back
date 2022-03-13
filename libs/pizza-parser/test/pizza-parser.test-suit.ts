@@ -17,6 +17,7 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
     test('return a pizza array', async () => {
       const pizzas = await parser.parsePizzas();
       expect(pizzas).toBeInstanceOf(Array);
+      expect(pizzas.length >= 1).toBe(true);
 
       for (const pizza of pizzas) {
         expectObject(pizza);
