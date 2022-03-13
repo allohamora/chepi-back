@@ -1,4 +1,4 @@
-import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
+import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -118,7 +118,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
 
   private async pageLinkToPizza(link: string) {
     const page = await this.getPageHtml(link);
-    const $ = cheerio.load(page);
+    const $ = load(page);
 
     const title = this.getTitle($);
     const description = this.getDescription($);
@@ -139,7 +139,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const pageHtml = await this.getPageHtml();
-    const $ = cheerio.load(pageHtml);
+    const $ = load(pageHtml);
     const pizzaLinks = this.getPizzaLinks($);
 
     return await this.getPizzas(pizzaLinks);
