@@ -20,8 +20,8 @@ export class Czernowizza extends ChernivtsiPizzasParser {
   private normalizeDescription(description: string) {
     const fixed = description
       .replace(/тісто(,)?/, '')
-      .replace(/моцарела/i, 'моцарелла')
-      .replace(/сир моцарелла/, 'моцарелла')
+      .replace(/моцарелла/i, 'моцарела')
+      .replace(/сир моцарела/, 'моцарела')
       .replace(/гриль овочі/, 'овочі гриль')
       .replace(/,( )?$/, '')
       .replace(/  /g, ' ')

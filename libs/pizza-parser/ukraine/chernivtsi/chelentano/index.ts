@@ -25,7 +25,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
       .replace(/болгарський/, 'перець болгарський')
       .replace(/основа,?/i, '')
       .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
-      .replace(/моцарела/g, 'моцарелла')
+      .replace(/моцарелла/g, 'моцарела')
       .trim();
 
     return capitalize(fixed);
