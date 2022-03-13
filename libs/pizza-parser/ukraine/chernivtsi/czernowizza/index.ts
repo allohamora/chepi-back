@@ -23,6 +23,10 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       .replace(/моцарелла/i, 'моцарела')
       .replace(/сир моцарела/, 'моцарела')
       .replace(/гриль овочі/, 'овочі гриль')
+      .replace(/чілі/, 'перець чілі')
+      .replace(/томати/, 'помідори')
+      .replace(/соус песто/, 'соус "Песто"')
+      .replace(/соус беш[ае]мель/i, 'соус "Бешамель"')
       .replace(/,( )?$/, '')
       .replace(/  /g, ' ')
       .trim();
