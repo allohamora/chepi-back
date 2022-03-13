@@ -95,8 +95,6 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       const image = this.getPizzaImage($pizza);
       const variants = this.getVariants($pizza);
 
-      console.log({ title, description });
-
       const base = { title, description, link, image, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
