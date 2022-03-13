@@ -3,7 +3,7 @@ import { getText } from 'libs/pizza-parser/utils/http';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://la.ua/chernivtsy/';
-const TITLE_BLACKLIST = [/На армію/];
+const TITLE_BLACKLIST = [/На армію/, /Віртуальна піца/];
 
 export class Lapiec extends ChernivtsiPizzasParser {
   private async getPageHtml() {
@@ -42,8 +42,8 @@ export class Lapiec extends ChernivtsiPizzasParser {
     return parseInt(weightText);
   }
 
-  private getPrice($info: Cheerio<Element>) {
-    const priceText = $info.find('.productPrice > span').text().trim();
+  private getPrice($pizza: Cheerio<Element>) {
+    const priceText = $pizza.find('.productPrice > span').text().trim();
 
     return Number(priceText);
   }
@@ -73,7 +73,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
 
         const size = this.getSize($variant);
         const weight = this.getWeight($variant);
-        const price = this.getPrice($info);
+        const price = this.getPrice($pizza);
 
         return {
           ...this.baseMetadata,
