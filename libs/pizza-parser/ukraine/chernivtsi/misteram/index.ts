@@ -2,7 +2,8 @@ import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import { getJSON } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
 import { capitalize } from 'libs/pizza-parser/utils/string';
-import { Company, COMPANY_LIST, Normalize, NormalizeHandler } from './company-list';
+import { COMPANY_LIST } from './company-list';
+import { Company, NormalizeHandler } from './company-list/types';
 import { TEXT_PLACEHOLDER } from 'libs/pizza-parser/utils/translate';
 
 enum MeasureType {
