@@ -23,9 +23,15 @@ export class Dongustavo extends ChernivtsiPizzasParser {
 
   private normalizeDescription(description: string) {
     const fixed = description
+      .replace(/\s/g, ' ')
       .replace(/моцарелла/i, 'моцарела')
       .replace(/сир фета/, 'фета')
-      .replace(/сир\sдор\sблю/gi, 'дор блю')
+      .replace(/сир дор блю/gi, 'дорблю')
+      .replace(/дор блю/, 'дорблю')
+      .replace(/чері/, 'помідори чері')
+      .replace(/помідори помідори чері/, 'помідори чері')
+      .replace(/оливки каламата/, 'оливки "Каламата"')
+      .replace(/соус цезарь/, 'соус "Цезар"')
       .replace(/^coyc, /i, '')
       .replace(/^соус, /i, '')
       .trim();
