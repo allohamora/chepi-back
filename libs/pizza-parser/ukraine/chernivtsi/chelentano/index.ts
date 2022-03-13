@@ -20,7 +20,9 @@ export class Chelentano extends ChernivtsiPizzasParser {
   private normalizeDescription(description: string) {
     const fixed = description
       .replace(/ ?сири/, '')
+      .replace(/ ?перці/, '')
       .replace(/(.+?) (та|і) (.+?)/g, '$1, $3')
+      .replace(/болгарський/, 'перець болгарський')
       .replace(/основа,?/i, '')
       .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
       .replace(/моцарела/g, 'моцарелла')
