@@ -1,5 +1,6 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
+import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://czernowizza.com';
@@ -8,6 +9,25 @@ const BLACKLIST = ['Пиріг Осетинський'];
 export class Czernowizza extends ChernivtsiPizzasParser {
   private async getPageHtml() {
     return await getText(BASE_URL);
+  }
+
+  private normalizeTitle(title: string) {
+    const fixed = title.replace(/піца/i, '').trim();
+
+    return capitalize(fixed);
+  }
+
+  private normalizeDescription(description: string) {
+    const fixed = description
+      .replace(/тісто(,)?/, '')
+      .replace(/моцарела/i, 'моцарелла')
+      .replace(/сир моцарелла/, 'моцарелла')
+      .replace(/гриль овочі/, 'овочі гриль')
+      .replace(/,( )?$/, '')
+      .replace(/  /g, ' ')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private getTitle($block: Cheerio<Element>) {
@@ -67,11 +87,15 @@ export class Czernowizza extends ChernivtsiPizzasParser {
     const $pizzas = this.getPizzaElements($, $category);
 
     return $pizzas.flatMap(($pizza) => {
-      const title = this.getTitle($pizza);
-      const description = this.getPizzaDescription($pizza);
+      const pizzaTitle = this.getTitle($pizza);
+      const title = this.normalizeTitle(pizzaTitle);
+      const pizzaDescription = this.getPizzaDescription($pizza);
+      const description = this.normalizeDescription(pizzaDescription);
       const link = this.getPizzaLink($pizza);
       const image = this.getPizzaImage($pizza);
       const variants = this.getVariants($pizza);
+
+      console.log({ title, description });
 
       const base = { title, description, link, image, ...this.baseMetadata };
 
