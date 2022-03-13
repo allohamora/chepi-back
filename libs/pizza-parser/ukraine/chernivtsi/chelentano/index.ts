@@ -26,6 +26,9 @@ export class Chelentano extends ChernivtsiPizzasParser {
       .replace(/основа,?/i, '')
       .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
       .replace(/моцарелла/g, 'моцарела')
+      .replace(/соус Цезаре/, 'соус "Цезаре"')
+      .replace(/чілі/, 'перець чілі')
+      .replace(/моцарела фреска/, 'моцарела "Фреска"')
       .trim();
 
     return capitalize(fixed);
@@ -127,6 +130,8 @@ export class Chelentano extends ChernivtsiPizzasParser {
       const description = this.normalizeDescription(cardDescription);
       const link = this.getCardLink($cardTitle);
       const image = this.getCardImage($card);
+
+      console.log({ title, description });
 
       const weights = this.getCardWeights($card);
       const sizes = this.getCardSizes($, $card);
