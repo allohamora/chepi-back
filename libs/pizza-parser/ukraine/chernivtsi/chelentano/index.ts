@@ -131,8 +131,6 @@ export class Chelentano extends ChernivtsiPizzasParser {
       const link = this.getCardLink($cardTitle);
       const image = this.getCardImage($card);
 
-      console.log({ title, description });
-
       const weights = this.getCardWeights($card);
       const sizes = this.getCardSizes($, $card);
       const prices = this.getCardPrices($, $card);
