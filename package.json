@@ -90,7 +90,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint -- --fix"
+      "npm run lint -- --fix",
+      "jest --findRelatedTests"
     ],
     "*.{js,json,yml,md}": [
       "npm run format -- --write"
