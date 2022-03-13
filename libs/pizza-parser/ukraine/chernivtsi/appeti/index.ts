@@ -15,6 +15,23 @@ export class Apetti extends ChernivtsiPizzasParser {
     return `${BASE_URL}/${href}`;
   }
 
+  private normalizeDescription(description: string) {
+    switch (description.toLowerCase()) {
+      case 'неймовірно смачне поєднання соковитих томатів, сиру моцарелла та духмяного базиліку':
+        return 'Томати, моцарелла, базилік';
+      case 'соковита шинка, стиглі томати, печериці, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом':
+        return 'Шинка, томати, моцарелла, фірмовий соус';
+      case 'куряче філе, томати, перець болгарський, ніжний сир у поєднанні з сиром моцарелла та фірмовим соусом':
+        return 'Куряче філе, томати, перець болгарський, ніжний сир, моцарелла, фірмовий соус';
+      case 'апетитне салямі з томатами, перцем болгарським, маслинами, ніжним сиром у поєднанні з сиром моцарелла та фірмовим соусом':
+        return 'Салямі, томати, перець болгарський, маслини, ніжний сир, моцарелла, фірмовий соус';
+      case 'поєднання м’яса курки, ананасу, кукурудзи, ніжного сиру та сиру моцарелла з фірмовим соусом роблять нашу піцу надзвичайно смачною':
+        return 'Курка, ананас, кукурудза, ніжний сир, моцарелла, фірмовий соус';
+      default:
+        throw new Error(`invalid description: ${description}`);
+    }
+  }
+
   private parsePizzaCategoryLinks($: CheerioAPI, $category: Cheerio<Element>) {
     return $category
       .children()
@@ -88,7 +105,8 @@ export class Apetti extends ChernivtsiPizzasParser {
     const $card = $('#msProduct');
 
     const title = this.getCardTitle($card);
-    const description = this.getCardDescription($card);
+    const cardDescription = this.getCardDescription($card);
+    const description = this.normalizeDescription(cardDescription);
     const image = this.getCardImage($card);
 
     const variants = this.getCardVariants($, $card);
