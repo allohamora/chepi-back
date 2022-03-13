@@ -22,15 +22,8 @@ export interface Pizza {
   city: City;
 }
 
-export interface WithId extends Pizza {
-  id: string;
-}
-
-type TranslatedPizzaTitles = `${Lang}_title`;
-type TranslatedPizzaDescription = `${Lang}_description`;
-
-export type Translated = Omit<WithId, 'title' | 'description'> & {
-  [key in TranslatedPizzaTitles | TranslatedPizzaDescription]: string;
+export type TranslatedContent = {
+  [key in `${Lang}_title` | `${Lang}_description`]: string;
 };
 
 export const historyOfChangesWatchKeys = [
@@ -56,11 +49,13 @@ export interface Change {
   detectedAt: number;
 }
 
-export type WithHistory = Translated & {
-  historyOfChanges?: Change[]; // order by detectedAt desc
-};
+export type PizzaJson = Omit<Pizza, 'title' | 'description'> &
+  TranslatedContent & {
+    id: string;
+    historyOfChanges?: Change[];
+  };
 
-export type PizzaJson = WithHistory;
+export type PizzaJsonWithoutHistory = Omit<PizzaJson, 'historyOfChanges'>;
 
 export interface PizzasJson {
   updatedAt: number;

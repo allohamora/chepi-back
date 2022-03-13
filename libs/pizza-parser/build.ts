@@ -1,24 +1,20 @@
 import path from 'node:path';
 import fsp from 'node:fs/promises';
-import { debuglog } from 'node:util';
 import { parsePizzas } from '.';
 import {
-  Lang,
   Pizza,
-  WithId,
   supportedLangs,
-  Translated,
-  WithHistory,
+  TranslatedContent,
   PizzaJson,
   historyOfChangesWatchKeys,
+  PizzaJsonWithoutHistory,
+  Lang,
 } from './types/pizza';
 import { getTimestamp } from './utils/date';
 import { placeholderOrFixed, translate } from './utils/translate';
 import { toSha256 } from './utils/crypto';
 import { pizzas } from 'pizzas.json';
-import { objectDiff, pick } from './utils/object';
-
-const debug = debuglog('pizza-parser:build');
+import { objectDiff, omit, pick } from './utils/object';
 
 const WRITE_PATH = path.join(process.cwd(), 'pizzas.json');
 
@@ -28,121 +24,109 @@ const writePizzas = async (pizzas: PizzaJson[], updatedAt: number) => {
   await fsp.writeFile(WRITE_PATH, JSON.stringify(data, null, 2));
 };
 
-const addHistory = (newPizzas: Translated[], detectedAt: number) => {
-  const pizzasMap = pizzas.reduce(
-    (map, pizza) => map.set(pizza.id, pizza as unknown as PizzaJson),
-    new Map<string, PizzaJson>(),
-  );
+const pizzasMap = pizzas.reduce(
+  (map, pizza) => map.set(pizza.id, pizza as unknown as PizzaJson),
+  new Map<string, PizzaJson>(),
+);
 
-  return newPizzas.map((newPizza) => {
-    const isFound = pizzasMap.has(newPizza.id);
+const getHistoryOfChanges = (newPizza: PizzaJsonWithoutHistory, detectedAt: number) => {
+  const isFound = pizzasMap.has(newPizza.id);
 
-    if (!isFound) {
-      return newPizza;
-    }
+  if (!isFound) {
+    return;
+  }
 
-    const oldPizza = pizzasMap.get(newPizza.id);
-    const diff = objectDiff(pick(oldPizza, historyOfChangesWatchKeys), pick(newPizza, historyOfChangesWatchKeys));
-    const historyOfChanges = diff.map(({ key, values }) => ({
-      key,
-      old: values[0],
-      new: values[1],
-      detectedAt,
-    }));
+  const oldPizza = pizzasMap.get(newPizza.id);
+  const diff = objectDiff(pick(oldPizza, historyOfChangesWatchKeys), pick(newPizza, historyOfChangesWatchKeys));
+  const newHistoryOfChanges = diff.map(({ key, values }) => ({
+    key,
+    old: values[0],
+    new: values[1],
+    detectedAt,
+  }));
 
-    const result = { ...newPizza } as WithHistory;
+  const historyOfChanges = [...newHistoryOfChanges, ...(oldPizza.historyOfChanges || [])];
 
-    if (historyOfChanges.length !== 0 || Array.isArray(oldPizza.historyOfChanges)) {
-      result.historyOfChanges = [...historyOfChanges, ...(oldPizza.historyOfChanges || [])];
-    }
+  if (historyOfChanges.length === 0) {
+    return;
+  }
 
-    return result;
-  });
+  return historyOfChanges;
 };
 
-const addId = (pizzas: Pizza[]): WithId[] => {
-  return pizzas.map((pizza) => {
-    const { title, link, lang, country, city, size } = pizza;
-    const id = toSha256(JSON.stringify({ title, link, lang, country, city, size }));
-
-    return { ...pizza, id };
-  });
+const getId = ({ title, link, lang, country, city, size }: Pizza) => {
+  return toSha256(JSON.stringify({ title, link, lang, country, city, size }));
 };
 
-const translatePizza = async ({ title, description, lang: from, ...rest }: WithId) => {
+const getTranslatedContent = async ({ title, description, lang: from }) => {
   const restLangs = supportedLangs.filter((lang) => lang !== from);
 
-  const translateContent = async (to: string) => {
-    const translatedTitle = await translate({ text: title, from, to });
-    const translatedDescription = await translate({ text: description, from, to });
+  const toContent = (title: string, description: string, lang: Lang) => ({
+    [`${lang}_title`]: placeholderOrFixed(title),
+    [`${lang}_description`]: placeholderOrFixed(description),
+  });
 
-    return { title: translatedTitle, description: translatedDescription, lang: to as Lang };
-  };
+  const restContent = await Promise.all(
+    restLangs.map(async (to) => {
+      const translatedTitle = await translate({ text: title, from, to });
+      const translatedDescription = await translate({ text: description, from, to });
 
-  const translatedContent = await Promise.all(restLangs.map(translateContent));
-  const content = [{ title, description, lang: from }, ...translatedContent];
+      return toContent(translatedTitle, translatedDescription, to);
+    }),
+  );
 
-  return content.reduce(
-    (pizza, { title, description, lang }) => {
-      pizza[`${lang}_title`] = placeholderOrFixed(title);
-      pizza[`${lang}_description`] = placeholderOrFixed(description);
+  const content = [toContent(title, description, from), ...restContent];
 
-      return pizza;
-    },
-    { ...rest },
-  ) as Translated;
+  return content.reduce((state, current) => ({ ...state, ...current }), {} as TranslatedContent) as TranslatedContent;
+};
+
+const buildPizza = async (pizza: Pizza, updatedAt: number): Promise<PizzaJson> => {
+  const id = getId(pizza);
+  const translatedContent = await getTranslatedContent(pizza);
+  const withoutHistory = { id, ...omit(pizza, ['title', 'description']), ...translatedContent };
+  const historyOfChanges = getHistoryOfChanges(withoutHistory, updatedAt);
+
+  return { ...withoutHistory, historyOfChanges };
 };
 
 const PIZZAS_PARALLEL_CHAINS = 15;
 
-const translatePizzas = async (pizzas: WithId[]) => {
-  const pieces: WithId[][] = pizzas.reduce(
+type PizzasChain = Promise<PizzaJson[]>;
+
+const buildPizzas = async (pizzas: Pizza[], updatedAt: number): Promise<PizzaJson[]> => {
+  const pieces: Pizza[][] = pizzas.reduce(
     (state, pizza, i) => {
       const stateIdx = i % PIZZAS_PARALLEL_CHAINS;
-
       state[stateIdx].push(pizza);
+
       return state;
     },
     Array.from({ length: PIZZAS_PARALLEL_CHAINS }, () => []),
   );
 
-  const pieceToChain = async (piece: WithId[]) => {
-    return await piece.reduce((chain, pizza) => {
-      return chain.then(async (state) => {
-        state.push(await translatePizza(pizza));
+  const toChain = async (chain: PizzasChain, pizza: Pizza) => {
+    return await chain.then(async (state) => {
+      const builded = await buildPizza(pizza, updatedAt);
+      state.push(builded);
 
-        return state;
-      });
-    }, Promise.resolve([] as Translated[]));
+      return state;
+    });
   };
 
-  const pizzasNested = await Promise.all(pieces.map(pieceToChain));
+  const pieceToChain = async (piece: Pizza[]) => {
+    return await piece.reduce(toChain, Promise.resolve([] as PizzaJson[]));
+  };
 
-  return pizzasNested.flat(1);
+  const pizzasPieces = await Promise.all(pieces.map(pieceToChain));
+
+  return pizzasPieces.flat(1);
 };
 
 const main = async () => {
-  debug('build start');
-
-  debug('get updatedAt');
   const updatedAt = getTimestamp();
-
-  debug('parse pizzas');
   const pizzas = await parsePizzas();
-
-  debug('add id to pizzas');
-  const withId = addId(pizzas);
-
-  debug('translate pizzas');
-  const translated = await translatePizzas(withId);
-
-  debug('add historyOfChanges to pizzas');
-  const withHistory = addHistory(translated, updatedAt);
-
-  debug('write pizzas.json');
-  await writePizzas(withHistory, updatedAt);
-
-  debug('build finish');
+  const builded = await buildPizzas(pizzas, updatedAt);
+  await writePizzas(builded, updatedAt);
 };
 
 main();
