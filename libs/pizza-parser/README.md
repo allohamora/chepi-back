@@ -10,6 +10,4 @@
 
 ## uk normalize rules
 
-- Use "type product" order for products with type prefix, example: Песто соус => соус Песто
 - Use "помідори" instead of "томати"
-- Use "шампіньйони" instead of "печериці"

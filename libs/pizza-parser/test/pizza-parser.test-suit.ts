@@ -14,7 +14,7 @@ const MAX_REQUEST_TIME_IN_MILISECONDS = 60000;
 const ukNotContainBlacklistedWordTest = (value: string) => {
   const expectFalseTest = expectFalseTestFactory(value);
 
-  expectFalseTest(/печериц[ія]/i);
+  expectFalseTest(/шампиньони?/i);
   expectFalseTest(/томати/i);
   expectFalseTest(/фірмов(ий|а)/i);
   expectFalseTest(/свіж[іа]/i);
