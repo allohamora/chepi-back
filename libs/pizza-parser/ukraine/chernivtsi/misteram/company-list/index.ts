@@ -13,7 +13,6 @@ import { kucheri } from './companies/kucheri';
 import { lapasta } from './companies/lapasta';
 import { mamasPizza } from './companies/mamas-pizza';
 import { monopoli } from './companies/monopoli';
-import { panskaVtiha } from './companies/panska-vtiha';
 import { pastamia } from './companies/pastamia';
 import { picantico } from './companies/picantico';
 import { pizzaPark } from './companies/pizza-park';
@@ -24,7 +23,6 @@ import { yourPizza } from './companies/your-pizza';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
-  // panskaVtiha,
   lapasta,
   baza,
   picantico,
