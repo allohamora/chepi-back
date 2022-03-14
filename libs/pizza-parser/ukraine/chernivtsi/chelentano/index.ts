@@ -34,8 +34,8 @@ export class Chelentano extends ChernivtsiPizzasParser {
       .replace(/соус Цезаре/, 'соус Цезар')
       .replace(/чілі/, 'перець чилі')
       .replace(/моцарела фреска/, 'моцарела Фреска')
-      .replace(/печериці/i, 'шампиньони')
       .replace(/салямі піканте/i, 'салямі Піканте')
+      .replace(/мікс-салат/i, 'мікс салат')
       .replace(/домашній /i, '')
       .trim();
 
