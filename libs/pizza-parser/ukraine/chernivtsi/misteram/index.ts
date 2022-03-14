@@ -127,8 +127,6 @@ export class Misteram extends ChernivtsiPizzasParser {
     const description = this.normalize(dishDescription, company?.normalize?.description);
     const size = this.getSize(category.size, dish.name);
 
-    console.log({ title, description });
-
     return { title, description, image, link, weight, size, price: dish.price, ...this.baseMetadata };
   }
 
