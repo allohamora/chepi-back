@@ -1,8 +1,44 @@
 import { PizzasParser } from '../types/parser';
 import { Constructable } from '../types/utils';
-import { expectNumberOrNull, expectObject, expectString, expectTrimmedString } from './test.utils';
+import { combine } from '../utils/fp';
+import {
+  expectFalseTestFactory,
+  expectNumberOrNull,
+  expectObject,
+  expectString,
+  expectTrimmedString,
+} from './test.utils';
 
 const MAX_REQUEST_TIME_IN_MILISECONDS = 60000;
+
+const ukNotContainBlacklistedWordTest = (value: string) => {
+  const expectFalseTest = expectFalseTestFactory(value);
+
+  expectFalseTest(/печериц[ія]/i);
+  expectFalseTest(/томати?/i);
+  expectFalseTest(/фірмов(ий|а)/i);
+  expectFalseTest(/свіж[іа]/i);
+  expectFalseTest(/піца/i);
+  expectFalseTest(/pizza/i);
+  expectFalseTest(/тісто/i);
+  expectFalseTest(/борошно/i);
+  expectFalseTest(/моцарелла/i);
+  expectFalseTest(/дор блю/i);
+  expectFalseTest(/чілі/i);
+  expectFalseTest(/сир моцарела/i);
+  expectFalseTest(/(?<!помідори )чері/i);
+  expectFalseTest(/(?<!перець )чилі/i);
+};
+
+const notContainQuoteTest = (value: string) => {
+  const expectFalseTest = expectFalseTestFactory(value);
+
+  expectFalseTest(/"/);
+  expectFalseTest(/«|»/);
+  expectFalseTest(/“/);
+};
+
+const ukContentTest = combine(notContainQuoteTest, ukNotContainBlacklistedWordTest);
 
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
   jest.setTimeout(MAX_REQUEST_TIME_IN_MILISECONDS);
@@ -24,6 +60,11 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
 
         expectTrimmedString(pizza.title);
         expectString(pizza.description);
+
+        if (pizza.lang === 'uk') {
+          ukContentTest(pizza.title);
+          ukContentTest(pizza.description);
+        }
 
         const isDesriptionNotEmpty = pizza.description.trim().length !== 0;
         if (isDesriptionNotEmpty) {

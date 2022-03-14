@@ -10,6 +10,14 @@ export const expectNumber = <V>(value: V) => {
   expect(value).not.toBeNaN();
 };
 
+export const expectFalseTest = <V extends string>(value: V, regexp: RegExp) => {
+  expect(regexp.test(value)).toBe(false);
+};
+
+export const expectFalseTestFactory = <V extends string>(value: V) => {
+  return (regexp: RegExp) => expectFalseTest(value, regexp);
+};
+
 export const expectOwnProperty = <V, K extends keyof V>(value: V, key: K) => {
   expect(value.hasOwnProperty(key)).toBe(true);
 };
