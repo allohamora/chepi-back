@@ -6,7 +6,6 @@ import { chebonta } from './companies/chebonta';
 import { chicheri } from './companies/chicheri';
 import { ciabatta } from './companies/ciabatta';
 import { diverso } from './companies/diverso';
-import { familyBakeryPizza } from './companies/family-bakery-pizza';
 import { gorno } from './companies/gorno';
 import { kartoteka } from './companies/kartoteka';
 import { kucheri } from './companies/kucheri';
@@ -40,7 +39,6 @@ export const COMPANY_LIST: Company[] = [
   ciabatta,
   diverso,
   yourPizza,
-  // familyBakeryPizza,
   aveCeasare,
   pastamia,
 ];
