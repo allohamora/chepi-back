@@ -9,7 +9,7 @@ export const diverso: Company = {
   normalize: {
     title: (title) => {
       const fixed = removePizzaAndDoubleQuotes(title)
-        .replace(/«(.+?)»/, '"$1"')
+        .replace(/«(.+?)»/, '$1')
         .trim();
 
       return capitalize(fixed);
@@ -19,7 +19,7 @@ export const diverso: Company = {
         .replace(/сири? моцарела/i, 'моцарела')
         .replace(/базилік свіжий/, 'базилік')
         .replace(/(.+?) та (.+?)/, '$1, $2')
-        .replace(/соус цезар/i, 'соус "Цезар"')
+        .replace(/соус цезар/i, 'соус Цезар')
         .trim();
 
       return capitalize(fixed);

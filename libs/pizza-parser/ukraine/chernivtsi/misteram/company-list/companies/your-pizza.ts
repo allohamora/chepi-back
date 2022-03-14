@@ -17,9 +17,11 @@ export const yourPizza: Company = {
         .replace(/дор-блю/, 'дорблю')
         .replace(/королівський/, 'сир королівський')
         .replace(/Сир сир королівський/i, 'сир королівський')
-        .replace(/соус Цезар/i, 'соус "Цезар"')
+        .replace(/соус Цезар/i, 'соус Цезар')
         .replace(/основа(, )?/i, '')
         .replace(/масліни/, 'маслини')
+        .replace(/чілі/i, 'чилі')
+        .replace(/болгарський перець/i, 'перець болгарський')
         .trim();
 
       return capitalize(fixed);

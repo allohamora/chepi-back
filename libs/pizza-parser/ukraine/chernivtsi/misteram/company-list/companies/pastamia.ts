@@ -11,7 +11,7 @@ export const pastamia: Company = {
     description: (description) => {
       const fixed = description
         .replace(/томати/i, 'помідори')
-        .replace(/салямі наполі,? піканте/i, 'салямі "Наполі Піканте"')
+        .replace(/салямі наполі,? піканте/i, 'салямі Наполі Піканте')
         .trim();
 
       return capitalize(fixed);

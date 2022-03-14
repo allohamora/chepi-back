@@ -5,7 +5,7 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 export const monopoli: Company = {
   slug: 'monopoli',
   id: 803,
-  categories: [{ id: 13020, size: null, slug: 'pizza' }],
+  categories: [{ id: 13020, size: null, blacklist: [/фокаччо/i], slug: 'pizza' }],
   normalize: {
     title: removePizzaAndDoubleQuotes,
     description: (description) => {
@@ -14,8 +14,8 @@ export const monopoli: Company = {
         .replace(/помідории/i, 'помідори')
         .replace(/чері/i, 'помідори чері')
         .replace(/масліни/i, 'маслини')
-        .replace(/соус Цезар/i, 'соус "Цезар"')
-        .replace(/соус Пелаті/i, 'соус "Пелаті"')
+        .replace(/соус Цезар/i, 'соус Цезар')
+        .replace(/соус Пелаті/i, 'соус Пелаті')
         .replace(/сир тофу/i, 'тофу')
         .replace(/печериці-гриль/i, 'печериці гриль');
 

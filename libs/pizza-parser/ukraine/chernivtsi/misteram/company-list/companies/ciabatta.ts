@@ -11,6 +11,7 @@ export const ciabatta: Company = {
     description: (description) => {
       const fixed = description
         .replace(/мисл.ковбаски/i, 'мисливські ковбаски')
+        .replace(/шампіньйони/i, 'печериці')
         .replace(/тісто(, )?/i, '')
         .trim();
 

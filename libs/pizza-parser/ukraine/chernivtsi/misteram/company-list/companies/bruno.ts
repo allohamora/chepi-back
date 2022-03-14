@@ -10,13 +10,15 @@ export const bruno: Company = {
     title: removePizzaAndDoubleQuotes,
     description: (description) => {
       const fixed = description
-        .replace(/томатний соус "Пелаті"/i, 'соус "Пелаті"')
-        .replace(/соус томатний "Пелаті"/i, 'соус "Пелаті"')
+        .replace(/томатний соус "Пелаті"/i, 'соус Пелаті')
+        .replace(/соус томатний "Пелаті"/i, 'соус Пелаті')
+        .replace(/"(.+?)"/g, '$1')
         .replace(/моцарелла/i, 'моцарела')
-        .replace(/айсберг/i, 'салат "Айсберг"')
+        .replace(/айсберг/i, 'салат Айсберг')
         .replace(/сир фета/i, 'фета')
         .replace(/сир сулугуні/i, 'сулугуні')
         .replace(/сир гауда/i, 'гауда')
+        .replace(/томати/i, 'помідори')
         .replace(/\.$/, '');
 
       return capitalize(fixed);

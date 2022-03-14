@@ -15,10 +15,11 @@ export const gorno: Company = {
       const fixed = description
         .replace(/листя міксу/i, 'листя салату')
         .replace(/сир тв./i, 'сир твердий')
-        .replace(/соус цезар/i, 'соус "Цезар"')
+        .replace(/соус цезар/i, 'соус Цезар')
         .replace(/моцарелла/i, 'моцарела')
         .replace(/томати/i, 'помідори')
         .replace(/ф.куряче/i, 'філе куряче')
+        .replace(/шампіньйони/i, 'печериці')
         .trim();
 
       return capitalize(fixed);

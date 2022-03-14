@@ -17,9 +17,9 @@ export const lapasta: Company = {
     },
     description: (description) => {
       const fixed = description
-        .replace(/табаско/i, 'соус "Табаско"')
-        .replace(/соус BBQ/i, 'соус "Барбекю"')
-        .replace(/філадельфія/i, 'сир "Філадельфія"')
+        .replace(/табаско/i, 'соус Табаско')
+        .replace(/соус BBQ/i, 'соус Барбекю')
+        .replace(/філадельфія/i, 'сир Філадельфія')
         .replace(/чері/i, 'помідори чері')
         .trim();
 

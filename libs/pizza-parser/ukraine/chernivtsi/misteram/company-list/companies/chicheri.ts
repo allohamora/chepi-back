@@ -11,8 +11,8 @@ export const chicheri: Company = {
     description: (description) => {
       const fixed = description
         .replace(/руккола/i, 'рукола')
-        .replace(/соус пелаті/i, 'соус "Пелаті"')
-        .replace(/айзберг/i, 'салат "Айсберг"')
+        .replace(/соус пелаті/i, 'соус Пелаті')
+        .replace(/айзберг/i, 'салат Айсберг')
         .replace(/фрі/i, 'картопля фрі')
         .replace(/чілі/i, 'перець чилі')
         .replace(/чері/i, 'помідори чері')

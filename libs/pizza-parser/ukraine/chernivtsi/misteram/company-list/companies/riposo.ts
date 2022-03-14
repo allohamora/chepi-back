@@ -10,10 +10,12 @@ export const riposo: Company = {
     title: removePizzaAndDoubleQuotes,
     description: (description) => {
       const fixed = description
-        .replace(/моцарела бебі/i, 'моцарела "Бебі"')
-        .replace(/соус розмариновий песто/i, 'соус розмариновий "Песто"')
+        .replace(/моцарела бебі/i, 'моцарела Бебі')
+        .replace(/соус розмариновий песто/i, 'соус розмариновий Песто')
         .replace(/Пармезан/, 'пармезан')
         .replace(/Дор блю/, 'дорблю')
+        .replace(/чілі/i, 'чилі')
+        .replace(/шампіньйони/i, 'печериці')
         .replace(/\./gi, ',')
         .trim();
 

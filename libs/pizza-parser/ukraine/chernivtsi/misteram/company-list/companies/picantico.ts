@@ -21,6 +21,7 @@ export const picantico: Company = {
         .replace(/перець чілі/, 'перець чилі')
         .replace(/сир пармезан/, 'пармезан')
         .replace(/томати/i, 'помідори')
+        .replace(/шампіньйони/i, 'печериці')
         .trim();
 
       return capitalize(fixed);

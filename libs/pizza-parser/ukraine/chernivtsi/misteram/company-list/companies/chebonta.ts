@@ -15,6 +15,8 @@ export const chebonta: Company = {
       const fixed = description
         .replace(/сир пармезан/i, 'пармезан')
         .replace(/томати/i, 'помідори')
+        .replace(/шампіньйони/i, 'печериці')
+        .replace(/чілі/i, 'чилі')
         .replace('соус на вибір (оберіть з переліку), ', '')
         .replace('Соус на вибір (оберіть з переліку), ', '')
         .trim();

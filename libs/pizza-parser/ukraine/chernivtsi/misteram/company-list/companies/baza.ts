@@ -14,8 +14,8 @@ export const baza: Company = {
     description: (description) => {
       const fixed = description
         .replace(/\./, ',')
-        .replace(/«(.+?)»/, '"$1"')
-        .replace(/ковбаса Баварська/i, 'ковбаса "Баварська"')
+        .replace(/«(.+?)»/, '$1')
+        .replace(/ковбаса Баварська/i, 'ковбаса Баварська')
         .replace(/свіжа зелень/i, 'зелень')
         .replace(/фрі/, 'картопля фрі')
         .trim();

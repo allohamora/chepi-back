@@ -6,8 +6,8 @@ export const mamasPizza: Company = {
   slug: 'mamaspizza',
   id: 1026,
   categories: [
-    { id: 13687, size: 30, slug: 'pizza30' },
-    { id: 13686, size: 50, slug: 'pizza50' },
+    { id: 13687, size: 30, slug: 'pizza30', blacklist: [/фокача/i] },
+    { id: 13686, size: 50, slug: 'pizza50', blacklist: [/фокача/i] },
   ],
   normalize: {
     title: removePizzaAndDoubleQuotes,
@@ -22,6 +22,12 @@ export const mamasPizza: Company = {
         .replace(/сир брі/i, 'брі')
         .replace(/сир пармезан/i, 'пармезан')
         .replace(/вершковий соус/i, 'соус вершковий')
+        .replace(/шампіньйони/i, 'печериці')
+        .replace(/печерицін/i, 'печериці')
+        .replace(/томати/i, 'помідори')
+        .replace(/цибуля маринована в оцеті/i, 'цибуля маринована')
+        .replace(/, /g, ',')
+        .replace(/,/g, ', ')
         .trim();
 
       return capitalize(fixed);

@@ -11,10 +11,15 @@ export const kartoteka: Company = {
     description: (description) => {
       const fixed = description
         .replace(/мацарела/i, 'моцарела')
-        .replace(/песто власного приготування/i, 'соус "Песто"')
-        .replace(/соус чимічуррі/i, 'соус "Чимічуррі"')
+        .replace(/молода моцарела/i, 'моцарела')
+        .replace(/песто власного приготування/i, 'соус Песто')
+        .replace(/соус чимічуррі/i, 'соус Чимічуррі')
         .replace(/томати/i, 'помідори')
+        .replace(/болгарський перець/i, 'перець болгарський')
+        .replace(/шампіньйони/i, 'печериці')
+        .replace(/вершкова основа/i, 'вершки')
         .replace(/(.+?) та (.+?)/i, '$1, $2')
+        .replace(/"(.+?)"/i, '$1')
         .trim();
 
       return capitalize(fixed);
