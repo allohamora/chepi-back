@@ -121,6 +121,8 @@ export class ShoSho extends ChernivtsiPizzasParser {
       const description = this.normalizeDescription(pizzaDescription);
       const image = this.getImage($modal);
 
+      console.log({ title, description });
+
       const variants = this.getVariants($, $modal);
 
       const base = { title, description, image, link: BASE_URL, ...this.baseMetadata };

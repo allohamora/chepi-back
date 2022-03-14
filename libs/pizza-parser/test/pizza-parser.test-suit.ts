@@ -30,7 +30,7 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/домашній /i);
   expectFalseTest(/основа,?/i);
   expectFalseTest(/сир моцарела/i);
-  expectFalseTest(/(?<!помідори )(?<=\s|^)чері/i);
+  expectFalseTest(/(?<!помідор(и|ами) )(?<=\s|^)чері/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)чилі/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)болгарський/i);
   expectFalseTest(/(?<!картопля )(?<=\s|^)фрі/i);
