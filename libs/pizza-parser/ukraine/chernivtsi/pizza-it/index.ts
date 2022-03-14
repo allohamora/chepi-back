@@ -1,5 +1,6 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
+import { capitalize } from 'libs/pizza-parser/utils/string';
 import { join } from 'libs/pizza-parser/utils/url';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
@@ -18,6 +19,30 @@ type Gallery = GalleryItem[];
 export class PizzaIt extends ChernivtsiPizzasParser {
   private async getPageHtml(pageLink = PAGE_URL) {
     return await getText(pageLink);
+  }
+
+  private normalizeDescription(description: string) {
+    const fixed = description
+      .toLowerCase()
+      .replace(/моцарелла/gi, 'моцарела')
+      .replace(/pomodoro/gi, '"Pomodoro"')
+      .replace(/josper/gi, '"Josper"')
+      .replace(/наполі/gi, '"Наполі"')
+      .replace(/крудо/gi, '"Крудо"')
+      .replace(/бебі шпинат/gi, 'шпинат "Бебі"')
+      .replace(/мікс: маскарпоне рікота/i, 'маскарпоне, рікота')
+      .replace(/свіжі /gi, '')
+      .replace(/кукурудза солодка/i, 'кукурудза')
+      .replace(/томати/gi, 'помідори')
+      .replace(/соус pepperoni/i, 'соус "Pepperoni"')
+      .replace(/соус песто базилік/i, 'соус "Песто Базилік"')
+      .replace(/мікс салатів заправлені базиліковим соусом песто/i, 'мікс салатів, соус "Песто Базилік"')
+      .replace(/фірмовий соус Броколі/i, 'фірмовий соус "Броколі"')
+      .replace(/черрі/gi, 'помідори чері')
+      .replace(/помідори помідори чері/i, 'помідори чері')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private getPizzaElements($: CheerioAPI, $pizzaCategory: Cheerio<Element>) {
@@ -121,7 +146,8 @@ export class PizzaIt extends ChernivtsiPizzasParser {
     const $ = load(page);
 
     const title = this.getTitle($);
-    const description = this.getDescription($);
+    const pizzaDescription = this.getDescription($);
+    const description = this.normalizeDescription(pizzaDescription);
     const image = this.getImage($);
 
     const variants = this.getVariants($);
