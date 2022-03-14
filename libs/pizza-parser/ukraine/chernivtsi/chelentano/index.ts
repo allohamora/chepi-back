@@ -14,7 +14,12 @@ export class Chelentano extends ChernivtsiPizzasParser {
   }
 
   private normalizeTitle(title: string) {
-    return title.replace(/Піца ?/, '');
+    const fixed = title
+      .replace(/піца ?/i, '')
+      .replace(/цезаре/i, 'цезар')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private normalizeDescription(description: string) {
@@ -26,9 +31,12 @@ export class Chelentano extends ChernivtsiPizzasParser {
       .replace(/основа,?/i, '')
       .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
       .replace(/моцарелла/g, 'моцарела')
-      .replace(/соус Цезаре/, 'соус "Цезаре"')
+      .replace(/соус Цезаре/, 'соус Цезар')
       .replace(/чілі/, 'перець чилі')
-      .replace(/моцарела фреска/, 'моцарела "Фреска"')
+      .replace(/моцарела фреска/, 'моцарела Фреска')
+      .replace(/печериці/i, 'шампиньони')
+      .replace(/салямі піканте/i, 'салямі Піканте')
+      .replace(/домашній /i, '')
       .trim();
 
     return capitalize(fixed);
