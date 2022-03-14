@@ -25,8 +25,8 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       .replace(/гриль овочі/, 'овочі гриль')
       .replace(/чілі/, 'перець чилі')
       .replace(/томати/, 'помідори')
-      .replace(/соус песто/, 'соус "Песто"')
-      .replace(/соус беш[ае]мель/i, 'соус "Бешамель"')
+      .replace(/соус песто/, 'соус Песто')
+      .replace(/соус беш[ае]мель/i, 'соус Бешамель')
       .replace(/,( )?$/, '')
       .replace(/  /g, ' ')
       .trim();
@@ -98,6 +98,8 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       const link = this.getPizzaLink($pizza);
       const image = this.getPizzaImage($pizza);
       const variants = this.getVariants($pizza);
+
+      console.log({ title, description });
 
       const base = { title, description, link, image, ...this.baseMetadata };
 
