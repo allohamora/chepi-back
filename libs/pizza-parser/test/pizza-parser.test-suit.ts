@@ -15,7 +15,7 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   const expectFalseTest = expectFalseTestFactory(value);
 
   expectFalseTest(/печериц[ія]/i);
-  expectFalseTest(/томати?/i);
+  expectFalseTest(/томати/i);
   expectFalseTest(/фірмов(ий|а)/i);
   expectFalseTest(/свіж[іа]/i);
   expectFalseTest(/піца/i);
@@ -26,9 +26,13 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/дор блю/i);
   expectFalseTest(/чілі/i);
   expectFalseTest(/цезаре/i);
+  expectFalseTest(/домашній /i);
+  expectFalseTest(/основа,?/i);
   expectFalseTest(/сир моцарела/i);
   expectFalseTest(/(?<!помідори )чері/i);
   expectFalseTest(/(?<!перець )чилі/i);
+  expectFalseTest(/(?<!перець )болгарський/i);
+  expectFalseTest(/^-$/i);
 };
 
 const notContainQuoteTest = (value: string) => {
