@@ -25,6 +25,7 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/моцарелла/i);
   expectFalseTest(/дор блю/i);
   expectFalseTest(/чілі/i);
+  expectFalseTest(/цезаре/i);
   expectFalseTest(/сир моцарела/i);
   expectFalseTest(/(?<!помідори )чері/i);
   expectFalseTest(/(?<!перець )чилі/i);
