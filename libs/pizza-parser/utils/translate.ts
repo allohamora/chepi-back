@@ -1,6 +1,7 @@
 import { setTimeout as delay } from 'node:timers/promises';
 import { debuglog } from 'node:util';
-import freeGoogleTranslate from '@vitalets/google-translate-api';
+import { translate as freeGoogleTranslate } from 'libs/translate';
+import { Lang } from 'libs/translate/lang';
 import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
@@ -8,8 +9,8 @@ import { capitalize } from './string';
 import { FsStrategy } from './cache/fs.strategy';
 
 interface TranslateOptions {
-  from: string;
-  to: string;
+  from: Lang;
+  to: Lang;
   text: string;
   timeout?: number;
 }
@@ -23,8 +24,7 @@ export const translate = cache.decorator(
   async ({ from, to, text, timeout = TRANSLATE_ERROR_TIMEOUT_STEP }: TranslateOptions) => {
     try {
       const res = await freeGoogleTranslate(
-        text,
-        { from, to },
+        { from, to, text },
         {
           agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
         },
