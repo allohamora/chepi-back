@@ -1,5 +1,6 @@
-import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
+import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
+import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://www.dongustavo.com.ua';
@@ -7,6 +8,37 @@ const BASE_URL = 'https://www.dongustavo.com.ua';
 export class Dongustavo extends ChernivtsiPizzasParser {
   private async getPageHtml() {
     return await getText(BASE_URL);
+  }
+
+  private normalizeTitle(title: string) {
+    const fixed = title
+      .replace(/pizza/i, '')
+      .replace(/піца/i, '')
+      .replace(/з грушею та медом/i, 'з грушею та медом')
+      .replace(/з білими грибами і трюфельною олією/i, 'з білими грибами та трюфельною олією')
+      .replace(/папероні/i, 'пепероні')
+      .trim();
+
+    return capitalize(fixed);
+  }
+
+  private normalizeDescription(description: string) {
+    const fixed = description
+      .replace(/\s/g, ' ')
+      .replace(/моцарелла/i, 'моцарела')
+      .replace(/сир фета/, 'фета')
+      .replace(/сир дор блю/gi, 'дорблю')
+      .replace(/дор блю/, 'дорблю')
+      .replace(/чері/, 'помідори чері')
+      .replace(/томати/gi, 'помідори')
+      .replace(/помідори помідори чері/, 'помідори чері')
+      .replace(/оливки каламата/, 'оливки Каламата')
+      .replace(/соус цезарь/, 'соус Цезар')
+      .replace(/^coyc, /i, '')
+      .replace(/^соус, /i, '')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private getPizzaElements($pizzaList: Cheerio<Element>) {
@@ -54,8 +86,10 @@ export class Dongustavo extends ChernivtsiPizzasParser {
     return pizzaElements.flatMap((pizzaElement) => {
       const $pizza = $(pizzaElement);
 
-      const title = this.getTitle($pizza);
-      const description = this.getDescription($pizza);
+      const pizzaTitle = this.getTitle($pizza);
+      const title = this.normalizeTitle(pizzaTitle);
+      const pizzaDescription = this.getDescription($pizza);
+      const description = this.normalizeDescription(pizzaDescription);
       const image = this.getImage($pizza);
       const link = this.getLink($pizza);
 
@@ -72,7 +106,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const pageHtml = await this.getPageHtml();
-    const $ = cheerio.load(pageHtml);
+    const $ = load(pageHtml);
 
     return this.getPizzas($);
   }

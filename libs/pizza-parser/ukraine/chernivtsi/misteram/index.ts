@@ -2,7 +2,8 @@ import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 import { getJSON } from 'libs/pizza-parser/utils/http';
 import { join } from 'libs/pizza-parser/utils/url';
 import { capitalize } from 'libs/pizza-parser/utils/string';
-import { Company, COMPANY_LIST } from './company-list';
+import { COMPANY_LIST } from './company-list';
+import { Company, NormalizeHandler } from './company-list/types';
 import { TEXT_PLACEHOLDER } from 'libs/pizza-parser/utils/translate';
 
 enum MeasureType {
@@ -85,6 +86,14 @@ export class Misteram extends ChernivtsiPizzasParser {
     return capitalize(dishName);
   }
 
+  private normalize(value: string, normalize: NormalizeHandler) {
+    if (normalize === undefined) {
+      return value;
+    }
+
+    return normalize(value);
+  }
+
   private getDescription(dirtDishDescription: string, remove: RegExp[] = []) {
     const dishDescription = this.clearString(dirtDishDescription, remove);
 
@@ -112,8 +121,10 @@ export class Misteram extends ChernivtsiPizzasParser {
     const image = this.getImage(dish.image);
     const weight = this.getWeight(dish.measureType, dish.measure);
 
-    const title = this.getTitle(dish.name, category.remove);
-    const description = this.getDescription(dish.description, category.remove);
+    const dishTitle = this.getTitle(dish.name, category.remove);
+    const title = this.normalize(dishTitle, company?.normalize?.title);
+    const dishDescription = this.getDescription(dish.description, category.remove);
+    const description = this.normalize(dishDescription, company?.normalize?.description);
     const size = this.getSize(category.size, dish.name);
 
     return { title, description, image, link, weight, size, price: dish.price, ...this.baseMetadata };

@@ -7,7 +7,7 @@ import {
   expectUndefined,
   expectOwnProperty,
 } from './test/test.utils';
-import { Change } from './types/pizza';
+import { Change, PizzaJson } from './types/pizza';
 
 const expectHistory = (historyOfChanges?: Change[]) => {
   if (!Array.isArray(historyOfChanges)) {
@@ -51,7 +51,7 @@ describe('pizzas.json', () => {
       expectString(pizza.en_title);
       expectString(pizza.en_description);
 
-      expectHistory(pizza.historyOfChanges as Change[]);
+      expectHistory((pizza as PizzaJson).historyOfChanges as Change[]);
     }
   });
 });

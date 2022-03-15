@@ -1,37 +1,44 @@
-import freeGoogleTranslate from '@vitalets/google-translate-api';
+import { setTimeout as delay } from 'node:timers/promises';
+import { debuglog } from 'node:util';
+import { translate as freeGoogleTranslate } from 'libs/translate';
+import { Lang } from 'libs/translate/lang';
 import { Cache } from './cache';
 import { HttpsProxyAgent } from 'hpagent';
 import { HTTP_PROXY_URL } from './config';
-import type { Options } from 'got';
 import { capitalize } from './string';
-import { isomorphicMemoryFsStrategy } from './cache/isomorphic-memory-fs.strategy';
+import { FsStrategy } from './cache/fs.strategy';
 
 interface TranslateOptions {
-  from: string;
-  to: string;
+  from: Lang;
+  to: Lang;
   text: string;
+  timeout?: number;
 }
 
-const cache = new Cache(isomorphicMemoryFsStrategy('translate'));
+const cache = new Cache(new FsStrategy('translate'));
+const debug = debuglog('pizza-parser:translate');
 
-interface FixedTranslateOptions {
-  from: string;
-  to: string;
-}
+const TRANSLATE_ERROR_TIMEOUT_STEP = 100;
 
-type FixedTranslate = (url: string, options: FixedTranslateOptions, gotOptions: Options) => Promise<{ text: string }>;
+export const translate = cache.decorator(
+  async ({ from, to, text, timeout = TRANSLATE_ERROR_TIMEOUT_STEP }: TranslateOptions) => {
+    try {
+      const res = await freeGoogleTranslate(
+        { from, to, text },
+        {
+          agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
+        },
+      );
 
-const fixedTranslate: FixedTranslate = (url, options, gotOptions) => {
-  return (freeGoogleTranslate as unknown as FixedTranslate)(url, options, gotOptions);
-};
+      return res.text;
+    } catch (error) {
+      debug('translate-error: %o', { message: error.message, from, to, text, timeout });
 
-export const translate = cache.decorator(async ({ from, to, text }: TranslateOptions) => {
-  const { text: data } = await fixedTranslate(text, { from, to }, {
-    agent: { https: new HttpsProxyAgent({ proxy: HTTP_PROXY_URL }) },
-  } as Options);
-
-  return data;
-});
+      await delay(timeout);
+      return await translate({ from, to, text, timeout: timeout * 2 });
+    }
+  },
+);
 
 export const TEXT_PLACEHOLDER = '-';
 

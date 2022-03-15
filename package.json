@@ -1,6 +1,6 @@
 {
   "name": "chepi-back",
-  "version": "3.0.5",
+  "version": "3.1.0",
   "description": "back-end for chepi",
   "author": "https://github.com/allohamora",
   "license": "MIT",
@@ -24,7 +24,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "pizzas:docker-compose": "docker-compose -f libs/pizza-parser/docker-compose.yml",
     "pizzas:build:script": "node -r tsconfig-paths/register -r ts-node/register libs/pizza-parser/build.ts",
+    "pizzas:build:script:debug": "NODE_DEBUG='pizza-parser:*' npm run pizzas:build:script",
     "pizzas:build": "npm run pizzas:docker-compose up -- -d && npm run pizzas:build:script && npm run pizzas:docker-compose down",
+    "pizzas:build:debug": "NODE_DEBUG='pizza-parser:*' npm run pizzas:build",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
@@ -39,7 +41,6 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^8.2.6",
     "@nestjs/swagger": "^5.2.0",
-    "@vitalets/google-translate-api": "^7.0.0",
     "cheerio": "^1.0.0-rc.10",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -89,7 +90,7 @@
   "lint-staged": {
     "*.ts": [
       "npm run lint -- --fix",
-      "npm run test -- --bail --findRelatedTests"
+      "jest --findRelatedTests"
     ],
     "*.{js,json,yml,md}": [
       "npm run format -- --write"

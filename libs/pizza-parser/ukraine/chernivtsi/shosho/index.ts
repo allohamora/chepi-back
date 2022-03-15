@@ -1,5 +1,6 @@
-import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
+import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
+import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://shosho.pizza';
@@ -8,6 +9,21 @@ const PIZZA_CATEGORY_TITLE = 'Піца';
 export class ShoSho extends ChernivtsiPizzasParser {
   private async getPageHtml() {
     return await getText(BASE_URL);
+  }
+
+  private normalizeTitle(title: string) {
+    const fixed = title.replace(/піца/i, '').trim();
+
+    return capitalize(fixed);
+  }
+
+  private normalizeDescription(description: string) {
+    const fixed = description
+      .replace(/тісто, /i, '')
+      .replace(/печериці свіжі/i, 'печериці')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private getPizzaCategory($: CheerioAPI) {
@@ -99,8 +115,10 @@ export class ShoSho extends ChernivtsiPizzasParser {
     return pizzaElements.flatMap(([, modal]) => {
       const $modal = $(modal);
 
-      const title = this.getTitle($modal);
-      const description = this.getDescription($modal);
+      const pizzaTitle = this.getTitle($modal);
+      const title = this.normalizeTitle(pizzaTitle);
+      const pizzaDescription = this.getDescription($modal);
+      const description = this.normalizeDescription(pizzaDescription);
       const image = this.getImage($modal);
 
       const variants = this.getVariants($, $modal);
@@ -113,7 +131,7 @@ export class ShoSho extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const pageHtml = await this.getPageHtml();
-    const $ = cheerio.load(pageHtml);
+    const $ = load(pageHtml);
     const pizzaCategory = this.getPizzaCategory($);
 
     return this.pizzaCategoryToPizzas($, pizzaCategory);

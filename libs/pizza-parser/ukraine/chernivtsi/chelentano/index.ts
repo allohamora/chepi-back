@@ -1,5 +1,6 @@
-import cheerio, { Cheerio, CheerioAPI, Element } from 'cheerio';
+import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { getText } from 'libs/pizza-parser/utils/http';
+import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://chernivtsi.celentano.delivery';
@@ -10,6 +11,35 @@ const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г\/\d+?г)$/;
 export class Chelentano extends ChernivtsiPizzasParser {
   private async getPageHtml() {
     return await getText(BASE_URL);
+  }
+
+  private normalizeTitle(title: string) {
+    const fixed = title
+      .replace(/піца ?/i, '')
+      .replace(/цезаре/i, 'цезар')
+      .trim();
+
+    return capitalize(fixed);
+  }
+
+  private normalizeDescription(description: string) {
+    const fixed = description
+      .replace(/ ?сири/, '')
+      .replace(/ ?перці/, '')
+      .replace(/(.+?) (та|і) (.+?)/g, '$1, $3')
+      .replace(/болгарський/, 'перець болгарський')
+      .replace(/основа,?/i, '')
+      .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
+      .replace(/моцарелла/g, 'моцарела')
+      .replace(/соус Цезаре/, 'соус Цезар')
+      .replace(/чілі/, 'перець чилі')
+      .replace(/моцарела фреска/, 'моцарела Фреска')
+      .replace(/салямі піканте/i, 'салямі Піканте')
+      .replace(/мікс-салат/i, 'мікс салат')
+      .replace(/домашній /i, '')
+      .trim();
+
+    return capitalize(fixed);
   }
 
   private getCardTitle($cardTitle: Cheerio<Element>) {
@@ -102,8 +132,10 @@ export class Chelentano extends ChernivtsiPizzasParser {
     return $pizzaCards.flatMap(($card) => {
       const $cardTitle = $card.find('.c-product-grid__title-link');
 
-      const title = this.getCardTitle($cardTitle);
-      const description = this.getCardDescription($card);
+      const cardTitle = this.getCardTitle($cardTitle);
+      const title = this.normalizeTitle(cardTitle);
+      const cardDescription = this.getCardDescription($card);
+      const description = this.normalizeDescription(cardDescription);
       const link = this.getCardLink($cardTitle);
       const image = this.getCardImage($card);
 
@@ -125,7 +157,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
 
   public async parsePizzas() {
     const pageHtml = await this.getPageHtml();
-    const $ = cheerio.load(pageHtml);
+    const $ = load(pageHtml);
     const $pizzaCards = this.getPizzasCards($);
 
     return this.pizzasCardsToPizzas($, $pizzaCards);
