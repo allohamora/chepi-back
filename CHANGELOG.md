@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/allohamora/chepi-back/compare/v3.0.5...v3.1.0) (2022-03-15)
+
+### Features
+
+- **pizza-parser:** add description normalization to appeti ([08e3299](https://github.com/allohamora/chepi-back/commits/08e3299db1a90e66de3226fcd36e514dc08fc150))
+- **pizza-parser:** add improved google translate ([29ec4c2](https://github.com/allohamora/chepi-back/commits/29ec4c2e63e6595ae751744edeaec2e523214316))
+- **pizza-parser:** add lapiec title and description normalization ([09a9b7c](https://github.com/allohamora/chepi-back/commits/09a9b7c733bc90c528716e2d9c5807ccefbdd501))
+- **pizza-parser:** add new normalize rules and remove useless examples ([0c51c53](https://github.com/allohamora/chepi-back/commits/0c51c53b3f5562731796ca3a8a0e109ee58dd3d2))
+- **pizza-parser:** add normalize rules ([491b402](https://github.com/allohamora/chepi-back/commits/491b4024c5be3f6a4e4e0f5fe4659a1973920183))
+- **pizza-parser:** add normalize rules ([62a0880](https://github.com/allohamora/chepi-back/commits/62a0880f83e609c9fd027ca6849bcf6effd07c15))
+- **pizza-parser:** add normalizer rules ([9eff328](https://github.com/allohamora/chepi-back/commits/9eff32808661db9072b72d6289e455935f36efd8))
+- **pizza-parser:** add waitWriteTimeout method to in-memory-fs.strategy ([267320a](https://github.com/allohamora/chepi-back/commits/267320a7749678636fa765497de799ed696d1b72))
+- **pizza-parser:** delete misteram family-bakery-pizza ([307b3ba](https://github.com/allohamora/chepi-back/commits/307b3bac068fe981b82b4c204dc1cdfdbf7f5aab))
+- **pizza-parser:** delete misteram panska-vtiha ([ec1587b](https://github.com/allohamora/chepi-back/commits/ec1587bce9365a8ca7929f7fc51f8cb210028c79))
+- **pizza-parser:** normalize chelentano title and description ([569555e](https://github.com/allohamora/chepi-back/commits/569555ea18afb6c75fa1f5318f384d132ae5aa5a))
+- **pizza-parser:** normalize czernowizza title and description ([82017a9](https://github.com/allohamora/chepi-back/commits/82017a92f54e79b0fd94758939d6e9e7537ca29f))
+- **pizza-parser:** normalize dongustavo title and description ([222f1d6](https://github.com/allohamora/chepi-back/commits/222f1d68ce40f93d7997dc79d1048df893ca01bd))
+- **pizza-parser:** normalize misteram title and description ([fcfbc20](https://github.com/allohamora/chepi-back/commits/fcfbc20febb11e09bd54f1981a1fce7f6239740a))
+- **pizza-parser:** normalize pizza-it description ([3f167c1](https://github.com/allohamora/chepi-back/commits/3f167c1649b6d7d2327e8597c3ac4ffdbcdcb554))
+- **pizza-parser:** normalize shosho title and description ([84af609](https://github.com/allohamora/chepi-back/commits/84af609c7450b93bed41375a82c2bba2e9b2d3b4))
+- **pizza-parser:** remove czernowizza because it banned my ip ([04de944](https://github.com/allohamora/chepi-back/commits/04de94482119c22d6089b5b6b144031efd96660e))
+- **pizza-parser:** remove in-memory-fs cache strategy ([7415ca9](https://github.com/allohamora/chepi-back/commits/7415ca90c765f0433ce1bb1d3f52013da68461c5))
+- **pizza-parser:** remove isomorphic-memory-fs.strategy ([dd75f05](https://github.com/allohamora/chepi-back/commits/dd75f050c116c4588b232b89e64fd50f08cbf9b9))
+- **pizza-parser:** remove normalize rules ([c91f08d](https://github.com/allohamora/chepi-back/commits/c91f08dd4053dc06d0e8bdac1c6ca397d12e8d58))
+- **pizzas.json:** generate pizzas.json ([7258244](https://github.com/allohamora/chepi-back/commits/72582440b8b9d69e259f8bae1dfdae933eda46ff))
+- **pizzas.json:** update pizzas.json ([191d0fa](https://github.com/allohamora/chepi-back/commits/191d0fad8d61fa99b91dd7edc56244c0c9ae7f90))
+
+### Bug Fixes
+
+- **pizza-parser:** fix "моцарелла" typo ([e8ac3d9](https://github.com/allohamora/chepi-back/commits/e8ac3d960839b5de249c2aa3462f7bd51bddf981))
+- **pizza-parser:** fix "папероні" typo ([5e1b9cf](https://github.com/allohamora/chepi-back/commits/5e1b9cf4a709953f024774a824b6c8ac7d84fd4a))
+- **pizza-parser:** fix "чілі" typo ([eb75acb](https://github.com/allohamora/chepi-back/commits/eb75acbb12663245c2ac97f1b91662ca9bf126cb))
+- **pizza-parser:** fix cheerio deprecations warnings ([7098ae3](https://github.com/allohamora/chepi-back/commits/7098ae35926c2bc5010afe431bce6fc6462a6d38))
+- **pizza-parser:** fix chelentano normalize errors ([4bc51da](https://github.com/allohamora/chepi-back/commits/4bc51da9017ba16be82d104198a93a1634e91784))
+- **pizza-parser:** fix chelentano normalize errors ([e960dcf](https://github.com/allohamora/chepi-back/commits/e960dcfa389a2357f4bb443259c30afed828144e))
+- **pizza-parser:** fix czernowizza normalize errors ([fc8f63b](https://github.com/allohamora/chepi-back/commits/fc8f63bfedcfaa10abc3b864f00159930beeca7a))
+- **pizza-parser:** fix diablo description in chelentano ([ca6f039](https://github.com/allohamora/chepi-back/commits/ca6f03918639b653ee5811ce7de94001bf41f03b))
+- **pizza-parser:** fix lapiec parser ([995635c](https://github.com/allohamora/chepi-back/commits/995635cb7e0d498a78387978b06ad7e48aa1e116))
+- **pizza-parser:** fix misteram normalize errors ([f8f2e38](https://github.com/allohamora/chepi-back/commits/f8f2e38792801bd7e3afa797f6da70606b5b1e83))
+- **pizza-parser:** fix misteram normalize errors ([7d850ed](https://github.com/allohamora/chepi-back/commits/7d850ed168443305c3d56a8ffb79ab9a11e9eef3))
+- **pizza-parser:** fix normalize errors ([9b2b333](https://github.com/allohamora/chepi-back/commits/9b2b333f41233eeb0d966dd0a75236a85a5fe389))
+- **pizza-parser:** fix normalize errors in dongustavo ([7d11a13](https://github.com/allohamora/chepi-back/commits/7d11a130820af7f67386f4c85455745119516e74))
+- **pizza-parser:** fix normalize errors in shosho ([c8bbc0b](https://github.com/allohamora/chepi-back/commits/c8bbc0b69e8d31e43bc77100d2a87b25f08fd3d5))
+- **pizza-parser:** fix pizza-it normalize errors ([e9b4865](https://github.com/allohamora/chepi-back/commits/e9b48658659b23cc4a5046a7d9b212d348210294))
+- **pizza-parser:** fix random unknown exit from main section of build script ([3674558](https://github.com/allohamora/chepi-back/commits/36745584ad4d80b5c154d5d1726b8933024a9cb0))
+- **pizza-parser:** fix shosho normalize errors ([2f2c848](https://github.com/allohamora/chepi-back/commits/2f2c848e315240729ece7c72929b0432de300105))
+- **pizza-parser:** fix writeTimeout and rename strategies to correct ([4f4a707](https://github.com/allohamora/chepi-back/commits/4f4a707578e435e51dc3ae920b6374787543555c))
+- **pizza-parser:** replace non standard keywords ([6558ad9](https://github.com/allohamora/chepi-back/commits/6558ad981f5fdb04c2d884b440848b512b892981))
+- **pizza-parser:** replace non standard keywords in chelentano ([960c65d](https://github.com/allohamora/chepi-back/commits/960c65d9392b40d445f77746f8a33ea367a154db))
+- **pizza-parser:** replace non standard keywords in dongustavo ([0853538](https://github.com/allohamora/chepi-back/commits/0853538d5a55cc7fbd9eed5ecafb210d48c9927c))
+- **pizza-parser:** replace non standard keywords in lapiec ([a937f3c](https://github.com/allohamora/chepi-back/commits/a937f3c2aa28c3c741ef0d891a34f4d23dc83e4e))
+- **pizza-parser:** replace non standard keywords in misteram ([0f02d14](https://github.com/allohamora/chepi-back/commits/0f02d14d47f0077ef8803ddf1b59852898128304))
+- **pizza-parser:** replace not standard keywords in appeti ([39881ce](https://github.com/allohamora/chepi-back/commits/39881cef36b3f4a08ccf83ba696032fdae5adc4f))
+
 ### [3.0.5](https://github.com/allohamora/chepi-back/compare/v3.0.4...v3.0.5) (2022-03-01)
 
 ### Bug Fixes

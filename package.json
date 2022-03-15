@@ -1,6 +1,6 @@
 {
   "name": "chepi-back",
-  "version": "3.0.5",
+  "version": "3.1.0",
   "description": "back-end for chepi",
   "author": "https://github.com/allohamora",
   "license": "MIT",
@@ -41,7 +41,6 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^8.2.6",
     "@nestjs/swagger": "^5.2.0",
-    "@vitalets/google-translate-api": "^8.0.0",
     "cheerio": "^1.0.0-rc.10",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
