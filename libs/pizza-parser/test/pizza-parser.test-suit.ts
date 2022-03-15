@@ -17,23 +17,31 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/шампиньони?/i);
   expectFalseTest(/шампіньйони/i);
   expectFalseTest(/томати/i);
-  expectFalseTest(/фірмовий/i);
-  expectFalseTest(/свіж[іа]/i);
-  expectFalseTest(/піца/i);
-  expectFalseTest(/pizza/i);
+
+  expectFalseTest(/основа,?/i);
   expectFalseTest(/тісто/i);
   expectFalseTest(/борошно/i);
+
+  expectFalseTest(/домашній /i);
+  expectFalseTest(/фірмовий/i);
+
+  expectFalseTest(/свіж[іа]/i);
+
+  expectFalseTest(/піца/i);
+  expectFalseTest(/pizza/i);
+
   expectFalseTest(/моцарелла/i);
   expectFalseTest(/дор блю/i);
+  expectFalseTest(/папероні/i);
   expectFalseTest(/чілі/i);
   expectFalseTest(/цезаре/i);
-  expectFalseTest(/домашній /i);
-  expectFalseTest(/основа,?/i);
+
   expectFalseTest(/сир моцарела/i);
   expectFalseTest(/(?<!помідор(и|ами) )(?<=\s|^)чері/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)чилі/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)болгарський/i);
   expectFalseTest(/(?<!картопля )(?<=\s|^)фрі/i);
+
   expectFalseTest(/^-$/i);
 };
 

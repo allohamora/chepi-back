@@ -37,6 +37,7 @@ export const theSad: Company = {
         .replace(/"(.+?)"/g, '$1')
         .replace(/шампіньйони/i, 'печериці')
         .replace(/томати/i, 'помідори')
+        .replace(/папероні/i, 'пепероні')
         .trim();
 
       return capitalize(fixed);

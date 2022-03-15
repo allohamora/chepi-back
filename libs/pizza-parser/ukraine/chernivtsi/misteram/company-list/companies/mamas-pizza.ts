@@ -10,7 +10,13 @@ export const mamasPizza: Company = {
     { id: 13686, size: 50, slug: 'pizza50', blacklist: [/фокача/i] },
   ],
   normalize: {
-    title: removePizzaAndDoubleQuotes,
+    title: (title) => {
+      const fixed = removePizzaAndDoubleQuotes(title)
+        .replace(/папероні/i, 'пепероні')
+        .trim();
+
+      return capitalize(fixed);
+    },
     description: (description) => {
       const fixed = description
         .replace(/соус на вибір, /i, '')
@@ -25,6 +31,7 @@ export const mamasPizza: Company = {
         .replace(/шампіньйони/i, 'печериці')
         .replace(/печерицін/i, 'печериці')
         .replace(/томати/i, 'помідори')
+        .replace(/папероні/i, 'пепероні')
         .replace(/цибуля маринована в оцеті/i, 'цибуля маринована')
         .replace(/, /g, ',')
         .replace(/,/g, ', ')

@@ -16,6 +16,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
       .replace(/піца/i, '')
       .replace(/з грушею та медом/i, 'з грушею та медом')
       .replace(/з білими грибами і трюфельною олією/i, 'з білими грибами та трюфельною олією')
+      .replace(/папероні/i, 'пепероні')
       .trim();
 
     return capitalize(fixed);

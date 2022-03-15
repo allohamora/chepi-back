@@ -10,7 +10,13 @@ export const gorno: Company = {
     { id: 16704, size: 50, slug: 'pizza50' },
   ],
   normalize: {
-    title: removePizzaAndDoubleQuotes,
+    title: (title) => {
+      const fixed = removePizzaAndDoubleQuotes(title)
+        .replace(/папероні/i, 'пепероні')
+        .trim();
+
+      return capitalize(fixed);
+    },
     description: (description) => {
       const fixed = description
         .replace(/листя міксу/i, 'листя салату')
@@ -20,6 +26,7 @@ export const gorno: Company = {
         .replace(/томати/i, 'помідори')
         .replace(/ф.куряче/i, 'філе куряче')
         .replace(/шампіньйони/i, 'печериці')
+        .replace(/папероні/i, 'пепероні')
         .trim();
 
       return capitalize(fixed);

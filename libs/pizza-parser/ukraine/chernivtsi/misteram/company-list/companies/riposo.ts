@@ -7,13 +7,20 @@ export const riposo: Company = {
   id: 635,
   categories: [{ id: 7666, size: 30, slug: 'pizza' }],
   normalize: {
-    title: removePizzaAndDoubleQuotes,
+    title: (title) => {
+      const fixed = removePizzaAndDoubleQuotes(title)
+        .replace(/папероні/i, 'пепероні')
+        .trim();
+
+      return capitalize(fixed);
+    },
     description: (description) => {
       const fixed = description
         .replace(/моцарела бебі/i, 'моцарела Бебі')
         .replace(/соус розмариновий песто/i, 'соус розмариновий Песто')
         .replace(/Пармезан/, 'пармезан')
         .replace(/Дор блю/, 'дорблю')
+        .replace(/папероні/i, 'пепероні')
         .replace(/чілі/i, 'чилі')
         .replace(/шампіньйони/i, 'печериці')
         .replace(/\./gi, ',')
