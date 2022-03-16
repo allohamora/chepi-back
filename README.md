@@ -74,3 +74,4 @@ npm run pizzas:build:script
 # build pizzas.json
 npm run pizzas:build
 ```
+Powered by [Google Translate](https://translate.google.com)

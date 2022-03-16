@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/allohamora/chepi-back/compare/v3.1.0...v3.1.1) (2022-03-16)
+
+### Features
+
+- add powered by Google Translate in README ([31c1021](https://github.com/allohamora/chepi-back/commits/31c10216e760916a6d895f2bc234c0dbafe4883e))
+
 ## [3.1.0](https://github.com/allohamora/chepi-back/compare/v3.0.5...v3.1.0) (2022-03-15)
 
 ### Features
