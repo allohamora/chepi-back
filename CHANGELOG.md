@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/allohamora/chepi-back/compare/v3.1.1...v3.2.0) (2022-03-16)
+
+### Features
+
+- add get pizza by id route ([2da9a95](https://github.com/allohamora/chepi-back/commits/2da9a95188710cf35d4c8ff570168e6c3fcc550b))
+
 ### [3.1.1](https://github.com/allohamora/chepi-back/compare/v3.1.0...v3.1.1) (2022-03-16)
 
 ### Features
