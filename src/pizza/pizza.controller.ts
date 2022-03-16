@@ -1,5 +1,5 @@
-import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, HttpCode, Post, Query } from '@nestjs/common';
+import { ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
 import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
 import { GetPizzasByIdsDto, GetPizzasByIdsResultDto } from './dto/getPizzasByIds.dto';
@@ -19,6 +19,14 @@ export class PizzaController {
     return await this.pizzaService.getPizzas(getPizzasDto);
   }
 
+  @ApiOperation({ summary: 'Get pizza by id' })
+  @ApiOkResponse({ description: 'Return pizza by id or null', type: GetPizzaByIdResultDto })
+  @ApiNotFoundResponse({ description: 'Pizza not found' })
+  @Get('/')
+  public async getPizzaById(@Query() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
+    return await this.pizzaService.getPizzaById(id);
+  }
+
   @ApiOperation({ summary: 'Get pizzas by ids' })
   @ApiOkResponse({
     description: 'Return found pizzas by ids. For not found id return nothing',
@@ -28,13 +36,6 @@ export class PizzaController {
   @HttpCode(200)
   public async getPizzasByIds(@Body() { ids }: GetPizzasByIdsDto): Promise<GetPizzasByIdsResultDto> {
     return await this.pizzaService.getPizzasByIds(ids);
-  }
-
-  @ApiOperation({ summary: 'Get pizza by id' })
-  @ApiOkResponse({ description: 'Return pizza by id or null', type: GetPizzaByIdResultDto })
-  @Get('/id/:id')
-  public async getPizzaById(@Param() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
-    return await this.pizzaService.getPizzaById(id);
   }
 
   @ApiOperation({ summary: 'Get pizzas stats' })

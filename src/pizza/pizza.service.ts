@@ -1,4 +1,4 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { GetPizzasDto } from './dto/getPizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
@@ -157,6 +157,10 @@ export class PizzaService implements OnModuleInit {
     });
 
     const value = hits.map(({ _source }) => _source)[0];
+
+    if (value === undefined) {
+      throw new NotFoundException();
+    }
 
     return { value };
   }
