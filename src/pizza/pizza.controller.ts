@@ -44,4 +44,11 @@ export class PizzaController {
   public getPizzasStats(): PizzasStatsResultDto {
     return this.pizzaService.getPizzasStats();
   }
+
+  @ApiOperation({ summary: 'Get pizza ids' })
+  @ApiOkResponse({ description: 'pizza ids', type: [String] })
+  @Get('/ids')
+  public async getPizzaIds() {
+    return await this.pizzaService.getPizzaIds();
+  }
 }

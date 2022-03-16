@@ -168,4 +168,28 @@ export class PizzaService implements OnModuleInit {
   public getPizzasStats(): PizzasStatsResultDto {
     return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
   }
+
+  public async getPizzaIds(): Promise<string[]> {
+    const esQuery: SearchQuery = {
+      index: PIZZAS_INDEX,
+      body: {
+        size: PIZZAS_COUNT,
+        query: {
+          bool: {
+            must: {
+              match_all: {},
+            },
+          },
+        },
+      },
+    };
+
+    const {
+      body: {
+        hits: { hits },
+      },
+    } = await this.elasticsearchService.search(esQuery);
+
+    return hits.map(({ _source }) => _source.id);
+  }
 }
