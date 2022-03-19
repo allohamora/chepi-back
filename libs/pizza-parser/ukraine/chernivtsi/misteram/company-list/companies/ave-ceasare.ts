@@ -3,6 +3,11 @@ import { Company } from '../types';
 
 export const aveCeasare: Company = {
   slug: 'aveceasare',
+  pizzaCompany: {
+    en_company: 'Ave Ceasare',
+    ru_company: 'Ave Ceasare',
+    uk_company: 'Ave Ceasare',
+  },
   id: 2633,
   categories: [{ id: 32894, size: 30, slug: 'pizza30' }],
   normalize: {

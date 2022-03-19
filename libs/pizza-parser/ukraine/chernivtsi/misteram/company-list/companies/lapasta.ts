@@ -4,6 +4,11 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 
 export const lapasta: Company = {
   slug: 'lapasta',
+  pizzaCompany: {
+    en_company: 'LAPASTA',
+    ru_company: 'LAPASTA',
+    uk_company: 'LAPASTA',
+  },
   id: 3134,
   categories: [{ id: 38384, size: null, slug: 'pizza', remove: [/,?\s+зауважте.+$/u], blacklist: [/фокачча/] }],
   normalize: {

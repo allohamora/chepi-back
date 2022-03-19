@@ -1,4 +1,4 @@
 import { pizzasParserTestSuit } from 'libs/pizza-parser/test/pizza-parser.test-suit';
-import { Chelentano } from '.';
+import { Celentano } from '.';
 
-pizzasParserTestSuit(Chelentano);
+pizzasParserTestSuit(Celentano);

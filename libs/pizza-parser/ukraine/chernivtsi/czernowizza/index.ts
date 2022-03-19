@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -7,6 +8,12 @@ const BASE_URL = 'https://czernowizza.com';
 const BLACKLIST = ['Пиріг Осетинський'];
 
 export class Czernowizza extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Czernowizza',
+    ru_company: 'Czernowizza',
+    uk_company: 'Czernowizza',
+  };
+
   private async getPageHtml() {
     return await getText(BASE_URL);
   }
@@ -99,7 +106,7 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       const image = this.getPizzaImage($pizza);
       const variants = this.getVariants($pizza);
 
-      const base = { title, description, link, image, ...this.baseMetadata };
+      const base = { title, description, link, image, ...this.company, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });

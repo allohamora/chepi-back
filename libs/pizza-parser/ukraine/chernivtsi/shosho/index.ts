@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -7,6 +8,12 @@ const BASE_URL = 'https://shosho.pizza';
 const PIZZA_CATEGORY_TITLE = 'Піца';
 
 export class ShoSho extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Sho Sho',
+    ru_company: 'Шо Шо',
+    uk_company: 'Шо Шо',
+  };
+
   private async getPageHtml() {
     return await getText(BASE_URL);
   }
@@ -123,7 +130,7 @@ export class ShoSho extends ChernivtsiPizzasParser {
 
       const variants = this.getVariants($, $modal);
 
-      const base = { title, description, image, link: BASE_URL, ...this.baseMetadata };
+      const base = { title, description, image, link: BASE_URL, ...this.company, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });

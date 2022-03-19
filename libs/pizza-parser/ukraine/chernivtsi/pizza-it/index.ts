@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { join } from 'libs/pizza-parser/utils/url';
@@ -17,6 +18,12 @@ interface GalleryItem {
 type Gallery = GalleryItem[];
 
 export class PizzaIt extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Famiglia Grande',
+    ru_company: 'Famiglia Grande',
+    uk_company: 'Famiglia Grande',
+  };
+
   private async getPageHtml(pageLink = PAGE_URL) {
     return await getText(pageLink);
   }
@@ -154,7 +161,7 @@ export class PizzaIt extends ChernivtsiPizzasParser {
 
     const variants = this.getVariants($);
 
-    const base = { title, description, link, image, ...this.baseMetadata };
+    const base = { title, description, link, image, ...this.company, ...this.baseMetadata };
 
     return variants.map((variant) => ({ ...base, ...variant }));
   }

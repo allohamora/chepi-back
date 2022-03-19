@@ -24,6 +24,9 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
     weight: numberAndText,
     size: numberAndText,
     price: numberAndText,
+    uk_company: { type: 'text' },
+    ru_company: { type: 'text' },
+    en_company: { type: 'text' },
     uk_title: { type: 'text' },
     uk_description: { type: 'text' },
     ru_title: { type: 'text' },
@@ -85,7 +88,7 @@ export class PizzaService implements OnModuleInit {
     } else {
       must.simple_query_string = {
         query: this.queryToSimpleQuery(query),
-        fields: ['*_title', '*_description', 'weight.text', 'size.text', 'price.text'],
+        fields: ['*_title', '*_description', '*_company', 'weight.text', 'size.text', 'price.text'],
         default_operator: 'and',
       };
     }

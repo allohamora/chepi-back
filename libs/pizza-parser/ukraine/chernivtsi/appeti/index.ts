@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { lowerAndCapitalize } from 'libs/pizza-parser/utils/string';
 import { join } from 'libs/pizza-parser/utils/url';
@@ -6,7 +7,13 @@ import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://appeti.com.ua';
 
-export class Apetti extends ChernivtsiPizzasParser {
+export class Appeti extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Appeti',
+    ru_company: 'Appeti',
+    uk_company: 'Appeti',
+  };
+
   private async getPageHtml(pageLink: string = BASE_URL) {
     return await getText(pageLink);
   }
@@ -110,7 +117,7 @@ export class Apetti extends ChernivtsiPizzasParser {
     const image = this.getCardImage($card);
 
     const variants = this.getCardVariants($, $card);
-    const base = { title, description, image, link, ...this.baseMetadata };
+    const base = { title, description, image, link, ...this.company, ...this.baseMetadata };
 
     return variants.map((variant) => ({ ...base, ...variant }));
   }

@@ -4,6 +4,11 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 
 export const monopoli: Company = {
   slug: 'monopoli',
+  pizzaCompany: {
+    en_company: 'Monopoli',
+    ru_company: 'Monopoli',
+    uk_company: 'Monopoli',
+  },
   id: 803,
   categories: [{ id: 13020, size: null, blacklist: [/фокаччо/i], slug: 'pizza' }],
   normalize: {

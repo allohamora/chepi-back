@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -8,7 +9,13 @@ const TYPE_BLACKLIST = ['піцарол', 'кальцоне', 'комбо'];
 
 const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г\/\d+?г)$/;
 
-export class Chelentano extends ChernivtsiPizzasParser {
+export class Celentano extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Celentano',
+    ru_company: 'Челентано',
+    uk_company: 'Челентано',
+  };
+
   private async getPageHtml() {
     return await getText(BASE_URL);
   }
@@ -149,7 +156,7 @@ export class Chelentano extends ChernivtsiPizzasParser {
         price: prices[i],
       }));
 
-      const base = { title, description, image, link, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.company, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });

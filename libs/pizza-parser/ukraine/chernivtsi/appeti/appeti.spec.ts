@@ -1,4 +1,4 @@
 import { pizzasParserTestSuit } from 'libs/pizza-parser/test/pizza-parser.test-suit';
-import { Apetti } from '.';
+import { Appeti } from '.';
 
-pizzasParserTestSuit(Apetti);
+pizzasParserTestSuit(Appeti);

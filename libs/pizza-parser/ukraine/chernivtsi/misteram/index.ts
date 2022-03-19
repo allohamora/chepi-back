@@ -5,6 +5,7 @@ import { capitalize } from 'libs/pizza-parser/utils/string';
 import { COMPANY_LIST } from './company-list';
 import { Company, NormalizeHandler } from './company-list/types';
 import { TEXT_PLACEHOLDER } from 'libs/pizza-parser/utils/translate';
+import { Company as PizzaCompany } from 'libs/pizza-parser/types/pizza';
 
 enum MeasureType {
   grm = '0',
@@ -37,6 +38,12 @@ const MAX_ITEMS_PER_COMPANY = 100;
 const NUMBERS_WITH_CM = /\d+? ?см/;
 
 export class Misteram extends ChernivtsiPizzasParser {
+  private company = 'Mister.Am';
+
+  private joinCompany(nestedCompany: string) {
+    return `${this.company} (${nestedCompany})`;
+  }
+
   private withBaseUrl(...slugs: string[]) {
     return join(BASE_URL, ...slugs);
   }
@@ -127,7 +134,13 @@ export class Misteram extends ChernivtsiPizzasParser {
     const description = this.normalize(dishDescription, company?.normalize?.description);
     const size = this.getSize(category.size, dish.name);
 
-    return { title, description, image, link, weight, size, price: dish.price, ...this.baseMetadata };
+    const pizzaCompany: PizzaCompany = {
+      en_company: this.joinCompany(company.pizzaCompany.en_company),
+      ru_company: this.joinCompany(company.pizzaCompany.ru_company),
+      uk_company: this.joinCompany(company.pizzaCompany.uk_company),
+    };
+
+    return { title, description, image, link, weight, size, price: dish.price, ...pizzaCompany, ...this.baseMetadata };
   }
 
   private async getPizzasFromCategory(company: Company, category: Category) {

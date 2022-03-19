@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -6,6 +7,12 @@ import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 const BASE_URL = 'https://www.dongustavo.com.ua';
 
 export class Dongustavo extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'Don Gustavo',
+    ru_company: 'Дон Густаво',
+    uk_company: 'Дон Густаво',
+  };
+
   private async getPageHtml() {
     return await getText(BASE_URL);
   }
@@ -98,7 +105,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
       const sizes = this.getSizes($pizza);
       const variants = weights.map((weight, i) => ({ weight, price: prices[i], size: sizes[i] }));
 
-      const base = { title, description, image, link, ...this.baseMetadata };
+      const base = { title, description, image, link, ...this.company, ...this.baseMetadata };
 
       return variants.map((variant) => ({ ...base, ...variant }));
     });

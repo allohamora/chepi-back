@@ -1,4 +1,5 @@
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
+import { Company } from 'libs/pizza-parser/types/pizza';
 import { getText } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
@@ -7,6 +8,12 @@ const BASE_URL = 'https://la.ua/chernivtsy/';
 const TITLE_BLACKLIST = [/На армію/, /Віртуальна піца/];
 
 export class Lapiec extends ChernivtsiPizzasParser {
+  private company: Company = {
+    en_company: 'LA PIEC',
+    ru_company: "LA П'ЄЦ",
+    uk_company: "LA П'ЄЦ",
+  };
+
   private async getPageHtml() {
     return await getText(BASE_URL);
   }
@@ -107,6 +114,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
 
         return {
           ...this.baseMetadata,
+          ...this.company,
           title,
           description,
           link,

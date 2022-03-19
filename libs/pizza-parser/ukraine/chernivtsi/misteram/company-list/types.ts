@@ -1,3 +1,5 @@
+import { Company as PizzaCompany } from 'libs/pizza-parser/types/pizza';
+
 export type NormalizeHandler = (value: string) => string;
 
 export interface Normalize {
@@ -18,4 +20,5 @@ export interface Company {
   id: number;
   categories: Category[];
   normalize?: Normalize;
+  pizzaCompany: PizzaCompany;
 }

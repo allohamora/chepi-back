@@ -4,6 +4,11 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 
 export const diverso: Company = {
   slug: 'diverso',
+  pizzaCompany: {
+    en_company: 'Diverso',
+    ru_company: 'Diverso',
+    uk_company: 'Diverso',
+  },
   id: 3076,
   categories: [{ id: 37363, size: null, slug: 'pizzaburgers', blacklist: [/бургер/] }],
   normalize: {

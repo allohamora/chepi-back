@@ -4,6 +4,11 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 
 export const yourPizza: Company = {
   slug: 'yourpizza',
+  pizzaCompany: {
+    en_company: 'Your Pizza',
+    ru_company: 'Твоя пицца',
+    uk_company: 'Твоя піца',
+  },
   id: 3034,
   categories: [
     { id: 36919, size: 20, slug: 'pizza20' },

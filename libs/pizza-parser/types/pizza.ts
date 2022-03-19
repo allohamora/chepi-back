@@ -9,7 +9,7 @@ export type Country = typeof supportedCountries[number];
 export const supportedCities = ['chernivtsi'] as const;
 export type City = typeof supportedCities[number];
 
-export interface Pizza {
+export interface BaseContent {
   title: string; // my pizza
   description: string; // with pepper and pepperoni
   link: string; // http://pizza.com/buy-pizza/:id
@@ -21,6 +21,12 @@ export interface Pizza {
   country: Country;
   city: City;
 }
+
+export type Company = {
+  [key in `${Lang}_company`]: string;
+};
+
+export type Pizza = BaseContent & Company;
 
 export type TranslatedContent = {
   [key in `${Lang}_title` | `${Lang}_description`]: string;

@@ -58,6 +58,15 @@ export class Pizza implements PizzaJson {
   @ApiProperty({ description: 'pizza price in grn', nullable: true })
   price: number | null;
 
+  @ApiProperty({ description: 'pizza company in ukrainian' })
+  uk_company: string;
+
+  @ApiProperty({ description: 'pizza company in russian' })
+  ru_company: string;
+
+  @ApiProperty({ description: 'pizza company in english' })
+  en_company: string;
+
   @ApiProperty({ description: 'pizza title in ukrainian' })
   uk_title: string;
 
