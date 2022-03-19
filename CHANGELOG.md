@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.0](https://github.com/allohamora/chepi-back/compare/v3.3.0...v3.4.0) (2022-03-19)
+
+### Features
+
+- add \*\_company fields ([4169be6](https://github.com/allohamora/chepi-back/commits/4169be6ad40feee0fd8ff62e9ea54d605308f3a3))
+- **pizza-parser:** add normalize company rules ([618a531](https://github.com/allohamora/chepi-back/commits/618a5316568026b678ce62c2fa1b71d2ee3bd8c0))
+- **pizzas.json:** update pizzas.json ([741e711](https://github.com/allohamora/chepi-back/commits/741e7119d18d0c50f36eefef165e32661151ec63))
+
 ## [3.3.0](https://github.com/allohamora/chepi-back/compare/v3.2.0...v3.3.0) (2022-03-16)
 
 ### Features
