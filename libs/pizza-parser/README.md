@@ -1,3 +1,9 @@
+# normalize company rules
+
+- If company have official name translation - use it
+- If company have only english name or a proper name - use it for all langs
+- If company name isn't a proper name - translate it for all langs
+
 # normalize rules
 
 - Remove keyword what includes all types of product such a dough, flour
