@@ -18,6 +18,8 @@ export const ciabatta: Company = {
         .replace(/мисл.ковбаски/i, 'мисливські ковбаски')
         .replace(/шампіньйони/i, 'печериці')
         .replace(/тісто(, )?/i, '')
+        .replace(/моцарелла/i, 'моцарела')
+        .replace(/дор блю/, 'дорблю')
         .trim();
 
       return capitalize(fixed);

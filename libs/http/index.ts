@@ -15,12 +15,13 @@ interface Options {
 
 interface HttpHeaders {
   'Content-Type': 'application/json' | 'text/plain';
+  'User-Agent': string;
 }
 
 export abstract class RequestBuilder {
   protected options: Options;
 
-  protected headers: HttpHeaders = { 'Content-Type': 'text/plain' };
+  protected headers: Record<string, unknown> = { 'Content-Type': 'text/plain' };
 
   constructor(url: string) {
     this.options = {
@@ -56,7 +57,7 @@ export abstract class RequestBuilder {
   }
 
   public header(key: keyof HttpHeaders, value: HttpHeaders[typeof key]) {
-    this.headers[key] = value;
+    this.headers[key] = value as unknown;
     return this;
   }
 

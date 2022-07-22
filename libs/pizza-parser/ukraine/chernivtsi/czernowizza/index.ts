@@ -5,7 +5,7 @@ import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://czernowizza.com';
-const BLACKLIST = ['Пиріг Осетинський'];
+const BLACKLIST = ['Пиріг Осетинський', 'Хачапурі на мангалі', 'Кальцоне'];
 
 export class Czernowizza extends ChernivtsiPizzasParser {
   private company: Company = {
@@ -34,8 +34,17 @@ export class Czernowizza extends ChernivtsiPizzasParser {
       .replace(/томати/, 'помідори')
       .replace(/соус песто/, 'соус Песто')
       .replace(/соус беш[ае]мель/i, 'соус Бешамель')
+      .replace(/сир гауда/i, 'гауда')
+      .replace(/сир рокфор/i, 'рокфор')
+      .replace(/сир сулугуні/i, 'сулугуні')
+      .replace(/свіжа/i, '')
       .replace(/,( )?$/, '')
       .replace(/  /g, ' ')
+      .replace(/^\//, '')
+      .replace(/\//g, ', ')
+      .replace(/\,  /g, ', ')
+      .replace(/\.$/, '')
+      .replace(/баклажа/g, 'баклажан')
       .trim();
 
     return capitalize(fixed);

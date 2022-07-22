@@ -43,6 +43,7 @@ export class Dongustavo extends ChernivtsiPizzasParser {
       .replace(/соус цезарь/, 'соус Цезар')
       .replace(/^coyc, /i, '')
       .replace(/^соус, /i, '')
+      .replace(/\.$/, '')
       .trim();
 
     return capitalize(fixed);

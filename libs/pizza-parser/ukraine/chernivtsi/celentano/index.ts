@@ -5,9 +5,9 @@ import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://chernivtsi.celentano.delivery';
-const TYPE_BLACKLIST = ['піцарол', 'кальцоне', 'комбо'];
+const TYPE_BLACKLIST = ['піцарол', 'кальцоне', 'комбо', 'Пароль «паляниця»'];
 
-const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г\/\d+?г)$/;
+const DESCRIPTION_WEIGHT_REGEXP = /,? ?(?<weights>\d+?г?\/\d+?г)$/;
 
 export class Celentano extends ChernivtsiPizzasParser {
   private company: Company = {
@@ -44,6 +44,9 @@ export class Celentano extends ChernivtsiPizzasParser {
       .replace(/салямі піканте/i, 'салямі Піканте')
       .replace(/мікс-салат/i, 'мікс салат')
       .replace(/домашній /i, '')
+      .replace(/сир моцарела/i, 'моцарела')
+      .replace(/сир гауда/i, 'гауда')
+      .replace(/,(?! )/, ', ')
       .trim();
 
     return capitalize(fixed);

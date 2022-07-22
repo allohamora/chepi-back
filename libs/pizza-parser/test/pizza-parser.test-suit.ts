@@ -37,23 +37,34 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/цезаре/i);
 
   expectFalseTest(/сир моцарела/i);
+  expectFalseTest(/сир гауда/i);
+  expectFalseTest(/сир рокфор/i);
+  expectFalseTest(/сир сулугуні/i);
+
   expectFalseTest(/(?<!помідор(и|ами) )(?<=\s|^)чері/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)чилі/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)болгарський/i);
   expectFalseTest(/(?<!картопля )(?<=\s|^)фрі/i);
-
-  expectFalseTest(/^-$/i);
 };
 
-const notContainQuoteTest = (value: string) => {
+const notContainBlacklistSymbolTest = (value: string) => {
   const expectFalseTest = expectFalseTestFactory(value);
+
+  expectFalseTest(/,(?! )/g);
+
+  expectFalseTest(/^-.+/);
+  expectFalseTest(/.+-$/);
+
+  expectFalseTest(/\.$/);
+
+  expectFalseTest(/,$/);
 
   expectFalseTest(/"/);
   expectFalseTest(/«|»/);
   expectFalseTest(/“/);
 };
 
-const ukContentTest = combine(notContainQuoteTest, ukNotContainBlacklistedWordTest);
+const ukContentTest = combine(notContainBlacklistSymbolTest, ukNotContainBlacklistedWordTest);
 
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
   jest.setTimeout(MAX_REQUEST_TIME_IN_MILISECONDS);

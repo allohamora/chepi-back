@@ -40,6 +40,7 @@ export class Lapiec extends ChernivtsiPizzasParser {
       .replace(/соус барбекю/i, 'соус Барбекю')
       .replace(/соус бешамель/i, 'соус Бешамель')
       .replace(/соус цезар/i, 'соус Цезар')
+      .replace(/,\s\s/g, ', ')
       .trim();
 
     return capitalize(fixed);
