@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.1](https://github.com/allohamora/chepi-back/compare/v3.3.0...v3.4.1) (2022-07-22)
+
+### Features
+
+- add \*\_company fields ([4169be6](https://github.com/allohamora/chepi-back/commits/4169be6ad40feee0fd8ff62e9ea54d605308f3a3))
+- **pizza-parser:** add normalize company rules ([618a531](https://github.com/allohamora/chepi-back/commits/618a5316568026b678ce62c2fa1b71d2ee3bd8c0))
+- **pizzas.json:** update pizzas.json ([7735f89](https://github.com/allohamora/chepi-back/commits/7735f89b1f7c8174cdca87812ae76819c710b7ec))
+- **pizzas.json:** update pizzas.json ([741e711](https://github.com/allohamora/chepi-back/commits/741e7119d18d0c50f36eefef165e32661151ec63))
+
+### Bug Fixes
+
+- **pizza-parser:** fix celentano parser errors ([427ab7c](https://github.com/allohamora/chepi-back/commits/427ab7c15a41596a6ca4b2d5f8e32ed4d3b186ee))
+- **pizza-parser:** fix czernowizza parser errors ([70f672c](https://github.com/allohamora/chepi-back/commits/70f672c398df06d5447045a64363042c7b191aa3))
+- **pizza-parser:** fix dongustavo parser errors ([c4e8ee6](https://github.com/allohamora/chepi-back/commits/c4e8ee652df5f6bc31e3f8be0da1dd671465b033))
+- **pizza-parser:** fix lapiec parser errors ([9361af0](https://github.com/allohamora/chepi-back/commits/9361af019669eaa9524e85df728e4481b0b740f9))
+- **pizza-parser:** fix misteram parser errors ([842fdc2](https://github.com/allohamora/chepi-back/commits/842fdc27d453bc58dabc71658f41a0141db9465a))
+- **pizza-parser:** fix shosho parser errors ([b935f68](https://github.com/allohamora/chepi-back/commits/b935f6813bdd3ddcac1baf8fa87046caeb601e97))
+
 ## [3.4.0](https://github.com/allohamora/chepi-back/compare/v3.3.0...v3.4.0) (2022-03-19)
 
 ### Features
