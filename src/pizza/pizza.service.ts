@@ -33,6 +33,15 @@ const PIZZAS_MAPPINGS: estypes.MappingTypeMapping = {
     ru_description: { type: 'text' },
     en_title: { type: 'text' },
     en_description: { type: 'text' },
+    historyOfChanges: {
+      type: 'nested',
+      properties: {
+        key: { type: 'text' },
+        old: { type: 'text' },
+        new: { type: 'text' },
+        detectedAt: { type: 'integer' },
+      },
+    },
   },
 };
 
