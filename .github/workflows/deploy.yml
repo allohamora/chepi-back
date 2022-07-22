@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Login
-        uses: okteto/login@master
+        uses: okteto/login@main
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
 
       - name: Create namespace
-        uses: okteto/namespace@master
+        uses: okteto/namespace@main
 
       - name: Deploy pipeline
-        uses: okteto/pipeline@master
+        uses: okteto/pipeline@main
         with:
           name: chepi-back
