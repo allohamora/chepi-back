@@ -31,6 +31,8 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/pizza/i);
 
   expectFalseTest(/моцарелла/i);
+  expectFalseTest(/горгонзонла/i);
+  expectFalseTest(/горгонзола/i);
   expectFalseTest(/дор блю/i);
   expectFalseTest(/папероні/i);
   expectFalseTest(/чілі/i);
@@ -40,6 +42,10 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
   expectFalseTest(/сир гауда/i);
   expectFalseTest(/сир рокфор/i);
   expectFalseTest(/сир сулугуні/i);
+  expectFalseTest(/сир горгонзонла/i);
+  expectFalseTest(/сир горгонзола/i);
+  expectFalseTest(/сир пармезан/i);
+  expectFalseTest(/сир пармезан/i);
 
   expectFalseTest(/(?<!помідор(и|ами) )(?<=\s|^)чері/i);
   expectFalseTest(/(?<!перець )(?<=\s|^)чилі/i);

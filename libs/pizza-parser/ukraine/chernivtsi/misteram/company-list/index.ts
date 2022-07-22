@@ -15,6 +15,7 @@ import { pizzaPark } from './companies/pizza-park';
 import { riposo } from './companies/riposo';
 import { terassa } from './companies/terassa';
 import { theSad } from './companies/the-sad';
+import { floraPark } from './companies/flora-park';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
@@ -33,4 +34,5 @@ export const COMPANY_LIST: Company[] = [
   kucheri,
   ciabatta,
   diverso,
+  floraPark,
 ];

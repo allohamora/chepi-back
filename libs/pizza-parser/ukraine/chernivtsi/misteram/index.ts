@@ -168,7 +168,7 @@ export class Misteram extends ChernivtsiPizzasParser {
     return companyListNestedPizzas.flat();
   }
 
-  public async parsePizzas() {
-    return await this.getPizzasFromCompanyList();
+  public parsePizzas() {
+    return this.getPizzasFromCompanyList();
   }
 }
