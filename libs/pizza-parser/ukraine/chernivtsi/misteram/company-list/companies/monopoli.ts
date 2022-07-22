@@ -22,7 +22,8 @@ export const monopoli: Company = {
         .replace(/соус Цезар/i, 'соус Цезар')
         .replace(/соус Пелаті/i, 'соус Пелаті')
         .replace(/сир тофу/i, 'тофу')
-        .replace(/печериці-гриль/i, 'печериці гриль');
+        .replace(/печериці-гриль/i, 'печериці гриль')
+        .replace(/\.$/, '');
 
       return capitalize(fixed);
     },

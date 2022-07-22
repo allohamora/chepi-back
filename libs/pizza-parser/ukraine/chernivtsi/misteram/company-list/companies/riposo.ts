@@ -29,6 +29,8 @@ export const riposo: Company = {
         .replace(/чілі/i, 'чилі')
         .replace(/шампіньйони/i, 'печериці')
         .replace(/\./gi, ',')
+        .replace(/,$/, '')
+        .replace(/чері/g, 'помідори чері')
         .trim();
 
       return capitalize(fixed);

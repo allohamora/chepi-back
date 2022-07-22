@@ -12,7 +12,18 @@ export const chicheri: Company = {
   id: 448,
   categories: [{ id: 35368, size: 30, slug: 'pizza30' }],
   normalize: {
-    title: removePizzaAndDoubleQuotes,
+    title: (title) => {
+      const fixed = removePizzaAndDoubleQuotes(title)
+        .replace(/піца/i, '')
+        .replace(/«(.+?)»/, '$1')
+        .replace(/“(.+?)”/, '$1')
+        .replace(/папероні/gi, 'пепероні')
+        .trim()
+        .replace(/-$/, '')
+        .trim();
+
+      return capitalize(fixed);
+    },
     description: (description) => {
       const fixed = description
         .replace(/руккола/i, 'рукола')
@@ -22,7 +33,8 @@ export const chicheri: Company = {
         .replace(/чілі/i, 'перець чилі')
         .replace(/чері/i, 'помідори чері')
         .replace(/помідори помідори чері/i, 'помідори чері')
-        .replace(/едем/i, 'едам');
+        .replace(/едем/i, 'едам')
+        .replace(/\.$/, '');
 
       return capitalize(fixed);
     },

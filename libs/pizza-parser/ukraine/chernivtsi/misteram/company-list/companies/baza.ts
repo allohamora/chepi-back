@@ -24,6 +24,9 @@ export const baza: Company = {
         .replace(/свіжа зелень/i, 'зелень')
         .replace(/фрі/, 'картопля фрі')
         .replace(/шампіньйони/i, 'печериці')
+        .replace(/перець чілі/i, 'перець чилі')
+        .replace(/"/g, '')
+        .replace(/,$/, '')
         .trim();
 
       return capitalize(fixed);

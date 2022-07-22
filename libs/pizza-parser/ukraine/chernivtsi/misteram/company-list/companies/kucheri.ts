@@ -12,15 +12,24 @@ export const kucheri: Company = {
   id: 1111,
   categories: [{ id: 14047, size: 30, slug: 'pizza', blacklist: [/фокача/i] }],
   normalize: {
-    title: removePizzaAndDoubleQuotes,
+    title: (title) => {
+      const fixed = removePizzaAndDoubleQuotes(title)
+        .replace(/папероні/gi, 'пепероні')
+        .trim();
+
+      return capitalize(fixed);
+    },
     description: (description) => {
       const fixed = description
         .replace(/соус пелаті/i, 'соус Пелаті')
+        .replace(/чілі/gi, 'перець чилі')
         .replace(/перець Чилі/i, 'перець чилі')
         .replace(/картопля "ФРІ"/i, 'картопля фрі')
         .replace(/едем/i, 'едам')
         .replace(/айзберг/i, 'салат Айсберг')
-        .replace(/козиний сир/i, 'козячий сир');
+        .replace(/козиний сир/i, 'козячий сир')
+        .replace(/папероні/i, 'пепероні')
+        .replace(/\.$/, '');
 
       return capitalize(fixed);
     },
