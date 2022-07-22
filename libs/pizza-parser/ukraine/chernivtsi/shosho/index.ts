@@ -1,11 +1,27 @@
+import puppeteer from 'puppeteer';
 import { Cheerio, CheerioAPI, Element, load } from 'cheerio';
 import { Company } from 'libs/pizza-parser/types/pizza';
-import { getText } from 'libs/pizza-parser/utils/http';
+import { cache } from 'libs/pizza-parser/utils/http';
 import { capitalize } from 'libs/pizza-parser/utils/string';
 import { ChernivtsiPizzasParser } from '../chernivtsi.pizza-parser';
 
 const BASE_URL = 'https://shosho.pizza';
 const PIZZA_CATEGORY_TITLE = 'Піца';
+
+const getShoshoHtml = cache.decorator(async (url: string) => {
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  await page.goto(url);
+
+  await page.waitForNavigation();
+
+  const content = await page.content();
+
+  await browser.close();
+
+  return content;
+});
 
 export class ShoSho extends ChernivtsiPizzasParser {
   private company: Company = {
@@ -14,8 +30,8 @@ export class ShoSho extends ChernivtsiPizzasParser {
     uk_company: 'Шо Шо',
   };
 
-  private async getPageHtml() {
-    return await getText(BASE_URL);
+  private getPageHtml() {
+    return getShoshoHtml(BASE_URL);
   }
 
   private normalizeTitle(title: string) {

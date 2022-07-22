@@ -46,6 +46,7 @@
     "class-validator": "^0.13.2",
     "got": "^11.8.3",
     "hpagent": "^0.1.2",
+    "puppeteer": "^15.5.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.2",
