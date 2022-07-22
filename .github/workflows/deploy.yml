@@ -14,10 +14,10 @@ jobs:
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
 
-      - name: Create namespace
+      - name: Activate Namespace
         uses: okteto/namespace@latest
         with:
-          name: allohamora
+          namespace: allohamora
 
       - name: Deploy pipeline
         uses: okteto/pipeline@latest
