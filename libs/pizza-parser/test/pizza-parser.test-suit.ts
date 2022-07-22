@@ -50,6 +50,8 @@ const ukNotContainBlacklistedWordTest = (value: string) => {
 const notContainBlacklistSymbolTest = (value: string) => {
   const expectFalseTest = expectFalseTestFactory(value);
 
+  expectFalseTest(/,(?! )/g);
+
   expectFalseTest(/^-.+/);
   expectFalseTest(/.+-$/);
 
