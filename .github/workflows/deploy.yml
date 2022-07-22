@@ -16,6 +16,8 @@ jobs:
 
       - name: Create namespace
         uses: okteto/namespace@latest
+        with:
+          name: allohamora
 
       - name: Deploy pipeline
         uses: okteto/pipeline@latest
