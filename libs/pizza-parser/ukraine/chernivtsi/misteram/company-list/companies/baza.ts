@@ -25,6 +25,7 @@ export const baza: Company = {
         .replace(/фрі/, 'картопля фрі')
         .replace(/шампіньйони/i, 'печериці')
         .replace(/перець чілі/i, 'перець чилі')
+        .replace(/горгонзола/gi, 'горгондзола')
         .replace(/"/g, '')
         .replace(/,$/, '')
         .trim();
