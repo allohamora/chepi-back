@@ -63,6 +63,7 @@ const notContainBlacklistSymbolTest = (value: string) => {
   expectFalseTest(/\.$/);
 
   expectFalseTest(/,$/);
+  expectFalseTest(/^,/);
 
   expectFalseTest(/"/);
   expectFalseTest(/«|»/);

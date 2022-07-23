@@ -18,6 +18,7 @@ import { theSad } from './companies/the-sad';
 import { floraPark } from './companies/flora-park';
 import { soda } from './companies/soda';
 import { ultraBabusya } from './companies/ultra-babusya';
+import { baronGartenber } from './companies/baron-gartenberg';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
@@ -39,4 +40,5 @@ export const COMPANY_LIST: Company[] = [
   floraPark,
   soda,
   ultraBabusya,
+  baronGartenber,
 ];
