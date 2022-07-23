@@ -40,6 +40,7 @@ export const mamasPizza: Company = {
         .replace(/цибуля маринована в оцеті/i, 'цибуля маринована')
         .replace(/, /g, ',')
         .replace(/,/g, ', ')
+        .replace(/.$/, '')
         .trim();
 
       return capitalize(fixed);

@@ -1,24 +1,30 @@
 import { Company } from './types';
-import { aveCeasare } from './companies/ave-ceasare';
 import { baza } from './companies/baza';
 import { bruno } from './companies/bruno';
 import { chebonta } from './companies/chebonta';
 import { chicheri } from './companies/chicheri';
 import { ciabatta } from './companies/ciabatta';
 import { diverso } from './companies/diverso';
-import { gorno } from './companies/gorno';
 import { kartoteka } from './companies/kartoteka';
 import { kucheri } from './companies/kucheri';
 import { lapasta } from './companies/lapasta';
 import { mamasPizza } from './companies/mamas-pizza';
 import { monopoli } from './companies/monopoli';
-import { pastamia } from './companies/pastamia';
 import { picantico } from './companies/picantico';
 import { pizzaPark } from './companies/pizza-park';
 import { riposo } from './companies/riposo';
 import { terassa } from './companies/terassa';
 import { theSad } from './companies/the-sad';
-import { yourPizza } from './companies/your-pizza';
+import { floraPark } from './companies/flora-park';
+import { soda } from './companies/soda';
+import { ultraBabusya } from './companies/ultra-babusya';
+import { baronGartenber } from './companies/baron-gartenberg';
+import { yummy } from './companies/yummy';
+import { dreamland } from './companies/dreamland';
+import { grandroyal } from './companies/grandroyal';
+import { cakestudio } from './companies/cakestudio';
+import { guestyard } from './companies/guestyard';
+import { roksolana } from './companies/roksolana';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
@@ -29,7 +35,6 @@ export const COMPANY_LIST: Company[] = [
   monopoli,
   kartoteka,
   chicheri,
-  gorno,
   bruno,
   mamasPizza,
   riposo,
@@ -38,7 +43,14 @@ export const COMPANY_LIST: Company[] = [
   kucheri,
   ciabatta,
   diverso,
-  yourPizza,
-  aveCeasare,
-  pastamia,
+  floraPark,
+  soda,
+  ultraBabusya,
+  baronGartenber,
+  yummy,
+  dreamland,
+  grandroyal,
+  cakestudio,
+  guestyard,
+  roksolana,
 ];

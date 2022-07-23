@@ -29,6 +29,7 @@ export const kucheri: Company = {
         .replace(/айзберг/i, 'салат Айсберг')
         .replace(/козиний сир/i, 'козячий сир')
         .replace(/папероні/i, 'пепероні')
+        .replace(/горгонзола/gi, 'горгондзола')
         .replace(/\.$/, '');
 
       return capitalize(fixed);

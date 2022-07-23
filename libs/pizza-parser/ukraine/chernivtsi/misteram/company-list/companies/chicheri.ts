@@ -34,6 +34,7 @@ export const chicheri: Company = {
         .replace(/чері/i, 'помідори чері')
         .replace(/помідори помідори чері/i, 'помідори чері')
         .replace(/едем/i, 'едам')
+        .replace(/горгонзола/gi, 'горгондзола')
         .replace(/\.$/, '');
 
       return capitalize(fixed);

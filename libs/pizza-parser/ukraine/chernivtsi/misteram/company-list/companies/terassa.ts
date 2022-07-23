@@ -5,7 +5,7 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 export const terassa: Company = {
   slug: 'terassa',
   pizzaCompany: {
-    en_company: 'Terasa',
+    en_company: 'Terrace',
     ru_company: 'Терраса',
     uk_company: 'Тераса',
   },

@@ -26,6 +26,7 @@ export const lapasta: Company = {
         .replace(/соус BBQ/i, 'соус Барбекю')
         .replace(/філадельфія/i, 'сир Філадельфія')
         .replace(/чері/i, 'помідори чері')
+        .replace(/горгонзола/gi, 'горгондзола')
         .trim();
 
       return capitalize(fixed);

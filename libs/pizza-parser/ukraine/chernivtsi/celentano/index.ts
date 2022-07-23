@@ -35,6 +35,7 @@ export class Celentano extends ChernivtsiPizzasParser {
       .replace(/ ?перці/, '')
       .replace(/(.+?) (та|і) (.+?)/g, '$1, $3')
       .replace(/болгарський/, 'перець болгарський')
+      .replace(/горгонзола/gi, 'горгондзола')
       .replace(/основа,?/i, '')
       .replace(/соус\(томатний\/вершковий\)/, 'соус томатний, соус вершковий')
       .replace(/моцарелла/g, 'моцарела')

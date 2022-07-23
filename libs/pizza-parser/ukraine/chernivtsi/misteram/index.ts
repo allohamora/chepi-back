@@ -76,7 +76,7 @@ export class Misteram extends ChernivtsiPizzasParser {
   }
 
   private getImage(hash: string) {
-    return `${ASSET_BASE_URL}/misteram-public/${hash}-400x0.png`;
+    return `${ASSET_BASE_URL}/misteram-public/${hash}-826x0.png`;
   }
 
   private getWeight(measureType: MeasureType, measure: string) {
@@ -168,7 +168,7 @@ export class Misteram extends ChernivtsiPizzasParser {
     return companyListNestedPizzas.flat();
   }
 
-  public async parsePizzas() {
-    return await this.getPizzasFromCompanyList();
+  public parsePizzas() {
+    return this.getPizzasFromCompanyList();
   }
 }

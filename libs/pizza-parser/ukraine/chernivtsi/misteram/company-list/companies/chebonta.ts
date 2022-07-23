@@ -24,6 +24,7 @@ export const chebonta: Company = {
         .replace(/чілі/i, 'чилі')
         .replace('соус на вибір (оберіть з переліку), ', '')
         .replace('Соус на вибір (оберіть з переліку), ', '')
+        .replace(/горгонзола/gi, 'горгондзола')
         .trim();
 
       return capitalize(fixed);

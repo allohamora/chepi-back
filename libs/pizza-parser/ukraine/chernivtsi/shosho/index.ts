@@ -44,6 +44,7 @@ export class ShoSho extends ChernivtsiPizzasParser {
     const fixed = description
       .replace(/тісто, /i, '')
       .replace(/печериці свіжі/i, 'печериці')
+      .replace(/горгонзола/gi, 'горгондзола')
       .trim();
 
     return capitalize(fixed);
