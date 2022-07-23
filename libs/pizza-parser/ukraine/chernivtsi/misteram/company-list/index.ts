@@ -21,6 +21,7 @@ import { ultraBabusya } from './companies/ultra-babusya';
 import { baronGartenber } from './companies/baron-gartenberg';
 import { yummy } from './companies/yummy';
 import { dreamland } from './companies/dreamland';
+import { grandroyal } from './companies/grandroyal';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
@@ -45,4 +46,5 @@ export const COMPANY_LIST: Company[] = [
   baronGartenber,
   yummy,
   dreamland,
+  grandroyal,
 ];
