@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.5.0](https://github.com/allohamora/chepi-back/compare/v3.4.3...v3.5.0) (2022-07-23)
+
+### Features
+
+- **pizza-parser:** add misteram baron-gartenberg parser ([67040d7](https://github.com/allohamora/chepi-back/commits/67040d7d768cacaf6f3eb049faf6a2f56f8dbe66))
+- **pizza-parser:** add misteram cakestudio parser ([744f65e](https://github.com/allohamora/chepi-back/commits/744f65e43a41fc84b271c38fa7d82454c1bebfd9))
+- **pizza-parser:** add misteram dreamland parser ([d961196](https://github.com/allohamora/chepi-back/commits/d961196ce57a1cfffaa6148de1c8e4e98a7bf9e6))
+- **pizza-parser:** add misteram flora-park parser ([58b3ddc](https://github.com/allohamora/chepi-back/commits/58b3ddc0eec8d4b2dd6e080da7cfee7eabffff5d))
+- **pizza-parser:** add misteram grandroyal parser ([aa0849d](https://github.com/allohamora/chepi-back/commits/aa0849de72449b269d45c38f9b92a53f3df64364))
+- **pizza-parser:** add misteram guestyard parser ([2a624bd](https://github.com/allohamora/chepi-back/commits/2a624bd5720a82724001ffcf1227b1c8904b1796))
+- **pizza-parser:** add misteram roksolana parser ([fe8c24b](https://github.com/allohamora/chepi-back/commits/fe8c24bef11847f29e05d0b7a31e179759924647))
+- **pizza-parser:** add misteram soda parser ([0a2e72a](https://github.com/allohamora/chepi-back/commits/0a2e72a36f4cefc01a7f86413fe7a81d05d69159))
+- **pizza-parser:** add misteram ultra-babusya parser ([d6be23a](https://github.com/allohamora/chepi-back/commits/d6be23a6f777e9874d89851e0a36d52943afe871))
+- **pizza-parser:** add misteram yummy parser ([304a452](https://github.com/allohamora/chepi-back/commits/304a4523ad1c5a8f1d8578def8e46c41c1bde052))
+- **pizza-parser:** remove disabled companies from misteram ([fbb3416](https://github.com/allohamora/chepi-back/commits/fbb3416a216fb7556de97f146ad76e25fc348c41))
+- **pizzas.json:** update pizzas.json ([5c3fc56](https://github.com/allohamora/chepi-back/commits/5c3fc56fb24061e0fafe1970750f6d48a1882037))
+
+### Bug Fixes
+
+- fix incorrect elastic search mappings ([53dd026](https://github.com/allohamora/chepi-back/commits/53dd0265d383df46b492f3752c627e4844d4db7a))
+- **pizza-parser:** fix incorrect misteram photos ([6981d01](https://github.com/allohamora/chepi-back/commits/6981d015190d04f677f9616478b32ca1b6699055))
+- **pizza-parser:** fix misteram parser errors ([a868603](https://github.com/allohamora/chepi-back/commits/a8686039caec7178092eb35d85dffab918de42fb))
+- **pizza-parser:** fix typos in misteram ([0f86ffb](https://github.com/allohamora/chepi-back/commits/0f86ffbe94025c48858b9b290e26b42e9f953664))
+- **pizza-parser:** fix горгонзола typo in misteram parsers ([fdbc168](https://github.com/allohamora/chepi-back/commits/fdbc168ea6178ae8784cff4f9392108081fc0110))
+- **pizza-parser:** fix горгонзола typo in parsers ([cc18315](https://github.com/allohamora/chepi-back/commits/cc18315f9a7f9a85e4e026329b3547ca81479089))
+- **pizza-parser:** uncomment all misteram companies ([c93007e](https://github.com/allohamora/chepi-back/commits/c93007ef89eb0853307972b0ed706af4f3e9940f))
+
 ### [3.4.3](https://github.com/allohamora/chepi-back/compare/v3.4.2...v3.4.3) (2022-07-22)
 
 ### Bug Fixes
