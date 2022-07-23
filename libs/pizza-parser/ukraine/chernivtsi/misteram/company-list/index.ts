@@ -22,6 +22,7 @@ import { baronGartenber } from './companies/baron-gartenberg';
 import { yummy } from './companies/yummy';
 import { dreamland } from './companies/dreamland';
 import { grandroyal } from './companies/grandroyal';
+import { cakestudio } from './companies/cakestudio';
 
 export const COMPANY_LIST: Company[] = [
   pizzaPark,
@@ -47,4 +48,5 @@ export const COMPANY_LIST: Company[] = [
   yummy,
   dreamland,
   grandroyal,
+  cakestudio,
 ];
