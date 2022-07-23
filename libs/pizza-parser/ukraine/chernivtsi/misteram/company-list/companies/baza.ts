@@ -5,9 +5,9 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 export const baza: Company = {
   slug: 'baza',
   pizzaCompany: {
-    en_company: 'BAZA',
-    ru_company: 'BAZA',
-    uk_company: 'BAZA',
+    en_company: 'Baza Food&Chill Bar',
+    ru_company: 'Baza Food&Chill Bar',
+    uk_company: 'Baza Food&Chill Bar',
   },
   id: 563,
   categories: [

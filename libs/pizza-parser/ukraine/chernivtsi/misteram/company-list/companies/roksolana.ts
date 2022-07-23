@@ -10,7 +10,7 @@ export const roksolana: Company = {
     uk_company: 'Roksolana ceremony hall',
   },
   id: 3565,
-  categories: [{ id: 48283, size: 30, slug: 'pizza' }],
+  categories: [{ id: 48283, size: null, slug: 'pizza' }],
   normalize: {
     title: (title) => {
       const fixed = removePizzaAndDoubleQuotes(title).replace(/ \)/, ')').trim();

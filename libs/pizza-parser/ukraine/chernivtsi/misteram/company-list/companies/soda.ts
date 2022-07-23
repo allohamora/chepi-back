@@ -3,11 +3,11 @@ import { Company } from '../types';
 import { removePizzaAndDoubleQuotes } from '../utils';
 
 export const soda: Company = {
-  slug: 'soda',
+  slug: 'soda-rest',
   pizzaCompany: {
-    en_company: 'SODA',
-    ru_company: 'SODA',
-    uk_company: 'SODA',
+    en_company: 'S.О.D.A. Summer',
+    ru_company: 'S.О.D.A. Summer',
+    uk_company: 'S.О.D.A. Summer',
   },
   id: 4069,
   categories: [{ id: 48361, size: null, slug: 'pizza' }],

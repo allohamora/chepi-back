@@ -5,9 +5,9 @@ import { removePizzaAndDoubleQuotes } from '../utils';
 export const ultraBabusya: Company = {
   slug: 'ultra-babusya',
   pizzaCompany: {
-    en_company: 'ULTRA BABUSYA',
-    ru_company: 'ULTRA БАБУСЯ',
-    uk_company: 'ULTRA БАБУСЯ',
+    en_company: 'Ultra Babusya',
+    ru_company: 'Ultra Бабуся',
+    uk_company: 'Ultra Бабуся',
   },
   id: 4051,
   categories: [{ id: 48192, size: null, slug: 'pizza' }],

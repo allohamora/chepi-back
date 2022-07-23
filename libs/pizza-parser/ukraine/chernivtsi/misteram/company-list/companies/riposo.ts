@@ -10,7 +10,7 @@ export const riposo: Company = {
     uk_company: 'Riposo',
   },
   id: 635,
-  categories: [{ id: 7666, size: 30, slug: 'pizza' }],
+  categories: [{ id: 7666, size: null, slug: 'pizza' }],
   normalize: {
     title: (title) => {
       const fixed = removePizzaAndDoubleQuotes(title)
