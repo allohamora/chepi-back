@@ -5,8 +5,8 @@ import {
   ApiResponseMetadata,
   getSchemaPath,
 } from '@nestjs/swagger';
-import { capitalize } from 'src/utils/string';
-import { ExceptionResponse, SuccessResponse } from 'src/shared/swagger/response';
+import { capitalize } from 'src/shared/utils/text.utils';
+import { ExceptionResponse, SuccessResponse } from 'src/shared/swagger/response.dtos';
 
 type Item = { $ref: string } | { type: string };
 type Data = { type: 'array'; items: Item } | Item;

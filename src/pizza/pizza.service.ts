@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
-import { GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/getPizzas.dto';
+import { GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/get-pizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
-import { SearchQuery } from 'src/types/elasticsearch';
+import { SearchQuery } from 'src/shared/types/elasticsearch.types';
 import { pizzas, updatedAt } from 'pizzas.json';
-import { PizzaStats } from './dto/pizzasStats.dto';
+import { PizzaStats } from './dto/pizza-stats.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -145,7 +145,7 @@ export class PizzaService implements OnModuleInit {
     return { meta: { total, count: data.length }, data };
   }
 
-  public async getPizzaById(id: string) {
+  public async getPizza(id: string) {
     const {
       body: {
         hits: { hits },

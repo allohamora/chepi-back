@@ -1,5 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
-import { ApiResponse, ApiResponseOptions } from './decorators/api-response.decorator';
+import { ApiResponse, ApiResponseOptions } from './api-response.decorator';
 
 export const ApiOkResponse = (options: ApiResponseOptions = {}) => {
   return ApiResponse({
