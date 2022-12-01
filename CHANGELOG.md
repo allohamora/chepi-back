@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/allohamora/chepi-back/compare/v4.0.1...v4.1.0) (2022-12-01)
+
+### Features
+
+- migrate to nestjs notation for files ([526aa0c](https://github.com/allohamora/chepi-back/commits/526aa0c7f4c19d3a8b8c0b4e33640a4ca97e9065))
+
+### Bug Fixes
+
+- **pizzas.json:** remove useless items ([84da9a9](https://github.com/allohamora/chepi-back/commits/84da9a98ffc80e6f58855f6ae70bd57080a032ca))
+
 ### [4.0.1](https://github.com/allohamora/chepi-back/compare/v4.0.0...v4.0.1) (2022-12-01)
 
 ### Bug Fixes
