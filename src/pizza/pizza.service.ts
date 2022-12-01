@@ -134,9 +134,9 @@ export class PizzaService implements OnModuleInit {
     } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>(esQuery);
 
     const total: number = typeof hits.total === 'number' ? hits.total : hits.total.value;
-    const value = hits.hits.map(({ _source }) => _source);
+    const data = hits.hits.map(({ _source }) => _source);
 
-    return { total, value };
+    return { meta: { total, count: data.length }, data };
   }
 
   public async getPizzaById(id: string) {
@@ -165,34 +165,10 @@ export class PizzaService implements OnModuleInit {
       throw new NotFoundException('pizza is not found');
     }
 
-    return { value };
+    return value;
   }
 
   public getPizzasStats(): PizzasStatsResultDto {
     return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
-  }
-
-  public async getPizzaIds(): Promise<string[]> {
-    const esQuery: SearchQuery = {
-      index: PIZZAS_INDEX,
-      body: {
-        size: PIZZAS_COUNT,
-        query: {
-          bool: {
-            must: {
-              match_all: {},
-            },
-          },
-        },
-      },
-    };
-
-    const {
-      body: {
-        hits: { hits },
-      },
-    } = await this.elasticsearchService.search(esQuery);
-
-    return hits.map(({ _source }) => _source.id);
   }
 }

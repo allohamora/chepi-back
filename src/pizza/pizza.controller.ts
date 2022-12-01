@@ -1,8 +1,10 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
-import { ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
-import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiNotFoundResponse, ApiOkResponse } from 'src/shared/swagger';
+import { GetPizzaByIdDto } from './dto/getPizzaById.dto';
+import { GetPizzasDto } from './dto/getPizzas.dto';
 import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
+import { Pizza } from './entities/pizza.entity';
 import { PizzaService } from './pizza.service';
 
 @ApiTags('Pizza')
@@ -11,9 +13,9 @@ export class PizzaController {
   constructor(private pizzaService: PizzaService) {}
 
   @ApiOperation({ summary: 'Get pizzas by query' })
-  @ApiOkResponse({ description: 'Return found by query pizzas', type: GetPizzaResultDto })
+  @ApiOkResponse({ description: 'Return found by query pizzas', type: Pizza, isArray: true })
   @Get('/')
-  public getPizzasByQuery(@Query() getPizzasDto: GetPizzasDto): Promise<GetPizzaResultDto> {
+  public getPizzasByQuery(@Query() getPizzasDto: GetPizzasDto) {
     return this.pizzaService.getPizzas(getPizzasDto);
   }
 
@@ -24,18 +26,11 @@ export class PizzaController {
     return this.pizzaService.getPizzasStats();
   }
 
-  @ApiOperation({ summary: 'Get pizza ids' })
-  @ApiOkResponse({ description: 'pizza ids', type: [String] })
-  @Get('/ids')
-  public getPizzaIds(): Promise<string[]> {
-    return this.pizzaService.getPizzaIds();
-  }
-
   @ApiOperation({ summary: 'Get pizza by id' })
-  @ApiOkResponse({ description: 'Return pizza by id or null', type: GetPizzaByIdResultDto })
+  @ApiOkResponse({ description: 'Return pizza by id or null', type: Pizza })
   @ApiNotFoundResponse({ description: 'Pizza not found' })
   @Get('/:id')
-  public getPizzaById(@Param() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
+  public getPizzaById(@Param() { id }: GetPizzaByIdDto) {
     return this.pizzaService.getPizzaById(id);
   }
 }

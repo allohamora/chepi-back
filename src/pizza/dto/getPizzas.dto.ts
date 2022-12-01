@@ -11,7 +11,6 @@ import {
   IsString,
 } from 'class-validator';
 import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
-import { Pizza } from '../entities/pizza.entity';
 
 const supportedTargets = ['weight', 'size', 'price'] as const;
 const supportedDirections = ['asc', 'desc'] as const;
@@ -74,12 +73,4 @@ export class GetPizzasDto {
     return value;
   })
   ids?: string[];
-}
-
-export class GetPizzaResultDto {
-  @ApiProperty({ type: Pizza, isArray: true, description: 'pizza array' })
-  value: Pizza[];
-
-  @ApiProperty({ description: 'number of found pizzas by query' })
-  total: number;
 }

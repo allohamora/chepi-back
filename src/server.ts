@@ -2,6 +2,8 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { ErrorExceptionFilter } from './shared/filters/error.filter';
+import { CustomResponseInterceptor } from './shared/interceptors/custom-response.interceptor';
 
 const APP_NAME = process.env.npm_package_name;
 const APP_VERSION = process.env.npm_package_version;
@@ -20,6 +22,18 @@ export class Server {
 
   public addCors() {
     this.app.enableCors();
+
+    return this;
+  }
+
+  public addInterceptors() {
+    this.app.useGlobalInterceptors(new CustomResponseInterceptor());
+
+    return this;
+  }
+
+  public addFilters() {
+    this.app.useGlobalFilters(new ErrorExceptionFilter());
 
     return this;
   }
@@ -56,6 +70,6 @@ export class Server {
   static async forProduction() {
     const server = await this.create();
 
-    return server.addGlobalPrefix().addCors().addPipes().addSwagger();
+    return server.addGlobalPrefix().addCors().addInterceptors().addFilters().addPipes().addSwagger();
   }
 }
