@@ -4,7 +4,9 @@ import { ArrayMinSize, IsArray, IsEnum, IsNumber, IsOptional, IsString, Matches 
 import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
 
 const SORT_REGEXP = /(weight|size|price):(asc|desc)/;
+
 export const SORT_JOIN_SYMBOL = ':';
+export const FIELDS_JOIN_SYMBOL = ',';
 
 export class GetPizzasDto {
   @ApiProperty({ description: 'search query', example: 'pizza with cheese', required: false })
@@ -53,4 +55,9 @@ export class GetPizzasDto {
     return value;
   })
   ids?: string[];
+
+  @ApiProperty({ example: `id${FIELDS_JOIN_SYMBOL}title`, required: false, description: 'list of selected fields' })
+  @IsString()
+  @IsOptional()
+  fields?: string;
 }

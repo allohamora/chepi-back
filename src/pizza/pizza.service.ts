@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
-import { GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/get-pizzas.dto';
+import { FIELDS_JOIN_SYMBOL, GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/get-pizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
@@ -154,13 +154,24 @@ export class PizzaService implements OnModuleInit {
     };
   }
 
-  public async getPizzas({ limit, offset, sort, query, country, city, ids }: GetPizzasDto) {
+  private selectFields(fields?: string) {
+    if (!fields) {
+      return undefined;
+    }
+
+    return {
+      _source: fields.split(FIELDS_JOIN_SYMBOL),
+    };
+  }
+
+  public async getPizzas({ limit, offset, sort, query, country, city, ids, fields }: GetPizzasDto) {
     const esQuery: SearchQuery = {
       index: PIZZAS_INDEX,
       body: {
         from: offset,
         size: limit,
         ...this.sort(sort),
+        ...this.selectFields(fields),
         query: {
           bool: {
             ...this.filterByQuery(query),
