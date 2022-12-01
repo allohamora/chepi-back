@@ -5,7 +5,7 @@ import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
 import { pizzas, updatedAt } from 'pizzas.json';
-import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
+import { PizzaStats } from './dto/pizzasStats.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -54,13 +54,13 @@ export class PizzaService implements OnModuleInit {
   constructor(private elasticsearchService: ElasticsearchService) {}
 
   public async onModuleInit() {
-    await this.setPizzasIfNotExists();
+    await this.setPizzasIfNotExist();
   }
 
-  private async setPizzasIfNotExists() {
-    const { body: isExists } = await this.elasticsearchService.indices.exists({ index: PIZZAS_INDEX });
+  private async setPizzasIfNotExist() {
+    const { body: isExist } = await this.elasticsearchService.indices.exists({ index: PIZZAS_INDEX });
 
-    if (isExists) return;
+    if (isExist) return;
 
     await this.elasticsearchService.indices.create<estypes.IndicesCreateResponse>({
       index: PIZZAS_INDEX,
@@ -74,7 +74,7 @@ export class PizzaService implements OnModuleInit {
       body: { errors },
     } = await this.elasticsearchService.bulk<estypes.BulkResponse>({ refresh: true, body: bulkBody });
 
-    if (errors) throw new Error('bulk has errors');
+    if (errors) throw new Error('bulk pizzas insert has errors');
   }
 
   private queryToSimpleQuery(query: string) {
@@ -168,7 +168,7 @@ export class PizzaService implements OnModuleInit {
     return value;
   }
 
-  public getPizzasStats(): PizzasStatsResultDto {
+  public getPizzaStats(): PizzaStats {
     return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
   }
 }

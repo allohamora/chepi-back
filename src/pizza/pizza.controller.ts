@@ -3,7 +3,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApiNotFoundResponse, ApiOkResponse } from 'src/shared/swagger';
 import { GetPizzaByIdDto } from './dto/getPizzaById.dto';
 import { GetPizzasDto } from './dto/getPizzas.dto';
-import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
+import { PizzaStats } from './dto/pizzasStats.dto';
 import { Pizza } from './entities/pizza.entity';
 import { PizzaService } from './pizza.service';
 
@@ -20,10 +20,10 @@ export class PizzaController {
   }
 
   @ApiOperation({ summary: 'Get pizzas stats' })
-  @ApiOkResponse({ description: 'Return pizzas.json stats', type: PizzasStatsResultDto })
+  @ApiOkResponse({ description: 'Return pizzas.json stats', type: PizzaStats })
   @Get('/stats')
-  public getPizzasStats(): PizzasStatsResultDto {
-    return this.pizzaService.getPizzasStats();
+  public getPizzaStats(): PizzaStats {
+    return this.pizzaService.getPizzaStats();
   }
 
   @ApiOperation({ summary: 'Get pizza by id' })
