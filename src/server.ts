@@ -1,4 +1,4 @@
-import { INestApplication, ValidationPipe } from '@nestjs/common';
+import { INestApplication, ValidationPipe, VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
@@ -14,8 +14,14 @@ const SWAGGER_PATH = 'swagger';
 export class Server {
   private constructor(private app: INestApplication) {}
 
-  public addGlobalPrefix() {
-    this.app.setGlobalPrefix('/api/v1');
+  public addApiPrefix() {
+    this.app.setGlobalPrefix('/api');
+
+    return this;
+  }
+
+  public addVersioning() {
+    this.app.enableVersioning({ defaultVersion: '1', type: VersioningType.URI });
 
     return this;
   }
@@ -70,6 +76,6 @@ export class Server {
   static async forProduction() {
     const server = await this.create();
 
-    return server.addGlobalPrefix().addCors().addInterceptors().addFilters().addPipes().addSwagger();
+    return server.addApiPrefix().addVersioning().addCors().addInterceptors().addFilters().addPipes().addSwagger();
   }
 }

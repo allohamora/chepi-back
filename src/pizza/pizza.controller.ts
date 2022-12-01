@@ -15,11 +15,11 @@ export class PizzaController {
   @ApiOperation({ summary: 'Get pizzas by query' })
   @ApiOkResponse({ description: 'Return found by query pizzas', type: Pizza, isArray: true })
   @Get('/')
-  public getPizzasByQuery(@Query() getPizzasDto: GetPizzasDto) {
+  public getPizzas(@Query() getPizzasDto: GetPizzasDto) {
     return this.pizzaService.getPizzas(getPizzasDto);
   }
 
-  @ApiOperation({ summary: 'Get pizzas stats' })
+  @ApiOperation({ summary: 'Get pizza stats' })
   @ApiOkResponse({ description: 'Return pizzas.json stats', type: PizzaStats })
   @Get('/stats')
   public getPizzaStats(): PizzaStats {
@@ -28,7 +28,7 @@ export class PizzaController {
 
   @ApiOperation({ summary: 'Get pizza by id' })
   @ApiOkResponse({ description: 'Return pizza by id or null', type: Pizza })
-  @ApiNotFoundResponse({ description: 'Pizza not found' })
+  @ApiNotFoundResponse({ description: 'Pizza is not found' })
   @Get('/:id')
   public getPizzaById(@Param() { id }: GetPizzaByIdDto) {
     return this.pizzaService.getPizzaById(id);

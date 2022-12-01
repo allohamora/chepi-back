@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
-import { GetPizzasDto } from './dto/getPizzas.dto';
+import { GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/getPizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
@@ -89,7 +89,13 @@ export class PizzaService implements OnModuleInit {
       .join(' ');
   }
 
-  public async getPizzas({ query, limit, offset, country, city, orderBy, ids }: GetPizzasDto) {
+  private sortToElasticSort(sort: string) {
+    const [target, direction] = sort.split(SORT_JOIN_SYMBOL);
+
+    return [{ [target]: direction as 'asc' | 'desc' }];
+  }
+
+  public async getPizzas({ query, limit, offset, country, city, sort, ids }: GetPizzasDto) {
     const must: estypes.QueryDslQueryContainer = {};
 
     if (!query || query.trim().length === 0) {
@@ -117,7 +123,7 @@ export class PizzaService implements OnModuleInit {
       body: {
         from: offset,
         size: limit,
-        sort: orderBy ? [{ [orderBy.target]: orderBy.direction }] : undefined,
+        sort: sort ? this.sortToElasticSort(sort) : undefined,
         query: {
           bool: {
             must,

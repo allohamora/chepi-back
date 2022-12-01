@@ -1,42 +1,23 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
-import {
-  ArrayMinSize,
-  IsArray,
-  IsEnum,
-  IsNotEmptyObject,
-  IsNumber,
-  IsObject,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { ArrayMinSize, IsArray, IsEnum, IsNumber, IsOptional, IsString, Matches } from 'class-validator';
 import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
 
-const supportedTargets = ['weight', 'size', 'price'] as const;
-const supportedDirections = ['asc', 'desc'] as const;
-
-class OrderBy {
-  @ApiProperty({ enum: supportedTargets })
-  @IsEnum(supportedTargets)
-  target: typeof supportedTargets[number];
-
-  @ApiProperty({ description: 'sort direction', enum: supportedDirections })
-  @IsEnum(supportedDirections)
-  direction: typeof supportedDirections[number];
-}
+const SORT_REGEXP = /(weight|size|price):(asc|desc)/;
+export const SORT_JOIN_SYMBOL = ':';
 
 export class GetPizzasDto {
-  @ApiProperty({ description: 'search query', example: 'pizza with cheese' })
+  @ApiProperty({ description: 'search query', example: 'pizza with cheese', required: false })
   @IsString()
   @IsOptional()
   query?: string;
 
-  @ApiProperty({ enum: supportedCities })
+  @ApiProperty({ enum: supportedCities, required: false })
   @IsEnum(supportedCities)
   @IsOptional()
   city?: City;
 
-  @ApiProperty({ enum: supportedCountries })
+  @ApiProperty({ enum: supportedCountries, required: false })
   @IsEnum(supportedCountries)
   @IsOptional()
   country?: Country;
@@ -53,14 +34,13 @@ export class GetPizzasDto {
   @Type(() => Number)
   offset?: number;
 
-  @ApiProperty({ default: null, required: false })
+  @ApiProperty({ example: `size${SORT_JOIN_SYMBOL}asc`, required: false })
+  @Matches(SORT_REGEXP)
+  @IsString()
   @IsOptional()
-  @IsNotEmptyObject()
-  @IsObject()
-  @Type(() => OrderBy)
-  orderBy?: OrderBy;
+  sort?: string;
 
-  @ApiProperty({ type: [String], nullable: true, description: 'pizza id array' })
+  @ApiProperty({ type: [String], required: false, description: 'pizza id array' })
   @IsString({ each: true })
   @ArrayMinSize(1)
   @IsArray()
