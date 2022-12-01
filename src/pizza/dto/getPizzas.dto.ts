@@ -1,6 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
-import { IsEnum, IsNotEmptyObject, IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import { Transform, Type } from 'class-transformer';
+import {
+  ArrayMinSize,
+  IsArray,
+  IsEnum,
+  IsNotEmptyObject,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
 import { Pizza } from '../entities/pizza.entity';
 
@@ -20,24 +29,29 @@ class OrderBy {
 export class GetPizzasDto {
   @ApiProperty({ description: 'search query', example: 'pizza with cheese' })
   @IsString()
-  query: string;
+  @IsOptional()
+  query?: string;
 
   @ApiProperty({ enum: supportedCities })
   @IsEnum(supportedCities)
-  city: City;
+  @IsOptional()
+  city?: City;
 
   @ApiProperty({ enum: supportedCountries })
   @IsEnum(supportedCountries)
-  country: Country;
+  @IsOptional()
+  country?: Country;
 
   @ApiProperty({ default: 20, required: false })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   limit?: number;
 
   @ApiProperty({ default: 0, required: false })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   offset?: number;
 
   @ApiProperty({ default: null, required: false })
@@ -46,6 +60,20 @@ export class GetPizzasDto {
   @IsObject()
   @Type(() => OrderBy)
   orderBy?: OrderBy;
+
+  @ApiProperty({ type: [String], nullable: true, description: 'pizza id array' })
+  @IsString({ each: true })
+  @ArrayMinSize(1)
+  @IsArray()
+  @IsOptional()
+  @Transform(({ value }) => {
+    if (value && !Array.isArray(value)) {
+      return [value];
+    }
+
+    return value;
+  })
+  ids?: string[];
 }
 
 export class GetPizzaResultDto {

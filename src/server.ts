@@ -12,6 +12,12 @@ const SWAGGER_PATH = 'swagger';
 export class Server {
   private constructor(private app: INestApplication) {}
 
+  public addGlobalPrefix() {
+    this.app.setGlobalPrefix('/api/v1');
+
+    return this;
+  }
+
   public addCors() {
     this.app.enableCors();
 
@@ -19,7 +25,7 @@ export class Server {
   }
 
   public addPipes() {
-    this.app.useGlobalPipes(new ValidationPipe());
+    this.app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
     return this;
   }
@@ -50,6 +56,6 @@ export class Server {
   static async forProduction() {
     const server = await this.create();
 
-    return server.addCors().addPipes().addSwagger();
+    return server.addGlobalPrefix().addCors().addPipes().addSwagger();
   }
 }

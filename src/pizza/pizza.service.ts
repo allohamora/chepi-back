@@ -89,10 +89,10 @@ export class PizzaService implements OnModuleInit {
       .join(' ');
   }
 
-  public async getPizzas({ query, limit, offset, country, city, orderBy }: GetPizzasDto) {
+  public async getPizzas({ query, limit, offset, country, city, orderBy, ids }: GetPizzasDto) {
     const must: estypes.QueryDslQueryContainer = {};
 
-    if (query.length === 0) {
+    if (!query || query.trim().length === 0) {
       must.match_all = {};
     } else {
       must.simple_query_string = {
@@ -100,6 +100,16 @@ export class PizzaService implements OnModuleInit {
         fields: ['*_title', '*_description', '*_company', 'weight.text', 'size.text', 'price.text'],
         default_operator: 'and',
       };
+    }
+
+    const filter: estypes.QueryDslQueryContainer[] = [];
+
+    if (country) {
+      filter.push({ term: { country } });
+    }
+
+    if (city) {
+      filter.push({ term: { city } });
     }
 
     const esQuery: SearchQuery = {
@@ -111,7 +121,9 @@ export class PizzaService implements OnModuleInit {
         query: {
           bool: {
             must,
-            filter: [{ term: { country } }, { term: { city } }],
+            filter: filter.length ? filter : undefined,
+            should: ids ? ids.map((id) => ({ match: { id } })) : undefined,
+            minimum_should_match: ids ? 1 : undefined,
           },
         },
       },
@@ -125,27 +137,6 @@ export class PizzaService implements OnModuleInit {
     const value = hits.hits.map(({ _source }) => _source);
 
     return { total, value };
-  }
-
-  public async getPizzasByIds(ids: string[]) {
-    const {
-      body: {
-        hits: { hits },
-      },
-    } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
-      index: PIZZAS_INDEX,
-      body: {
-        query: {
-          bool: {
-            should: ids.map((id) => ({ match: { id } })),
-          },
-        },
-      },
-    });
-
-    const value = hits.map(({ _source }) => _source);
-
-    return { value };
   }
 
   public async getPizzaById(id: string) {
@@ -171,7 +162,7 @@ export class PizzaService implements OnModuleInit {
     const value = hits.map(({ _source }) => _source)[0];
 
     if (value === undefined) {
-      throw new NotFoundException();
+      throw new NotFoundException('pizza is not found');
     }
 
     return { value };
