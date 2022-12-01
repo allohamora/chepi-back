@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/allohamora/chepi-back/compare/v3.5.0...v4.0.0) (2022-12-01)
+
+### Features
+
+- add new server bootstrap ([37de978](https://github.com/allohamora/chepi-back/commits/37de97889ddd35b2a10a8dcc51311b9c70de1929))
+- add response standard ([e156e05](https://github.com/allohamora/chepi-back/commits/e156e057402176ea4fddb4b90ac30535c8ba1c03))
+- migrate to REST ([ff2d050](https://github.com/allohamora/chepi-back/commits/ff2d050f29d95deb7a44f9f79bdc6d2453959679))
+
+### Bug Fixes
+
+- add correct getPizzas sort ([17720ea](https://github.com/allohamora/chepi-back/commits/17720eaa102e062b867fd4a0b8b7f7e6c3b65a6c))
+- audit problems ([fff84ec](https://github.com/allohamora/chepi-back/commits/fff84ec054ce0833d2c842762bd77eb598e615bf))
+
 ## [3.5.0](https://github.com/allohamora/chepi-back/compare/v3.4.3...v3.5.0) (2022-07-23)
 
 ### Features
