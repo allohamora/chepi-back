@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1658557096,
+  "updatedAt": 1658557097,
   "pizzas": [
     {
       "id": "ac69bcc6923383cf76a5df15196318d4c2ff17bdfb486028f8d7ff745704dcf3",
@@ -16398,26 +16398,6 @@
       "en_description": "Creamy sauce with cream cheese, gorgonzola, parmesan, mozzarella, feta, basil, olive oil"
     },
     {
-      "id": "d5147b5b05cad30e159bf420436d2efc2a6e83f73495f5608b6cde9274e0a0ef",
-      "image": "https://assets.misteram.com.ua/misteram-public/3210f8b009d2dc88fc0a42d3111e62e6-826x0.png",
-      "link": "https://misteram.com.ua/chernivtsi/roksolana/pizza",
-      "weight": 60,
-      "size": null,
-      "price": 3,
-      "en_company": "Mister.Am (Roksolana ceremony hall)",
-      "ru_company": "Mister.Am (Roksolana ceremony hall)",
-      "uk_company": "Mister.Am (Roksolana ceremony hall)",
-      "lang": "uk",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "uk_title": "Хлібна корзина",
-      "uk_description": "-",
-      "ru_title": "Хлебная корзина",
-      "ru_description": "-",
-      "en_title": "Bread basket",
-      "en_description": "-"
-    },
-    {
       "id": "8bc067d1764aafa33e5b71bbcd6674809443a70780b88143edc539cfa302298a",
       "image": "https://shosho.pizza/shop/thumbnails_product_460_/Pizza_1080x1080_0002_Шар 16.jpeg",
       "link": "https://shosho.pizza",
@@ -17688,26 +17668,6 @@
       "ru_description": "Сливочный соус, сыр Филадельфия, лосось, моцарелла, пармезан, руккола, орегано",
       "en_title": "Philadelphia",
       "en_description": "Creamy sauce, Philadelphia cheese, salmon, mozzarella, parmesan, arugula, oregano"
-    },
-    {
-      "id": "ec50e2aa91a006f26d676d01dbf2438290009d39ef17a3e8f5300fcf13cbd753",
-      "image": "https://assets.misteram.com.ua/misteram-public/3210f8b009d2dc88fc0a42d3111e62e6-826x0.png",
-      "link": "https://misteram.com.ua/chernivtsi/roksolana/pizza",
-      "weight": null,
-      "size": null,
-      "price": 3,
-      "en_company": "Mister.Am (Roksolana ceremony hall)",
-      "ru_company": "Mister.Am (Roksolana ceremony hall)",
-      "uk_company": "Mister.Am (Roksolana ceremony hall)",
-      "lang": "uk",
-      "country": "ukraine",
-      "city": "chernivtsi",
-      "uk_title": "Хлібці житні",
-      "uk_description": "-",
-      "ru_title": "Хлебцы ржаные",
-      "ru_description": "-",
-      "en_title": "Rye bread",
-      "en_description": "-"
     },
     {
       "id": "60835e9b43320bc7128a13f01584b5e6d3813bc454bcedfd0b55b468eff10219",
