@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://github.com/allohamora/chepi-back/compare/v4.0.0...v4.0.1) (2022-12-01)
+
+### Bug Fixes
+
+- add correct links to README ([87092eb](https://github.com/allohamora/chepi-back/commits/87092ebc02259e1f09c1c9cacec6a5a032b9c71b))
+
 ## [4.0.0](https://github.com/allohamora/chepi-back/compare/v3.5.0...v4.0.0) (2022-12-01)
 
 ### Features

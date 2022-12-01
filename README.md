@@ -4,7 +4,7 @@ back-end for chepi
 
 ## Links
 
-- [Docs/Swagger](https://chepi-back-allohamora.cloud.okteto.net/api/)
+- [Docs/Swagger](https://chepi-back-allohamora.cloud.okteto.net/swagger/)
 - [Production link](https://chepi-back-allohamora.cloud.okteto.net)
 
 ## Used technologies
@@ -20,11 +20,11 @@ back-end for chepi
 
 ## Options
 
-| Key                | Value |
-| ------------------ | ----- |
-| Port               | 3000  |
-| Swagger url        | /api  |
-| Elasticsearch port | 9200  |
+| Key                | Value    |
+| ------------------ | -------- |
+| Port               | 3000     |
+| Swagger url        | /swagger |
+| Elasticsearch port | 9200     |
 
 ## Running the app
 
@@ -74,4 +74,5 @@ npm run pizzas:build:script
 # build pizzas.json
 npm run pizzas:build
 ```
+
 Powered by [Google Translate](https://translate.google.com)
