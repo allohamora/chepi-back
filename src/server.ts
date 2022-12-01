@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ErrorExceptionFilter } from './shared/filters/error.filter';
-import { CustomResponseInterceptor } from './shared/interceptors/custom-response.interceptor';
+import { ResponseInterceptor } from './shared/interceptors/response.interceptor';
 
 const APP_NAME = process.env.npm_package_name;
 const APP_VERSION = process.env.npm_package_version;
@@ -33,7 +33,7 @@ export class Server {
   }
 
   public addInterceptors() {
-    this.app.useGlobalInterceptors(new CustomResponseInterceptor());
+    this.app.useGlobalInterceptors(new ResponseInterceptor());
 
     return this;
   }
