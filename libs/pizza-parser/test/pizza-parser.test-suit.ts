@@ -9,7 +9,7 @@ import {
   expectTrimmedString,
 } from './test.utils';
 
-const MAX_REQUEST_TIME_IN_MILISECONDS = 60000;
+const MAX_REQUEST_TIME_IN_MILLISECONDS = 60000;
 
 const ukNotContainBlacklistedWordTest = (value: string) => {
   const expectFalseTest = expectFalseTestFactory(value);
@@ -74,7 +74,7 @@ const notContainBlacklistSymbolTest = (value: string) => {
 const ukContentTest = combine(notContainBlacklistSymbolTest, ukNotContainBlacklistedWordTest);
 
 export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
-  jest.setTimeout(MAX_REQUEST_TIME_IN_MILISECONDS);
+  jest.setTimeout(MAX_REQUEST_TIME_IN_MILLISECONDS);
 
   describe('parsePizza', () => {
     let parser: PizzasParser;
@@ -83,7 +83,7 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
       parser = new Parser();
     });
 
-    test('return a pizza array', async () => {
+    test('returns a pizza array', async () => {
       const pizzas = await parser.parsePizzas();
       expect(pizzas).toBeInstanceOf(Array);
       expect(pizzas.length >= 1).toBe(true);
@@ -99,8 +99,8 @@ export const pizzasParserTestSuit = (Parser: Constructable<PizzasParser>) => {
           ukContentTest(pizza.description);
         }
 
-        const isDesriptionNotEmpty = pizza.description.trim().length !== 0;
-        if (isDesriptionNotEmpty) {
+        const isDescriptionNotEmpty = pizza.description.trim().length !== 0;
+        if (isDescriptionNotEmpty) {
           expectTrimmedString(pizza.description);
         }
 

@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-floating-promises': 'warn',
+    '@typescript-eslint/ban-types': 'warn',
 
     'beautiful-sort/import': [
       'error',

@@ -8,8 +8,8 @@ export const combine = <V>(...middlewares: Middleware<V, unknown>[]) => {
   };
 };
 
-export const compose = <V>(...midlewares: Middleware<V>[]) => {
+export const compose = <V>(...middlewares: Middleware<V>[]) => {
   return (value: V) => {
-    return midlewares.reduce((state, middleware) => middleware(state), value);
+    return middlewares.reduce((state, middleware) => middleware(state), value);
   };
 };

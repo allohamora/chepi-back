@@ -23,7 +23,7 @@ const expectHistory = (historyOfChanges?: Change[]) => {
 };
 
 describe('pizzas.json', () => {
-  test('have updatedAt', () => {
+  test('has updatedAt', () => {
     expectNumber(updatedAt);
   });
 

@@ -1,54 +1,36 @@
-import { Body, Controller, Get, HttpCode, Post, Query } from '@nestjs/common';
-import { ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { GetPizzaByIdDto, GetPizzaByIdResultDto } from './dto/getPizzaById.dto';
-import { GetPizzaResultDto, GetPizzasDto } from './dto/getPizzas.dto';
-import { GetPizzasByIdsDto, GetPizzasByIdsResultDto } from './dto/getPizzasByIds.dto';
-import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
+import { Controller, Get, Param, Query } from '@nestjs/common';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiNotFoundResponse, ApiOkResponse } from 'src/shared/swagger';
+import { GetPizzaByIdDto } from './dto/getPizzaById.dto';
+import { GetPizzasDto } from './dto/getPizzas.dto';
+import { PizzaStats } from './dto/pizzasStats.dto';
+import { Pizza } from './entities/pizza.entity';
 import { PizzaService } from './pizza.service';
 
-@ApiTags('pizza')
-@Controller('pizza')
+@ApiTags('Pizza')
+@Controller('pizzas')
 export class PizzaController {
-  constructor(private readonly pizzaService: PizzaService) {}
+  constructor(private pizzaService: PizzaService) {}
 
   @ApiOperation({ summary: 'Get pizzas by query' })
-  @ApiOkResponse({ description: 'Return found by query pizzas', type: GetPizzaResultDto })
-  @Post('/')
-  @HttpCode(200)
-  public async getPizzasByQuery(@Body() getPizzasDto: GetPizzasDto): Promise<GetPizzaResultDto> {
-    return await this.pizzaService.getPizzas(getPizzasDto);
+  @ApiOkResponse({ description: 'Return found by query pizzas', type: Pizza, isArray: true })
+  @Get('/')
+  public getPizzas(@Query() getPizzasDto: GetPizzasDto) {
+    return this.pizzaService.getPizzas(getPizzasDto);
+  }
+
+  @ApiOperation({ summary: 'Get pizza stats' })
+  @ApiOkResponse({ description: 'Return pizzas.json stats', type: PizzaStats })
+  @Get('/stats')
+  public getPizzaStats(): PizzaStats {
+    return this.pizzaService.getPizzaStats();
   }
 
   @ApiOperation({ summary: 'Get pizza by id' })
-  @ApiOkResponse({ description: 'Return pizza by id or null', type: GetPizzaByIdResultDto })
-  @ApiNotFoundResponse({ description: 'Pizza not found' })
-  @Get('/')
-  public async getPizzaById(@Query() { id }: GetPizzaByIdDto): Promise<GetPizzaByIdResultDto> {
-    return await this.pizzaService.getPizzaById(id);
-  }
-
-  @ApiOperation({ summary: 'Get pizzas by ids' })
-  @ApiOkResponse({
-    description: 'Return found pizzas by ids. For not found id return nothing',
-    type: GetPizzasByIdsResultDto,
-  })
-  @Post('/ids')
-  @HttpCode(200)
-  public async getPizzasByIds(@Body() { ids }: GetPizzasByIdsDto): Promise<GetPizzasByIdsResultDto> {
-    return await this.pizzaService.getPizzasByIds(ids);
-  }
-
-  @ApiOperation({ summary: 'Get pizzas stats' })
-  @ApiOkResponse({ description: 'Return pizzas.json stats', type: PizzasStatsResultDto })
-  @Get('/stats')
-  public getPizzasStats(): PizzasStatsResultDto {
-    return this.pizzaService.getPizzasStats();
-  }
-
-  @ApiOperation({ summary: 'Get pizza ids' })
-  @ApiOkResponse({ description: 'pizza ids', type: [String] })
-  @Get('/ids')
-  public async getPizzaIds() {
-    return await this.pizzaService.getPizzaIds();
+  @ApiOkResponse({ description: 'Return pizza by id or null', type: Pizza })
+  @ApiNotFoundResponse({ description: 'Pizza is not found' })
+  @Get('/:id')
+  public getPizzaById(@Param() { id }: GetPizzaByIdDto) {
+    return this.pizzaService.getPizzaById(id);
   }
 }

@@ -1,57 +1,56 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
-import { IsEnum, IsNotEmptyObject, IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
+import { Transform, Type } from 'class-transformer';
+import { ArrayMinSize, IsArray, IsEnum, IsNumber, IsOptional, IsString, Matches } from 'class-validator';
 import { City, Country, supportedCities, supportedCountries } from 'libs/pizza-parser/types/pizza';
-import { Pizza } from '../entities/pizza.entity';
 
-const supportedTargets = ['weight', 'size', 'price'] as const;
-const supportedDirections = ['asc', 'desc'] as const;
-
-class OrderBy {
-  @ApiProperty({ enum: supportedTargets })
-  @IsEnum(supportedTargets)
-  target: typeof supportedTargets[number];
-
-  @ApiProperty({ description: 'sort direction', enum: supportedDirections })
-  @IsEnum(supportedDirections)
-  direction: typeof supportedDirections[number];
-}
+const SORT_REGEXP = /(weight|size|price):(asc|desc)/;
+export const SORT_JOIN_SYMBOL = ':';
 
 export class GetPizzasDto {
-  @ApiProperty({ description: 'search query', example: 'pizza with cheese' })
+  @ApiProperty({ description: 'search query', example: 'pizza with cheese', required: false })
   @IsString()
-  query: string;
+  @IsOptional()
+  query?: string;
 
-  @ApiProperty({ enum: supportedCities })
+  @ApiProperty({ enum: supportedCities, required: false })
   @IsEnum(supportedCities)
-  city: City;
+  @IsOptional()
+  city?: City;
 
-  @ApiProperty({ enum: supportedCountries })
+  @ApiProperty({ enum: supportedCountries, required: false })
   @IsEnum(supportedCountries)
-  country: Country;
+  @IsOptional()
+  country?: Country;
 
   @ApiProperty({ default: 20, required: false })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   limit?: number;
 
   @ApiProperty({ default: 0, required: false })
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   offset?: number;
 
-  @ApiProperty({ default: null, required: false })
+  @ApiProperty({ example: `size${SORT_JOIN_SYMBOL}asc`, required: false })
+  @Matches(SORT_REGEXP)
+  @IsString()
   @IsOptional()
-  @IsNotEmptyObject()
-  @IsObject()
-  @Type(() => OrderBy)
-  orderBy?: OrderBy;
-}
+  sort?: string;
 
-export class GetPizzaResultDto {
-  @ApiProperty({ type: Pizza, isArray: true, description: 'pizza array' })
-  value: Pizza[];
+  @ApiProperty({ type: [String], required: false, description: 'pizza id array' })
+  @IsString({ each: true })
+  @ArrayMinSize(1)
+  @IsArray()
+  @IsOptional()
+  @Transform(({ value }) => {
+    if (value && !Array.isArray(value)) {
+      return [value];
+    }
 
-  @ApiProperty({ description: 'number of found pizzas by query' })
-  total: number;
+    return value;
+  })
+  ids?: string[];
 }

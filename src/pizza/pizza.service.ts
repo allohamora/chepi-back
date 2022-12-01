@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
-import { GetPizzasDto } from './dto/getPizzas.dto';
+import { GetPizzasDto, SORT_JOIN_SYMBOL } from './dto/getPizzas.dto';
 import { Pizza } from './entities/pizza.entity';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
 import { estypes } from '@elastic/elasticsearch';
 import { SearchQuery } from 'src/types/elasticsearch';
 import { pizzas, updatedAt } from 'pizzas.json';
-import { PizzasStatsResultDto } from './dto/pizzasStats.dto';
+import { PizzaStats } from './dto/pizzasStats.dto';
 
 const numberAndText = {
   type: 'integer',
@@ -54,13 +54,13 @@ export class PizzaService implements OnModuleInit {
   constructor(private elasticsearchService: ElasticsearchService) {}
 
   public async onModuleInit() {
-    await this.setPizzasIfNotExists();
+    await this.setPizzasIfNotExist();
   }
 
-  private async setPizzasIfNotExists() {
-    const { body: isExists } = await this.elasticsearchService.indices.exists({ index: PIZZAS_INDEX });
+  private async setPizzasIfNotExist() {
+    const { body: isExist } = await this.elasticsearchService.indices.exists({ index: PIZZAS_INDEX });
 
-    if (isExists) return;
+    if (isExist) return;
 
     await this.elasticsearchService.indices.create<estypes.IndicesCreateResponse>({
       index: PIZZAS_INDEX,
@@ -74,7 +74,7 @@ export class PizzaService implements OnModuleInit {
       body: { errors },
     } = await this.elasticsearchService.bulk<estypes.BulkResponse>({ refresh: true, body: bulkBody });
 
-    if (errors) throw new Error('bulk has errors');
+    if (errors) throw new Error('bulk pizzas insert has errors');
   }
 
   private queryToSimpleQuery(query: string) {
@@ -89,10 +89,16 @@ export class PizzaService implements OnModuleInit {
       .join(' ');
   }
 
-  public async getPizzas({ query, limit, offset, country, city, orderBy }: GetPizzasDto) {
+  private sortToElasticSort(sort: string) {
+    const [target, direction] = sort.split(SORT_JOIN_SYMBOL);
+
+    return [{ [target]: direction as 'asc' | 'desc' }];
+  }
+
+  public async getPizzas({ query, limit, offset, country, city, sort, ids }: GetPizzasDto) {
     const must: estypes.QueryDslQueryContainer = {};
 
-    if (query.length === 0) {
+    if (!query || query.trim().length === 0) {
       must.match_all = {};
     } else {
       must.simple_query_string = {
@@ -102,16 +108,28 @@ export class PizzaService implements OnModuleInit {
       };
     }
 
+    const filter: estypes.QueryDslQueryContainer[] = [];
+
+    if (country) {
+      filter.push({ term: { country } });
+    }
+
+    if (city) {
+      filter.push({ term: { city } });
+    }
+
     const esQuery: SearchQuery = {
       index: PIZZAS_INDEX,
       body: {
         from: offset,
         size: limit,
-        sort: orderBy ? [{ [orderBy.target]: orderBy.direction }] : undefined,
+        sort: sort ? this.sortToElasticSort(sort) : undefined,
         query: {
           bool: {
             must,
-            filter: [{ term: { country } }, { term: { city } }],
+            filter: filter.length ? filter : undefined,
+            should: ids ? ids.map((id) => ({ match: { id } })) : undefined,
+            minimum_should_match: ids ? 1 : undefined,
           },
         },
       },
@@ -122,30 +140,9 @@ export class PizzaService implements OnModuleInit {
     } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>(esQuery);
 
     const total: number = typeof hits.total === 'number' ? hits.total : hits.total.value;
-    const value = hits.hits.map(({ _source }) => _source);
+    const data = hits.hits.map(({ _source }) => _source);
 
-    return { total, value };
-  }
-
-  public async getPizzasByIds(ids: string[]) {
-    const {
-      body: {
-        hits: { hits },
-      },
-    } = await this.elasticsearchService.search<estypes.SearchResponse<Pizza>>({
-      index: PIZZAS_INDEX,
-      body: {
-        query: {
-          bool: {
-            should: ids.map((id) => ({ match: { id } })),
-          },
-        },
-      },
-    });
-
-    const value = hits.map(({ _source }) => _source);
-
-    return { value };
+    return { meta: { total, count: data.length }, data };
   }
 
   public async getPizzaById(id: string) {
@@ -171,37 +168,13 @@ export class PizzaService implements OnModuleInit {
     const value = hits.map(({ _source }) => _source)[0];
 
     if (value === undefined) {
-      throw new NotFoundException();
+      throw new NotFoundException('pizza is not found');
     }
 
-    return { value };
+    return value;
   }
 
-  public getPizzasStats(): PizzasStatsResultDto {
+  public getPizzaStats(): PizzaStats {
     return { updatedAt: PIZZAS_UPDATED_AT, count: PIZZAS_COUNT };
-  }
-
-  public async getPizzaIds(): Promise<string[]> {
-    const esQuery: SearchQuery = {
-      index: PIZZAS_INDEX,
-      body: {
-        size: PIZZAS_COUNT,
-        query: {
-          bool: {
-            must: {
-              match_all: {},
-            },
-          },
-        },
-      },
-    };
-
-    const {
-      body: {
-        hits: { hits },
-      },
-    } = await this.elasticsearchService.search(esQuery);
-
-    return hits.map(({ _source }) => _source.id);
   }
 }
