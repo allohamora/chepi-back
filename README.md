@@ -32,16 +32,16 @@ back-end for chepi
 # development
 npm run start
 
-# watch mode
+# development in watch mode
 npm run start:dev
 
-# production mode
+# production
 npm run start:prod
 
-# dependencies
+# start services
 docker-compose up
 
-# in docker with dependencies
+# start services and chepi-back back-end in production mode
 docker-compose --profile production up
 ```
 
@@ -51,11 +51,8 @@ docker-compose --profile production up
 # unit tests
 npm run test
 
-# libs unit tests
-npm run test:libs
-
-# e2e tests
-npm run test:e2e
+# unit tests in watch mode
+npm run test:watch
 
 # test coverage
 npm run test:cov
@@ -64,7 +61,7 @@ npm run test:cov
 ## Pizzas
 
 ```bash
-# pizzas docker-compose npm run wrapper
+# pizzas docker-compose
 npm run pizzas:docker-compose (up | down | etc)
 
 # run pizzas.json build script
